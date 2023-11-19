@@ -171,8 +171,9 @@ nav:
       - github-merge.md
       - fortinet-fortidevsec.md
   - "CI/CD":
-      - azure-oidc.md
+      - github-personal-access-token.md
       - github-secrets.md
+      - azure-oidc.md
       - github-workflows.md
       - fortimanager.md
       - fortimanager-ztp.md
