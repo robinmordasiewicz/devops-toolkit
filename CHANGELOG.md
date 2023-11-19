@@ -1,5 +1,12 @@
 # CHANGELOG
 
+## [1.1.1](https://github.com/robinmordasiewicz/devops-toolkit/compare/v1.1.0...v1.1.1) (2023-11-19)
+
+
+### Bug Fixes
+
+* **puppeteer.js:** modify screenshot path to be relative ([522f2f7](https://github.com/robinmordasiewicz/devops-toolkit/commit/522f2f74bca4494ec00b2ff575bcbddea30b7b94))
+
 ## [1.1.0](https://github.com/robinmordasiewicz/devops-toolkit/compare/v1.0.0...v1.1.0) (2023-11-19)
 
 
