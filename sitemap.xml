@@ -1,177 +1,187 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
-         <loc>https://robinmordasiewicz.github.io/fortinet-devops/</loc>
+         <loc>https://robinmordasiewicz.github.io/devops-toolkit/</loc>
          <lastmod>2023-11-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://robinmordasiewicz.github.io/fortinet-devops/accounts/</loc>
+         <loc>https://robinmordasiewicz.github.io/devops-toolkit/accounts/</loc>
          <lastmod>2023-11-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://robinmordasiewicz.github.io/fortinet-devops/azure-az-login/</loc>
+         <loc>https://robinmordasiewicz.github.io/devops-toolkit/azure-az-login/</loc>
          <lastmod>2023-11-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://robinmordasiewicz.github.io/fortinet-devops/azure-cloud-shell/</loc>
+         <loc>https://robinmordasiewicz.github.io/devops-toolkit/azure-cloud-shell/</loc>
          <lastmod>2023-11-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://robinmordasiewicz.github.io/fortinet-devops/azure-install-gh/</loc>
+         <loc>https://robinmordasiewicz.github.io/devops-toolkit/azure-install-gh/</loc>
          <lastmod>2023-11-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://robinmordasiewicz.github.io/fortinet-devops/azure-install-terraform/</loc>
+         <loc>https://robinmordasiewicz.github.io/devops-toolkit/azure-install-terraform/</loc>
          <lastmod>2023-11-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://robinmordasiewicz.github.io/fortinet-devops/azure-subscription/</loc>
+         <loc>https://robinmordasiewicz.github.io/devops-toolkit/azure-subscription/</loc>
          <lastmod>2023-11-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://robinmordasiewicz.github.io/fortinet-devops/challenge/</loc>
+         <loc>https://robinmordasiewicz.github.io/devops-toolkit/challenge/</loc>
          <lastmod>2023-11-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://robinmordasiewicz.github.io/fortinet-devops/concepts/</loc>
+         <loc>https://robinmordasiewicz.github.io/devops-toolkit/concepts/</loc>
          <lastmod>2023-11-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://robinmordasiewicz.github.io/fortinet-devops/devops/</loc>
+         <loc>https://robinmordasiewicz.github.io/devops-toolkit/devops/</loc>
          <lastmod>2023-11-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://robinmordasiewicz.github.io/fortinet-devops/digitial-journey/</loc>
+         <loc>https://robinmordasiewicz.github.io/devops-toolkit/digitial-journey/</loc>
          <lastmod>2023-11-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://robinmordasiewicz.github.io/fortinet-devops/fortimanager-ztp/</loc>
+         <loc>https://robinmordasiewicz.github.io/devops-toolkit/fortimanager-ztp/</loc>
          <lastmod>2023-11-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://robinmordasiewicz.github.io/fortinet-devops/fortimanager/</loc>
+         <loc>https://robinmordasiewicz.github.io/devops-toolkit/fortimanager/</loc>
          <lastmod>2023-11-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://robinmordasiewicz.github.io/fortinet-devops/gitflow/</loc>
+         <loc>https://robinmordasiewicz.github.io/devops-toolkit/fortinet-fortidevsec/</loc>
          <lastmod>2023-11-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://robinmordasiewicz.github.io/fortinet-devops/github-actions/</loc>
+         <loc>https://robinmordasiewicz.github.io/devops-toolkit/gitflow/</loc>
          <lastmod>2023-11-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://robinmordasiewicz.github.io/fortinet-devops/github-branch/</loc>
+         <loc>https://robinmordasiewicz.github.io/devops-toolkit/github-branch/</loc>
          <lastmod>2023-11-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://robinmordasiewicz.github.io/fortinet-devops/github-clone-repo/</loc>
+         <loc>https://robinmordasiewicz.github.io/devops-toolkit/github-clone-repo/</loc>
          <lastmod>2023-11-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://robinmordasiewicz.github.io/fortinet-devops/github-commit/</loc>
+         <loc>https://robinmordasiewicz.github.io/devops-toolkit/github-commit/</loc>
          <lastmod>2023-11-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://robinmordasiewicz.github.io/fortinet-devops/github-copilot-install/</loc>
+         <loc>https://robinmordasiewicz.github.io/devops-toolkit/github-copilot-install/</loc>
          <lastmod>2023-11-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://robinmordasiewicz.github.io/fortinet-devops/github-create-repo/</loc>
+         <loc>https://robinmordasiewicz.github.io/devops-toolkit/github-create-repo/</loc>
          <lastmod>2023-11-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://robinmordasiewicz.github.io/fortinet-devops/github-fork-repo/</loc>
+         <loc>https://robinmordasiewicz.github.io/devops-toolkit/github-fork-repo/</loc>
          <lastmod>2023-11-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://robinmordasiewicz.github.io/fortinet-devops/github-merge/</loc>
+         <loc>https://robinmordasiewicz.github.io/devops-toolkit/github-merge/</loc>
          <lastmod>2023-11-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://robinmordasiewicz.github.io/fortinet-devops/github-profile/</loc>
+         <loc>https://robinmordasiewicz.github.io/devops-toolkit/github-profile/</loc>
          <lastmod>2023-11-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://robinmordasiewicz.github.io/fortinet-devops/github-pull-request/</loc>
+         <loc>https://robinmordasiewicz.github.io/devops-toolkit/github-pull-request/</loc>
          <lastmod>2023-11-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://robinmordasiewicz.github.io/fortinet-devops/github-push/</loc>
+         <loc>https://robinmordasiewicz.github.io/devops-toolkit/github-push/</loc>
          <lastmod>2023-11-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://robinmordasiewicz.github.io/fortinet-devops/gitops/</loc>
+         <loc>https://robinmordasiewicz.github.io/devops-toolkit/github-secrets/</loc>
          <lastmod>2023-11-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://robinmordasiewicz.github.io/fortinet-devops/links/</loc>
+         <loc>https://robinmordasiewicz.github.io/devops-toolkit/github-workflows/</loc>
          <lastmod>2023-11-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://robinmordasiewicz.github.io/fortinet-devops/opencommit-conventional/</loc>
+         <loc>https://robinmordasiewicz.github.io/devops-toolkit/gitops/</loc>
          <lastmod>2023-11-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://robinmordasiewicz.github.io/fortinet-devops/opencommit-install/</loc>
+         <loc>https://robinmordasiewicz.github.io/devops-toolkit/links/</loc>
          <lastmod>2023-11-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://robinmordasiewicz.github.io/fortinet-devops/secure-cloud-blueprint/</loc>
+         <loc>https://robinmordasiewicz.github.io/devops-toolkit/opencommit-conventional/</loc>
          <lastmod>2023-11-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://robinmordasiewicz.github.io/fortinet-devops/source-of-truth/</loc>
+         <loc>https://robinmordasiewicz.github.io/devops-toolkit/opencommit-install/</loc>
          <lastmod>2023-11-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://robinmordasiewicz.github.io/fortinet-devops/terraform-deploy/</loc>
+         <loc>https://robinmordasiewicz.github.io/devops-toolkit/secure-cloud-blueprint/</loc>
          <lastmod>2023-11-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://robinmordasiewicz.github.io/fortinet-devops/terraform-docs/</loc>
+         <loc>https://robinmordasiewicz.github.io/devops-toolkit/source-of-truth/</loc>
          <lastmod>2023-11-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://robinmordasiewicz.github.io/fortinet-devops/terraform-environment/</loc>
+         <loc>https://robinmordasiewicz.github.io/devops-toolkit/terraform-deploy/</loc>
          <lastmod>2023-11-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://robinmordasiewicz.github.io/fortinet-devops/blog/</loc>
+         <loc>https://robinmordasiewicz.github.io/devops-toolkit/terraform-docs/</loc>
+         <lastmod>2023-11-19</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://robinmordasiewicz.github.io/devops-toolkit/terraform-environment/</loc>
+         <lastmod>2023-11-19</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://robinmordasiewicz.github.io/devops-toolkit/blog/</loc>
          <lastmod>2023-11-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
