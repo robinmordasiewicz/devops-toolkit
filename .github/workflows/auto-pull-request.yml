@@ -13,6 +13,7 @@ permissions:
   contents: write
   pull-requests: write
   id-token: write
+  actions: write
 
 concurrency:
   group: ${{ github.ref }}-${{ github.workflow }}
@@ -23,10 +24,10 @@ jobs:
     name: auto-pull-request
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11
-        with:
-          token: ${{ secrets.PAT || secrets.GITHUB_TOKEN }}
-      - name: pull-request
+      - name: checkout
+        uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11
+
+      - name: auto-pull-request
         uses: diillson/auto-pull-request@4cf50b3681cd76250f37841466e61e514a377064
         with:
           destination_branch: "main"
