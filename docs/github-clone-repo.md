@@ -6,13 +6,13 @@ comments: true
 - [x] Clone
 
 ```bash
-git clone https://github.com/<githubusername>/fortinet-devops
+git clone https://github.com/<githubusername>/devops-toolkit
 ```
 
 - [x] CD into repository folder
 
 ```bash
-cd fortinet-devops
+cd devops-toolkit
 ```
 
 - [x] List folder contents
