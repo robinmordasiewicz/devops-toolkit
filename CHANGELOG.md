@@ -1,5 +1,12 @@
 # CHANGELOG
 
+## [1.2.0](https://github.com/robinmordasiewicz/devops-toolkit/compare/v1.1.1...v1.2.0) (2023-11-19)
+
+
+### Features
+
+* **docs:** add new GitHub profile documentation ([83642f8](https://github.com/robinmordasiewicz/devops-toolkit/commit/83642f8157a44955df7df9cdd0b9a1036792764c))
+
 ## [1.1.1](https://github.com/robinmordasiewicz/devops-toolkit/compare/v1.1.0...v1.1.1) (2023-11-19)
 
 
@@ -20,4 +27,3 @@
 * **release-please.yml:** remove token and path parameters from release-please action ([d08cf0d](https://github.com/robinmordasiewicz/devops-toolkit/commit/d08cf0d2ec00c46d9ebff947c81d6561a6d9eaea))
 
 ## 1.0.0 (2023-11-19)
-
