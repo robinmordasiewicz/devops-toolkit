@@ -10,7 +10,7 @@ const puppeteer = require('puppeteer');
   await page.setViewport({ width: 1500, height: 1080 })
   await page.goto('https://github.com/robinmordasiewicz')
   await page.screenshot({
-    path: 'docs/img/github-profile.png'
+    path: './docs/img/github-profile.png'
   })
 
   await browser.close()
