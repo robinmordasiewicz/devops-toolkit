@@ -1,5 +1,12 @@
 # CHANGELOG
 
+## [1.2.1](https://github.com/robinmordasiewicz/devops-toolkit/compare/v1.2.0...v1.2.1) (2023-11-19)
+
+
+### Bug Fixes
+
+* **screenshots.yml:** replace 'git commit -a' with 'git add .' and 'git commit' ([bb95496](https://github.com/robinmordasiewicz/devops-toolkit/commit/bb954962c7f5688f77e2b40fb34b8c4d3c3cee77))
+
 ## [1.2.0](https://github.com/robinmordasiewicz/devops-toolkit/compare/v1.1.1...v1.2.0) (2023-11-19)
 
 
