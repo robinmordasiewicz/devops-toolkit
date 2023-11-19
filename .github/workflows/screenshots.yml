@@ -29,17 +29,17 @@ jobs:
       - uses: browser-actions/setup-chrome@11cef13cde73820422f9263a707fb8029808e191
       - uses: actions/setup-node@8f152de45cc393bb48ce5d89d36b731f54556e65
 
-      - name: Run test
-        uses: tj-actions/puppeteer@a2befb374cdb596ae129a21e0a52494eb028ee82
-        id: puppeteer
-        with:
-          files: |
-            puppeteer.js
+      # - name: Run test
+      #  uses: tj-actions/puppeteer@a2befb374cdb596ae129a21e0a52494eb028ee82
+      #  id: puppeteer
+      #  with:
+      #    files: |
+      #      puppeteer.js
 
       - name: Install dependencies
         run: npm i puppeteer
 
-      - name: Run headless test
+      - name: Screenshots
         uses: coactions/setup-xvfb@b6b4fcfb9f5a895edadc3bc76318fae0ac17c8b3
         with:
           run: node puppeteer.js
