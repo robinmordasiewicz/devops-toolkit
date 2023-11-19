@@ -116,6 +116,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://robinmordasiewicz.github.io/devops-toolkit/github-profile/</loc>
+         <lastmod>2023-11-19</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://robinmordasiewicz.github.io/devops-toolkit/github-pull-request/</loc>
          <lastmod>2023-11-19</lastmod>
          <changefreq>daily</changefreq>
