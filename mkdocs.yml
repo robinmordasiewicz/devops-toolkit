@@ -169,8 +169,11 @@ nav:
       - github-push.md
       - github-pull-request.md
       - github-merge.md
+      - fortinet-fortidevsec.md
   - "CI/CD":
-      - github-actions.md
+      - azure-oidc.md
+      - github-secrets.md
+      - github-workflows.md
       - fortimanager.md
       - fortimanager-ztp.md
   - github-copilot-install.md
