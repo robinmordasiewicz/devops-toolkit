@@ -1,2 +1,23 @@
 # CHANGELOG
 
+## [1.1.1](https://github.com/robinmordasiewicz/devops-toolkit/compare/v1.1.0...v1.1.1) (2023-11-19)
+
+
+### Bug Fixes
+
+* **puppeteer.js:** modify screenshot path to be relative ([522f2f7](https://github.com/robinmordasiewicz/devops-toolkit/commit/522f2f74bca4494ec00b2ff575bcbddea30b7b94))
+
+## [1.1.0](https://github.com/robinmordasiewicz/devops-toolkit/compare/v1.0.0...v1.1.0) (2023-11-19)
+
+
+### Features
+
+* **workflows:** add init job to check OPENAI_API_KEY existence in openai-pr-description.yml ([a037f87](https://github.com/robinmordasiewicz/devops-toolkit/commit/a037f8798122bff063b65d7e5551e275d0148e79))
+
+
+### Bug Fixes
+
+* **release-please.yml:** remove token and path parameters from release-please action ([d08cf0d](https://github.com/robinmordasiewicz/devops-toolkit/commit/d08cf0d2ec00c46d9ebff947c81d6561a6d9eaea))
+
+## 1.0.0 (2023-11-19)
+
