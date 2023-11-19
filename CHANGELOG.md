@@ -1,5 +1,12 @@
 # CHANGELOG
 
+## 1.0.0 (2023-11-19)
+
+
+### Bug Fixes
+
+* **terraform:** remove unnecessary line in main.tf for cleaner code ([2b6cb5f](https://github.com/robinmordasiewicz/devops-toolkit/commit/2b6cb5f0b38fc64e1ec627721bd0ab1187a7aaeb))
+
 ## [2.14.0](https://github.com/robinmordasiewicz/fortinet-devops/compare/v2.13.0...v2.14.0) (2023-11-18)
 
 
