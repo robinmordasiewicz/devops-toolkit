@@ -30,7 +30,7 @@ jobs:
 
       - name: Build Docs
         env:
-          MKDOCS_GIT_COMMITTERS_APIKEY: ${{ secrets.PAT }}
+          MKDOCS_GIT_COMMITTERS_APIKEY: ${{ secrets.GITHUB_TOKEN }}
         run: |
           pip install --upgrade pip
           pip install -r requirements.txt

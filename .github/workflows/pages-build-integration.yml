@@ -51,5 +51,5 @@ jobs:
 
       - name: Build Docs
         env:
-          MKDOCS_GIT_COMMITTERS_APIKEY: ${{ secrets.PAT }}
+          MKDOCS_GIT_COMMITTERS_APIKEY: ${{ secrets.GITHUB_TOKEN }}
         run: mkdocs gh-deploy --force
