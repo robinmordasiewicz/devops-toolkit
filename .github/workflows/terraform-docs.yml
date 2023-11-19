@@ -1,0 +1,67 @@
+---
+name: terraform-docs
+
+on: # yamllint disable-line rule:truthy
+  pull_request:
+    paths:
+      - "terraform/**.tf"
+      - "terraform/terraform.auto.tfvars.example"
+
+permissions:
+  contents: write
+  pull-requests: write
+  id-token: write
+  issues: write
+
+concurrency:
+  group: ${{ github.workflow }}
+  cancel-in-progress: true
+
+jobs:
+  terraform-docs:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11
+        with:
+          ref: ${{ github.event.pull_request.head.ref }}
+          fetch-depth: 0
+
+      - uses: asannou/tfmermaid-action@dae450b175614c7448d85e5081f79b19e99fc1f8
+        with:
+          working-directory: terraform/
+          file: README.md
+          exclude: data,var,output
+
+      - name: Render terraform docs inside the README.md and push changes back to PR branch
+        uses: terraform-docs/gh-actions@f6d59f89a280fa0a3febf55ef68f146784b20ba0
+        env:
+          GITHUB_TOKEN: ${{ secrets.PAT || secrets.GITHUB_TOKEN }}
+        with:
+          working-dir: terraform/
+          output-file: README.md
+          output-method: inject
+          git-push: "true"
+#      - uses: actions/setup-node@8f152de45cc393bb48ce5d89d36b731f54556e65
+#        with:
+#          node-version: 18
+#
+#      - run: npm install markdown-table-formatter -g
+#
+#      - name: Markdown lint table formatter
+#        run: markdown-table-formatter README.md
+
+#  - name: Create Pull Request
+#    id: cpr
+#    uses: peter-evans/create-pull-request@153407881ec5c347639a548ade7d8ad1d6740e38
+#    with:
+#      token: ${{ secrets.PAT || secrets.GITHUB_TOKEN }}
+#      commit-message: "[terraform-docs] Compile terraform documentation"
+#      title: "[terraform-docs] Compile terraform documentation"
+#      labels: bot
+#      base: ${{ github.event.pull_request.head.ref }}
+#        #delete-branch: true
+#      - name: pull-request
+#        uses: diillson/auto-pull-request@4cf50b3681cd76250f37841466e61e514a377064
+#        with:
+#          destination_branch: "main"
+#          github_token: ${{ secrets.PAT }}

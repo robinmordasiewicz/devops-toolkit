@@ -1,0 +1,53 @@
+---
+fail_fast: true
+repos:
+  - repo: https://github.com/Lucas-C/pre-commit-hooks
+    rev: v1.5.4
+    hooks:
+      - id: remove-crlf
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v4.5.0
+    hooks:
+      - id: check-merge-conflict
+      - id: mixed-line-ending
+      - id: end-of-file-fixer
+      - id: trailing-whitespace
+  #  - repo: https://github.com/terraform-docs/terraform-docs
+  #    rev: "v0.16.0"
+  #    hooks:
+  #      - id: terraform-docs-go
+  #        args: ["markdown", "table", "--output-file", "README.md", "./"]
+  #        fail_fast: false
+  #        pass_filenames: false
+  #  - repo: local
+  #    hooks:
+  #      - id: markdown-tables
+  #        name: markdown-tables
+  #        entry: markdown-table-formatter README.md
+  #        language: system
+  #        pass_filenames: false
+  #        fail_fast: false
+  - repo: https://github.com/anderseknert/pre-commit-opa
+    rev: v1.5.1
+    hooks:
+      - id: opa-fmt
+        args: [policies, -w]
+      - id: opa-check
+        args: [policies]
+  #  - repo: local
+  #  hooks:
+  #    - id: mkdocs
+  #      name: mkdocs
+  #      entry: mkdocs
+  #      args: ["build", "-s"]
+  #      language: system
+  #      pass_filenames: false
+  - repo: https://github.com/oxsecurity/megalinter
+    rev: v7.5.0
+    hooks:
+      - id: megalinter-incremental
+        stages:
+          - commit
+      - id: megalinter-full
+        stages:
+          - push

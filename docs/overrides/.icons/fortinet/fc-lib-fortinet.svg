@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" height=80 width=80 viewBox="0 0 80 80">
+  <title>FortinetIcon</title>
+  <rect fill="#db2b27" x="10" y="42.53" width="22.64" height="14.84" />
+  <rect fill="#db2b27" x="38.82" y="21.51" width="22.26" height="14.84" />
+  <rect fill="#db2b27" x="38.82" y="63.65" width="22.26" height="14.84" />
+  <rect fill="#db2b27" x="67.17" y="42.53" width="22.73" height="14.84"/>
+  <path fill="#db2b27" d="M19.32,21.51C14.57,22.75,10.86,28,10,34.73v1.71H32.64V21.51Z"/>
+  <path fill="#db2b27" d="M10,63.65v1.81c.76,6.47,4.28,11.6,8.75,13h14V63.65Z"/>
+  <path fill="#db2b27" d="M89.9,36.35V34.64c-.85-6.66-4.56-12-9.32-13.23H67.17V36.25l22.73.1Z"/>
+  <path fill="#db2b27" d="M81.25,78.59c4.37-1.53,7.89-6.57,8.75-13v-1.8H67.27V78.59Z"/>
+</svg>

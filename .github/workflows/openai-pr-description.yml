@@ -1,0 +1,30 @@
+---
+name: openai-pr-description
+
+on: # yamllint disable-line rule:truthy
+  pull_request:
+
+concurrency:
+  group: ${{ github.workflow }}
+  cancel-in-progress: true
+
+permissions:
+  id-token: write
+  contents: write
+  pull-requests: write
+  issues: write
+  actions: write
+
+jobs:
+  openai-pr-description:
+    if: github.head_ref != 'release-please--branches--main'
+    name: openai-pr-description
+    runs-on: ubuntu-22.04
+
+    steps:
+      - uses: platisd/openai-pr-description@453990b658f5a6942c2e0063d43fbcd8de7ec3a1
+        with:
+          github_token: ${{ secrets.PAT || secrets.GITHUB_TOKEN }}
+          openai_api_key: ${{ secrets.OPENAI_API_KEY }}
+          openai_model: gpt-3.5-turbo
+          max_tokens: 750

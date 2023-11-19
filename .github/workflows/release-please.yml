@@ -1,0 +1,26 @@
+---
+name: release-please
+
+on: # yamllint disable-line rule:truthy
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: write
+  pull-requests: write
+
+concurrency:
+  group: ${{ github.workflow }}
+  cancel-in-progress: true
+
+jobs:
+  release-please:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: google-github-actions/release-please-action@db8f2c60ee802b3748b512940dde88eabd7b7e01
+        with:
+          release-type: simple
+          pull-request-header: ":robot: this is an automated release :robot:"
+          token: ${{ secrets.PAT || secrets.GITHUB_TOKEN }}
+          path: "."

@@ -1,0 +1,55 @@
+---
+name: screenshots
+
+on: # yamllint disable-line rule:truthy
+  pull_request:
+
+concurrency:
+  group: ${{ github.workflow }}
+  cancel-in-progress: true
+
+permissions:
+  id-token: write
+  contents: write
+  pull-requests: write
+  actions: write
+
+jobs:
+  screenshots:
+    if: github.head_ref != 'release-please--branches--main'
+    name: screenshots
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11
+        with:
+          ref: ${{ github.event.pull_request.head.ref }}
+          fetch-depth: 0
+
+      - uses: browser-actions/setup-chrome@11cef13cde73820422f9263a707fb8029808e191
+      - uses: actions/setup-node@8f152de45cc393bb48ce5d89d36b731f54556e65
+
+      # - run: |
+      #  chrome --headless=new --screenshot="docs/img/github-profile.png" --hide-scrollbars --window-size=1620,1080 --disable-gpu "https://github.com/robinmordasiewicz"
+      - name: Run test
+        uses: tj-actions/puppeteer@a2befb374cdb596ae129a21e0a52494eb028ee82
+        id: puppeteer
+        with:
+          files: |
+            puppeteer.js
+
+      - name: Install dependencies
+        run: npm i puppeteer
+
+      - name: Run headless test
+        uses: coactions/setup-xvfb@b6b4fcfb9f5a895edadc3bc76318fae0ac17c8b3
+        with:
+          run: node puppeteer.js
+          # run: chrome --headless --screenshot="docs/img/github-profile.png" --hide-scrollbars --window-size=1620,1080 --disable-gpu --no-sandbox --disable-setuid-sandbox "https://github.com/robinmordasiewicz"
+
+      - name: Push changes
+        run: |
+          git config --global user.name "Robin Mordasiewicz"
+          git config --global user.email "bot@example.com"
+          git commit -a -m "docs: updating screenshots"
+          git push

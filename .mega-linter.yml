@@ -1,0 +1,31 @@
+ACTION_ACTIONLINT_ARGUMENTS:
+  - -shellcheck=
+APPLY_FIXES: all
+CLEAR_REPORT_FOLDER: true
+DISABLE:
+  - SPELL
+DISABLE_LINTERS:
+  - MARKDOWN_MARKDOWN_LINK_CHECK
+FILEIO_REPORTER: false
+FLAVOR_SUGGESTIONS: false
+SHOW_ELAPSED_TIME: true
+TERRAFORM_TFLINT_UNSECURED_ENV_VARIABLES:
+  - GITHUB_TOKEN
+TERRAFORM_TERRASCAN_UNSECURED_ENV_VARIABLES:
+  - GITHUB_TOKEN
+TERRAFORM_TERRASCAN_ARGUMENTS:
+  [
+    "scan",
+    "--iac-type",
+    "terraform",
+    "--policy-type",
+    "azure",
+    "-d",
+    "terraform/",
+    "--non-recursive",
+  ]
+JAVASCRIPT_STANDARD_ARGUMENTS: ["--global", "src", "--global", "'$'"]
+REPOSITORY_GRYPE_ARGUMENTS: ["--add-cpes-if-none"]
+REPOSITORY_TRUFFLEHOG_UNSECURED_ENV_VARIABLES:
+  - GITHUB_TOKEN
+REPOSITORY_TRUFFLEHOG_ARGUMENTS: ["--exclude_paths", ".git/config"]

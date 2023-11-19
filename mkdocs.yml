@@ -1,0 +1,177 @@
+---
+site_name: DevOps ToolKit
+site_description: DevOps ToolKit
+site_url: https://robinmordasiewicz.github.io/fortinet-devops/
+repo_url: https://github.com/robinmordasiewicz/fortinet-devops/
+edit_uri: edit/main/docs/
+repo_name: "robinmordasiewicz/fortinet-devops"
+
+extra:
+  generator: false
+  social:
+    - icon: fortinet/fc-lib-fortinet
+      link: https://www.fortinet.com/blog
+    - icon: fortinet/fc-lib-facebook
+      link: https://www.facebook.com/fortinet
+    - icon: fortinet/fc-lib-twitter
+      link: https://twitter.com/fortinet
+    - icon: fortinet/fc-lib-youtube
+      link: https://www.youtube.com/channel/UCzpsl8Vm6OL7ij2Lm4G6Jcg
+    - icon: fortinet/fc-lib-linkedin
+      link: https://www.linkedin.com/company/fortinet/
+
+validation:
+  omitted_files: warn
+  absolute_links: warn
+  unrecognized_links: warn
+
+extra_css: [extra.css]
+extra_javascript: [extra.js]
+
+# yamllint disable-line rule:line-length
+copyright: '<div _ngcontent-ayh-c7="" class="left-col"><a _ngcontent-ayh-c7="" href="https://www.fortinet.com/corporate/about-us/about-us.html" rel="noopener noreferrer" target="_blank">Corporate</a>&nbsp;|&nbsp;<a _ngcontent-ayh-c7="" href="https://www.fortinet.com/partners/partner-program/find-a-partner.html" rel="noopener noreferrer" target="_blank">How to Buy</a>&nbsp;|&nbsp;<a _ngcontent-ayh-c7="" href="https://www.fortinet.com/products.html" rel="noopener noreferrer" target="_blank">Products</a>&nbsp;|&nbsp;<a _ngcontent-ayh-c7="" href="https://www.fortinet.com/support-and-training/support/contact.html" rel="noopener noreferrer" target="_blank">Services &amp; Support</a>&nbsp;|&nbsp;<a _ngcontent-ayh-c7="" href="https://www.fortinet.com/corporate/about-us/legal.html" rel="noopener noreferrer" target="_blank">Legal</a>&nbsp;|&nbsp;<a _ngcontent-ayh-c7="" href="https://www.fortinet.com/corporate/about-us/privacy.html" rel="noopener noreferrer" target="_blank">Privacy</a>&nbsp;|&nbsp;<a _ngcontent-ayh-c7="" href="https://www.fortinet.com/corporate/about-us/legal.html" rel="noopener noreferrer" target="_blank">Terms of Use</a></div>'
+
+theme:
+  name: material
+  custom_dir: docs/overrides
+  logo: logo.svg
+  favicon: favicon.ico
+  include_sidebar: false
+  icon:
+    repo: fontawesome/brands/github
+  features:
+    - announce.dismiss
+    - content.action.edit
+    - content.action.view
+    - content.code.annotate
+    - content.code.copy
+    - content.code.select
+    - content.tabs.link
+    - content.tooltips
+    - header.autohide
+    - navigation.footer
+    - navigation.indexes
+    - navigation.instant
+    - navigation.instant.prefetch
+    - navigation.instant.progress
+    - navigation.path
+    - navigation.tracking
+    - search.highlight
+    - search.share
+    - search.suggest
+    - toc.follow
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      primary: black
+      accent: grey
+      scheme: default
+      toggle:
+        icon: material/toggle-switch-off-outline
+        name: Switch to dark mode
+    - media: "(prefers-color-scheme: dark)"
+      primary: grey
+      accent: black
+      scheme: slate
+      toggle:
+        icon: material/toggle-switch
+
+markdown_extensions:
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+      options:
+        custom_icons:
+          - overrides/.icons
+  - abbr
+  - admonition
+  - attr_list
+  - def_list
+  - footnotes
+  - md_in_html
+  - toc:
+      toc_depth: "1-1"
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.superfences
+  - pymdownx.tilde
+  - pymdownx.keys
+  - pymdownx.magiclink:
+      normalize_issue_symbols: true
+      repo_url_shorthand: true
+      user: robinmordasiewicz
+      repo: fortinet-devops
+  - pymdownx.mark
+  - pymdownx.smartsymbols
+  - pymdownx.superfences
+  - pymdownx.details
+  - pymdownx.caret
+  - pymdownx.critic
+  - pymdownx.tabbed:
+      alternate_style: true
+      combine_header_slug: true
+      slugify: !!python/object/apply:pymdownx.slugs.slugify
+        kwds:
+          case: lower
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.tasklist:
+      custom_checkbox: true
+      clickable_checkbox: true
+
+plugins:
+  - git-committers:
+      repository: robinmordasiewicz/fortinet-devops
+      branch: main
+  - glightbox
+  - social
+  - blog
+  - search:
+      separator: '[\s\u200b\-_,:!=\[\]()"`/]+|\.(?!\d)|&[lg]t;|(?!\b)(?=[A-Z][a-z])'
+
+nav:
+  - "Home": "index.md"
+  - "Concepts":
+      - devops.md
+      - digitial-journey.md
+      - challenge.md
+      - source-of-truth.md
+      - gitops.md
+      - gitflow.md
+      - secure-cloud-blueprint.md
+  - "Accounts": "accounts.md"
+  - "Platforms":
+      - "Source Control Management":
+          - github-create-repo.md
+          - github-profile.md
+          - github-fork-repo.md
+      - "Cloud Provider":
+          - azure-cloud-shell.md
+          - azure-install-terraform.md
+          - azure-az-login.md
+  - "Deploy Infrastructure":
+      - azure-subscription.md
+      - github-clone-repo.md
+      - terraform-environment.md
+      - terraform-deploy.md
+  - "Publish Changes":
+      - github-branch.md
+      - opencommit-conventional.md
+      - opencommit-install.md
+      - azure-install-gh.md
+      - github-commit.md
+      - github-push.md
+      - github-pull-request.md
+      - github-merge.md
+  - "CI/CD":
+      - github-actions.md
+      - fortimanager.md
+      - fortimanager-ztp.md
+  - github-copilot-install.md
+  - links.md

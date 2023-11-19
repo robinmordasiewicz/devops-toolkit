@@ -1,0 +1,41 @@
+formatter: "markdown table" # this is required
+
+content: |-
+  ## Example terraform.auto.tfvars
+
+  ```hcl
+  {{ include "terraform.auto.tfvars.example" }}
+  ```
+
+  {{ .Header }}
+  {{ .Requirements }}
+  {{ .Modules }}
+  {{ .Inputs }}
+  {{ .Outputs }}
+  {{ .Footer }}
+
+output:
+  file: README.md
+  mode: inject
+  template: |-
+    <!-- BEGIN_TF_DOCS -->
+    {{ .Content }}
+    <!-- END_TF_DOCS -->
+output-values:
+  enabled: false
+  from: ""
+
+settings:
+  anchor: false
+  color: true
+  default: true
+  description: false
+  escape: true
+  hide-empty: true
+  html: false
+  indent: 2
+  lockfile: true
+  read-comments: true
+  required: true
+  sensitive: true
+  type: true

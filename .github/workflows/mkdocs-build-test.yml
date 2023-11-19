@@ -1,0 +1,37 @@
+---
+name: mkdocs-build-test
+
+on: # yamllint disable-line rule:truthy
+  pull_request:
+    paths:
+      - docs/**
+      - mkdocs.yml
+      - README.md
+      - requirements.txt
+
+concurrency:
+  group: ${{ github.workflow }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+
+jobs:
+  mkdocs-build-test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout
+        uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11
+
+      - name: Install Python
+        uses: actions/setup-python@65d7f2d534ac1bc67fcd62888c5f4f3d2cb2b236
+        with:
+          python-version: 3.x
+
+      - name: Build Docs
+        env:
+          MKDOCS_GIT_COMMITTERS_APIKEY: ${{ secrets.PAT }}
+        run: |
+          pip install --upgrade pip
+          pip install -r requirements.txt
+          mkdocs build
