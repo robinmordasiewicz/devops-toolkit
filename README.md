@@ -6,7 +6,7 @@
 | [![pages-build-deployment](https://github.com/robinmordasiewicz/devops-toolkit/actions/workflows/pages/pages-build-deployment/badge.svg)](https://github.com/robinmordasiewicz/devops-toolkit/actions/workflows/pages/pages-build-deployment) | [![pages-build-integration](https://github.com/robinmordasiewicz/devops-toolkit/actions/workflows/pages-build-integration.yml/badge.svg)](https://github.com/robinmordasiewicz/devops-toolkit/actions/workflows/pages-build-integration.yml) | [![release-please](https://github.com/robinmordasiewicz/devops-toolkit/actions/workflows/release-please.yml/badge.svg)](https://github.com/robinmordasiewicz/devops-toolkit/actions/workflows/release-please.yml)                   |
 | [![terraform-docs](https://github.com/robinmordasiewicz/devops-toolkit/actions/workflows/terraform-docs.yml/badge.svg)](https://github.com/robinmordasiewicz/devops-toolkit/actions/workflows/terraform-docs.yml)                             | [![FortiDevSec SAST scanner](https://github.com/robinmordasiewicz/fortigate-azure-terraform/actions/workflows/sast.yml/badge.svg)](https://github.com/robinmordasiewicz/fortigate-azure-terraform/actions/workflows/sast.yml)                  | [![dependabot-automerge](https://github.com/robinmordasiewicz/devops-toolkit/actions/workflows/dependabot-automerge.yml/badge.svg)](https://github.com/robinmordasiewicz/devops-toolkit/actions/workflows/dependabot-automerge.yml) |
 
-## Repo Settings
+## GitHub Repo Settings
 
 ```bash
 gh repo edit \
