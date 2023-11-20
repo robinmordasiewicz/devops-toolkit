@@ -43,7 +43,7 @@ repos:
   #      language: system
   #      pass_filenames: false
   - repo: https://github.com/oxsecurity/megalinter
-    rev: v7.5.0
+    rev: v7.6.0
     hooks:
       - id: megalinter-incremental
         stages:

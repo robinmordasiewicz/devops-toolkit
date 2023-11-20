@@ -17,3 +17,5 @@ google-chrome --headless=new --screenshot="docs/img/github-profile.png" --hide-s
 #sgpt --code "write a markdown page instructing users step by step with short titles and sections, how to sign up for a DockerHub account" >docs/account-docker.md
 
 #sgpt "write a markdown file that lets people know that this is the beginning of a guide that requires users to have login accounts in github with copilot, azure, docker, and openai. For each of the accounts in the list, include the login page as a link in markdown. Make the title of the markdown document 'Accounts'. Do not use please and thank you in the documentation" >docs/accounts.md
+
+# sgpt "write a one page markdown file with step by step instructions on how to configure OIDC in Azure to authenticate a github repository using the web interfaces and include links to screenshots of the web interface that show where to click. Include the equivalent az cli commands and make sure that the fenced code blocks are set to bash. Include a summary which shows how to test and validate from the cli that the authentication works." > docs/azure-oidc.md
