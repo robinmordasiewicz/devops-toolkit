@@ -145,7 +145,7 @@ nav:
       - secure-cloud-blueprint.md
   - "Accounts": "accounts.md"
   - "Platforms":
-      - "Source Control Management":
+      - "Source Control":
           - github-create-repo.md
           - github-profile.md
           - github-fork-repo.md
