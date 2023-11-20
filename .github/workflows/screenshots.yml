@@ -16,7 +16,11 @@ permissions:
 
 jobs:
   screenshots:
-    if: github.head_ref != 'release-please--branches--main'
+    if: ${{ ! contains('
+      release-please--branches--main
+      dependabot/
+      ', github.head_ref)
+      }}
     name: screenshots
     runs-on: ubuntu-latest
 
