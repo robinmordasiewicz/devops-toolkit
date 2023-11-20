@@ -5,6 +5,7 @@ site_url: https://robinmordasiewicz.github.io/devops-toolkit/
 repo_url: https://github.com/robinmordasiewicz/devops-toolkit/
 edit_uri: edit/main/docs/
 repo_name: "robinmordasiewicz/devops-toolkit"
+dev_addr: "127.0.0.1:8000"
 
 extra:
   generator: false
@@ -126,9 +127,6 @@ markdown_extensions:
       clickable_checkbox: true
 
 plugins:
-  - git-committers:
-      repository: robinmordasiewicz/devops-toolkit
-      branch: main
   - glightbox
   - social
   - blog
