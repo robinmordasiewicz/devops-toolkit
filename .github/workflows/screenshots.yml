@@ -50,8 +50,8 @@ jobs:
 
       - name: Push changes
         run: |
-          git config --global user.name "Robin Mordasiewicz"
-          git config --global user.email "bot@example.com"
+          git config user.name "$(git log -n 1 --pretty=format:%an)"
+          git config user.email "$(git log -n 1 --pretty=format:%ae)"
           git add .
           git commit -m "docs: updating screenshots"
           git push
