@@ -1,4 +1,8 @@
-const puppeteer = require('puppeteer');
+const puppeteer = require('puppeteer')
+const url = process.argv[2]
+if (!url) {
+  throw new Error('Please provide a URL as the first argument')
+}
 
 (async () => {
   const browser = await puppeteer.launch({
@@ -8,7 +12,7 @@ const puppeteer = require('puppeteer');
   })
   const page = await browser.newPage()
   await page.setViewport({ width: 1500, height: 1080 })
-  await page.goto('https://github.com/robinmordasiewicz')
+  await page.goto('url')
   await page.screenshot({
     path: './docs/img/github-profile.png'
   })
