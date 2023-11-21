@@ -42,7 +42,7 @@ jobs:
 
       - name: devskim workaround
         run: |
-          git config --global --add safe.directory /github/workspace/.git
+          git config --global --add safe.directory *
 
       # MegaLinter
       - name: MegaLinter
