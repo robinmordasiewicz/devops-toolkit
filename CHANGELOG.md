@@ -1,5 +1,22 @@
 # CHANGELOG
 
+## [1.2.3](https://github.com/robinmordasiewicz/devops-toolkit/compare/v1.2.2...v1.2.3) (2023-11-21)
+
+
+### Bug Fixes
+
+* updating screenshot workflow ([e5aa2d5](https://github.com/robinmordasiewicz/devops-toolkit/commit/e5aa2d56f02a7793676f58c7b1904afd1ee689ab))
+* updating screenshot workflow ([b745567](https://github.com/robinmordasiewicz/devops-toolkit/commit/b74556748d93a5c58f1ac62d2de5e42d4a3dfbf5))
+* updating screenshot workflow ([cffdbcf](https://github.com/robinmordasiewicz/devops-toolkit/commit/cffdbcf26adf7071aecc0ef32fc9a19dbc1b408a))
+* updating screenshot workflow ([f70c14f](https://github.com/robinmordasiewicz/devops-toolkit/commit/f70c14f03c4b31da4c46dc3b3f6da175c57a0bc5))
+* updating screenshot workflow ([8a7bf95](https://github.com/robinmordasiewicz/devops-toolkit/commit/8a7bf954f1fb292b7ba5e874c5a8eb2f8120ee0a))
+* updating screenshot workflow ([eb8c432](https://github.com/robinmordasiewicz/devops-toolkit/commit/eb8c43255f08013feb7b3e628cd4afe82f80fce0))
+* updating screenshot workflow ([f38ffa0](https://github.com/robinmordasiewicz/devops-toolkit/commit/f38ffa0754d50cc2370c5c0b8b21c7e24f7a1551))
+* updating screenshot workflow ([bf3c95f](https://github.com/robinmordasiewicz/devops-toolkit/commit/bf3c95f4251f57fd2cf2e791c69d291eb9c50e47))
+* updating screenshot workflow ([5e8c255](https://github.com/robinmordasiewicz/devops-toolkit/commit/5e8c255b77076c3c0fda1515e314c40a7a46f037))
+* updating screenshot workflow ([149b217](https://github.com/robinmordasiewicz/devops-toolkit/commit/149b2178d6b048c92ea50556cb3375944602529c))
+* updating screenshot workflow ([766c9b1](https://github.com/robinmordasiewicz/devops-toolkit/commit/766c9b18b1f3909fbfa49e2be255aef94f8207dc))
+
 ## [1.2.2](https://github.com/robinmordasiewicz/devops-toolkit/compare/v1.2.1...v1.2.2) (2023-11-20)
 
 
