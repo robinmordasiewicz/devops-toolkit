@@ -51,9 +51,9 @@ jobs:
       - name: Screenshots
         uses: coactions/setup-xvfb@b6b4fcfb9f5a895edadc3bc76318fae0ac17c8b3
         env:
-          OWNER: ${GITHUB_REPOSITORY_OWNER}
+          OWNER: ${{ env.GITHUB_REPOSITORY_OWNER }}
         with:
-          run: node puppeteer.js https://github.com/${GITHUB_REPOSITORY_OWNER}
+          run: node puppeteer.js https://github.com/${OWNER}
 
       - name: Push changes
         run: |
