@@ -1,5 +1,12 @@
 # CHANGELOG
 
+## [1.2.4](https://github.com/robinmordasiewicz/devops-toolkit/compare/v1.2.3...v1.2.4) (2023-11-21)
+
+
+### Bug Fixes
+
+* updating screenshot workflow ([bc738fc](https://github.com/robinmordasiewicz/devops-toolkit/commit/bc738fc43e48fbdb2a7a71f75a3a540a25f4a6f8))
+
 ## [1.2.3](https://github.com/robinmordasiewicz/devops-toolkit/compare/v1.2.2...v1.2.3) (2023-11-21)
 
 
