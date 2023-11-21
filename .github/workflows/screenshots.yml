@@ -17,7 +17,7 @@ permissions:
 jobs:
   screenshots:
     if: ${{ ! contains('
-      release-please--branches--main
+      release-please--branches
       dependabot/
       ', github.head_ref)
       }}
@@ -42,13 +42,12 @@ jobs:
 
       - name: Install dependencies
         run: |
-          env
           npm i puppeteer
 
       - name: Screenshots
         uses: coactions/setup-xvfb@b6b4fcfb9f5a895edadc3bc76318fae0ac17c8b3
         with:
-          run: node puppeteer.js
+          run: node puppeteer.js "https://github.com/${{ github.REPOSITORY_OWNER }}"
 
       - name: Push changes
         run: |
