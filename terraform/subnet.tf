@@ -25,6 +25,7 @@ resource "azurerm_network_security_group" "private_nsg" {
     destination_address_prefix = "*"
   }
 }
+
 resource "azurerm_subnet_network_security_group_association" "external_subnet_association" {
   subnet_id                 = azurerm_subnet.external_subnet.id
   network_security_group_id = azurerm_network_security_group.private_nsg.id
