@@ -53,7 +53,7 @@ jobs:
         env:
           OWNER: ${GITHUB_REPOSITORY_OWNER}
         with:
-          run: node puppeteer.js "https://github.com/${OWNER}"
+          run: node puppeteer.js https://github.com/${GITHUB_REPOSITORY_OWNER}
 
       - name: Push changes
         run: |
