@@ -165,6 +165,7 @@ nav:
       - github-commit.md
       - github-push.md
       - github-pull-request.md
+      - github-workflow-linter.md
       - github-merge.md
       - fortinet-fortidevsec.md
   - "CI/CD":
