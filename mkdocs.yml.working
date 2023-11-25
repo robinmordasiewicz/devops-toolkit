@@ -1,20 +1,14 @@
 ---
 site_name: DevOps ToolKit
-site_description: >-
-  Create a CICD pipeline and automate the SDLC for infrastructure as code.
+site_description: DevOps ToolKit
 site_url: https://robinmordasiewicz.github.io/devops-toolkit/
-site_author: Robin Mordasiewicz
-
-repo_name: "robinmordasiewicz/devops-toolkit"
 repo_url: https://github.com/robinmordasiewicz/devops-toolkit/
 edit_uri: edit/main/docs/
-
-# yamllint disable-line rule:line-length
-copyright: '<div _ngcontent-ayh-c7="" class="left-col"><a _ngcontent-ayh-c7="" href="https://www.fortinet.com/corporate/about-us/about-us.html" rel="noopener noreferrer" target="_blank">Corporate</a>&nbsp;|&nbsp;<a _ngcontent-ayh-c7="" href="https://www.fortinet.com/partners/partner-program/find-a-partner.html" rel="noopener noreferrer" target="_blank">How to Buy</a>&nbsp;|&nbsp;<a _ngcontent-ayh-c7="" href="https://www.fortinet.com/products.html" rel="noopener noreferrer" target="_blank">Products</a>&nbsp;|&nbsp;<a _ngcontent-ayh-c7="" href="https://www.fortinet.com/support-and-training/support/contact.html" rel="noopener noreferrer" target="_blank">Services &amp; Support</a>&nbsp;|&nbsp;<a _ngcontent-ayh-c7="" href="https://www.fortinet.com/corporate/about-us/legal.html" rel="noopener noreferrer" target="_blank">Legal</a>&nbsp;|&nbsp;<a _ngcontent-ayh-c7="" href="https://www.fortinet.com/corporate/about-us/privacy.html" rel="noopener noreferrer" target="_blank">Privacy</a>&nbsp;|&nbsp;<a _ngcontent-ayh-c7="" href="https://www.fortinet.com/corporate/about-us/legal.html" rel="noopener noreferrer" target="_blank">Terms of Use</a></div>'
+repo_name: "robinmordasiewicz/devops-toolkit"
 
 extra:
   annotate:
-    json: [.s2]
+      json: [.s2]
   generator: false
   social:
     - icon: fortinet/fc-lib-fortinet
@@ -36,12 +30,15 @@ validation:
 extra_css: [extra.css]
 extra_javascript: [extra.js]
 
+# yamllint disable-line rule:line-length
+copyright: '<div _ngcontent-ayh-c7="" class="left-col"><a _ngcontent-ayh-c7="" href="https://www.fortinet.com/corporate/about-us/about-us.html" rel="noopener noreferrer" target="_blank">Corporate</a>&nbsp;|&nbsp;<a _ngcontent-ayh-c7="" href="https://www.fortinet.com/partners/partner-program/find-a-partner.html" rel="noopener noreferrer" target="_blank">How to Buy</a>&nbsp;|&nbsp;<a _ngcontent-ayh-c7="" href="https://www.fortinet.com/products.html" rel="noopener noreferrer" target="_blank">Products</a>&nbsp;|&nbsp;<a _ngcontent-ayh-c7="" href="https://www.fortinet.com/support-and-training/support/contact.html" rel="noopener noreferrer" target="_blank">Services &amp; Support</a>&nbsp;|&nbsp;<a _ngcontent-ayh-c7="" href="https://www.fortinet.com/corporate/about-us/legal.html" rel="noopener noreferrer" target="_blank">Legal</a>&nbsp;|&nbsp;<a _ngcontent-ayh-c7="" href="https://www.fortinet.com/corporate/about-us/privacy.html" rel="noopener noreferrer" target="_blank">Privacy</a>&nbsp;|&nbsp;<a _ngcontent-ayh-c7="" href="https://www.fortinet.com/corporate/about-us/legal.html" rel="noopener noreferrer" target="_blank">Terms of Use</a></div>'
+
 theme:
   name: material
   custom_dir: docs/overrides
-  include_sidebar: false
   logo: logo.svg
   favicon: favicon.ico
+  include_sidebar: false
   icon:
     repo: fontawesome/brands/github
   features:
@@ -50,21 +47,17 @@ theme:
     - content.action.view
     - content.code.annotate
     - content.code.copy
-    # - content.code.select
-    # - content.tabs.link
+    - content.code.select
+    - content.tabs.link
     - content.tooltips
-    # - header.autohide
+    - header.autohide
     - navigation.footer
-    # - navigation.indexes
-    # - navigation.instant
-    # - navigation.instant.prefetch
-    # - navigation.instant.progress
-    # - navigation.prune
-    - navigation.sections
-    - navigation.tabs
-    - navigation.top
-    - navigation.tracking
+    - navigation.indexes
+    - navigation.instant
+    - navigation.instant.prefetch
+    - navigation.instant.progress
     - navigation.path
+    - navigation.tracking
     - search.highlight
     - search.share
     - search.suggest
@@ -83,9 +76,6 @@ theme:
       scheme: slate
       toggle:
         icon: material/toggle-switch
-  font:
-    text: Roboto
-    code: Roboto Mono
 
 markdown_extensions:
   - pymdownx.emoji:
@@ -119,25 +109,30 @@ markdown_extensions:
       repo: devops-toolkit
   - pymdownx.mark
   - pymdownx.smartsymbols
-  - pymdownx.superfences:
-      preserve_tabs: true
-      custom_fences:
-        - name: mermaid
-          class: mermaid
-          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.superfences
+  - pymdownx.details
+  - pymdownx.caret
+  - pymdownx.critic
   - pymdownx.tabbed:
       alternate_style: true
       combine_header_slug: true
       slugify: !!python/object/apply:pymdownx.slugs.slugify
         kwds:
+          case: lower
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.tasklist:
+      custom_checkbox: true
+      clickable_checkbox: true
+
 plugins:
   - glightbox
   - social
   - blog
   - search:
       separator: '[\s\u200b\-_,:!=\[\]()"`/]+|\.(?!\d)|&[lg]t;|(?!\b)(?=[A-Z][a-z])'
-  - minify:
-      minify_html: true
 
 nav:
   - "Home": "index.md"
