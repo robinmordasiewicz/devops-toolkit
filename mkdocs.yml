@@ -142,6 +142,7 @@ nav:
       - gitops.md
       - gitflow.md
       - secure-cloud-blueprint.md
+      - github-copilot-install.md
   - "Accounts": "accounts.md"
   - "Platforms":
       - "Source Control":
@@ -158,10 +159,11 @@ nav:
       - terraform-environment.md
       - terraform-deploy.md
   - "Publish Changes":
-      - github-branch.md
+      - azure-install-gh.md
       - opencommit-conventional.md
       - opencommit-install.md
-      - azure-install-gh.md
+      - github-branch.md
+      - github-modify-cloudinit.md
       - github-commit.md
       - github-push.md
       - github-pull-request.md
@@ -169,11 +171,16 @@ nav:
       - github-merge.md
       - fortinet-fortidevsec.md
   - "CI/CD":
-      - github-personal-access-token.md
-      - github-secrets.md
-      - azure-oidc.md
-      - github-workflows.md
+      - github-workflow-auto-pull-request.md
+      - "Merge PR":
+          - github-workflow-linter.md
+          - github-workflow-terraform-docs.md
+          - github-workflow-fortidevsec.md
+          - github-workflow-mkdocs-build.md
+      - "Terraform Test":
+          - azure-oidc.md
+          - github-workflow-terraform-test.md
+  - "NetSecOps Developer Tools":
       - fortimanager.md
       - fortimanager-ztp.md
-  - github-copilot-install.md
   - links.md
