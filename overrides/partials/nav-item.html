@@ -14,11 +14,8 @@
   {% if nav_item.is_page and nav_item.meta.icon %}
     {% include ".icons/" ~ nav_item.meta.icon ~ ".svg" %}
   {% endif %}
-  {#-
   <span class="md-ellipsis">
-    {{ ref.title }}
   </span>
-  -#}
   {% if nav_item.is_page and nav_item.meta.status %}
     {{ render_status(nav_item, nav_item.meta.status) }}
   {% endif %}
