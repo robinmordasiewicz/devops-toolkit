@@ -1,5 +1,13 @@
 # CHANGELOG
 
+## [1.4.0](https://github.com/robinmordasiewicz/devops-toolkit/compare/v1.3.0...v1.4.0) (2023-11-25)
+
+
+### Features
+
+* adding screenshots ([f400097](https://github.com/robinmordasiewicz/devops-toolkit/commit/f400097c7efb2f52de2541011983f6824d544fa1))
+* improving screenshots ([ac80ddc](https://github.com/robinmordasiewicz/devops-toolkit/commit/ac80ddc88526b392d810e68ee07b9356f5c39ec1))
+
 ## [1.3.0](https://github.com/robinmordasiewicz/devops-toolkit/compare/v1.2.10...v1.3.0) (2023-11-25)
 
 
