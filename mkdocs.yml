@@ -179,6 +179,7 @@ nav:
   - "CI/CD":
       - github-personal-access-token.md
       - github-secrets.md
+      - terraform-docs.md
       - azure-oidc.md
       - github-workflows.md
       - fortimanager.md
