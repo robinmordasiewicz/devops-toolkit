@@ -1,5 +1,12 @@
 # CHANGELOG
 
+## [1.2.8](https://github.com/robinmordasiewicz/devops-toolkit/compare/v1.2.7...v1.2.8) (2023-11-25)
+
+
+### Bug Fixes
+
+* **mkdocs.yml:** new order ([e56d4e0](https://github.com/robinmordasiewicz/devops-toolkit/commit/e56d4e0b475aa3958e82742cf72c7c6647066725))
+
 ## [1.2.7](https://github.com/robinmordasiewicz/devops-toolkit/compare/v1.2.6...v1.2.7) (2023-11-25)
 
 
