@@ -34,7 +34,7 @@ validation:
   unrecognized_links: warn
 
 extra_css: [extra.css]
-extra_javascript: [extra.js]
+# extra_javascript: [extra.js]
 
 theme:
   name: material
@@ -53,14 +53,14 @@ theme:
     # - content.code.select
     # - content.tabs.link
     - content.tooltips
-    # - header.autohide
+    - header.autohide
     - navigation.footer
     # - navigation.indexes
-    # - navigation.instant
-    # - navigation.instant.prefetch
-    # - navigation.instant.progress
+    - navigation.instant
+    - navigation.instant.prefetch
+    - navigation.instant.progress
     # - navigation.prune
-    - navigation.sections
+    # - navigation.sections
     - navigation.tabs
     - navigation.top
     - navigation.tracking
