@@ -1,5 +1,12 @@
 # CHANGELOG
 
+## [1.2.7](https://github.com/robinmordasiewicz/devops-toolkit/compare/v1.2.6...v1.2.7) (2023-11-25)
+
+
+### Bug Fixes
+
+* **mkdocs.yml:** resetting the menu system ([a9562ef](https://github.com/robinmordasiewicz/devops-toolkit/commit/a9562ef0ae61dafb738530c245642621fc818366))
+
 ## [1.2.6](https://github.com/robinmordasiewicz/devops-toolkit/compare/v1.2.5...v1.2.6) (2023-11-25)
 
 
