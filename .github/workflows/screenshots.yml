@@ -47,7 +47,7 @@ jobs:
       - name: Screenshots
         uses: coactions/setup-xvfb@b6b4fcfb9f5a895edadc3bc76318fae0ac17c8b3
         with:
-          run: node puppeteer.js "https://github.com/${{ github.REPOSITORY_OWNER }}"
+          run: node puppeteer.js "https://github.com/${{ github.REPOSITORY_OWNER }}" docs/img/github-profile.png
 
       - name: ImageMagick Action
         uses: jruipinto/ImageMagick-action@f8361c3ab427051432299cef10d7c76424f7ff6d
