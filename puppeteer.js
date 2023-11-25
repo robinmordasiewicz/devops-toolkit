@@ -1,7 +1,11 @@
 const puppeteer = require('puppeteer')
 const url = process.argv[2]
+const destination = process.argv[3]
 if (!url) {
   throw new Error('Please provide a URL as the first argument')
+}
+if (!destination) {
+  throw new Error('Please provide a filenamee destination as the second argument')
 }
 
 (async () => {
@@ -14,7 +18,7 @@ if (!url) {
   await page.setViewport({ width: 1500, height: 1080 })
   await page.goto(url)
   await page.screenshot({
-    path: './docs/img/github-profile.png'
+    path: destination
   })
 
   await browser.close()
