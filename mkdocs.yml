@@ -149,6 +149,7 @@ nav:
       - gitops.md
       - gitflow.md
       - secure-cloud-blueprint.md
+      - github-copilot-install.md
   - "Accounts": "accounts.md"
   - "Platforms":
       - "Source Control":
@@ -182,5 +183,4 @@ nav:
       - github-workflows.md
       - fortimanager.md
       - fortimanager-ztp.md
-  - github-copilot-install.md
   - links.md
