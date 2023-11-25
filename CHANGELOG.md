@@ -1,5 +1,12 @@
 # CHANGELOG
 
+## [1.2.9](https://github.com/robinmordasiewicz/devops-toolkit/compare/v1.2.8...v1.2.9) (2023-11-25)
+
+
+### Bug Fixes
+
+* **nav-item.html:** remove extra site label ([a4b5efb](https://github.com/robinmordasiewicz/devops-toolkit/commit/a4b5efb27520c88f7d6149a2b76f4412d8ca4825))
+
 ## [1.2.8](https://github.com/robinmordasiewicz/devops-toolkit/compare/v1.2.7...v1.2.8) (2023-11-25)
 
 
