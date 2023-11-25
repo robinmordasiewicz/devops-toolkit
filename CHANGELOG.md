@@ -1,5 +1,12 @@
 # CHANGELOG
 
+## [1.2.10](https://github.com/robinmordasiewicz/devops-toolkit/compare/v1.2.9...v1.2.10) (2023-11-25)
+
+
+### Bug Fixes
+
+* clean up some unused files ([2064aae](https://github.com/robinmordasiewicz/devops-toolkit/commit/2064aae754fcab2f35e5de2cb9bc607a6b55ebb9))
+
 ## [1.2.9](https://github.com/robinmordasiewicz/devops-toolkit/compare/v1.2.8...v1.2.9) (2023-11-25)
 
 
