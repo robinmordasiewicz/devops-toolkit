@@ -1,5 +1,12 @@
 # CHANGELOG
 
+## [1.2.6](https://github.com/robinmordasiewicz/devops-toolkit/compare/v1.2.5...v1.2.6) (2023-11-25)
+
+
+### Bug Fixes
+
+* **mkdocs.yml:** updating the mkdocs config ([6b9a87c](https://github.com/robinmordasiewicz/devops-toolkit/commit/6b9a87c5d320cf3edb6e8905199cf3f0f5034b15))
+
 ## [1.2.5](https://github.com/robinmordasiewicz/devops-toolkit/compare/v1.2.4...v1.2.5) (2023-11-21)
 
 
