@@ -8,5 +8,5 @@
 }
 
 .md-sidebar {
-  width: unset;
+  width: 8rem;
 }
