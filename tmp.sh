@@ -1,12 +1,12 @@
 #!/bin/bash
 #
 
-arrow_head="path 'M 210,16  l -15,-5  +5,+5  -5,+5  +15,-5 z'"
+arrow_head="path 'M 220,16  l -15,-5  +5,+5  -5,+5  +15,-5 z'"
 convert -size 350x50 \
 	xc:transparent \
 	-stroke red \
-	-strokewidth 10 \
-	-draw 'line 4,24 315,24' \
+	-strokewidth 6 \
+	-draw 'line 4,24 330,24' \
 	-draw "stroke red fill red scale 1.5,1.5 $arrow_head" \
 	arrow.png
 
