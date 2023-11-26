@@ -66,11 +66,6 @@ jobs:
         with:
           command: convert github-fork.png -shave 1x1 -bordercolor black -border 1 github-fork-border.png
 
-      # - name: Move image in place
-      #  run: |
-      #    mv github-fork-border.png github-fork.png
-      #    mv github-profile-border.png github-profile.png
-
       - name: create-arrow
         run: |
           arrow_head="path 'M 212,14  l -15,-5  +5,+5  -5,+5  +15,-5 z'"
@@ -81,30 +76,65 @@ jobs:
             -draw 'line 4,28 395,28' \
             -draw "stroke red fill red scale 2,2 $arrow_head" \
             arrow.png
-          convert arrow.png \
-            -bordercolor none -border 20 \
-            \( -clone 0 -fill white -colorize 100 \) \
-            \( -clone 0 -alpha extract -write mpr:alpha -morphology edgeout disk:1 \) \
-            -alpha off -compose over -composite \
-            \( mpr:alpha -morphology dilate disk:1 \) \
-            -alpha off -compose copy_opacity -composite \
-            arrow-white-border.png
-          convert arrow-white-border.png \
-            -bordercolor none -border 20 \
-            \( -clone 0 -fill black -colorize 100 \) \
-            \( -clone 0 -alpha extract -write mpr:alpha -morphology edgeout disk:1 \) \
-            -alpha off -compose over -composite \
-            \( mpr:alpha -morphology dilate disk:1 \) \
-            -alpha off -compose copy_opacity -composite \
-            arrow-white-black-border.png
-          mv arrow-white-black-border.png arrow.png
-          rm arrow-white-border.png
+
+      - name: rotate-arrows
+        run: |
           convert -rotate 315 -background 'rgba(0,0,0,0)' arrow.png 315-arrow.png
           convert -rotate 225 -background 'rgba(0,0,0,0)' arrow.png 225-arrow.png
 
-      - name: overlay-arrow-fork
+      - name: bevel
+        run: |
+          width=5
+          wfact=$((1000*$width))
+          leveling="-level 0,$wfact"
+          depth=100
+          icontr=`convert xc: -format "%[fx:(0.5*$depth-100)]" info:`
+          ocontr=`convert xc: -format "%[fx:(0.5*$depth-100)]" info:`
+          ideepening="-brightness-contrast 0,$icontr"
+          odeepening="-brightness-contrast 0,$ocontr"
+          for entry in 315-arrow.png 225-arrow.png
+          do
+            convert $entry -bordercolor none -border 10x10 -write mpr:img \
+              -alpha extract -write mpr:alpha \
+              +level 0,1000 -white-threshold 999 \
+              -morphology Distance:-1 Euclidean:$width,1000 $leveling \
+              -shade 120x45 -auto-level $ideepening \
+              \( +clone -fill "gray(50%)" -colorize 100% \) +swap \( mpr:alpha -threshold 0 \) \
+              -compose over -composite \
+              \( mpr:img -alpha off \) +swap -compose hardlight -composite \
+              mpr:alpha -alpha off -compose copy_opacity -composite \
+              -shave 10x10 \
+              arrow-bevel.png
+            mv arrow-bevel.png $entry
+          done
+
+      - name: create-border
+        run: |
+          for entry in 315-arrow.png 225-arrow.png
+          do
+            convert $entry \
+              -bordercolor none -border 20 \
+              \( -clone 0 -fill white -colorize 100 \) \
+              \( -clone 0 -alpha extract -write mpr:alpha -morphology edgeout disk:1 \) \
+              -alpha off -compose over -composite \
+              \( mpr:alpha -morphology dilate disk:1 \) \
+              -alpha off -compose copy_opacity -composite \
+              arrow-white-border.png
+            convert arrow-white-border.png \
+              -bordercolor none -border 20 \
+              \( -clone 0 -fill black -colorize 100 \) \
+              \( -clone 0 -alpha extract -write mpr:alpha -morphology edgeout disk:1 \) \
+              -alpha off -compose over -composite \
+              \( mpr:alpha -morphology dilate disk:1 \) \
+              -alpha off -compose copy_opacity -composite \
+              $entry
+          done
+          rm arrow-white-border.png
+
+      - name: overlay-arrow
         run: |
           composite -geometry +990+100 315-arrow.png github-fork-border.png github-fork-border-arrow.png
+          composite -geometry +580+205 225-arrow.png github-profile-border.png github-profile-border-arrow.png
 
       - name: make-drop-shadow
         run: |
@@ -112,10 +142,6 @@ jobs:
             +swap -background none -layers merge +repage output.png
           convert output.png -bordercolor none -border 32 docs/img/github-fork.png
           rm github-fork-border.png github-fork-border-arrow.png github-fork.png
-
-      - name: overlay-arrow-profile
-        run: |
-          composite -geometry +580+205 225-arrow.png github-profile-border.png github-profile-border-arrow.png
 
       - name: make-drop-shadow
         run: |
