@@ -48,29 +48,30 @@ jobs:
         uses: coactions/setup-xvfb@b6b4fcfb9f5a895edadc3bc76318fae0ac17c8b3
         with:
           run: |
-            node puppeteer.js "https://github.com/${{ github.REPOSITORY_OWNER }}" docs/img/github-profile.png
+            node puppeteer.js "https://github.com/${{ github.REPOSITORY_OWNER }}" github-profile.png
 
       - name: github-fork-screenshot
         uses: coactions/setup-xvfb@b6b4fcfb9f5a895edadc3bc76318fae0ac17c8b3
         with:
           run: |
-            node puppeteer.js "https://github.com/robinmordasiewicz/devops-toolkit" docs/img/github-fork.png
+            node puppeteer.js "https://github.com/robinmordasiewicz/devops-toolkit" github-fork.png
 
       - name: github-profile-border
         uses: jruipinto/ImageMagick-action@f8361c3ab427051432299cef10d7c76424f7ff6d
         with:
-          command: convert docs/img/github-profile.png -shave 1x1 -bordercolor black -border 1 docs/img/github-profile-border.png
+          command: convert github-profile.png -shave 1x1 -bordercolor black -border 1 github-profile-border.png
 
       - name: github-fork-border
         uses: jruipinto/ImageMagick-action@f8361c3ab427051432299cef10d7c76424f7ff6d
         with:
-          command: convert docs/img/github-fork.png -shave 1x1 -bordercolor black -border 1 docs/img/github-fork-border.png
+          command: convert github-fork.png -shave 1x1 -bordercolor black -border 1 github-fork-border.png
 
       - name: Move image in place
         run: |
-          mv docs/img/github-fork-border.png docs/img/github-fork.png
+          mv github-fork-border.png github-fork.png
+          mv github-profile-border.png github-profile.png
 
-      - name: process images
+      - name: create-arrow
         run: |
           arrow_head="path 'M 210,16  l -15,-5  +5,+5  -5,+5  +15,-5 z'"
           convert -size 350x50 \
@@ -80,20 +81,33 @@ jobs:
           -draw 'line 4,24 315,24' \
           -draw "stroke red fill red scale 1.5,1.5 $arrow_head" \
           arrow.png
+          convert -rotate 315 -background 'rgba(0,0,0,0)' arrow.png rotated_arrow.png
 
       - name: overlay-arrow-fork
         run: |
-          convert -rotate 315 -background 'rgba(0,0,0,0)' arrow.png rotated_arrow.png
-          composite -geometry +990+100 rotated_arrow.png docs/img/github-fork.png output.png
-          convert output.png \( +clone -background black -shadow 100x40+0+16 \) \
-            +swap -background none -layers merge +repage output-2.png
-          convert output-2.png -bordercolor none -border 32 docs/img/github-fork-1.png
-          mv docs/img/github-fork-1.png docs/img/github-fork.png
-          rm output-2.png output.png rotated_arrow.png
+          composite -geometry +990+100 rotated_arrow.png github-fork.png github-fork-arrow.png
 
-      - name: Move image in place
+      - name: make-drop-shadow
         run: |
-          mv docs/img/github-profile-border.png docs/img/github-profile.png
+          convert github-fork-arrow.png \( +clone -background black -shadow 100x40+0+16 \) \
+            +swap -background none -layers merge +repage output-2.png
+          convert output-2.png -bordercolor none -border 32 github-fork.png
+          mv github-fork.png docs/img/github-fork.png
+
+      - name: overlay-arrow-fork
+        run: |
+          composite -geometry +990+100 rotated_arrow.png github-profile.png github-profile-arrow.png
+
+      - name: make-drop-shadow
+        run: |
+          convert github-profile-arrow.png \( +clone -background black -shadow 100x40+0+16 \) \
+            +swap -background none -layers merge +repage output-2.png
+          convert output-2.png -bordercolor none -border 32 github-profile.png
+          mv github-profile.png docs/img/github-profile.png
+
+      - name: cleanup
+        run: |
+          rm output-2.png output.png rotated_arrow.png
 
       - name: Push changes
         run: |
