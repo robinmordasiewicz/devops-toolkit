@@ -95,9 +95,9 @@ jobs:
           convert output.png -bordercolor none -border 32 docs/img/github-fork.png
           rm github-fork-border.png github-fork-border-arrow.png github-fork.png
 
-      - name: overlay-arrow-fork
+      - name: overlay-arrow-profile
         run: |
-          composite -geometry +990+100 225-arrow.png github-profile-border.png github-profile-border-arrow.png
+          composite -geometry +690+200 225-arrow.png github-profile-border.png github-profile-border-arrow.png
 
       - name: make-drop-shadow
         run: |
