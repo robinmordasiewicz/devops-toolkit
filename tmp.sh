@@ -10,9 +10,20 @@ convert -size 486x96 \
 	-draw "polygon 482,47 385,4 400,36 10,36 10,58 400,58 385,92" \
 	arrow.png
 
-width=8
+convert -rotate 315 -background 'rgba(0,0,0,0)' arrow.png 315-arrow.png
+convert -rotate 225 -background 'rgba(0,0,0,0)' arrow.png 225-arrow.png
+mv 315-arrow.png arrow.png
+
+convert -size 486x96 \
+	xc:black \
+	-fill white \
+	-draw "ellipse 14,47 11,11 0,360" \
+	-draw "polygon 482,47 385,4 400,36 10,36 10,58 400,58 385,92" \
+	mask.png
+
+width=10
 wfact=$((1000 * width))
-depth=80
+depth=40
 icontr=$(convert xc: -format "%[fx:(0.5*$depth-100)]" info:)
 
 convert arrow.png -bordercolor none -border 10x10 -write mpr:img \
@@ -45,19 +56,9 @@ convert arrow-white-border.png \
 	-alpha off -compose copy_opacity -composite \
 	arrow-white-black-border.png
 
-open arrow-white-black-border.png
-
-convert "arrow.png" \
-	\( "arrow.png" -alpha extract \) \
-	-matte -bordercolor none -border 100x100 \
-	-alpha off -compose copy_opacity -composite -compose over \
-	\( -clone 0 -background black -shadow 25x4+3+4 \) \
-	+swap \
-	-background none -layers merge \
-	-trim \
-	"output.png"
-
-open output.png
+convert arrow-white-black-border.png \( +clone -background black -shadow 50x10+10+10 \) +swap -background none -layers merge +repage output.png
+composite -geometry +915+140 output.png docs/img/github-fork.png output2.png
+open output2.png
 
 #convert -rotate 315 -background 'rgba(0,0,0,0)' arrow.png rotated_arrow.png
 #composite -geometry +990+100 rotated_arrow.png docs/img/github-fork.png output.png

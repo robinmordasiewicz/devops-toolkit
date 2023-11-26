@@ -108,7 +108,7 @@ jobs:
             mv arrow-bevel.png $entry
           done
 
-      - name: create-border
+      - name: create-border-shadow
         run: |
           for entry in 315-arrow.png 225-arrow.png
           do
@@ -128,12 +128,14 @@ jobs:
               \( mpr:alpha -morphology dilate disk:1 \) \
               -alpha off -compose copy_opacity -composite \
               $entry
+              convert $entry \( +clone -background black -shadow 50x10+10+10 \) +swap -background none -layers merge +repage output.png
+              mv output.png $entry
           done
           rm arrow-white-border.png
 
       - name: overlay-arrow
         run: |
-          composite -geometry +810+55 315-arrow.png github-fork-border.png github-fork-border-arrow.png
+          composite -geometry +915+140 315-arrow.png github-fork-border.png github-fork-border-arrow.png
           composite -geometry +525+160 225-arrow.png github-profile-border.png github-profile-border-arrow.png
 
       - name: make-drop-shadow
