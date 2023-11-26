@@ -68,13 +68,13 @@ jobs:
 
       - name: create-arrow
         run: |
-          arrow_head="path 'M 212,14  l -15,-5  +5,+5  -5,+5  +15,-5 z'"
-          convert -size 450x57 \
+          convert -size 540x96 \
             xc:transparent \
             -stroke red \
-            -strokewidth 6 \
-            -draw 'line 4,28 395,28' \
-            -draw "stroke red fill red scale 2,2 $arrow_head" \
+            -strokewidth 0 \
+            -fill red \
+            -draw "ellipse 14,47 9,9 0,360" \
+            -draw "polygon 536,47 380,4 400,38 10,38 10,56 400,56 380,92" \
             arrow.png
 
       - name: rotate-arrows
