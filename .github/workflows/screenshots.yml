@@ -84,10 +84,10 @@ jobs:
 
       - name: bevel
         run: |
-          width=8
+          width=10
           wfact=$((1000*$width))
           leveling="-level 0,$wfact"
-          depth=75
+          depth=80
           icontr=`convert xc: -format "%[fx:(0.5*$depth-100)]" info:`
           ocontr=`convert xc: -format "%[fx:(0.5*$depth-100)]" info:`
           ideepening="-brightness-contrast 0,$icontr"
@@ -115,17 +115,17 @@ jobs:
             convert $entry \
               -bordercolor none -border 20 \
               \( -clone 0 -fill white -colorize 100 \) \
-              \( -clone 0 -alpha extract -write mpr:alpha -morphology edgeout disk:1 \) \
+              \( -clone 0 -alpha extract -write mpr:alpha -morphology edgeout disk:2 \) \
               -alpha off -compose over -composite \
-              \( mpr:alpha -morphology dilate disk:1 \) \
+              \( mpr:alpha -morphology dilate disk:2 \) \
               -alpha off -compose copy_opacity -composite \
               arrow-white-border.png
             convert arrow-white-border.png \
               -bordercolor none -border 20 \
               \( -clone 0 -fill black -colorize 100 \) \
-              \( -clone 0 -alpha extract -write mpr:alpha -morphology edgeout disk:1 \) \
+              \( -clone 0 -alpha extract -write mpr:alpha -morphology edgeout disk:2 \) \
               -alpha off -compose over -composite \
-              \( mpr:alpha -morphology dilate disk:1 \) \
+              \( mpr:alpha -morphology dilate disk:2 \) \
               -alpha off -compose copy_opacity -composite \
               $entry
           done
@@ -133,8 +133,8 @@ jobs:
 
       - name: overlay-arrow
         run: |
-          composite -geometry +790+75 315-arrow.png github-fork-border.png github-fork-border-arrow.png
-          composite -geometry +500+150 225-arrow.png github-profile-border.png github-profile-border-arrow.png
+          composite -geometry +810+55 315-arrow.png github-fork-border.png github-fork-border-arrow.png
+          composite -geometry +520+155 225-arrow.png github-profile-border.png github-profile-border-arrow.png
 
       - name: make-drop-shadow
         run: |
