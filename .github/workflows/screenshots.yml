@@ -90,8 +90,8 @@ jobs:
       - name: make-drop-shadow
         run: |
           convert github-fork-border-arrow.png \( +clone -background black -shadow 100x40+0+16 \) \
-            +swap -background none -layers merge +repage output-2.png
-          convert output-2.png -bordercolor none -border 32 docs/img/github-fork.png
+            +swap -background none -layers merge +repage output.png
+          convert output.png -bordercolor none -border 32 docs/img/github-fork.png
           rm github-fork-border.png github-fork-border-arrow.png github-fork.png
 
       - name: overlay-arrow-fork
@@ -101,13 +101,13 @@ jobs:
       - name: make-drop-shadow
         run: |
           convert github-profile-border-arrow.png \( +clone -background black -shadow 100x40+0+16 \) \
-            +swap -background none -layers merge +repage output-2.png
-          convert output-2.png -bordercolor none -border 32 docs/img/github-profile.png
+            +swap -background none -layers merge +repage output.png
+          convert output.png -bordercolor none -border 32 docs/img/github-profile.png
           rm github-profile-border-arrow.png github-profile-border.png github-profile.png
 
       - name: cleanup
         run: |
-          rm output-2.png output.png rotated_arrow.png
+          rm output.png rotated_arrow.png
 
       - name: Push changes
         run: |
