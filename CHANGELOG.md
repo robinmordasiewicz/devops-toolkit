@@ -1,5 +1,21 @@
 # CHANGELOG
 
+## [1.10.0](https://github.com/robinmordasiewicz/devops-toolkit/compare/v1.9.0...v1.10.0) (2023-11-26)
+
+
+### Features
+
+* adding bevel ([b9b2eda](https://github.com/robinmordasiewicz/devops-toolkit/commit/b9b2eda86ccb51ff419bbcef0646f39126aa796c))
+* adding bevel arrow to screenshot ([26b103a](https://github.com/robinmordasiewicz/devops-toolkit/commit/26b103a2934456912b8435e0d85c768170afdce7))
+* adding bevel to screenshot arrow ([02bcbfe](https://github.com/robinmordasiewicz/devops-toolkit/commit/02bcbfe99618d68f3e82083e5d6c529737451034))
+* adding border to arrow ([8d1960a](https://github.com/robinmordasiewicz/devops-toolkit/commit/8d1960a29986c98f7c6397b4d687a3514fab3709))
+* updating css ([3fe1e12](https://github.com/robinmordasiewicz/devops-toolkit/commit/3fe1e123ae2b95c72477f55c8a75cc7b64a9685f))
+
+
+### Bug Fixes
+
+* updating border on arrow ([10c27a2](https://github.com/robinmordasiewicz/devops-toolkit/commit/10c27a2c98af37953a345ace75da71b907d43a74))
+
 ## [1.9.0](https://github.com/robinmordasiewicz/devops-toolkit/compare/v1.8.0...v1.9.0) (2023-11-26)
 
 
