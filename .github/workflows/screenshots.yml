@@ -81,6 +81,7 @@ jobs:
         run: |
           convert -rotate 315 -background 'rgba(0,0,0,0)' arrow.png 315-arrow.png
           convert -rotate 225 -background 'rgba(0,0,0,0)' arrow.png 225-arrow.png
+          rm arrow.png
 
       - name: bevel
         run: |
@@ -119,8 +120,8 @@ jobs:
               -alpha off -compose over -composite \
               \( mpr:alpha -morphology dilate disk:2 \) \
               -alpha off -compose copy_opacity -composite \
-              arrow-white-border.png
-            convert arrow-white-border.png \
+              output.png
+            convert output.png \
               -bordercolor none -border 20 \
               \( -clone 0 -fill black -colorize 100 \) \
               \( -clone 0 -alpha extract -write mpr:alpha -morphology edgeout disk:1 \) \
@@ -128,33 +129,32 @@ jobs:
               \( mpr:alpha -morphology dilate disk:1 \) \
               -alpha off -compose copy_opacity -composite \
               $entry
-              convert $entry \( +clone -background black -shadow 50x10+10+10 \) +swap -background none -layers merge +repage output.png
-              mv output.png $entry
+            convert $entry \
+              \( +clone -background black -shadow 50x10+10+10 \) \
+              +swap \
+              -background none \
+              -layers merge \
+              +repage \
+              output.png
+             mv output.png $entry
           done
-          rm arrow-white-border.png
 
       - name: overlay-arrow
         run: |
-          composite -geometry +915+140 315-arrow.png github-fork-border.png github-fork-border-arrow.png
-          composite -geometry +525+160 225-arrow.png github-profile-border.png github-profile-border-arrow.png
+          composite -geometry +915+140 315-arrow.png github-fork-border.png github-fork-arrow.png
+          mv github-fork-arrow.png github-fork.png
+          composite -geometry +525+160 225-arrow.png github-profile.png github-profile-arrow.png
+          mv github-profile-arrow.png github-profile.png
 
       - name: make-drop-shadow
         run: |
-          convert github-fork-border-arrow.png \( +clone -background black -shadow 100x40+0+16 \) \
-            +swap -background none -layers merge +repage output.png
-          convert output.png -bordercolor none -border 32 docs/img/github-fork.png
-          rm github-fork-border.png github-fork-border-arrow.png github-fork.png
-
-      - name: make-drop-shadow
-        run: |
-          convert github-profile-border-arrow.png \( +clone -background black -shadow 100x40+0+16 \) \
-            +swap -background none -layers merge +repage output.png
-          convert output.png -bordercolor none -border 32 docs/img/github-profile.png
-          rm github-profile-border-arrow.png github-profile-border.png github-profile.png
-
-      - name: cleanup
-        run: |
-          rm output.png 315-arrow.png 225-arrow.png arrow.png
+          for entry in github-profile.png github-fork.png
+          do
+            convert $entry \( +clone -background black -shadow 100x40+0+16 \) \
+              +swap -background none -layers merge +repage output.png
+            convert output.png -bordercolor none -border 32 docs/img/$entry
+            rm $entry output.png
+          done
 
       - name: Push changes
         run: |
