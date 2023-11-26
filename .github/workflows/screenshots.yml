@@ -78,6 +78,10 @@ jobs:
         with:
           command: convert docs/img/github-fork.png -shave 1x1 -bordercolor black -border 1 docs/img/github-fork-border.png
 
+      - name: Move image in place
+        run: |
+          mv docs/img/github-fork-border.png docs/img/github-fork.png
+
       - name: overlay-arrow-fork
         run: |
           convert -rotate 315 -background 'rgba(0,0,0,0)' arrow.png rotated_arrow.png
