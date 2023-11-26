@@ -1,5 +1,13 @@
 # CHANGELOG
 
+## [1.6.0](https://github.com/robinmordasiewicz/devops-toolkit/compare/v1.5.0...v1.6.0) (2023-11-26)
+
+
+### Features
+
+* fixing screenshots ([6d883c5](https://github.com/robinmordasiewicz/devops-toolkit/commit/6d883c5a2b1b58c6cf84c9864bd518cf2bf57a68))
+* screenshots fixed ([3e32262](https://github.com/robinmordasiewicz/devops-toolkit/commit/3e322625c2cd7bc90f5c0b37c6c210f591ab6153))
+
 ## [1.5.0](https://github.com/robinmordasiewicz/devops-toolkit/compare/v1.4.0...v1.5.0) (2023-11-26)
 
 
