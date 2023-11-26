@@ -156,10 +156,6 @@ jobs:
             rm $entry output.png
           done
 
-      - name: cleanup
-        run: |
-          rm output.png 315-arrow.png 225-arrow.png arrow.png
-
       - name: Push changes
         run: |
           git config user.name "$(git log -n 1 --pretty=format:%an)"
