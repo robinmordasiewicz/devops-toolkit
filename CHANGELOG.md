@@ -1,5 +1,23 @@
 # CHANGELOG
 
+## [1.5.0](https://github.com/robinmordasiewicz/devops-toolkit/compare/v1.4.0...v1.5.0) (2023-11-26)
+
+
+### Features
+
+* adding drop shadows to screenshots ([021e89f](https://github.com/robinmordasiewicz/devops-toolkit/commit/021e89f6bc025fceb53e7f88435ac90c45654da1))
+
+
+### Bug Fixes
+
+* cleanup ([2e319ae](https://github.com/robinmordasiewicz/devops-toolkit/commit/2e319ae3810892224062c6f8b4f38bace9dafe4d))
+* still fixing screenshots ([bb4c46d](https://github.com/robinmordasiewicz/devops-toolkit/commit/bb4c46d579775c31a41913dd5d2a353332ea3d29))
+
+
+### Reverts
+
+* remove some of these files ([f9da0b8](https://github.com/robinmordasiewicz/devops-toolkit/commit/f9da0b8c5f103763612b516902dabea63099356c))
+
 ## [1.4.0](https://github.com/robinmordasiewicz/devops-toolkit/compare/v1.3.0...v1.4.0) (2023-11-25)
 
 
