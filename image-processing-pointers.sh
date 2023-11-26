@@ -1,30 +1,30 @@
 #!/bin/bash
 #
 
-convert -size 540x96 \
+arrow_head="path 'M 212,14  l -15,-5  +5,+5  -5,+5  +15,-5 z'"
+convert -size 450x57 \
 	xc:transparent \
-	-strokewidth 0 \
+	-strokewidth 6 \
 	-stroke red \
-	-fill red \
-	-draw "ellipse 14,47 9,9 0,360" \
-	-draw "polygon 536,47 380,4 400,38 10,38 10,56 400,56 380,92" \
+	-draw 'line 4,28 395,28' \
+	-draw "stroke red fill red scale 2,2 $arrow_head" \
 	arrow.png
 
 width=5
 wfact=$((1000 * width))
-#leveling="-level 0,$wfact"
+leveling="-level 0,$wfact"
 
 depth=100
 icontr=$(convert xc: -format "%[fx:(0.5*$depth-100)]" info:)
 #ocontr=$(convert xc: -format "%[fx:(0.5*$depth-100)]" info:)
-#ideepening="-brightness-contrast 0,${icontr}"
+ideepening="-brightness-contrast 0,${icontr}"
 #odeepening="-brightness-contrast 0,${ocontr}"
 
 convert arrow.png -bordercolor none -border 10x10 -write mpr:img \
 	-alpha extract -write mpr:alpha \
 	+level 0,1000 -white-threshold 999 \
-	-morphology Distance:-1 Euclidean:$width,1000 -level 0,"$wfact" \
-	-shade 120x45 -auto-level -brightness-contrast 0,"$icontr" \
+	-morphology Distance:-1 Euclidean:$width,1000 "$leveling" \
+	-shade 120x45 -auto-level "$ideepening" \
 	\( +clone -fill "gray(50%)" -colorize 100% \) +swap \( mpr:alpha -threshold 0 \) \
 	-compose over -composite \
 	\( mpr:img -alpha off \) +swap -compose hardlight -composite \
