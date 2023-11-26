@@ -81,11 +81,12 @@ jobs:
           -draw 'line 4,24 315,24' \
           -draw "stroke red fill red scale 1.5,1.5 $arrow_head" \
           arrow.png
-          convert -rotate 315 -background 'rgba(0,0,0,0)' arrow.png rotated_arrow.png
+          convert -rotate 315 -background 'rgba(0,0,0,0)' arrow.png 315-arrow.png
+          convert -rotate 225 -background 'rgba(0,0,0,0)' arrow.png 225-arrow.png
 
       - name: overlay-arrow-fork
         run: |
-          composite -geometry +990+100 rotated_arrow.png github-fork-border.png github-fork-border-arrow.png
+          composite -geometry +990+100 315-arrow.png github-fork-border.png github-fork-border-arrow.png
 
       - name: make-drop-shadow
         run: |
@@ -96,7 +97,7 @@ jobs:
 
       - name: overlay-arrow-fork
         run: |
-          composite -geometry +990+100 rotated_arrow.png github-profile-border.png github-profile-border-arrow.png
+          composite -geometry +990+100 225-arrow.png github-profile-border.png github-profile-border-arrow.png
 
       - name: make-drop-shadow
         run: |
@@ -107,7 +108,7 @@ jobs:
 
       - name: cleanup
         run: |
-          rm output.png rotated_arrow.png
+          rm output.png 315-arrow.png 225-arrow.png arrow.png
 
       - name: Push changes
         run: |
