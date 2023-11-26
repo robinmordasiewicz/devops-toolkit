@@ -23,8 +23,8 @@ ideepening="-brightness-contrast 0,${icontr}"
 convert arrow.png -bordercolor none -border 10x10 -write mpr:img \
 	-alpha extract -write mpr:alpha \
 	+level 0,1000 -white-threshold 999 \
-	-morphology Distance:-1 Euclidean:$width,1000 "${leveling}" \
-	-shade 120x45 -auto-level "${ideepening}" \
+	-morphology Distance:-1 Euclidean:$width,1000 "$leveling" \
+	-shade 120x45 -auto-level "$ideepening" \
 	\( +clone -fill "gray(50%)" -colorize 100% \) +swap \( mpr:alpha -threshold 0 \) \
 	-compose over -composite \
 	\( mpr:img -alpha off \) +swap -compose hardlight -composite \
