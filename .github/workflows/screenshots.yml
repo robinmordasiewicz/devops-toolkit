@@ -97,7 +97,7 @@ jobs:
 
       - name: overlay-arrow-profile
         run: |
-          composite -geometry +690+200 225-arrow.png github-profile-border.png github-profile-border-arrow.png
+          composite -geometry +650+205 225-arrow.png github-profile-border.png github-profile-border-arrow.png
 
       - name: make-drop-shadow
         run: |
