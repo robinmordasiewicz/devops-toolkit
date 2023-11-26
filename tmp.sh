@@ -10,7 +10,29 @@ convert -size 450x57 \
 	-draw "stroke red fill red scale 2,2 $arrow_head" \
 	arrow.png
 
-convert arrow.png \
+width=5
+wfact=$((1000 * width))
+leveling="-level 0,$wfact"
+
+depth=100
+icontr=$(convert xc: -format "%[fx:(0.5*$depth-100)]" info:)
+#ocontr=$(convert xc: -format "%[fx:(0.5*$depth-100)]" info:)
+ideepening="-brightness-contrast 0,${icontr}"
+#odeepening="-brightness-contrast 0,${ocontr}"
+
+convert arrow.png -bordercolor none -border 10x10 -write mpr:img \
+	-alpha extract -write mpr:alpha \
+	+level 0,1000 -white-threshold 999 \
+	-morphology Distance:-1 Euclidean:$width,1000 "${leveling}" \
+	-shade 120x45 -auto-level "${ideepening}" \
+	\( +clone -fill "gray(50%)" -colorize 100% \) +swap \( mpr:alpha -threshold 0 \) \
+	-compose over -composite \
+	\( mpr:img -alpha off \) +swap -compose hardlight -composite \
+	mpr:alpha -alpha off -compose copy_opacity -composite \
+	-shave 10x10 \
+	arrow-bevel.png
+
+convert arrow-bevel.png \
 	-bordercolor none -border 20 \
 	\( -clone 0 -fill white -colorize 100 \) \
 	\( -clone 0 -alpha extract -write mpr:alpha -morphology edgeout disk:1 \) \
