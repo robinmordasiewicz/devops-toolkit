@@ -1,5 +1,14 @@
 # CHANGELOG
 
+## [1.10.1](https://github.com/robinmordasiewicz/devops-toolkit/compare/v1.10.0...v1.10.1) (2023-11-26)
+
+
+### Bug Fixes
+
+* arrow over screenshots ([e29b9fa](https://github.com/robinmordasiewicz/devops-toolkit/commit/e29b9fae24751f6d842169c15351ddd242e7dd6f))
+* arrows over screenshots ([4342e54](https://github.com/robinmordasiewicz/devops-toolkit/commit/4342e544bb06da067146677a1201a1c5ba5e3a26))
+* updating arrow overlay for screenshots ([f5d5618](https://github.com/robinmordasiewicz/devops-toolkit/commit/f5d5618840045c2a6e334eff8b4c95b6cbde6fea))
+
 ## [1.10.0](https://github.com/robinmordasiewicz/devops-toolkit/compare/v1.9.0...v1.10.0) (2023-11-26)
 
 
