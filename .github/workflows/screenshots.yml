@@ -133,7 +133,7 @@ jobs:
 
       - name: overlay-arrow
         run: |
-          composite -geometry +810+55 315-arrow.png github-fork-border.png github-fork-border-arrow.png
+          composite -geometry +815+50 315-arrow.png github-fork-border.png github-fork-border-arrow.png
           composite -geometry +525+160 225-arrow.png github-profile-border.png github-profile-border-arrow.png
 
       - name: make-drop-shadow
