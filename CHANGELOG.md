@@ -1,5 +1,12 @@
 # CHANGELOG
 
+## [1.7.0](https://github.com/robinmordasiewicz/devops-toolkit/compare/v1.6.0...v1.7.0) (2023-11-26)
+
+
+### Features
+
+* screenshots ([ee3e940](https://github.com/robinmordasiewicz/devops-toolkit/commit/ee3e940c0d698bd75400e801fde58604261ada9c))
+
 ## [1.6.0](https://github.com/robinmordasiewicz/devops-toolkit/compare/v1.5.0...v1.6.0) (2023-11-26)
 
 
