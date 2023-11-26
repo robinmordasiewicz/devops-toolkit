@@ -84,10 +84,10 @@ jobs:
 
       - name: bevel
         run: |
-          width=5
+          width=8
           wfact=$((1000*$width))
           leveling="-level 0,$wfact"
-          depth=100
+          depth=75
           icontr=`convert xc: -format "%[fx:(0.5*$depth-100)]" info:`
           ocontr=`convert xc: -format "%[fx:(0.5*$depth-100)]" info:`
           ideepening="-brightness-contrast 0,$icontr"
