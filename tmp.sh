@@ -12,7 +12,7 @@ convert -size 486x96 \
 
 width=8
 wfact=$((1000 * width))
-depth=75
+depth=80
 icontr=$(convert xc: -format "%[fx:(0.5*$depth-100)]" info:)
 
 convert arrow.png -bordercolor none -border 10x10 -write mpr:img \
@@ -30,9 +30,9 @@ convert arrow.png -bordercolor none -border 10x10 -write mpr:img \
 convert arrow-bevel.png \
 	-bordercolor none -border 20 \
 	\( -clone 0 -fill white -colorize 100 \) \
-	\( -clone 0 -alpha extract -write mpr:alpha -morphology edgeout disk:1 \) \
+	\( -clone 0 -alpha extract -write mpr:alpha -morphology edgeout disk:2 \) \
 	-alpha off -compose over -composite \
-	\( mpr:alpha -morphology dilate disk:1 \) \
+	\( mpr:alpha -morphology dilate disk:2 \) \
 	-alpha off -compose copy_opacity -composite \
 	arrow-white-border.png
 
