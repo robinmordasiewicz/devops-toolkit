@@ -1,5 +1,12 @@
 # CHANGELOG
 
+## [1.4.1](https://github.com/robinmordasiewicz/devops-toolkit/compare/v1.4.0...v1.4.1) (2023-11-26)
+
+
+### Reverts
+
+* remove some of these files ([f9da0b8](https://github.com/robinmordasiewicz/devops-toolkit/commit/f9da0b8c5f103763612b516902dabea63099356c))
+
 ## [1.4.0](https://github.com/robinmordasiewicz/devops-toolkit/compare/v1.3.0...v1.4.0) (2023-11-25)
 
 
