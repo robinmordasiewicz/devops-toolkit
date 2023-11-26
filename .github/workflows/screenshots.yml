@@ -56,18 +56,6 @@ jobs:
           run: |
             node puppeteer.js "https://github.com/robinmordasiewicz/devops-toolkit" docs/img/github-fork.png
 
-      - name: process iamges
-        run: |
-          arrow_head="path 'M 210,16  l -15,-5  +5,+5  -5,+5  +15,-5 z'"
-          convert -size 350x50 \
-          xc:transparent \
-          \( +clone -background black -shadow 80x3+3+3 \) +swap \
-          -stroke red \
-          -strokewidth 10 \
-          -draw 'line 4,24 315,24' \
-          -draw "stroke red fill red scale 1.5,1.5 $arrow_head" \
-          arrow.png
-
       - name: github-profile-border
         uses: jruipinto/ImageMagick-action@f8361c3ab427051432299cef10d7c76424f7ff6d
         with:
@@ -81,6 +69,17 @@ jobs:
       - name: Move image in place
         run: |
           mv docs/img/github-fork-border.png docs/img/github-fork.png
+
+      - name: process images
+        run: |
+          arrow_head="path 'M 210,16  l -15,-5  +5,+5  -5,+5  +15,-5 z'"
+          convert -size 350x50 \
+          xc:transparent \
+          -stroke red \
+          -strokewidth 10 \
+          -draw 'line 4,24 315,24' \
+          -draw "stroke red fill red scale 1.5,1.5 $arrow_head" \
+          arrow.png
 
       - name: overlay-arrow-fork
         run: |
