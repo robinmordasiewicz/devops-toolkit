@@ -1,24 +1,19 @@
 #!/bin/bash
 #
 
-convert -size 540x96 \
+convert -size 496x96 \
 	xc:transparent \
 	-strokewidth 0 \
 	-stroke red \
 	-fill red \
-	-draw "ellipse 14,47 9,9 0,360" \
-	-draw "polygon 536,47 380,4 400,38 10,38 10,56 400,56 380,92" \
+	-draw "ellipse 14,47 11,11 0,360" \
+	-draw "polygon 492,47 385,4 400,36 10,36 10,58 400,58 385,92" \
 	arrow.png
 
-width=5
+width=8
 wfact=$((1000 * width))
-#leveling="-level 0,$wfact"
-
-depth=100
+depth=75
 icontr=$(convert xc: -format "%[fx:(0.5*$depth-100)]" info:)
-#ocontr=$(convert xc: -format "%[fx:(0.5*$depth-100)]" info:)
-#ideepening="-brightness-contrast 0,${icontr}"
-#odeepening="-brightness-contrast 0,${ocontr}"
 
 convert arrow.png -bordercolor none -border 10x10 -write mpr:img \
 	-alpha extract -write mpr:alpha \
