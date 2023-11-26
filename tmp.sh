@@ -1,13 +1,13 @@
 #!/bin/bash
 #
 
-convert -size 496x96 \
+convert -size 486x96 \
 	xc:transparent \
 	-strokewidth 0 \
 	-stroke red \
 	-fill red \
 	-draw "ellipse 14,47 11,11 0,360" \
-	-draw "polygon 492,47 385,4 400,36 10,36 10,58 400,58 385,92" \
+	-draw "polygon 482,47 385,4 400,36 10,36 10,58 400,58 385,92" \
 	arrow.png
 
 width=8
