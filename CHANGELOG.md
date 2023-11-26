@@ -1,5 +1,12 @@
 # CHANGELOG
 
+## [1.8.0](https://github.com/robinmordasiewicz/devops-toolkit/compare/v1.7.0...v1.8.0) (2023-11-26)
+
+
+### Features
+
+* screenshots ([391e384](https://github.com/robinmordasiewicz/devops-toolkit/commit/391e3847516664c55dbab3c275b963a01d902e2a))
+
 ## [1.7.0](https://github.com/robinmordasiewicz/devops-toolkit/compare/v1.6.0...v1.7.0) (2023-11-26)
 
 
