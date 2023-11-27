@@ -66,86 +66,12 @@ jobs:
         with:
           command: convert github-fork.png -shave 1x1 -bordercolor black -border 1 github-fork-border.png
 
-      - name: create-arrow
-        run: |
-          convert -size 246x72 \
-            xc:transparent \
-            -strokewidth 0 \
-            -stroke red \
-            -fill red \
-            -draw "ellipse 14,36 9,9 0,360" \
-            -draw "polygon 242,36 175,4 185,27 10,27 10,45 185,45 175,68" \
-            arrow.png
-
-      - name: rotate-arrows
-        run: |
-          convert -rotate 315 -background 'rgba(0,0,0,0)' arrow.png 315-arrow.png
-          convert -rotate 225 -background 'rgba(0,0,0,0)' arrow.png 225-arrow.png
-          rm arrow.png
-
-      - name: bevel
-        run: |
-          width=8
-          wfact=$((1000*$width))
-          leveling="-level 0,$wfact"
-          depth=60
-          icontr=`convert xc: -format "%[fx:(0.5*$depth-100)]" info:`
-          ocontr=`convert xc: -format "%[fx:(0.5*$depth-100)]" info:`
-          ideepening="-brightness-contrast 0,$icontr"
-          odeepening="-brightness-contrast 0,$ocontr"
-          for entry in 315-arrow.png 225-arrow.png
-          do
-            convert $entry -bordercolor none -border 10x10 -write mpr:img \
-              -alpha extract -write mpr:alpha \
-              +level 0,1000 -white-threshold 999 \
-              -morphology Distance:-1 Euclidean:$width,1000 $leveling \
-              -shade 120x45 -auto-level $ideepening \
-              \( +clone -fill "gray(50%)" -colorize 100% \) +swap \( mpr:alpha -threshold 0 \) \
-              -compose over -composite \
-              \( mpr:img -alpha off \) +swap -compose hardlight -composite \
-              mpr:alpha -alpha off -compose copy_opacity -composite \
-              -shave 10x10 \
-              arrow-bevel.png
-            mv arrow-bevel.png $entry
-          done
-
-      - name: create-border-shadow
-        run: |
-          for entry in 315-arrow.png 225-arrow.png
-          do
-            convert $entry \
-              -bordercolor none -border 20 \
-              \( -clone 0 -fill white -colorize 100 \) \
-              \( -clone 0 -alpha extract -write mpr:alpha -morphology edgeout disk:2 \) \
-              -alpha off -compose over -composite \
-              \( mpr:alpha -morphology dilate disk:2 \) \
-              -alpha off -compose copy_opacity -composite \
-              output.png
-            convert output.png \
-              -bordercolor none -border 20 \
-              \( -clone 0 -fill black -colorize 100 \) \
-              \( -clone 0 -alpha extract -write mpr:alpha -morphology edgeout disk:1 \) \
-              -alpha off -compose over -composite \
-              \( mpr:alpha -morphology dilate disk:1 \) \
-              -alpha off -compose copy_opacity -composite \
-              $entry
-            convert $entry \
-              \( +clone -background black -shadow 50x10+10+10 \) \
-              +swap \
-              -background none \
-              -layers merge \
-              +repage \
-              output.png
-             mv output.png $entry
-          done
-
       - name: overlay-arrow
         run: |
-          composite -geometry +1000+35 315-arrow.png github-fork-border.png github-fork-arrow.png
+          composite -geometry +1000+35 docs/img/overlays/pointer-315.png github-fork-border.png github-fork-arrow.png
           mv github-fork-arrow.png github-fork.png
-          composite -geometry +522+158 225-arrow.png github-profile.png github-profile-arrow.png
+          composite -geometry +522+158 docs/img/overlays/pointer-225.png github-profile.png github-profile-arrow.png
           mv github-profile-arrow.png github-profile.png
-          rm 315-arrow.png 225-arrow.png
 
       - name: make-drop-shadow
         run: |
