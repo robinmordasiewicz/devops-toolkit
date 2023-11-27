@@ -1,5 +1,12 @@
 # CHANGELOG
 
+## [1.10.3](https://github.com/robinmordasiewicz/devops-toolkit/compare/v1.10.2...v1.10.3) (2023-11-27)
+
+
+### Bug Fixes
+
+* remove unused images ([fb3ae77](https://github.com/robinmordasiewicz/devops-toolkit/commit/fb3ae771f0e570c0d3c970d838e047cb453a9ec7))
+
 ## [1.10.2](https://github.com/robinmordasiewicz/devops-toolkit/compare/v1.10.1...v1.10.2) (2023-11-27)
 
 
