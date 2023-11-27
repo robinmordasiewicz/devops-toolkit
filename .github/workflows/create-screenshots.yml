@@ -43,6 +43,7 @@ jobs:
     needs: configure
     runs-on: ubuntu-latest
     strategy:
+      fail-fast: false
       matrix: ${{ fromJson(needs.configure.outputs.matrix) }}
 
     steps:
