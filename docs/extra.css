@@ -1,17 +1,23 @@
 .md-grid {
-  margin-left: 15px;
-  max-width: 65rem;
+  margin-left: 0;
+  max-width: 75rem;
 }
 
 *, ::after, ::before {
   box-sizing: unset;
 }
+
 /* stylelint-disable selector-class-pattern */
+.md-main__inner {
+    margin-top: 0;
+}
+
 .md-sidebar--secondary {
   display: none;
   width: 20px;
 }
 /* stylelint-enable selector-class-pattern */
+
 .md-sidebar {
   width:10rem
 }
