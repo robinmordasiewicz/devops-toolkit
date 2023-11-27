@@ -1,7 +1,7 @@
 {
   "include": [
     {
-      "url": "https://github.com/${{ github.REPOSITORY_OWNER }}",
+      "url": "https://github.com/robinmordasiewicz",
       "filename": "github-profile.png"
     },
     {
