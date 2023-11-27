@@ -1,0 +1,73 @@
+---
+name: screenshot
+
+on: # yamllint disable-line rule:truthy
+  pull_request:
+
+concurrency:
+  group: ${{ github.workflow }}
+  cancel-in-progress: true
+
+permissions:
+  id-token: write
+  contents: write
+  pull-requests: write
+  actions: write
+
+jobs:
+  configure:
+    if: ${{ ! contains('
+      release-please--branches
+      dependabot/
+      ', github.head_ref)
+      }}
+    runs-on: ubuntu-latest
+    outputs:
+      matrix: ${{ steps.set-matrix.outputs.matrix }}
+    steps:
+      - uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11
+        with:
+          ref: ${{ github.event.pull_request.head.ref }}
+          fetch-depth: 0
+      - name: Set matrix data
+        id: set-matrix
+        run: echo "matrix=$(jq -c . < ./screenshots.json)" >> $GITHUB_OUTPUT
+
+  screenshot:
+    if: ${{ ! contains('
+      release-please--branches
+      dependabot/
+      ', github.head_ref)
+      }}
+    name: screenshot
+    needs: configure
+    runs-on: ubuntu-latest
+    strategy:
+      matrix: ${{ fromJson(needs.configure.outputs.matrix) }}
+
+    steps:
+      - uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11
+        with:
+          ref: ${{ github.event.pull_request.head.ref }}
+          fetch-depth: 0
+
+      - uses: browser-actions/setup-chrome@11cef13cde73820422f9263a707fb8029808e191
+      - uses: actions/setup-node@8f152de45cc393bb48ce5d89d36b731f54556e65
+
+      - name: Install dependencies
+        run: |
+          npm i puppeteer
+
+      - name: screenshot
+        uses: coactions/setup-xvfb@b6b4fcfb9f5a895edadc3bc76318fae0ac17c8b3
+        with:
+          run: |
+            node puppeteer.js ${{ matrix.url }} ./docs/img/screenshots/${{ matrix.filename }}
+
+      - name: Push changes
+        run: |
+          git config user.name "$(git log -n 1 --pretty=format:%an)"
+          git config user.email "$(git log -n 1 --pretty=format:%ae)"
+          git add .
+          git commit -m "docs(${{ matrix.filename }}: ${{ matrix.url }} screenshot"
+          git push
