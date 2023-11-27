@@ -85,10 +85,10 @@ jobs:
 
       - name: bevel
         run: |
-          width=10
+          width=8
           wfact=$((1000*$width))
           leveling="-level 0,$wfact"
-          depth=80
+          depth=60
           icontr=`convert xc: -format "%[fx:(0.5*$depth-100)]" info:`
           ocontr=`convert xc: -format "%[fx:(0.5*$depth-100)]" info:`
           ideepening="-brightness-contrast 0,$icontr"
@@ -141,7 +141,7 @@ jobs:
 
       - name: overlay-arrow
         run: |
-          composite -geometry +940+35 315-arrow.png github-fork-border.png github-fork-arrow.png
+          composite -geometry +1000+35 315-arrow.png github-fork-border.png github-fork-arrow.png
           mv github-fork-arrow.png github-fork.png
           composite -geometry +522+158 225-arrow.png github-profile.png github-profile-arrow.png
           mv github-profile-arrow.png github-profile.png
