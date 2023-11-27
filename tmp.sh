@@ -14,13 +14,6 @@ convert -rotate 315 -background 'rgba(0,0,0,0)' arrow.png 315-arrow.png
 convert -rotate 225 -background 'rgba(0,0,0,0)' arrow.png 225-arrow.png
 mv 315-arrow.png arrow.png
 
-convert -size 486x96 \
-	xc:black \
-	-fill white \
-	-draw "ellipse 14,47 11,11 0,360" \
-	-draw "polygon 482,47 385,4 400,36 10,36 10,58 400,58 385,92" \
-	mask.png
-
 width=10
 wfact=$((1000 * width))
 depth=40
@@ -37,8 +30,9 @@ convert arrow.png -bordercolor none -border 10x10 -write mpr:img \
 	mpr:alpha -alpha off -compose copy_opacity -composite \
 	-shave 10x10 \
 	arrow-bevel.png
+mv arrow-bevel.png arrow.png
 
-convert arrow-bevel.png \
+convert arrow.png \
 	-bordercolor none -border 20 \
 	\( -clone 0 -fill white -colorize 100 \) \
 	\( -clone 0 -alpha extract -write mpr:alpha -morphology edgeout disk:2 \) \
@@ -46,8 +40,9 @@ convert arrow-bevel.png \
 	\( mpr:alpha -morphology dilate disk:2 \) \
 	-alpha off -compose copy_opacity -composite \
 	arrow-white-border.png
+mv arrow-white-border.png arrow.png
 
-convert arrow-white-border.png \
+convert arrow.png \
 	-bordercolor none -border 20 \
 	\( -clone 0 -fill black -colorize 100 \) \
 	\( -clone 0 -alpha extract -write mpr:alpha -morphology edgeout disk:1 \) \
@@ -55,9 +50,11 @@ convert arrow-white-border.png \
 	\( mpr:alpha -morphology dilate disk:1 \) \
 	-alpha off -compose copy_opacity -composite \
 	arrow-white-black-border.png
+mv arrow-white-black-border.png arrow.png
 
-convert arrow-white-black-border.png \( +clone -background black -shadow 50x10+10+10 \) +swap -background none -layers merge +repage output.png
+convert arrow.png \( +clone -background black -shadow 50x10+10+10 \) +swap -background none -layers merge +repage output.png
 composite -geometry +915+140 output.png docs/img/github-fork.png output2.png
+rm output.png
 open output2.png
 
 #convert -rotate 315 -background 'rgba(0,0,0,0)' arrow.png rotated_arrow.png
