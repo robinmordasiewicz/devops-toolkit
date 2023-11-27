@@ -1,13 +1,13 @@
 #!/bin/bash
 #
 
-convert -size 486x96 \
-	xc:transparent \
+convert -size 386x72 \
+	xc:white \
 	-strokewidth 0 \
 	-stroke red \
 	-fill red \
-	-draw "ellipse 14,47 11,11 0,360" \
-	-draw "polygon 482,47 385,4 400,36 10,36 10,58 400,58 385,92" \
+	-draw "ellipse 14,36 9,9 0,360" \
+	-draw "polygon 382,36 285,4 300,27 10,27 10,45 300,45 285,68" \
 	arrow.png
 
 convert -rotate 315 -background 'rgba(0,0,0,0)' arrow.png 315-arrow.png
