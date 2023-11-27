@@ -7,13 +7,13 @@ if [[ ! -d "$outputfolder" ]]; then
 fi
 
 # Create base arrow image
-convert -size 72x384 \
+convert -size 72x284 \
 	xc:transparent \
 	-strokewidth 0 \
 	-stroke red \
 	-fill red \
-	-draw "ellipse 36,371 9,9 0,360" \
-	-draw "polygon 36,4 4,76 27,65 27,371 45,371 45,65 68,76" \
+	-draw "ellipse 36,271 9,9 0,360" \
+	-draw "polygon 36,4 4,76 27,65 27,271 45,271 45,65 68,76" \
 	${outputfolder}/pointer.png
 
 width=10
