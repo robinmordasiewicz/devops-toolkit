@@ -17,6 +17,7 @@ if (!destination) {
   const page = await browser.newPage()
   await page.setViewport({ width: 1500, height: 1080 })
   await page.goto(url, { waitUntil: 'load' })
+  await page.waitForTimeout(5000)
   await page.screenshot({
     path: destination
   })
