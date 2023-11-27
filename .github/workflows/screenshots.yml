@@ -145,6 +145,7 @@ jobs:
           mv github-fork-arrow.png github-fork.png
           composite -geometry +522+158 225-arrow.png github-profile.png github-profile-arrow.png
           mv github-profile-arrow.png github-profile.png
+          rm 315-arrow.png 225-arrow.png
 
       - name: make-drop-shadow
         run: |
