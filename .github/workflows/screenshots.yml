@@ -141,7 +141,7 @@ jobs:
 
       - name: overlay-arrow
         run: |
-          composite -geometry +915+140 315-arrow.png github-fork-border.png github-fork-arrow.png
+          composite -geometry +855+55 315-arrow.png github-fork-border.png github-fork-arrow.png
           mv github-fork-arrow.png github-fork.png
           composite -geometry +525+160 225-arrow.png github-profile.png github-profile-arrow.png
           mv github-profile-arrow.png github-profile.png
