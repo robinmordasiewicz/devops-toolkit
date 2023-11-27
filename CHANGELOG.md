@@ -1,5 +1,22 @@
 # CHANGELOG
 
+## [1.10.2](https://github.com/robinmordasiewicz/devops-toolkit/compare/v1.10.1...v1.10.2) (2023-11-27)
+
+
+### Bug Fixes
+
+* adjust pointer size ([dd0f067](https://github.com/robinmordasiewicz/devops-toolkit/commit/dd0f0674fc3cc2d4c4a7e2f2788a4b3dc007e290))
+* adjusting pointer ([ce4071f](https://github.com/robinmordasiewicz/devops-toolkit/commit/ce4071f716483a53a9670f84e7f0eac5d79246ac))
+* adjusting pointer size ([e9a894e](https://github.com/robinmordasiewicz/devops-toolkit/commit/e9a894eb6fa8048484213f2e1c23d6665787ce76))
+* cleanup old files ([2da175a](https://github.com/robinmordasiewicz/devops-toolkit/commit/2da175af21990bfd4bf3d38d0e6ddbc4f13bcd0f))
+* getting drop shadows working ([79a3377](https://github.com/robinmordasiewicz/devops-toolkit/commit/79a337767c1e651917bda7b92e1e7d6c8a4ad507))
+* getting drop shadows working ([b19acb0](https://github.com/robinmordasiewicz/devops-toolkit/commit/b19acb09dbdc20b2179e5ef22a64e2fc217422d9))
+* make pointer have transparent background ([348714e](https://github.com/robinmordasiewicz/devops-toolkit/commit/348714e355a1780d77b7dba3338f5fe89192781f))
+* making pointer smaller ([b3edb4c](https://github.com/robinmordasiewicz/devops-toolkit/commit/b3edb4c1438b56ef44baa93c653601a66724a826))
+* move pointer to the correct position ([bb8ba47](https://github.com/robinmordasiewicz/devops-toolkit/commit/bb8ba47bbdfd86edae2bb5a0f95b2b2893ee4ea9))
+* pointer overlay ([6d75513](https://github.com/robinmordasiewicz/devops-toolkit/commit/6d7551314a17b1d33c76eff01521adf8df6276b4))
+* tweaking pointer position ([00e804e](https://github.com/robinmordasiewicz/devops-toolkit/commit/00e804e9cf055b3b6a043085019cf5e2110e7560))
+
 ## [1.10.1](https://github.com/robinmordasiewicz/devops-toolkit/compare/v1.10.0...v1.10.1) (2023-11-26)
 
 
