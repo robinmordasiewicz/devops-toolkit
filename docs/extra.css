@@ -15,5 +15,9 @@
 /* stylelint-enable selector-class-pattern */
 
 .md-sidebar {
-    width:10rem
+  width:10rem
+}
+
+.md-content {
+  min-width: 80%;
 }
