@@ -1,5 +1,20 @@
 # CHANGELOG
 
+## [1.10.1](https://github.com/robinmordasiewicz/devops-toolkit/compare/v1.10.0...v1.10.1) (2023-11-26)
+
+
+### Bug Fixes
+
+* adding drop shadow to pointer ([af514f8](https://github.com/robinmordasiewicz/devops-toolkit/commit/af514f81cff1d2b95ad1e923c749c6ec00687b68))
+* adding drop shadow to pointers ([64ff4fb](https://github.com/robinmordasiewicz/devops-toolkit/commit/64ff4fb8ebd85a1ed0e691e1278676bc8feaba0f))
+* adding drop shadows ([4448d75](https://github.com/robinmordasiewicz/devops-toolkit/commit/4448d75d4185ae755aa2aedc553f62133e27f8eb))
+* arrow over screenshots ([e29b9fa](https://github.com/robinmordasiewicz/devops-toolkit/commit/e29b9fae24751f6d842169c15351ddd242e7dd6f))
+* arrows over screenshots ([4342e54](https://github.com/robinmordasiewicz/devops-toolkit/commit/4342e544bb06da067146677a1201a1c5ba5e3a26))
+* screenshot arrow overlay update ([09662b9](https://github.com/robinmordasiewicz/devops-toolkit/commit/09662b9cc63316ed3677c81f9a659accf7537895))
+* screenshot arrows ([158e147](https://github.com/robinmordasiewicz/devops-toolkit/commit/158e1477a19b307e0528f94074d51229fcdbddea))
+* updating arrow overlay for screenshots ([f5d5618](https://github.com/robinmordasiewicz/devops-toolkit/commit/f5d5618840045c2a6e334eff8b4c95b6cbde6fea))
+* updating pointer for screenshots ([7f6f5a9](https://github.com/robinmordasiewicz/devops-toolkit/commit/7f6f5a9a60622f6e2cdf648ef3369ebe5af0728e))
+
 ## [1.10.0](https://github.com/robinmordasiewicz/devops-toolkit/compare/v1.9.0...v1.10.0) (2023-11-26)
 
 
