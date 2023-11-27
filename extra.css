@@ -1,5 +1,5 @@
 .md-grid {
-  margin-left: 50px;
+  margin-left: 15px;
   max-width: 65rem;
 }
 
@@ -13,3 +13,7 @@
   width: 20px;
 }
 /* stylelint-enable selector-class-pattern */
+
+.md-sidebar {
+    width:10rem
+}
