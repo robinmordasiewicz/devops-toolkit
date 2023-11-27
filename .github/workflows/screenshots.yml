@@ -68,13 +68,13 @@ jobs:
 
       - name: create-arrow
         run: |
-          convert -size 486x96 \
-            xc:transparent \
-            -stroke red \
+          convert -size 386x72 \
+            xc:white \
             -strokewidth 0 \
+            -stroke red \
             -fill red \
-            -draw "ellipse 14,47 11,11 0,360" \
-            -draw "polygon 482,47 385,4 400,36 10,36 10,58 400,58 385,92" \
+            -draw "ellipse 14,36 9,9 0,360" \
+            -draw "polygon 382,36 285,4 300,27 10,27 10,45 300,45 285,68" \
             arrow.png
 
       - name: rotate-arrows
@@ -150,8 +150,12 @@ jobs:
         run: |
           for entry in github-profile.png github-fork.png
           do
-            convert $entry \( +clone -background black -shadow 100x40+0+16 \) \
-              +swap -background none -layers merge +repage output.png
+            convert $entry \( +clone -background black -shadow 40x50+0+36 \) \
+              +swap \
+              -background none \
+              -layers merge \
+              +repage \
+              output.png
             convert output.png -bordercolor none -border 32 docs/img/$entry
             rm $entry output.png
           done
