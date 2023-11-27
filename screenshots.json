@@ -1,0 +1,12 @@
+{
+  "include": [
+    {
+      "url": "https://github.com/${{ github.REPOSITORY_OWNER }}",
+      "filename": "github-profile.png"
+    },
+    {
+      "url": "https://github.com/robinmordasiewicz/devops-toolkit",
+      "filename": "github-fork.png"
+    }
+  ]
+}
