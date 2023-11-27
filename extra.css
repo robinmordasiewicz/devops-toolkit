@@ -6,14 +6,12 @@
 *, ::after, ::before {
   box-sizing: unset;
 }
-
 /* stylelint-disable selector-class-pattern */
 .md-sidebar--secondary {
   display: none;
   width: 20px;
 }
 /* stylelint-enable selector-class-pattern */
-
 .md-sidebar {
   width:10rem
 }
