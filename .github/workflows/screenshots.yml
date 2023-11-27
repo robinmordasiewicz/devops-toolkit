@@ -69,9 +69,11 @@ jobs:
       - name: overlay-arrow
         run: |
           composite -geometry +1000+35 docs/img/overlays/pointer-45.png github-fork-border.png github-fork-arrow.png
+          rm github-fork-border.png
           mv github-fork-arrow.png github-fork.png
           composite -geometry +522+158 docs/img/overlays/pointer-315.png github-profile.png github-profile-arrow.png
           mv github-profile-arrow.png github-profile.png
+          rm github-profile-border.png
 
       - name: make-drop-shadow
         run: |
