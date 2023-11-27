@@ -7,16 +7,40 @@ if (!url) {
 if (!destination) {
   throw new Error('Please provide a filenamee destination as the second argument')
 }
+const h = 1080
+const w = 1500;
 
 (async () => {
   const browser = await puppeteer.launch({
-    args: ['--disable-dev-shm-usage', '--user-data-dir=./.chrome', '--start-fullscreen', '--kiosk', '--disable-session-crashed-bubble', '--noerrdialogs', '--no-default-browser-check', '--useAutomationExtension', '--disable-infobars', '--ignore-certificate-errors', '--start-maximized', '--enable-automation', '--no-sandbox', '--disabled-setupid-sandbox', '--enable-font-antialiasing', '--font-render-hinting=none', '--disable-gpu', '--force-color-profile=srgb', '--window-size=1664,936', '--hide-scrollbars', '--disable-font-subpixel-positioning'],
+    args: [
+      '--disable-dev-shm-usage',
+      '--disable-session-crashed-bubble',
+      '--disable-infobars',
+      '--disable-setuid-sandbox',
+      '--disable-gpu',
+      '--disable-font-subpixel-positioning',
+      '--enable-automation',
+      '--enable-font-antialiasing',
+      '--font-render-hinting=none',
+      '--force-color-profile=srgb',
+      '--hide-scrollbars',
+      '--ignore-certificate-errors',
+      '--kiosk',
+      '--noerrdialogs',
+      '--no-default-browser-check',
+      '--no-sandbox',
+      '--start-fullscreen',
+      '--start-maximized',
+      '--useAutomationExtension',
+      '--user-data-dir=./.chrome',
+      '--window-size=h,w'
+    ],
     ignoreDefaultArgs: ['--enable-automation'],
     headless: 'new'
   })
   const page = await browser.newPage()
-  await page.setViewport({ width: 1500, height: 1080 })
-  await page.goto(url, { waitUntil: 'load' })
+  await page.setViewport({ width: w, height: h })
+  await page.goto(url, { waitUntil: 'networkidle2' })
   await page.waitForTimeout(5000)
   await page.screenshot({
     path: destination
