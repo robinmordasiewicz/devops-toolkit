@@ -1,5 +1,12 @@
 # CHANGELOG
 
+## [1.10.4](https://github.com/robinmordasiewicz/devops-toolkit/compare/v1.10.3...v1.10.4) (2023-11-27)
+
+
+### Bug Fixes
+
+* **screenshots.yml:** update overlay-arrow images for better visual guidance ([1ee0a38](https://github.com/robinmordasiewicz/devops-toolkit/commit/1ee0a38eda2d6bf1022ccf4f491a9025091f75d7))
+
 ## [1.10.3](https://github.com/robinmordasiewicz/devops-toolkit/compare/v1.10.2...v1.10.3) (2023-11-27)
 
 
