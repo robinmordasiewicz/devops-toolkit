@@ -62,11 +62,7 @@ jobs:
         uses: coactions/setup-xvfb@b6b4fcfb9f5a895edadc3bc76318fae0ac17c8b3
         with:
           run: |
-            node puppeteer.js ${{ matrix.url }} ${{ matrix.filename }}
-
-      - name: mv screenshot into screenshots folder
-        run: |
-          mv ${{ matrix.filename }} ./docs/img/screenshots/${{ matrix.filename }}
+            node puppeteer.js ${{ matrix.url }} ./docs/img/screenshots/${{ matrix.filename }}
 
       - name: Push changes
         run: |
