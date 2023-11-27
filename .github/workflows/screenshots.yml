@@ -30,32 +30,6 @@ jobs:
           ref: ${{ github.event.pull_request.head.ref }}
           fetch-depth: 0
 
-      - uses: browser-actions/setup-chrome@11cef13cde73820422f9263a707fb8029808e191
-      - uses: actions/setup-node@8f152de45cc393bb48ce5d89d36b731f54556e65
-
-      # - name: Run test
-      #  uses: tj-actions/puppeteer@a2befb374cdb596ae129a21e0a52494eb028ee82
-      #  id: puppeteer
-      #  with:
-      #    files: |
-      #      puppeteer.js
-
-      - name: Install dependencies
-        run: |
-          npm i puppeteer
-
-      - name: github-profile-screenshot
-        uses: coactions/setup-xvfb@b6b4fcfb9f5a895edadc3bc76318fae0ac17c8b3
-        with:
-          run: |
-            node puppeteer.js "https://github.com/${{ github.REPOSITORY_OWNER }}" github-profile.png
-
-      - name: github-fork-screenshot
-        uses: coactions/setup-xvfb@b6b4fcfb9f5a895edadc3bc76318fae0ac17c8b3
-        with:
-          run: |
-            node puppeteer.js "https://github.com/robinmordasiewicz/devops-toolkit" github-fork.png
-
       - name: github-profile-border
         uses: jruipinto/ImageMagick-action@f8361c3ab427051432299cef10d7c76424f7ff6d
         with:
