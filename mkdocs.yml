@@ -153,7 +153,7 @@ nav:
   - "Accounts": "accounts.md"
   - "Platforms":
       - "Source Control":
-          - github-create-repo.md
+          - Repositories.md
           - github-profile.md
           - github-fork-repo.md
       - "Cloud Provider":

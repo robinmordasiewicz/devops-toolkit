@@ -14,9 +14,15 @@
     },
     {
       "url": "",
-      "filename": "github-new.png",
+      "filename": "github-repositories.png",
       "pointerangle": "45",
-      "geometry": "+1100+100"
+      "geometry": "+1095+108"
+    },
+    {
+      "url": "",
+      "filename": "github-new.png",
+      "pointerangle": "225",
+      "geometry": "+600+308"
     }
   ]
 }
