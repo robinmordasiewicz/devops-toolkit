@@ -11,6 +11,12 @@
       "filename": "github-fork.png",
       "pointerangle": "45",
       "geometry": "+1000+35"
+    },
+    {
+      "url": "",
+      "filename": "github-new.png",
+      "pointerangle": "45",
+      "geometry": "+1000+35"
     }
   ]
 }
