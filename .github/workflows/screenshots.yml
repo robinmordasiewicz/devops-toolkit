@@ -2,10 +2,16 @@
 name: screenshots
 
 on: # yamllint disable-line rule:truthy
-  pull_request:
+  push:
+    paths:
+      - "screenshots.json"
+    branches-ignore:
+      - main
+      - dependabot/**
+      - release-please/**
 
 concurrency:
-  group: ${{ github.workflow }}
+  group: ${{ github.workflow }}-${{ github.ref }}
   cancel-in-progress: true
 
 permissions:
@@ -16,29 +22,17 @@ permissions:
 
 jobs:
   configure:
-    if: ${{ ! contains('
-      release-please--branches
-      dependabot/
-      ', github.head_ref)
-      }}
     runs-on: ubuntu-latest
     outputs:
       matrix: ${{ steps.set-matrix.outputs.matrix }}
     steps:
       - uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11
-        with:
-          ref: ${{ github.event.pull_request.head.ref }}
-          fetch-depth: 0
+
       - name: Set matrix data
         id: set-matrix
         run: echo "matrix=$(jq -c . < ./screenshots.json)" >> $GITHUB_OUTPUT
 
   screenshots:
-    if: ${{ ! contains('
-      release-please--branches
-      dependabot/
-      ', github.head_ref)
-      }}
     name: screenshots
     needs: configure
     strategy:
@@ -48,18 +42,19 @@ jobs:
 
     steps:
       - uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11
-        with:
-          ref: ${{ github.event.pull_request.head.ref }}
-          fetch-depth: 0
 
       - uses: browser-actions/setup-chrome@11cef13cde73820422f9263a707fb8029808e191
+        if: ${{ matrix.url != '' }}
+
       - uses: actions/setup-node@8f152de45cc393bb48ce5d89d36b731f54556e65
+        if: ${{ matrix.url != '' }}
 
       - name: Install dependencies
+        if: ${{ matrix.url != '' }}
         run: |
           npm i puppeteer
 
-      - name: screenshot
+      - name: take-screenshot
         if: ${{ matrix.url != '' }}
         uses: coactions/setup-xvfb@b6b4fcfb9f5a895edadc3bc76318fae0ac17c8b3
         with:
@@ -92,13 +87,13 @@ jobs:
 
       - name: drop-shadow
         run: |
-          convert docs/img/${{ matrix.filename }} \( +clone -background black -shadow 20x25+0+18 \) \
+          convert docs/img/${{ matrix.filename }} \( +clone -background black -shadow 30x35+0+18 \) \
             +swap \
             -background none \
             -layers merge \
             +repage \
             output.png
-          convert output.png -bordercolor none -border 18 output2.png
+          convert output.png -bordercolor none -border 28 output2.png
           mv output2.png docs/img/${{ matrix.filename }}
           rm output.png
 
@@ -106,7 +101,7 @@ jobs:
         run: |
           git config user.name "$(git log -n 1 --pretty=format:%an)"
           git config user.email "$(git log -n 1 --pretty=format:%ae)"
-          git pull
           git add .
-          git commit -m "docs(${{ matrix.filename }}): updating ${{ matrix.url }} processed screenshots"
+          git commit -m "docs(${{ matrix.filename }}): processing screenshot"
+          git pull
           git push

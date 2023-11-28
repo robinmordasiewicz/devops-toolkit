@@ -19,8 +19,7 @@ comments: true
 - Select "Canada Central" as the "Cloud Shell region"
 - Enter "<yourusername-cloudshell>" as the "Resource group"
 
-> [!WARNING]
-> Storage account name must be between 3 and 24 characters in length and use numbers and lower-case letters only.
+!!! warning "Storage account name must be between 3 and 24 characters in length and use numbers and lower-case letters only."
 
 - Enter "<yourusername-fileshare>" as the "File share"
 
