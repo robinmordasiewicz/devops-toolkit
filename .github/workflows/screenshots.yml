@@ -105,4 +105,4 @@ jobs:
           git commit -m "docs(${{ matrix.filename }}): processing screenshot"
           git config pull.rebase false
           git pull
-          git push
+          git push --force-with-lease
