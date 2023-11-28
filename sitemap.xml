@@ -6,6 +6,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://robinmordasiewicz.github.io/devops-toolkit/Repositories/</loc>
+         <lastmod>2023-11-28</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://robinmordasiewicz.github.io/devops-toolkit/accounts/</loc>
          <lastmod>2023-11-28</lastmod>
          <changefreq>daily</changefreq>
@@ -42,11 +47,6 @@
     </url>
     <url>
          <loc>https://robinmordasiewicz.github.io/devops-toolkit/challenge/</loc>
-         <lastmod>2023-11-28</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://robinmordasiewicz.github.io/devops-toolkit/concepts/</loc>
          <lastmod>2023-11-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
@@ -97,11 +97,6 @@
     </url>
     <url>
          <loc>https://robinmordasiewicz.github.io/devops-toolkit/github-copilot-install/</loc>
-         <lastmod>2023-11-28</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://robinmordasiewicz.github.io/devops-toolkit/github-create-repo/</loc>
          <lastmod>2023-11-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
