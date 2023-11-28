@@ -157,7 +157,7 @@ nav:
           - Profile.md
           - Fork.md
       - "Cloud Provider":
-          - azure-cloud-shell.md
+          - Azure-Cloud-Shell.md
           - azure-install-terraform.md
           - azure-az-login.md
   - "Deploy Infrastructure":

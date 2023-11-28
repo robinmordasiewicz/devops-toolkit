@@ -1,7 +1,7 @@
 ---
 comments: true
 ---
-# [Azure Portal Login](https://portal.azure.com)
+# [https://portal.azure.com](https://portal.azure.com)
 
 - Launch Azure Cloud Shell from the top navigation of the Azure portal
 - Click `Bash`
