@@ -70,6 +70,17 @@ jobs:
         run: |
           composite -geometry ${{ matrix.geometry }} docs/img/overlays/pointer-${{ matrix.pointerangle }}.png docs/img/screenshots/${{ matrix.filename }} docs/img/${{ matrix.filename }}
 
+      - name: rounded-corners
+        run: |
+          convert docs/img/${{ matrix.filename }} \( +clone -alpha extract \
+            \( -size 15x15 xc:black -draw 'fill white circle 15,15 15,0' -write mpr:arc +delete \) \
+            \( mpr:arc \) -gravity northwest -composite \
+            \( mpr:arc -flip \) -gravity southwest -composite \
+            \( mpr:arc -flop \) -gravity northeast -composite \
+            \( mpr:arc -rotate 180 \) -gravity southeast -composite \) \
+            -alpha off -compose CopyOpacity -composite output.png
+          mv output.png docs/img/${{ matrix.filename }}
+
       - name: border
         uses: jruipinto/ImageMagick-action@f8361c3ab427051432299cef10d7c76424f7ff6d
         with:
