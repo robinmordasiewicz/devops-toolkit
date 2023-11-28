@@ -28,19 +28,19 @@
       "url": "",
       "filename": "azure-cloud-shell.png",
       "pointerangle": "45",
-      "geometry": "+1000+30"
+      "geometry": "+900+10"
     },
     {
       "url": "",
       "filename": "azure-cloud-shell-select-storage-advanced.png",
       "pointerangle": "135",
-      "geometry": "+600+200"
+      "geometry": "+700+180"
     },
     {
       "url": "",
       "filename": "azure-cloud-shell-select-storage-advanced-create-storage.png",
-      "pointerangle": "135",
-      "geometry": "+300+100"
+      "pointerangle": "225",
+      "geometry": "+300+75"
     }
   ]
 }
