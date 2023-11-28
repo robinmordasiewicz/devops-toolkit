@@ -78,13 +78,16 @@ jobs:
           convert -size $size xc:none -draw "roundrectangle 0,0,$width,$height,15,15" png:- | convert docs/img/${{ matrix.filename }} -matte - -compose DstIn -composite output.png
           mv output.png docs/img/${{ matrix.filename }}
 
-      - name: border
-        uses: jruipinto/ImageMagick-action@f8361c3ab427051432299cef10d7c76424f7ff6d
-        with:
-          command: convert docs/img/${{ matrix.filename }} -shave 1x1 -bordercolor black -border 1 output.png
-
-      - name: move file
+      - name: add-border
         run: |
+          convert docs/img/${{ matrix.filename }} \
+              -bordercolor none -border 20 \
+              \( -clone 0 -fill black -colorize 100 \) \
+              \( -clone 0 -alpha extract -write mpr:alpha -morphology edgeout disk:1 \) \
+              -alpha off -compose over -composite \
+              \( mpr:alpha -morphology dilate disk:1 \) \
+              -alpha off -compose copy_opacity -composite \
+              output.png
           mv output.png docs/img/${{ matrix.filename }}
 
       - name: drop-shadow
