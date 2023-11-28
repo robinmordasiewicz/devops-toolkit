@@ -1,5 +1,5 @@
 ---
-name: screenshot
+name: process-screenshot
 
 on: # yamllint disable-line rule:truthy
   pull_request:
@@ -33,18 +33,18 @@ jobs:
         id: set-matrix
         run: echo "matrix=$(jq -c . < ./screenshots.json)" >> $GITHUB_OUTPUT
 
-  screenshot:
+  process-screenshot:
     if: ${{ ! contains('
       release-please--branches
       dependabot/
       ', github.head_ref)
       }}
-    name: screenshot
-    runs-on: ubuntu-latest
+    name: process-screenshot
     needs: configure
     strategy:
       fail-fast: false
       matrix: ${{ fromJson(needs.configure.outputs.matrix) }}
+    runs-on: ubuntu-latest
 
     steps:
       - uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11
@@ -52,18 +52,24 @@ jobs:
           ref: ${{ github.event.pull_request.head.ref }}
           fetch-depth: 0
 
-      - uses: browser-actions/setup-chrome@11cef13cde73820422f9263a707fb8029808e191
-      - uses: actions/setup-node@8f152de45cc393bb48ce5d89d36b731f54556e65
-
-      - name: Install dependencies
+      - name: overlay-arrow
         run: |
-          npm i puppeteer
+          composite -geometry ${{ matrix.geometry }} docs/img/overlays/pointer-${{ matrix.pointerangle }}.png docs/img/screenshots/${{ matrix.filename }} docs/img/${{ matrix.filename }}
 
-      - name: screenshot
-        uses: coactions/setup-xvfb@b6b4fcfb9f5a895edadc3bc76318fae0ac17c8b3
+      - name: border
+        uses: jruipinto/ImageMagick-action@f8361c3ab427051432299cef10d7c76424f7ff6d
         with:
-          run: |
-            node puppeteer.js ${{ matrix.url }} ./docs/img/screenshots/${{ matrix.filename }}
+          command: convert docs/img/${{ matrix.filename }} -shave 1x1 -bordercolor black -border 1 output.png && mv output.png docs/img/${{ matrix.filename }}
+
+      - name: drop-shadow
+        run: |
+          convert docs/img/${{ matrix.filename }} \( +clone -background black -shadow 40x50+0+36 \) \
+            +swap \
+            -background none \
+            -layers merge \
+            +repage \
+            output.png
+          convert output.png -bordercolor none -border 32 docs/img/${{ matrix.filename }} && rm output.png
 
       - name: Push changes
         run: |
@@ -71,5 +77,5 @@ jobs:
           git config user.email "$(git log -n 1 --pretty=format:%ae)"
           git pull
           git add .
-          git commit -m "docs(${{ matrix.filename }}: ${{ matrix.url }} screenshot"
+          git commit -m "docs(${{ matrix.filename }}): updating ${{ matrix.url }} processed screenshots"
           git push
