@@ -1,5 +1,19 @@
 # CHANGELOG
 
+## [1.12.0](https://github.com/robinmordasiewicz/devops-toolkit/compare/v1.11.0...v1.12.0) (2023-11-28)
+
+
+### Features
+
+* **screenshots.json:** add new screenshot configuration for azure-cloud-shell-select-storage-advanced.png ([6f19259](https://github.com/robinmordasiewicz/devops-toolkit/commit/6f192598339ed87b8e1f7c96e883c899efa893c9))
+* **screenshots.json:** add new screenshot configuration for azure-cloud-shell.png ([48c3689](https://github.com/robinmordasiewicz/devops-toolkit/commit/48c3689a958024c14cbd49b2ec9acd82070371bf))
+
+
+### Bug Fixes
+
+* **screenshots.json:** adjust geometry values for better screenshot positioning ([bb88887](https://github.com/robinmordasiewicz/devops-toolkit/commit/bb88887edbaaf8ae82f5d9e5c54566808de04dbc))
+* **screenshots.json:** adjust geometry values for better screenshot positioning ([0202174](https://github.com/robinmordasiewicz/devops-toolkit/commit/02021748278929b457c4bcdca0be390359bd729d))
+
 ## [1.11.0](https://github.com/robinmordasiewicz/devops-toolkit/compare/v1.10.3...v1.11.0) (2023-11-28)
 
 
