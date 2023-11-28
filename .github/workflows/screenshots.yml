@@ -3,6 +3,8 @@ name: screenshots
 
 on: # yamllint disable-line rule:truthy
   pull_request:
+    branches:
+      - main
     paths:
       - "screenshots.json"
 #  push:
