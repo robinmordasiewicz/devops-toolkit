@@ -75,7 +75,7 @@ jobs:
           size=$(identify -format "%[fx:w]x%[fx:h]" "docs/img/${{ matrix.filename }}")
           width=$(echo $size | cut -d'x' -f1)
           height=$(echo $size | cut -d'x' -f2)
-          convert -size $size xc:none -draw "roundrectangle 0,0,$width,$height,15,15" png:- | convert docs/img/${{ matrix.filename }} -matte - -compose DstIn -composite output.png
+          convert -size $size xc:none -draw "roundrectangle 0,0,$width,$height,10,10" png:- | convert docs/img/${{ matrix.filename }} -matte - -compose DstIn -composite output.png
           mv output.png docs/img/${{ matrix.filename }}
 
       - name: add-border
@@ -92,13 +92,13 @@ jobs:
 
       - name: drop-shadow
         run: |
-          convert docs/img/${{ matrix.filename }} \( +clone -background black -shadow 40x50+0+36 \) \
+          convert docs/img/${{ matrix.filename }} \( +clone -background black -shadow 20x25+0+18 \) \
             +swap \
             -background none \
             -layers merge \
             +repage \
             output.png
-          convert output.png -bordercolor none -border 32 output2.png
+          convert output.png -bordercolor none -border 18 output2.png
           mv output2.png docs/img/${{ matrix.filename }}
           rm output.png
 
