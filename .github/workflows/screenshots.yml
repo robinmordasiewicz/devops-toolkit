@@ -93,7 +93,7 @@ jobs:
             -layers merge \
             +repage \
             output.png
-          convert output.png -bordercolor none -border 28 output2.png
+          convert output.png -bordercolor none -border 18 output2.png
           mv output2.png docs/img/${{ matrix.filename }}
           rm output.png
 
@@ -103,5 +103,6 @@ jobs:
           git config user.email "$(git log -n 1 --pretty=format:%ae)"
           git add .
           git commit -m "docs(${{ matrix.filename }}): processing screenshot"
+          git config pull.rebase false
           git pull
-          git push
+          git push --force-with-lease
