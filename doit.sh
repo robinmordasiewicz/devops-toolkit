@@ -1,7 +1,7 @@
 #!/bin/bash
 #
 
-google-chrome --headless=new --screenshot="docs/img/github-profile.png" --hide-scrollbars --window-size=1620,1080 "https://github.com/robinmordasiewicz"
+#google-chrome --headless=new --screenshot="docs/img/github-profile.png" --hide-scrollbars --window-size=1620,1080 "https://github.com/robinmordasiewicz"
 
 #google-chrome --headless=new --screenshot="docs/img/github-fork-repo.png" --hide-scrollbars --window-size=1620,1080 "https://github.com/robinmordasiewicz/devops-toolkit/fork"
 
