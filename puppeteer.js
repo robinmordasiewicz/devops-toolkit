@@ -33,7 +33,7 @@ const w = 1500;
       '--start-maximized',
       '--useAutomationExtension',
       '--user-data-dir=./.chrome',
-      '--window-size=h,w'
+      '--window-size=1500,1080'
     ],
     ignoreDefaultArgs: ['--enable-automation'],
     headless: 'new'
