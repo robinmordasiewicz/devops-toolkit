@@ -90,10 +90,6 @@ jobs:
               output.png
           mv output.png docs/img/${{ matrix.filename }}
 
-      - name: move file
-        run: |
-          mv output.png docs/img/${{ matrix.filename }}
-
       - name: drop-shadow
         run: |
           convert docs/img/${{ matrix.filename }} \( +clone -background black -shadow 40x50+0+36 \) \
