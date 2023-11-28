@@ -73,7 +73,7 @@ jobs:
       - name: rounded-corners
         run: |
           convert docs/img/${{ matrix.filename }} \( +clone -alpha extract \
-            \( -size 15x15 xc:none -draw 'fill white circle 15,15 15,0' -write mpr:arc +delete \) \
+            \( -size 15x15 xc:transparent -draw 'fill white circle 15,15 15,0' -write mpr:arc +delete \) \
             \( mpr:arc \) -gravity northwest -composite \
             \( mpr:arc -flip \) -gravity southwest -composite \
             \( mpr:arc -flop \) -gravity northeast -composite \
