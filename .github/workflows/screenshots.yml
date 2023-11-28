@@ -6,6 +6,7 @@ on: # yamllint disable-line rule:truthy
     branches:
       - main
     paths:
+      - ".github/workflows/screenshots.yml"
       - "screenshots.json"
 #  push:
 #    paths:
