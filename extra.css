@@ -3,6 +3,11 @@
   max-width: 75rem;
 }
 
+.md-typeset h1 {
+    line-height: 1;
+    margin: 0;
+}
+
 *, ::after, ::before {
   box-sizing: unset;
 }
