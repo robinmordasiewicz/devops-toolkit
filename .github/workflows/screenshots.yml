@@ -1,5 +1,5 @@
 ---
-name: process-screenshot
+name: screenshots
 
 on: # yamllint disable-line rule:truthy
   pull_request:
@@ -33,13 +33,13 @@ jobs:
         id: set-matrix
         run: echo "matrix=$(jq -c . < ./screenshots.json)" >> $GITHUB_OUTPUT
 
-  process-screenshot:
+  screenshots:
     if: ${{ ! contains('
       release-please--branches
       dependabot/
       ', github.head_ref)
       }}
-    name: process-screenshot
+    name: screenshots
     needs: configure
     strategy:
       fail-fast: false
@@ -86,7 +86,8 @@ jobs:
             -layers merge \
             +repage \
             output.png
-          convert output.png -bordercolor none -border 32 docs/img/${{ matrix.filename }}
+          convert output.png -bordercolor none -border 32 output2.png
+          mv output2.png docs/img/${{ matrix.filename }}
           rm output.png
 
       - name: Push changes
