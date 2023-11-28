@@ -6,6 +6,16 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://robinmordasiewicz.github.io/devops-toolkit/Fork/</loc>
+         <lastmod>2023-11-28</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://robinmordasiewicz.github.io/devops-toolkit/Profile/</loc>
+         <lastmod>2023-11-28</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://robinmordasiewicz.github.io/devops-toolkit/Repositories/</loc>
          <lastmod>2023-11-28</lastmod>
          <changefreq>daily</changefreq>
@@ -101,22 +111,12 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://robinmordasiewicz.github.io/devops-toolkit/github-fork-repo/</loc>
-         <lastmod>2023-11-28</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
          <loc>https://robinmordasiewicz.github.io/devops-toolkit/github-merge/</loc>
          <lastmod>2023-11-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robinmordasiewicz.github.io/devops-toolkit/github-personal-access-token/</loc>
-         <lastmod>2023-11-28</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://robinmordasiewicz.github.io/devops-toolkit/github-profile/</loc>
          <lastmod>2023-11-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
