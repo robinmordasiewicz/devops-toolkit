@@ -52,6 +52,19 @@ jobs:
           ref: ${{ github.event.pull_request.head.ref }}
           fetch-depth: 0
 
+      - uses: browser-actions/setup-chrome@11cef13cde73820422f9263a707fb8029808e191
+      - uses: actions/setup-node@8f152de45cc393bb48ce5d89d36b731f54556e65
+
+      - name: Install dependencies
+        run: |
+          npm i puppeteer
+
+      - name: screenshot
+        uses: coactions/setup-xvfb@b6b4fcfb9f5a895edadc3bc76318fae0ac17c8b3
+        with:
+          run: |
+            node puppeteer.js ${{ matrix.url }} ./docs/img/screenshots/${{ matrix.filename }}
+
       - name: overlay-arrow
         run: |
           composite -geometry ${{ matrix.geometry }} docs/img/overlays/pointer-${{ matrix.pointerangle }}.png docs/img/screenshots/${{ matrix.filename }} docs/img/${{ matrix.filename }}
