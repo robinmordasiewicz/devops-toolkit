@@ -1,5 +1,33 @@
 # CHANGELOG
 
+## [1.11.0](https://github.com/robinmordasiewicz/devops-toolkit/compare/v1.10.3...v1.11.0) (2023-11-28)
+
+
+### Features
+
+* **.github/workflows:** add create-screenshots.yml to automate screenshot creation ([80a26d5](https://github.com/robinmordasiewicz/devops-toolkit/commit/80a26d59222386dbd5e73c34de27d7d8274b6970))
+* **create-screenshots.yml:** add git pull command to ensure latest changes are fetched before committing ([acd84a2](https://github.com/robinmordasiewicz/devops-toolkit/commit/acd84a21c7adad12e049711e53f88a3b3d71520d))
+* **create-screenshots.yml:** disable fail-fast strategy in GitHub Actions workflow ([6a55a24](https://github.com/robinmordasiewicz/devops-toolkit/commit/6a55a24b5b9372d86896d9ec4537774c0ef83654))
+* **docs:** add new Fork.md and Profile.md files, remove github-profile.md ([057e6c7](https://github.com/robinmordasiewicz/devops-toolkit/commit/057e6c7d9dc32534c326a096b732a3d9ac7c9f93))
+* **screenshots.yml:** add rounded-corners step to add rounded corners to images ([58ce5c1](https://github.com/robinmordasiewicz/devops-toolkit/commit/58ce5c1bda9ded7f9fb05c27b0177fda8357b51f))
+
+
+### Bug Fixes
+
+* **create-pointer.sh:** adjust arrow image size and position for better visibility ([869c9b3](https://github.com/robinmordasiewicz/devops-toolkit/commit/869c9b3b37eb4339211a42ab5cf6a08f7943b6d2))
+* **puppeteer.js:** replace dynamic window size with fixed values in puppeteer launch options ([740fe38](https://github.com/robinmordasiewicz/devops-toolkit/commit/740fe38e1f7907fa0b8dd275197c62bd5df0616e))
+* **screenshots.json:** adjust geometry values for better screenshot positioning ([177bd8d](https://github.com/robinmordasiewicz/devops-toolkit/commit/177bd8d1a1f6a00a04fd991a1dc2e73e6b2d3ec9))
+* **screenshots.json:** adjust geometry values for better screenshot positioning ([e654b23](https://github.com/robinmordasiewicz/devops-toolkit/commit/e654b2309a2d033ea91c6a7f5d042c51a7c211d5))
+* **screenshots.json:** adjust geometry values for better screenshot positioning ([49a6159](https://github.com/robinmordasiewicz/devops-toolkit/commit/49a615967d6564462d617cbd708b4e603622922f))
+* **screenshots.json:** adjust geometry values for better screenshot positioning ([9b93339](https://github.com/robinmordasiewicz/devops-toolkit/commit/9b933397d575942783aa885be3cfe0893aa80cd3))
+* **screenshots.json:** replace dynamic repository owner with static username ([264ac48](https://github.com/robinmordasiewicz/devops-toolkit/commit/264ac4867257b465e474079c4adab6fd0938e541))
+* **screenshots.yml:** add condition to skip screenshot action if url is empty ([7661260](https://github.com/robinmordasiewicz/devops-toolkit/commit/766126006f2f81ef553816b45d87a7116e2ce2b4))
+* **screenshots.yml:** change rounded-corners color from transparent to black ([3594807](https://github.com/robinmordasiewicz/devops-toolkit/commit/3594807800949ebd717d43a4bc45dfec423e575a))
+* **screenshots.yml:** change xc:black to xc:none in rounded-corners command to remove black corners ([5bbf862](https://github.com/robinmordasiewicz/devops-toolkit/commit/5bbf8627fe2cd51be1e1e338d9235b127787cf5a))
+* **screenshots.yml:** change xc:none to xc:transparent for rounded-corners ([b25143c](https://github.com/robinmordasiewicz/devops-toolkit/commit/b25143c51cdaee5818b93a66411d1a9082147388))
+* **screenshots.yml:** remove temporary image files after use ([4230194](https://github.com/robinmordasiewicz/devops-toolkit/commit/4230194feae5828ff0b2b14376cfca3937bb7220))
+* **screenshots.yml:** update overlay-arrow images for better visual guidance ([1ee0a38](https://github.com/robinmordasiewicz/devops-toolkit/commit/1ee0a38eda2d6bf1022ccf4f491a9025091f75d7))
+
 ## [1.10.3](https://github.com/robinmordasiewicz/devops-toolkit/compare/v1.10.2...v1.10.3) (2023-11-27)
 
 
