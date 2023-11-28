@@ -94,7 +94,7 @@ internal_prefix     = "10.0.3.0/24"
 | azurerm | 3.82.0 |
 | http | 3.4.0 |
 | random | 3.5.1 |
-| tls | 4.0.4 |
+| tls | 4.0.5 |
 
 ## Inputs
 
