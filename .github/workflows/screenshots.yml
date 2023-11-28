@@ -2,16 +2,17 @@
 name: screenshots
 
 on: # yamllint disable-line rule:truthy
-  push:
-    paths:
-      - "screenshots.json"
-    branches-ignore:
-      - main
-      - dependabot/**
-      - release-please/**
+  pull_request:
+#  push:
+#    paths:
+#      - "screenshots.json"
+#    branches-ignore:
+#      - main
+#      - dependabot/**
+#      - release-please/**
 
 concurrency:
-  group: ${{ github.workflow }}-${{ github.ref }}
+  group: ${{ github.workflow }}
   cancel-in-progress: true
 
 permissions:
@@ -22,11 +23,19 @@ permissions:
 
 jobs:
   configure:
+    if: ${{ ! contains('
+      release-please
+      dependabot
+      ', github.head_ref)
+      }}
     runs-on: ubuntu-latest
     outputs:
       matrix: ${{ steps.set-matrix.outputs.matrix }}
     steps:
       - uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11
+        with:
+          ref: ${{ github.event.pull_request.head.ref }}
+          fetch-depth: 0
 
       - name: Set matrix data
         id: set-matrix
@@ -34,6 +43,11 @@ jobs:
 
   screenshots:
     name: screenshots
+    if: ${{ ! contains('
+      release-please
+      dependabot
+      ', github.head_ref)
+      }}
     needs: configure
     strategy:
       fail-fast: false
@@ -42,6 +56,9 @@ jobs:
 
     steps:
       - uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11
+        with:
+          ref: ${{ github.event.pull_request.head.ref }}
+          fetch-depth: 0
 
       - uses: browser-actions/setup-chrome@11cef13cde73820422f9263a707fb8029808e191
         if: ${{ matrix.url != '' }}
@@ -98,11 +115,13 @@ jobs:
           rm output.png
 
       - name: Push changes
+        env:
+          BRANCH: ${{github.event.pull_request.head.ref}}
         run: |
           git config user.name "$(git log -n 1 --pretty=format:%an)"
           git config user.email "$(git log -n 1 --pretty=format:%ae)"
           git add .
           git commit -m "docs(${{ matrix.filename }}): processing screenshot"
           git config pull.rebase false
-          git pull
+          git pull origin "$BRANCH"
           git push --force-with-lease
