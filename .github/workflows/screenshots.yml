@@ -72,13 +72,10 @@ jobs:
 
       - name: rounded-corners
         run: |
-          convert docs/img/${{ matrix.filename }} \( +clone -alpha extract \
-            \( -size 15x15 xc:none -draw 'fill white circle 15,15 15,0' -write mpr:arc +delete \) \
-            \( mpr:arc \) -gravity northwest -composite \
-            \( mpr:arc -flip \) -gravity southwest -composite \
-            \( mpr:arc -flop \) -gravity northeast -composite \
-            \( mpr:arc -rotate 180 \) -gravity southeast -composite \) \
-            -alpha off -compose CopyOpacity -composite output.png
+          size=$(identify -format "%[fx:w]x%[fx:h]" "docs/img/${{ matrix.filename }}")
+          width=$(echo $size | cut -d'x' -f1)
+          height=$(echo $size | cut -d'x' -f2)
+          convert -size $size xc:none -draw "roundrectangle 0,0,$width,$height,15,15" png:- | convert docs/img/${{ matrix.filename }} -matte - -compose DstIn -composite output.png
           mv output.png docs/img/${{ matrix.filename }}
 
       - name: border
