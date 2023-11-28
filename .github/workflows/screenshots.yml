@@ -92,13 +92,13 @@ jobs:
 
       - name: drop-shadow
         run: |
-          convert docs/img/${{ matrix.filename }} \( +clone -background black -shadow 20x25+0+18 \) \
+          convert docs/img/${{ matrix.filename }} \( +clone -background black -shadow 30x35+0+18 \) \
             +swap \
             -background none \
             -layers merge \
             +repage \
             output.png
-          convert output.png -bordercolor none -border 18 output2.png
+          convert output.png -bordercolor none -border 28 output2.png
           mv output2.png docs/img/${{ matrix.filename }}
           rm output.png
 
