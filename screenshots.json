@@ -23,6 +23,12 @@
       "filename": "github-new.png",
       "pointerangle": "225",
       "geometry": "+375+450"
+    },
+    {
+      "url": "",
+      "filename": "azure-cloud-shell.png",
+      "pointerangle": "45",
+      "geometry": "+1000+30"
     }
   ]
 }
