@@ -8,13 +8,6 @@ on: # yamllint disable-line rule:truthy
     paths:
       - ".github/workflows/screenshots.yml"
       - "screenshots.json"
-#  push:
-#    paths:
-#      - "screenshots.json"
-#    branches-ignore:
-#      - main
-#      - dependabot/**
-#      - release-please/**
 
 concurrency:
   group: ${{ github.workflow }}
@@ -56,6 +49,7 @@ jobs:
     needs: configure
     strategy:
       fail-fast: false
+      max-parallel: 1
       matrix: ${{ fromJson(needs.configure.outputs.matrix) }}
     runs-on: ubuntu-latest
 
@@ -128,5 +122,5 @@ jobs:
           git add .
           git commit -m "docs(${{ matrix.filename }}): processing screenshot"
           git config pull.rebase false
-          git pull origin "$BRANCH"
+          git pull
           git push --force-with-lease
