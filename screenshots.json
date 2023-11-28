@@ -2,11 +2,15 @@
   "include": [
     {
       "url": "https://github.com/robinmordasiewicz",
-      "filename": "github-profile.png"
+      "filename": "github-profile.png",
+      "pointerangle": "315",
+      "geometry": "+522+158"
     },
     {
       "url": "https://github.com/robinmordasiewicz/devops-toolkit",
-      "filename": "github-fork.png"
+      "filename": "github-fork.png",
+      "pointerangle": "45",
+      "geometry": "+1000+35"
     }
   ]
 }
