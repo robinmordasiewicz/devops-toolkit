@@ -154,8 +154,8 @@ nav:
   - "Platforms":
       - "Source Control":
           - Repositories.md
-          - github-profile.md
-          - github-fork-repo.md
+          - Profile.md
+          - Fork.md
       - "Cloud Provider":
           - azure-cloud-shell.md
           - azure-install-terraform.md
