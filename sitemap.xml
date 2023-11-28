@@ -6,6 +6,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://robinmordasiewicz.github.io/devops-toolkit/Azure-Cloud-Shell/</loc>
+         <lastmod>2023-11-28</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://robinmordasiewicz.github.io/devops-toolkit/Fork/</loc>
          <lastmod>2023-11-28</lastmod>
          <changefreq>daily</changefreq>
@@ -27,11 +32,6 @@
     </url>
     <url>
          <loc>https://robinmordasiewicz.github.io/devops-toolkit/azure-az-login/</loc>
-         <lastmod>2023-11-28</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://robinmordasiewicz.github.io/devops-toolkit/azure-cloud-shell/</loc>
          <lastmod>2023-11-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
