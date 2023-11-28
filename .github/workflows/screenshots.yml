@@ -104,4 +104,4 @@ jobs:
           git pull
           git add .
           git commit -m "docs(${{ matrix.filename }}): processing screenshot"
-          git push
+          git push -f
