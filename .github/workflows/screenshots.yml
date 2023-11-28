@@ -115,11 +115,13 @@ jobs:
           rm output.png
 
       - name: Push changes
+        env:
+          BRANCH: ${{github.event.pull_request.head.ref}}
         run: |
           git config user.name "$(git log -n 1 --pretty=format:%an)"
           git config user.email "$(git log -n 1 --pretty=format:%ae)"
           git add .
           git commit -m "docs(${{ matrix.filename }}): processing screenshot"
           git config pull.rebase false
-          git pull
+          git pull origin "$BRANCH"
           git push --force-with-lease
