@@ -16,8 +16,12 @@ comments: true
 ![Select Advanced](img/azure-cloud-shell-select-storage-advanced.png)
 
 - Select "CSE-SE-DevOps" as the "Subscription"
-- Select "cloud-shell-storage-eastus" as the "Resource group"
-- Select "Use Existing" for the "Storage account" and select "cs2100320030cd8c0fc" as the storage account.
-- Enter "foobazz" as the "File share".
+- Select "Canada Central" as the "Cloud Shell region"
+- Enter "<yourusername-cloudshell>" as the "Resource group"
+
+> [!WARNING]
+> Storage account name must be between 3 and 24 characters in length and use numbers and lower-case letters only.
+
+- Enter "<yourusername-fileshare>" as the "File share"
 
 ![Create Storage](img/azure-cloud-shell-select-storage-advanced-create-storage.png)

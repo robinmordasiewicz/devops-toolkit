@@ -23,6 +23,24 @@
       "filename": "github-new.png",
       "pointerangle": "225",
       "geometry": "+375+450"
+    },
+    {
+      "url": "",
+      "filename": "azure-cloud-shell.png",
+      "pointerangle": "45",
+      "geometry": "+1000+30"
+    },
+    {
+      "url": "",
+      "filename": "azure-cloud-shell-select-storage-advanced.png",
+      "pointerangle": "135",
+      "geometry": "+600+200"
+    },
+    {
+      "url": "",
+      "filename": "azure-cloud-shell-select-storage-advanced-create-storage.png",
+      "pointerangle": "135",
+      "geometry": "+300+100"
     }
   ]
 }
