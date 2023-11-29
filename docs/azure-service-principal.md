@@ -37,7 +37,7 @@ gh secret set AZURE_RESOURCE_GROUP_NAME -b "myusername-tfstate-RG"
 
 ```bash
 az account list --query "[?name=='CSE-SE-DevOps'].id" --output tsv
-az ad sp create-for-rbac --name "myapp" --role contributor --scopes /subscriptions/{subscription-id} --json-auth > creds.json
+az ad sp create-for-rbac --role Contributor --scopes /subscriptions/{subscription-id} --json-auth > creds.json
 ```
 
 - Create GitHub secrets.
@@ -48,9 +48,9 @@ gh secret set ARM_TENANT_ID -b "`jq -r .tenantId creds.json`"
 gh secret set ARM_CLIENT_ID -b "`jq -r .clientId creds.json`"
 gh secret set ARM_CLIENT_SECRET -b "`jq -r .clientSecret creds.json`"
 gh secret set AZURE_CREDENTIALS -b "`jq -c . creds.json`"
-gh variable set DEPLOYED -b "true"
 ```
 
+- Manually create a workflow variable using the Github UI, named `DEPLOYED`, with a value of `true`.
 - Manually execute the terraform workflow, and watch job progress and resoure creation in the Azure portal.
 - Modify cloud-init file and commmit, observe the auto-pull-request workflow, and then approve the pull request. Watch the job progress and resource creation in the Azure portal. Notice that the VM is re-created and initialized with the new cloud-init file.
 - Toggle the DEPLOYED variable to false and manually trigger the terraform workflow. Watch the job progress and resource deletion in the Azure portal.
