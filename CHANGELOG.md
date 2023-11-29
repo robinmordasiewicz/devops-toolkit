@@ -1,5 +1,34 @@
 # CHANGELOG
 
+## [1.13.0](https://github.com/robinmordasiewicz/devops-toolkit/compare/v1.12.0...v1.13.0) (2023-11-29)
+
+
+### Features
+
+* **.gitignore:** remove *.tfvars from gitignore to track terraform variable files ([b775a63](https://github.com/robinmordasiewicz/devops-toolkit/commit/b775a6378e0d1be9240ce4d87cec13e133694d48))
+* Add Terraform workflow and update related documentation ([402371d](https://github.com/robinmordasiewicz/devops-toolkit/commit/402371d4f4fbdeae0a24dddf5422208e95e96461))
+* **screenshots.yml:** add branch filter to pull_request event to limit workflow runs ([1b86556](https://github.com/robinmordasiewicz/devops-toolkit/commit/1b865568782d1f2623a3b13ace5c591105a58e95))
+* **screenshots.yml:** add paths filter to pull_request trigger for screenshots.json ([2a50f67](https://github.com/robinmordasiewicz/devops-toolkit/commit/2a50f67b7752539ac34db5cb0464c3e7fec793bb))
+* **screenshots.yml:** add self to paths to trigger workflow on changes ([adea5ec](https://github.com/robinmordasiewicz/devops-toolkit/commit/adea5ec447817c8b8cbd661fbf3f0bfea69aab84))
+* **screenshots.yml:** disable git rebase on pull to avoid potential conflicts ([80db09d](https://github.com/robinmordasiewicz/devops-toolkit/commit/80db09d80269e1f6f57f4b2a8d06cb372e3b98d2))
+* **terraform.yml:** add path parameter to download-artifact action in GitHub workflow ([878fe48](https://github.com/robinmordasiewicz/devops-toolkit/commit/878fe4869b5c17a8d33381dd5b5ecc099004b690))
+
+
+### Bug Fixes
+
+* **openai-pr-description.yml:** add github_token to workflow and remove openai_model and max_tokens ([7cd771c](https://github.com/robinmordasiewicz/devops-toolkit/commit/7cd771c9fc48af8c010c7ee6499b90be8f66f745))
+* **screenshots.json:** adjust geometry property for better screenshot positioning ([72d0ec8](https://github.com/robinmordasiewicz/devops-toolkit/commit/72d0ec84353f4aa25384783a5d0427a5cd35650d))
+* **screenshots.json:** adjust geometry value for better screenshot positioning ([c59bcd2](https://github.com/robinmordasiewicz/devops-toolkit/commit/c59bcd2137e797f0a5a030c7a858666a161ad349))
+* **screenshots.json:** adjust geometry value for better screenshot positioning ([857f080](https://github.com/robinmordasiewicz/devops-toolkit/commit/857f080e5fece38d6486e3033085cfbea3c2b823))
+* **screenshots.json:** adjust geometry value for better screenshot positioning ([6228ffb](https://github.com/robinmordasiewicz/devops-toolkit/commit/6228ffb5672286eb80a800fb798a90400ecea945))
+* **screenshots.json:** adjust geometry values for azure-cloud-shell.png ([bde05b2](https://github.com/robinmordasiewicz/devops-toolkit/commit/bde05b2e33b0464a2a4c46dd48c51efbbbf0af11))
+* **screenshots.json:** adjust geometry values for better screenshot positioning ([e9f0000](https://github.com/robinmordasiewicz/devops-toolkit/commit/e9f0000c3ad4eb1b748ab6c7d1bb1e3681eeaf2a))
+* **screenshots.yml:** change git push to git push --force-with-lease to prevent accidental overwrites ([8987568](https://github.com/robinmordasiewicz/devops-toolkit/commit/8987568f29e20dd8724274184dae6d4179f7dcf9))
+* **screenshots.yml:** pull from the correct branch during screenshot processing ([c3e6576](https://github.com/robinmordasiewicz/devops-toolkit/commit/c3e6576d66bc35942c6dd618bee172e78ee8adb9))
+* **screenshots.yml:** reduce border size in image conversion from 28 to 18 ([8b24fe2](https://github.com/robinmordasiewicz/devops-toolkit/commit/8b24fe236e8f0ae724360cbcdb9d642e57c5b22f))
+* **screenshots.yml:** remove commented out push paths and branches-ignore ([dd439c6](https://github.com/robinmordasiewicz/devops-toolkit/commit/dd439c6afd70814dabbbc66a29400dcccfe5c000))
+* **terraform.yml:** change path of tfplan from 'tfplan' to 'terraform/tfplan' ([a02425a](https://github.com/robinmordasiewicz/devops-toolkit/commit/a02425a5056b8ca2bee52e0b1e461f866fa6136d))
+
 ## [1.12.0](https://github.com/robinmordasiewicz/devops-toolkit/compare/v1.11.0...v1.12.0) (2023-11-28)
 
 
