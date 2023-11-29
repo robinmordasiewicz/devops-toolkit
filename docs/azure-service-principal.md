@@ -10,7 +10,7 @@ az account set -s CSE-SE-DevOps
 ```bash
 az group create -n myusername-tfstate-RG -l canadacentral
 az storage account create -n myusernamesaccount -g myusername-tfstate-RG -l canadacentral --sku Standard_LRS
-az storage container create -n myusernametfstate
+az storage container create -n myusernametfstate --account-name myusernamesaccount --auth-mode login
 ```
 
 ```bash
