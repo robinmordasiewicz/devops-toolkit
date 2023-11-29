@@ -16,7 +16,6 @@ creds.json
 *.spec
 *.tfstate
 *.tfstate.*
-*.tfvars
 *.tfvars.json
 *.tsbuildinfo
 *_override.tf
