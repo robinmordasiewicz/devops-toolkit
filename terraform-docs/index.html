@@ -17,64 +17,7 @@ classDef v fill:#eeedfc,stroke:#eeedfc,color:#5c4ee5
 classDef ms fill:none,stroke:#dce0e6,stroke-width:2px
 classDef vs fill:none,stroke:#dce0e6,stroke-width:4px,stroke-dasharray:10
 classDef ps fill:none,stroke:none
-classDef cs fill:#f7f8fa,stroke:#dce0e6,stroke-width:2px
-subgraph "n0"["Compute"]
-n1["azurerm_availability_set.&lt;br/&gt;fortinet_availability_set"]:::r
-n2["azurerm_linux_virtual_machine.&lt;br/&gt;fortigate_virtual_machine"]:::r
-end
-class n0 cs
-subgraph "n3"["Network"]
-n4["azurerm_network_interface.&lt;br/&gt;fortigate_dmz_network_interface"]:::r
-n5["azurerm_network_interface.&lt;br/&gt;fortigate_external_network_interface"]:::r
-n6["azurerm_network_interface_security_group_association.&lt;br/&gt;fortigate_association"]:::r
-n7["azurerm_network_security_group.&lt;br/&gt;nsg"]:::r
-n8["azurerm_network_security_group.&lt;br/&gt;private_nsg"]:::r
-n9["azurerm_network_security_group.&lt;br/&gt;vip_allow_https_tcp_nsg"]:::r
-na["azurerm_public_ip.&lt;br/&gt;fortigate_public_ip"]:::r
-nb["azurerm_public_ip.&lt;br/&gt;vip_public_ip"]:::r
-nc["azurerm_subnet.dmz_subnet"]:::r
-nd["azurerm_subnet.&lt;br/&gt;external_subnet"]:::r
-ne["azurerm_subnet.&lt;br/&gt;internal_subnet"]:::r
-nf["azurerm_subnet_network_security_group_association.&lt;br/&gt;dmz_subnet_association"]:::r
-ng["azurerm_subnet_network_security_group_association.&lt;br/&gt;external_subnet_association"]:::r
-nh["azurerm_subnet_network_security_group_association.&lt;br/&gt;internal_subnet_association"]:::r
-ni["azurerm_virtual_network.vnet"]:::r
-end
-class n3 cs
-subgraph "nj"["Base"]
-nk["azurerm_resource_group.&lt;br/&gt;azure_resource_group"]:::r
-end
-class nj cs
-nl["random_integer.random_number"]:::r
-nm["random_pet.admin_username"]:::r
-nn["tls_private_key.ssh_key"]:::r
-nk--&gt;n1
-n1--&gt;n2
-n4--&gt;n2
-n5--&gt;n2
-nm--&gt;n2
-nn--&gt;n2
-nc--&gt;n4
-nb--&gt;n5
-nd--&gt;n5
-n5--&gt;n6
-n9--&gt;n6
-nk--&gt;n7
-nk--&gt;n8
-nk--&gt;n9
-nk--&gt;na
-nk--&gt;nb
-ni--&gt;nc
-ni--&gt;nd
-ni--&gt;ne
-n8--&gt;nf
-nc--&gt;nf
-n8--&gt;ng
-nd--&gt;ng
-n8--&gt;nh
-ne--&gt;nh
-nk--&gt;ni
-nk--&gt;nm</code></pre> <!-- BEGIN_TF_DOCS --> <h2 id=example-terraformautotfvars>Example terraform.auto.tfvars</h2> <div class=highlight><pre><span></span><code><span class=na>location</span><span class=w>            </span><span class=o>=</span><span class=w> </span><span class=s2>&quot;canadacentral&quot;</span>
+classDef cs fill:#f7f8fa,stroke:#dce0e6,stroke-width:2px</code></pre> <!-- BEGIN_TF_DOCS --> <h2 id=example-terraformautotfvars>Example terraform.auto.tfvars</h2> <div class=highlight><pre><span></span><code><span class=na>location</span><span class=w>            </span><span class=o>=</span><span class=w> </span><span class=s2>&quot;canadacentral&quot;</span>
 <span class=na>resource_group</span><span class=w>      </span><span class=o>=</span><span class=w> </span><span class=s2>&quot;my-resource-group&quot;</span>
 <span class=na>owner_email</span><span class=w>         </span><span class=o>=</span><span class=w> </span><span class=s2>&quot;root@example.com&quot;</span>
 <span class=na>vnet_address_prefix</span><span class=w> </span><span class=o>=</span><span class=w> </span><span class=s2>&quot;10.0.0.0/16&quot;</span>
