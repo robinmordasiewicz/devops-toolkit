@@ -17,6 +17,14 @@ az storage account create -n myusernamesaccount -g myusername-tfstate-RG -l cana
 az storage container create -n myusernametfstate --account-name myusernamesaccount --auth-mode login
 ```
 
+- Authenticate with a GitHub.com account.
+
+```bash
+git config --global user.name "John Doe"
+git config --global user.email johndoe@example.com
+gh auth login
+```
+
 - Create GitHub secrets.
 
 ```bash
@@ -42,3 +50,7 @@ gh secret set ARM_CLIENT_SECRET -b "`jq -r .clientSecret creds.json`"
 gh secret set AZURE_CREDENTIALS -b "`jq -c . creds.json`"
 gh variable set DEPLOYED -b "true"
 ```
+
+- Manually execute the terraform workflow, and watch job progress and resoure creation in the Azure portal.
+- Modify cloud-init file and commmit, observe the auto-pull-request workflow, and then approve the pull request. Watch the job progress and resource creation in the Azure portal. Notice that the VM is re-created and initialized with the new cloud-init file.
+- Toggle the DEPLOYED variable to false and manually trigger the terraform workflow. Watch the job progress and resource deletion in the Azure portal.
