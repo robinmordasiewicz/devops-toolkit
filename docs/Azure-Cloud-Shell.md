@@ -8,7 +8,7 @@ comments: true
 
 ![Screenshot showing how to start Azure Cloud Shell in the Azure portal.](img/azure-cloud-shell.png)
 
-!!! info "The first time you start Cloud Shell you're prompted to create an Azure Storage account for the Azure file share."
+!!! info "The first time starting Cloud Shell requires completing the initialization wizard."
 
 - Click `Show advanced settings`
 
