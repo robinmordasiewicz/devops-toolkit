@@ -1,0 +1,79 @@
+---
+name: create-article
+
+on: # yamllint disable-line rule:truthy
+  pull_request:
+    branches:
+      - main
+    paths:
+      - "docs/concepts/articles/**.json"
+
+concurrency:
+  group: ${{ github.workflow }}
+  cancel-in-progress: true
+
+permissions:
+  id-token: write
+  contents: write
+  pull-requests: write
+  actions: write
+
+jobs:
+  init:
+    name: init
+    runs-on: ubuntu-latest
+    outputs:
+      action: ${{ steps.init.outputs.action }}
+    steps:
+      - id: init
+        name: "init"
+        shell: bash
+        run: |
+          if [[ -n "${{ secrets.OPENAI_API_KEY }}" ]]
+          then
+              echo 'action=true' >> "${GITHUB_OUTPUT}"
+          else
+            echo 'action=false' >> "${GITHUB_OUTPUT}"
+          fi
+  list-manifests:
+    runs-on: ubuntu-latest
+    outputs:
+      matrix: ${{ steps.set-matrix.outputs.matrix }}
+    steps:
+      - uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11
+        with:
+          ref: ${{ github.event.pull_request.head.ref }}
+          fetch-depth: 0
+
+      - name: Set matrix
+        id: set-matrix
+        run: echo "name=matrix::$(ls docs/concepts/articles/*.json | jq -R -s -c 'split("\n")[:-1]')" >> $GITHUB_OUTPUT
+
+  create-articles:
+    needs: [init, list-manifests]
+    if: needs.init.outputs.action == 'true' && github.head_ref != 'release-please--branches--main'
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        manifest: ${{ fromJson(needs.list-manifests.outputs.matrix) }}
+    steps:
+      - uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11
+
+      - name: create-articles
+        run: |
+          filename=$(basename -s .json "${{ matrix.manifest }}")
+          curl -s -H "Content-Type: application/json" -H "Authorization: Bearer ${{ secrets.OPENAI_API_KEY }} -d @${{ fromJson(needs.list-manifests.outputs.matrix) }}  https://api.openai.com/v1/chat/completions -o output.json
+          jq -r '.choices[0].message.content' output.json > docs/concepts/articles/${filename}.md
+          rm output.json
+
+      - name: Push changes
+        env:
+          BRANCH: ${{github.event.pull_request.head.ref}}
+        run: |
+          git config user.name "$(git log -n 1 --pretty=format:%an)"
+          git config user.email "$(git log -n 1 --pretty=format:%ae)"
+          git add .
+          git commit -m "docs(${{ fromJson(needs.list-manifests.outputs.matrix) }}): creating article"
+          git config pull.rebase false
+          git pull
+          git push --force-with-lease
