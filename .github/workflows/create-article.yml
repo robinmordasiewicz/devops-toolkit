@@ -63,7 +63,7 @@ jobs:
         run: |
           filename=$(basename -s .json "${{ matrix.manifest }}")
           curl -s -H "Content-Type: application/json" -H "Authorization: Bearer ${{ secrets.OPENAI_API_KEY }} -d @${{ matrix.manifest }} https://api.openai.com/v1/chat/completions -o output.json
-          jq -r '.choices[0].message.content' output.json > docs/concepts/articles/${filename}.md
+          jq -r '.choices[0].message.content' output.json > docs/concepts/articles/`basename -s .json ${{ matrix.manifest }}`.md
           rm output.json
 
       - name: Push changes
