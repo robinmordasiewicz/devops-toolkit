@@ -62,7 +62,7 @@ jobs:
           ref: ${{ github.event.pull_request.head.ref }}
           fetch-depth: 0
 
-      - name: create-articles
+      - name: create-article ${{ matrix.manifest }}
         run: |
           # checkov:skip=CKV_GHA_3: "Suspicious use of curl with secrets"
           curl -s -H "Content-Type: application/json" -H "Authorization: Bearer ${{ secrets.OPENAI_API_KEY }}" -d @${{ matrix.manifest }} https://api.openai.com/v1/chat/completions | jq -r '.choices[0].message.content' > docs/concepts/articles/`basename -s .json ${{ matrix.manifest }}`.md
@@ -72,6 +72,7 @@ jobs:
         run: |
           sed -i '0,/^```$/d' docs/concepts/articles/`basename -s .json ${{ matrix.manifest }}`.md
           awk '{last=$0} END {print last}' docs/concepts/articles/`basename -s .json ${{ matrix.manifest }}`.md | sed -i '/^```$/d' docs/concepts/articles/`basename -s .json ${{ matrix.manifest }}`.md
+          cat docs/concepts/articles/`basename -s .json ${{ matrix.manifest }}`.md
 
       - name: Install Python
         uses: actions/setup-python@65d7f2d534ac1bc67fcd62888c5f4f3d2cb2b236
