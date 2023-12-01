@@ -1,5 +1,24 @@
 # CHANGELOG
 
+## [1.15.0](https://github.com/robinmordasiewicz/devops-toolkit/compare/v1.14.0...v1.15.0) (2023-12-01)
+
+
+### Features
+
+* **create-article.yml:** add command to display content of generated markdown file ([e54a6f3](https://github.com/robinmordasiewicz/devops-toolkit/commit/e54a6f31cfb51bce80e7abd873502c7bca590522))
+* **create-article.yml:** add process-article step to remove code blocks from articles ([91e6e96](https://github.com/robinmordasiewicz/devops-toolkit/commit/91e6e96eb8b97c6f71bb4ba0b89858e195559780))
+* **create-article.yml:** add self to paths to trigger workflow on changes ([b278491](https://github.com/robinmordasiewicz/devops-toolkit/commit/b278491459cb36444879af41e0898774c835e5e8))
+
+
+### Bug Fixes
+
+* **create-article.yml:** add condition to remove markdown code block syntax only if present ([e6ce303](https://github.com/robinmordasiewicz/devops-toolkit/commit/e6ce3030a97ca22b2165055d72a55ff56048f11f))
+* **create-article.yml:** modify egrep command to use -q flag for silent mode ([d9c57cf](https://github.com/robinmordasiewicz/devops-toolkit/commit/d9c57cf20ca81076d2cab32bc9101468a95babfb))
+* **create-article.yml:** remove unnecessary backticks in awk command ([6162acc](https://github.com/robinmordasiewicz/devops-toolkit/commit/6162acc5618b9adf29ae2fd343f98303868da8ad))
+* **create-article.yml:** simplify code block detection in markdown files ([7af8119](https://github.com/robinmordasiewicz/devops-toolkit/commit/7af811976d1dbafe2ebdb5359a44a1dedbc1fd54))
+* **mkdocs-build-test.yml:** swap order of github.workflow and github.ref in concurrency group ([113965b](https://github.com/robinmordasiewicz/devops-toolkit/commit/113965b1ec474f94cfc5910af8ad9fcfa1ef819b))
+* **source-control-management.json:** update seed value from 999 to 1000 ([d59005b](https://github.com/robinmordasiewicz/devops-toolkit/commit/d59005bd697dfc2f4d53c9399c5d52bf35c89537))
+
 ## [1.14.0](https://github.com/robinmordasiewicz/devops-toolkit/compare/v1.13.0...v1.14.0) (2023-12-01)
 
 
