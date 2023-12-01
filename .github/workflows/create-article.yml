@@ -2,15 +2,14 @@
 name: create-article
 
 on: # yamllint disable-line rule:truthy
-  push:
+  pull_request:
     branches:
-      - "*"
-      - "!main"
-      - "!gh-pages"
-      - "!release-please--branches--*"
+      - main
+    paths:
+      - "docs/concepts/articles/*.json"
 
 concurrency:
-  group: ${{ github.ref }}-${{ github.workflow }}
+  group: ${{ github.workflow }}
   cancel-in-progress: true
 
 permissions:
