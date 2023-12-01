@@ -1,3 +1,4 @@
+```markdown
 ---
 title: Source Code Management
 author: robinmordasiewicz
@@ -18,4 +19,3 @@ GitHub is the leading platform for SCM, but it's not the only player in the fiel
 
 Git, the underlying version control system used by these SCM platforms, is integral to Continuous Integration and Continuous Delivery (CICD) in a DevOps lifecycle. It allows developers to collaborate on code, automates testing, and delivers updates faster and more reliably.
 ```
-
