@@ -133,7 +133,12 @@ markdown_extensions:
 plugins:
   - glightbox
   - social
-  - blog
+  - blog:
+      blog_dir: concepts
+      post_dir: "{blog}/articles"
+      post_readtime: false
+      archive: false
+      authors: false
   - search:
       separator: '[\s\u200b\-_,:!=\[\]()"`/]+|\.(?!\d)|&[lg]t;|(?!\b)(?=[A-Z][a-z])'
   - minify:
@@ -142,14 +147,7 @@ plugins:
 nav:
   - "Home": "index.md"
   - "Concepts":
-      - devops.md
-      - digitial-journey.md
-      - challenge.md
-      - source-of-truth.md
-      - gitops.md
-      - gitflow.md
-      - secure-cloud-blueprint.md
-      - github-copilot-install.md
+      - concepts/index.md
   - "Accounts": "accounts.md"
   - "Platforms":
       - "Source Control":
