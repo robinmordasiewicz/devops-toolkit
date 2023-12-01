@@ -47,7 +47,7 @@ jobs:
 
       - name: Set matrix
         id: set-matrix
-        run: echo "name=matrix::$(ls docs/concepts/articles/*.json | jq -R -s -c 'split("\n")[:-1]')" >> $GITHUB_OUTPUT
+        run: echo "matrix=$(ls docs/concepts/articles/*.json | jq -R -s -c 'split("\n")[:-1]')" >> $GITHUB_OUTPUT
 
   create-articles:
     needs: [init, list-manifests]
