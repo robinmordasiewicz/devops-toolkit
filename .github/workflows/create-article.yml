@@ -68,6 +68,11 @@ jobs:
           curl -s -H "Content-Type: application/json" -H "Authorization: Bearer ${{ secrets.OPENAI_API_KEY }}" -d @${{ matrix.manifest }} https://api.openai.com/v1/chat/completions | jq -r '.choices[0].message.content' > docs/concepts/articles/`basename -s .json ${{ matrix.manifest }}`.md
           cat docs/concepts/articles/`basename -s .json ${{ matrix.manifest }}`.md
 
+      - name: process-article ${{ matrix.manifest }}
+        run: |
+          sed -i '0,/^```$/d' docs/concepts/articles/`basename -s .json ${{ matrix.manifest }}`.md
+          awk '{last=$0} END {print last}' docs/concepts/articles/`basename -s .json ${{ matrix.manifest }}`.md | sed -i '/^```$/d' docs/concepts/articles/`basename -s .json ${{ matrix.manifest }}`.md
+
       - name: Install Python
         uses: actions/setup-python@65d7f2d534ac1bc67fcd62888c5f4f3d2cb2b236
         with:
