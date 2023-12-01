@@ -5,16 +5,17 @@ date: 2023-11-30
 comments: true
 ---
 
-Source Code Management (SCM) has cemented its place as a pivotal component in the Software Development Life Cycle (SDLC), Quality Assurance (QA), Staging, and promotion to production environments. SCM has earned its legitimacy because it aids in tracking and controlling changes in the software, thus making it an integral part of the Foundation of DevOps.
+Source Code Management (SCM) plays a vital role in Software Development Life Cycle (SDLC), Quality Assurance (QA), staging, and promotion to production environments. It provides a systematic approach to tracking and managing changes to code, thereby avoiding confusion and ensuring that every change can be audited. In the world of DevOps, SCM is the foundation on which everything else is built.
 
 <!-- more -->
 
-Among the various SCM platforms available, GitHub indisputably stands out as the most widely used one. However, there are other contenders that are just as competent. Here are the top four SCM platforms:
+GitHub is the leading platform for SCM, but it's not the only player in the field. Other widely used SCMs include:
 
-The crucial symbiosis of Git and a Continuous
-- [:octocat: GitHub](https://github.com/)
-- [:bitbucket: Bitbucket](https://bitbucket.org/)
-- [:gitlab: GitLab](https://about.gitlab.com/)
-- [:aws: AWS CodeCommit](https://aws.amazon.com/codecommit/)
+- [:fa-github: GitHub](https://github.com)
+- [:fa-gitlab: GitLab](https://about.gitlab.com)
+- [:fa-bitbucket: Bitbucket](https://bitbucket.org)
+- [:fa-perforce: Perforce](https://www.perforce.com)
 
-The backbone of a CI/CD DevOps pipeline is the git version control system. It aids in maintaining a clean and traceable history of code changes, allowing teams to work concurrently without conflict, and supporting processes within the pipeline such as automated builds and deployments. This closes the devops loop, making git an irreplaceable tool in modern development workflows.
+Git, the underlying version control system used by these SCM platforms, is integral to Continuous Integration and Continuous Delivery (CICD) in a DevOps lifecycle. It allows developers to collaborate on code, automates testing, and delivers updates faster and more reliably.
+```
+
