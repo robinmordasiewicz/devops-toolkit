@@ -9,10 +9,11 @@ on: # yamllint disable-line rule:truthy
       - dependabot*
       - release-please*
     paths:
-      - docs/**
+      - docs/**.md
       - mkdocs.yml
       - README.md
       - requirements.txt
+      - .github/workflows/mkdocs-build-test.yml
 
 concurrency:
   group: ${{ github.ref }}-${{ github.workflow }}
