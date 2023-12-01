@@ -5,16 +5,15 @@ date: 2023-11-30
 comments: true
 ---
 
-Source code management (SCM) plays a significant role in the Software Development Life Cycle (SDLC), particularly in Quality Assurance (QA), staging, and promotion to production environments. It allows developers to keep track of changes, work simultaneously on code without overwriting it, and revert back to previous versions if there is an issue. This collaborative dimension of SCM is paramount to the success of DevOps, as it enables seamless cooperation among team members, and fosters an accelerated and error-resistant development process.
+Source Code Management (SCM) plays a significant role in the Software Development Life Cycle (SDLC), particularly in Quality Assurance (QA), staging, and promotion to production environments. It allows developers to concurrently work on code, provides a history of changes, and it mitigates the risk of software failure, by enabling quick reversion to previous versions in case of failure. SCM has become the bedrock of DevOps as it facilitates in maintaining consistency and traceability in the product development process.
 
 <!-- more -->
 
-GitHub has emerged as the leading platform when it comes to SCM. Nevertheless, there are several other popular SCM platforms that warrant attention. Here are the top four:
+GitHub is the most widely used SCM platforms today. However, several other reliable platforms are worth exploring. Here are the top four widely accepted SCM platforms:
 
-* :fa-github: [GitHub](https://github.com)
-* :fa-gitlab: [GitLab](https://gitlab.com)
-* :fa-bitbucket: [Bitbucket](https://bitbucket.org)
-* :fa-git: [Git](https://git-scm.com)
+- [GitHub](https://github.com/): :octocat:
+- [Bitbucket](https://bitbucket.org/): :logo-bitbucket:
+- [GitLab](https://about.gitlab.com/): :gitlab-logo:
+- [Subversion](https://subversion.apache.org/): :subversionlogo:
 
-Git has become the backbone of most Continuous Integration and Continuous Deployment (CI/CD) pipelines in a DevOps environment. This is due to its robust and flexible version control capabilities, which enable efficient tracking and handling of source code changes, quick identification and rectification of conflicts, and ultimately, streamlined and effective software development and deployment.
-
+Git, a distributed SCM tool, forms the backbone of a Continous Integration/Continous Development (CI/CD) DevOps pipeline. Git enables tracking changes in source code during software development and ensures better coordination among developers, enhancing the speed and efficiency of the product development process.
