@@ -67,7 +67,8 @@ jobs:
         run: |
           # checkov:skip=CKV_GHA_3: "Suspicious use of curl with secrets"
           curl -s -H "Content-Type: application/json" -H "Authorization: Bearer ${{ secrets.OPENAI_API_KEY }}" -d @${{ matrix.manifest }} https://api.openai.com/v1/chat/completions | jq -r '.choices[0].message.content' > docs/concepts/articles/`basename -s .json ${{ matrix.manifest }}`.md
-          if egrep -q '^```' -m 1 docs/concepts/articles/`basename -s .json ${{ matrix.manifest }}`.md && awk '{last=$0} END {print last}' docs/concepts/articles/`basename -s .json ${{ matrix.manifest }}`.md | egrep '^```$'` ; then
+          #if egrep -q '^```' -m 1 docs/concepts/articles/`basename -s .json ${{ matrix.manifest }}`.md && awk '{last=$0} END {print last}' docs/concepts/articles/`basename -s .json ${{ matrix.manifest }}`.md | egrep '^```$'` ; then
+          if egrep -q '^```' -m 1 docs/concepts/articles/`basename -s .json ${{ matrix.manifest }}`.md ; then
             sed -i '0,/^``/ { /^``/d }' docs/concepts/articles/`basename -s .json ${{ matrix.manifest }}`.md
             sed -i '$d' docs/concepts/articles/`basename -s .json ${{ matrix.manifest }}`.md
           fi
