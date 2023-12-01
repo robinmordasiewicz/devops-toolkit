@@ -3,6 +3,11 @@ name: mkdocs-build-test
 
 on: # yamllint disable-line rule:truthy
   push:
+    branches-ignore:
+      - gh-pages
+      - main
+      - dependabot*
+      - release-please*
     paths:
       - docs/**
       - mkdocs.yml
@@ -10,7 +15,7 @@ on: # yamllint disable-line rule:truthy
       - requirements.txt
 
 concurrency:
-  group: ${{ github.workflow }}
+  group: ${{ github.workflow }}-${{ github.ref }}
   cancel-in-progress: true
 
 permissions:
