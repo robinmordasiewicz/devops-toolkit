@@ -1,5 +1,20 @@
 # CHANGELOG
 
+## [1.14.0](https://github.com/robinmordasiewicz/devops-toolkit/compare/v1.13.0...v1.14.0) (2023-12-01)
+
+
+### Features
+
+* **.github/workflows:** add create-article workflow to automate article creation from JSON files ([380a428](https://github.com/robinmordasiewicz/devops-toolkit/commit/380a428d6aaa7af14e67e7f659c0e6327348d5fe))
+* **create-article.yml:** add ref and fetch-depth to checkout action for complete history ([9058bea](https://github.com/robinmordasiewicz/devops-toolkit/commit/9058bea511b0026036be15618f30eaaa07610167))
+* **workflows:** modify triggers and add Python installation and docs build steps in create-article.yml ([3218163](https://github.com/robinmordasiewicz/devops-toolkit/commit/3218163949dbd34ff7b2f458a0563c3af4777f0b))
+
+
+### Bug Fixes
+
+* **create-article.yml:** correct matrix variable assignment in Set matrix step ([73921b5](https://github.com/robinmordasiewicz/devops-toolkit/commit/73921b5a9e574de75675d0af893870db2ccac17f))
+* **create-article.yml:** correct the curl command to use matrix.manifest instead of needs.list-manifests.outputs.matrix ([f5fd788](https://github.com/robinmordasiewicz/devops-toolkit/commit/f5fd78875ebaca8874d8fbb6da9a23e64b5ed013))
+
 ## [1.13.0](https://github.com/robinmordasiewicz/devops-toolkit/compare/v1.12.0...v1.13.0) (2023-11-29)
 
 
