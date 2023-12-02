@@ -1,0 +1,14 @@
+{
+  "model": "gpt-4",
+  "seed": 1000,
+  "messages": [
+    {
+      "role": "system",
+      "content": "you are an favicon favourites icon generation AI."
+    },
+    {
+      "role": "user",
+      "content": "Create a favicon with the letter \"MC\" in it."
+    }
+  ]
+}
