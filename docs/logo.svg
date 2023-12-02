@@ -1,17 +1,20 @@
-<svg width="400" height="70" viewBox="0 0 400 70" style="border: 1px solid #FFFFFF;" xmlns="http://www.w3.org/2000/svg" overflow="visible">
-  <style>
-    @import url('https://fonts.googleapis.com/css?family=Roboto');
-    text {
-      font-family: 'Roboto', sans-serif;
-      font-weight: bold;
-      fill: #FFFFFF;
-    }
-    .highlighted {
-      fill: #FF0000;
-    }
-  </style>
+<svg width="400" height="70" viewBox="0 0 400 70" style="border: 1px solid orange; background-color: transparent;" overflow="visible">
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css?family=Roboto');
+      .main-text {
+        text-anchor: middle;
+        font-family: 'Roboto', Arial, sans-serif;
+        font-weight: bold;
+        fill: white;
+      }
+      .highlight-text {
+        fill: #FF0000;
+      }
+    </style>
+  </defs>
 
-  <text x="50%" y="50%" text-anchor="middle" alignment-baseline="middle">
-    Multi <tspan class="highlighted">C</tspan>loud SE
+  <text x="200" y="35" class="main-text">
+    Multi <tspan class="highlight-text">C</tspan>loud SE
   </text>
 </svg>
