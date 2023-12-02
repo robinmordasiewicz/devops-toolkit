@@ -1,17 +1,9 @@
-<svg width="400" height="70" viewBox="0 0 400 70" style="border: 1px solid #FFFFFF;" xmlns="http://www.w3.org/2000/svg" overflow="visible">
-  <style>
-    @import url('https://fonts.googleapis.com/css?family=Roboto');
-    text {
-      font-family: 'Roboto', sans-serif;
-      font-weight: bold;
-      fill: #FFFFFF;
-    }
-    .highlighted {
-      fill: #FF0000;
-    }
-  </style>
-
-  <text x="50%" y="50%" text-anchor="middle" alignment-baseline="middle">
-    Multi <tspan class="highlighted">C</tspan>loud SE
-  </text>
+<svg version="1.1" width="400px" height="70px" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" overflow="visible" style="shape-rendering:geometricPrecision;text-rendering:geometricPrecision;fill:none;stroke:#FFA500;stroke-width:2;stroke-miterlimit:10;">
+    <defs>
+        <style>@import url('https://fonts.googleapis.com/css?family=Roboto');</style> 
+    </defs>
+    <rect x="1" y="1" width="398" height="68" stroke="#FFA500" fill="none" stroke-width="2"/>
+    <text x="50%" y="50%" overflow="visible" font-family="Roboto" font-size="50" text-anchor="middle" dominant-baseline="central" fill="#FFFFFF">Multi </text>
+    <text x="50%" y="50%" overflow="visible" font-family="Roboto" font-size="50" text-anchor="middle" dominant-baseline="central" fill="#FF0000">C</text>
+    <text x="55%" y="50%" overflow="visible" font-family="Roboto" font-size="50" text-anchor="middle" dominant-baseline="central" fill="#FFFFFF">loud SE</text>
 </svg>
