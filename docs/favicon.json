@@ -8,7 +8,7 @@
     },
     {
       "role": "user",
-      "content": "Create a 16px 16px favicon with the number 8 in orange font over a black square. Rotate the 8 character 90 degrees on its side horizontally. The 8 should be centered"
+      "content": "Create a 16px 16px favicon with the number 8 in orange font over a black square. Rotate the 8 character 90 degrees on its side horizontally. The 8 should be centered. Be sure that the output svg file is set to exactly 16px by 16px."
     }
   ]
 }
