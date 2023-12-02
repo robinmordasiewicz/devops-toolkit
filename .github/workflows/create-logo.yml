@@ -57,7 +57,9 @@ jobs:
           curl -s -H "Content-Type: application/json" -H "Authorization: Bearer ${{ secrets.OPENAI_API_KEY }}" -d @${{ matrix.file }} https://api.openai.com/v1/chat/completions | jq -r '.choices[0].message.content' > docs/`basename -s .json ${{ matrix.file }}`.svg
 
       - name: "install deps"
-        run: "sudo apt install -y libfreetype6-dev gsfonts libmagickwand-dev imagemagick"
+        run: |
+          sudo apt install -y libfreetype6-dev gsfonts libmagickwand-dev imagemagick
+          sudo npm install -g svg-to-ico
 
       - name: Install Google Fonts
         run: |
@@ -69,7 +71,7 @@ jobs:
       - name: convert-svg-ico
         if: matrix.file == 'docs/favicon.json'
         run: |
-          convert docs/`basename -s .json ${{ matrix.file }}`.svg  -define icon:auto-resize -colors 256 docs/favicon.ico
+          svg-to-ico docs/`basename -s .json ${{ matrix.file }}`.svg docs/favicon.ico
 
       - name: Install Python
         uses: actions/setup-python@65d7f2d534ac1bc67fcd62888c5f4f3d2cb2b236
