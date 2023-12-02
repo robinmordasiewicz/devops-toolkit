@@ -8,7 +8,7 @@
     },
     {
       "role": "user",
-      "content": "Create a favicon with the number 8 in orange. Rotate the 8 character 90 degrees on its side horizontally on a black background."
+      "content": "Create a 16pxx16px favicon with the number 8 in orange. Rotate the 8 character 90 degrees on its side horizontally on a black background."
     }
   ]
 }
