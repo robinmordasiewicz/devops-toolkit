@@ -66,12 +66,6 @@ jobs:
           mv fira_sans /usr/share/fonts/
           fc-cache -fv
 
-      #- name: convert-svg-ico
-      #  if: matrix.file == 'docs/favicon.json'
-      #  run: |
-      #    sudo npm install -g svg-to-ico
-      #    svg-to-ico docs/`basename -s .json ${{ matrix.file }}`.svg docs/favicon.ico
-
       - name: Install Python
         uses: actions/setup-python@65d7f2d534ac1bc67fcd62888c5f4f3d2cb2b236
         with:
