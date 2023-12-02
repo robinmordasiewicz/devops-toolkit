@@ -1,0 +1,56 @@
+---
+name: create-favicon
+
+on: # yamllint disable-line rule:truthy
+  pull_request:
+    branches:
+      - main
+      - .github/workflows/create-favicon.yml
+
+concurrency:
+  group: ${{ github.workflow }}
+  cancel-in-progress: true
+
+permissions:
+  id-token: write
+  contents: write
+  pull-requests: write
+  actions: write
+
+jobs:
+  create-favicons:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11
+        with:
+          ref: ${{ github.event.pull_request.head.ref }}
+          fetch-depth: 0
+
+      - name: get-profile-pic
+        run: |
+          wget https://github.com/${{ github.repository_owner }}.png -O ${{ github.repository_owner }}.png
+
+      - name: convert-profile-pic
+        run: |
+          convert robinmordasiewicz.png -alpha off -resize 256x256 -define icon:auto-resize="256,128,96,64,48,32,16" docs/favicon.ico
+          rm ${{ github.repository_owner }}.png
+
+      - name: Build Docs
+        env:
+          MKDOCS_GIT_COMMITTERS_APIKEY: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          pip install --upgrade pip
+          pip install -r requirements.txt
+          mkdocs build
+
+      - name: Push changes
+        env:
+          BRANCH: ${{github.event.pull_request.head.ref}}
+        run: |
+          git config user.name "$(git log -n 1 --pretty=format:%an)"
+          git config user.email "$(git log -n 1 --pretty=format:%ae)"
+          git add docs/favicon.ico
+          git commit -m "docs(favicon.ico): creating new favicon"
+          git config pull.rebase false
+          git pull
+          git push --force-with-lease
