@@ -1,21 +1,11 @@
 <svg width="400" height="70" viewBox="0 0 400 70" style="border: 1px solid #FFFFFF;" xmlns="http://www.w3.org/2000/svg" overflow="visible">
   <style>
     @import url('https://fonts.googleapis.com/css?family=Roboto');
-    text {
-      font-family: 'Roboto', sans-serif;
-      font-weight: bold;
-      fill: #FFFFFF;
-    }
-    .highlighted {
-      fill: #FF0000;
-    }
+    text {fill: #ffffff; font-weight: bold; font-size: 50px; font-family: 'Roboto'; text-anchor: middle;}
+    .highlight {fill: #ff0000;}
   </style>
 
-  <text x="50%" y="50%" text-anchor="middle" alignment-baseline="middle">
-    Multi Cloud 
-    <tspan class="highlighted">
-      S
-    </tspan>
-    E
+  <text x="200" y="50">
+    Multi <tspan class="highlight">C</tspan>loud SE
   </text>
 </svg>
