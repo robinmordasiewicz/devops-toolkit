@@ -1,16 +1,18 @@
-<svg version="1.1" width="400px" height="70px" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" viewBox="0 0 400 70" overflow="visible">
-<defs>
-<style type="text/css">
-@import url('https://fonts.googleapis.com/css?family=Roboto');
-.text {
-  font-family: 'Roboto', sans-serif;
-  font-weight: bold;
-  fontSize: 70px;
-}
-</style>
-</defs>
-<rect x="0" y="0" width="400" height="70" style="fill:none;stroke:orange;stroke-width:2;"></rect>
-<text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" fill="white" class="text">Multi </text>
-<text x="68%" y="50%" dominant-baseline="middle" text-anchor="middle" fill="brightcolor" class="text">Cloud</text>
-<text x="86%" y="50%" dominant-baseline="middle" text-anchor="middle" fill="white" class="text"> SE</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 70" overflow="visible" style="background-color: transparent;">
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css?family=Roboto');
+      .dark { fill: white; } .light { fill: black; }
+      .highlight { fill: #FF0000; }
+    </style>
+  </defs>
+
+  <rect width="100%" height="100%" fill="none" stroke="orange" stroke-width="2"/>
+  <text x="50%" y="50%" text-anchor="middle" dominant-baseline="central" font-family="'Roboto', sans-serif" font-size="46" class='dark'>
+    <tspan>M</tspan>
+    <tspan class='highlight'>u</tspan>
+    <tspan>lti Clo</tspan>
+    <tspan class='highlight'>u</tspan>
+    <tspan>d SE</tspan>
+  </text>
 </svg>
