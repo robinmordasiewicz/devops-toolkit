@@ -11,6 +11,6 @@
 </defs>
 <rect x="0" y="0" width="400" height="70" style="fill:none;stroke:orange;stroke-width:2;"></rect>
 <text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" fill="white" class="text">Multi </text>
-<text x="68%" y="50%" dominant-baseline="middle" text-anchor="middle" fill="brightcolor" class="text">C</text>
-<text x="75%" y="50%" dominant-baseline="middle" text-anchor="middle" fill="white" class="text">loud SE</text>
+<text x="68%" y="50%" dominant-baseline="middle" text-anchor="middle" fill="brightcolor" class="text">Cloud</text>
+<text x="86%" y="50%" dominant-baseline="middle" text-anchor="middle" fill="white" class="text"> SE</text>
 </svg>
