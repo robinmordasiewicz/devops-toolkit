@@ -12,10 +12,6 @@
   </style>
 
   <text x="50%" y="50%" text-anchor="middle" alignment-baseline="middle">
-    Multi Cloud 
-    <tspan class="highlighted">
-      S
-    </tspan>
-    E
+    Multi <tspan class="highlighted">C</tspan>loud SE
   </text>
 </svg>
