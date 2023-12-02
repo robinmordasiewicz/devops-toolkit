@@ -28,29 +28,35 @@ jobs:
 
       - name: get-profile-pic
         run: |
-          wget https://github.com/${{ github.repository_owner }}.png -O ${{ github.repository_owner }}.png
+          wget https://github.com/${{ github.repository_owner }}.png -O docs/img/profile-picture.png
 
       - name: convert-profile-pic
         run: |
-          convert robinmordasiewicz.png -alpha off -resize 256x256 -define icon:auto-resize="256,128,96,64,48,32,16" docs/favicon.ico
-          rm ${{ github.repository_owner }}.png
+          if [[ `git status --porcelain docs/img/profile-picture.png` ]]; then
+            convert docs/img/profile-picture.png -alpha off -resize 256x256 -define icon:auto-resize="256,128,96,64,48,32,16" docs/favicon.ico
+          fi
 
       - name: Build Docs
         env:
           MKDOCS_GIT_COMMITTERS_APIKEY: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          pip install --upgrade pip
-          pip install -r requirements.txt
-          mkdocs build
+          if [[ `git status --porcelain docs/img/profile-picture.png` ]]; then
+            pip install --upgrade pip
+            pip install -r requirements.txt
+            mkdocs build
+          fi
 
       - name: Push changes
         env:
           BRANCH: ${{github.event.pull_request.head.ref}}
         run: |
-          git config user.name "$(git log -n 1 --pretty=format:%an)"
-          git config user.email "$(git log -n 1 --pretty=format:%ae)"
-          git add docs/favicon.ico
-          git commit -m "docs(favicon.ico): creating new favicon"
-          git config pull.rebase false
-          git pull
-          git push --force-with-lease
+          if [[ `git status --porcelain docs/img/profile-picture.png` ]]; then
+            git config user.name "$(git log -n 1 --pretty=format:%an)"
+            git config user.email "$(git log -n 1 --pretty=format:%ae)"
+            git add docs/img/profile-picture.png
+            git add docs/favicon.ico
+            git commit -m "docs(favicon.ico): creating new favicon"
+            git config pull.rebase false
+            git pull
+            git push --force-with-lease
+          fi
