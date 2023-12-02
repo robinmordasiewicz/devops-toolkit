@@ -109,7 +109,6 @@ markdown_extensions:
           format: !!python/name:pymdownx.superfences.fence_code_format
   - pymdownx.inlinehilite
   - pymdownx.snippets
-  - pymdownx.superfences
   - pymdownx.tilde
   - pymdownx.keys
   - pymdownx.magiclink:
@@ -119,12 +118,8 @@ markdown_extensions:
       repo: devops-toolkit
   - pymdownx.mark
   - pymdownx.smartsymbols
-  - pymdownx.superfences:
-      preserve_tabs: true
-      custom_fences:
-        - name: mermaid
-          class: mermaid
-          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.tasklist:
+      custom_checkbox: true
   - pymdownx.tabbed:
       alternate_style: true
       combine_header_slug: true
