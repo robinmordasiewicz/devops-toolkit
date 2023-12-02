@@ -56,6 +56,16 @@ jobs:
           # checkov:skip=CKV_GHA_3: "Suspicious use of curl with secrets"
           curl -s -H "Content-Type: application/json" -H "Authorization: Bearer ${{ secrets.OPENAI_API_KEY }}" -d @${{ matrix.file }} https://api.openai.com/v1/chat/completions | jq -r '.choices[0].message.content' > docs/`basename -s .json ${{ matrix.file }}`.svg
 
+      - name: "install deps"
+        run: "sudo apt install -y libfreetype6-dev gsfonts libmagickwand-dev imagemagick"
+
+      - name: Install Google Fonts
+        run: |
+          wget -O Fira_Sans.zip https://fonts.google.com/download?family=Fira%20Sans
+          unzip -d fira_sans/ Fira_Sans.zip
+          mv fira_sans /usr/share/fonts/
+          fc-cache -fv
+
       - name: convert-svg-ico
         if: matrix.file == 'docs/favicon.json'
         run: |
