@@ -8,7 +8,7 @@
     },
     {
       "role": "user",
-      "content": "Make a 400 wide 70 height image. The logo text is \"Multi Cloud SE\". Make one of the letters in the logo a bright color. Make the font bold and extra large. Draw a thin orange border around the outer edge of the image. Use this font string \"https://fonts.googleapis.com/css?family=Roboto\""
+      "content": "Make a 400 wide 70 height image. The logo text is \"Multi Cloud SE\". Make one of the letters in the logo a bright color. Make the font bold and extra large. Draw a thin orange border around all four outer edges of the image. Use this font string \"https://fonts.googleapis.com/css?family=Roboto\""
     }
   ]
 }
