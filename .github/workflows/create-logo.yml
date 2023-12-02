@@ -1,0 +1,82 @@
+---
+name: create-logo
+
+on: # yamllint disable-line rule:truthy
+  pull_request:
+    branches:
+      - main
+    paths:
+      - "docs/logo.json"
+      - "docs/icon.json"
+      - .github/workflows/create-logo.yml
+
+concurrency:
+  group: ${{ github.workflow }}
+  cancel-in-progress: true
+
+permissions:
+  id-token: write
+  contents: write
+  pull-requests: write
+  actions: write
+
+jobs:
+  init:
+    name: init
+    runs-on: ubuntu-latest
+    outputs:
+      action: ${{ steps.init.outputs.action }}
+    steps:
+      - id: init
+        name: "init"
+        shell: bash
+        run: |
+          if [[ -n "${{ secrets.OPENAI_API_KEY }}" ]]
+          then
+              echo 'action=true' >> "${GITHUB_OUTPUT}"
+          else
+            echo 'action=false' >> "${GITHUB_OUTPUT}"
+          fi
+
+  create-logos:
+    needs: [init]
+    if: needs.init.outputs.action == 'true' && github.head_ref != 'release-please--branches--main'
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        file: [docs/logo.json, docs/icon.json]
+    steps:
+      - uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11
+        with:
+          ref: ${{ github.event.pull_request.head.ref }}
+          fetch-depth: 0
+
+      - name: create svg ${{ matrix.file }}
+        run: |
+          # checkov:skip=CKV_GHA_3: "Suspicious use of curl with secrets"
+          curl -s -H "Content-Type: application/json" -H "Authorization: Bearer ${{ secrets.OPENAI_API_KEY }}" -d @${{ matrix.file }} https://api.openai.com/v1/chat/completions | jq -r '.choices[0].message.content' > docs/`basename -s .json ${{ matrix.file }}`.svg
+
+      - name: Install Python
+        uses: actions/setup-python@65d7f2d534ac1bc67fcd62888c5f4f3d2cb2b236
+        with:
+          python-version: 3.x
+
+      - name: Build Docs
+        env:
+          MKDOCS_GIT_COMMITTERS_APIKEY: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          pip install --upgrade pip
+          pip install -r requirements.txt
+          mkdocs build
+
+      - name: Push changes
+        env:
+          BRANCH: ${{github.event.pull_request.head.ref}}
+        run: |
+          git config user.name "$(git log -n 1 --pretty=format:%an)"
+          git config user.email "$(git log -n 1 --pretty=format:%ae)"
+          git add .
+          git commit -m "docs(${{ matrix.file }}): creating"
+          git config pull.rebase false
+          git pull
+          git push --force-with-lease
