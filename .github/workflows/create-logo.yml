@@ -7,7 +7,7 @@ on: # yamllint disable-line rule:truthy
       - main
     paths:
       - "docs/logo.json"
-      - "docs/icon.json"
+      - "docs/favicon.json"
       - .github/workflows/create-logo.yml
 
 concurrency:
