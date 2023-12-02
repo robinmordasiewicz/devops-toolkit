@@ -1,9 +1,16 @@
-<svg version="1.1" width="400px" height="70px" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" overflow="visible" style="shape-rendering:geometricPrecision;text-rendering:geometricPrecision;fill:none;stroke:#FFA500;stroke-width:2;stroke-miterlimit:10;">
-    <defs>
-        <style>@import url('https://fonts.googleapis.com/css?family=Roboto');</style> 
-    </defs>
-    <rect x="1" y="1" width="398" height="68" stroke="#FFA500" fill="none" stroke-width="2"/>
-    <text x="50%" y="50%" overflow="visible" font-family="Roboto" font-size="50" text-anchor="middle" dominant-baseline="central" fill="#FFFFFF">Multi </text>
-    <text x="50%" y="50%" overflow="visible" font-family="Roboto" font-size="50" text-anchor="middle" dominant-baseline="central" fill="#FF0000">C</text>
-    <text x="55%" y="50%" overflow="visible" font-family="Roboto" font-size="50" text-anchor="middle" dominant-baseline="central" fill="#FFFFFF">loud SE</text>
+<svg version="1.1" width="400px" height="70px" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" viewBox="0 0 400 70" overflow="visible">
+<defs>
+<style type="text/css">
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+.text {
+  font-family: 'Roboto', sans-serif;
+  font-weight: bold;
+  fontSize: 70px;
+}
+</style>
+</defs>
+<rect x="0" y="0" width="400" height="70" style="fill:none;stroke:orange;stroke-width:2;"></rect>
+<text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" fill="white" class="text">Multi </text>
+<text x="68%" y="50%" dominant-baseline="middle" text-anchor="middle" fill="brightcolor" class="text">C</text>
+<text x="75%" y="50%" dominant-baseline="middle" text-anchor="middle" fill="white" class="text">loud SE</text>
 </svg>
