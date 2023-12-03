@@ -1,0 +1,12 @@
+---
+- name: Enable AzureRM Backend
+  hosts: localhost
+  gather_facts: false
+
+  tasks:
+    - name: Enable AzureRM Backend
+      become: false
+      lineinfile:
+        path: terraform/terraform.tf
+        insertafter: '^terraform\s*{'
+        line: "  backend{}"
