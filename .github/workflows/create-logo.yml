@@ -59,13 +59,6 @@ jobs:
         run: |
           sudo apt install -y libfreetype6-dev gsfonts libmagickwand-dev imagemagick
 
-      - name: Install Google Fonts
-        run: |
-          wget -O Fira_Sans.zip https://fonts.google.com/download?family=Fira%20Sans
-          unzip -d fira_sans/ Fira_Sans.zip
-          mv fira_sans /usr/share/fonts/
-          fc-cache -fv
-
       - name: Install Python
         uses: actions/setup-python@65d7f2d534ac1bc67fcd62888c5f4f3d2cb2b236
         with:
