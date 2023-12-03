@@ -17,8 +17,8 @@ extra:
     json: [.s2]
   generator: false
   social:
-    - icon: custom/fc-lib-fortinet
-      link: https://robinmordasiewicz.github.io/devops-toolkit/
+    - icon: custom/github-octocat-logo-svg-vector
+      link: https://robinmordasiewicz.github.io/robinmordasiewicz/
     - icon: custom/fc-lib-facebook
       link: https://www.facebook.com/robin.mordasiewicz/
     - icon: custom/fc-lib-twitter
