@@ -1,7 +1,25 @@
-<svg width="400" height="70" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 400 70">
+<svg width="400" height="70" xmlns="http://www.w3.org/2000/svg" overflow="visible">
   <style>
     @import url('https://fonts.googleapis.com/css?family=Roboto');
+    :root {
+      --text-color: black;
+      --border-color: black;
+      --background-color: white;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --text-color: white;
+        --border-color: white;
+        --background-color: #1a1a1a;
+      }
+    }
+    text {
+      font-family: 'Roboto', sans-serif;
+      font-weight: bold;
+      font-size: 36px;
+      fill: var(--text-color);
+    }
   </style>
-  <rect x="0" y="0" width="400" height="70" fill="none" stroke="orange" stroke-width="1" />
-  <text x="50%" y="50%" alignment-baseline="middle" text-anchor="middle" font-family="Roboto" font-size="40" font-weight="bold" fill="black" stroke="none" overflow="visible">Multi Cloud SE</text>
+  <rect x="0" y="0" width="400" height="70" fill="none" stroke="orange" stroke-width="1"/>
+  <text x="50%" y="50%" alignment-baseline="middle" text-anchor="middle">Multi Cloud SE</text>
 </svg>
