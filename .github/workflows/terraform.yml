@@ -56,6 +56,9 @@ jobs:
         uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11
 
       - name: enable-azurerm-backend
+        env:
+          ANSIBLE_LOCALHOST_WARNING: false
+          ANSIBLE_INVENTORY_UNPARSED_WARNING: false
         run: |
           ansible-playbook enable-azurerm-backend.yml
 
