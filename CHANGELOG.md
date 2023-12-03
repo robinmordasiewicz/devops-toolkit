@@ -1,5 +1,30 @@
 # CHANGELOG
 
+## [1.16.0](https://github.com/robinmordasiewicz/devops-toolkit/compare/v1.15.0...v1.16.0) (2023-12-03)
+
+
+### Features
+
+* add create-favicon workflow and refactor create-logo workflow ([624e8bd](https://github.com/robinmordasiewicz/devops-toolkit/commit/624e8bd7a7638e7325e6dfb39f7b64247a569714))
+* **create-logo.yml:** add dependencies and Google Fonts installation steps ([0928a4f](https://github.com/robinmordasiewicz/devops-toolkit/commit/0928a4f0a8ff176b31cd147ca639cf4e7c0b38d3))
+* **create-logo.yml:** add GitHub workflow to generate logos dynamically ([eaece6a](https://github.com/robinmordasiewicz/devops-toolkit/commit/eaece6aeaa5851067073f4ffc3dca2b3763710e5))
+* enable azurerm backend ([5f5a316](https://github.com/robinmordasiewicz/devops-toolkit/commit/5f5a3168dd2032ecc06c53c6a4e3571f3fa72708))
+* enable azurerm backend ([eb9b454](https://github.com/robinmordasiewicz/devops-toolkit/commit/eb9b454a1a8f70bf006dd36ff0940ee3b8a274e8))
+* **favicon.json:** update AI role description and user content for favicon generation ([50bae60](https://github.com/robinmordasiewicz/devops-toolkit/commit/50bae60bb212ef19d6997e1af560a53098f55186))
+* **workflows/create-logo.yml:** replace icon.json with favicon.json in matrix file ([7cc2128](https://github.com/robinmordasiewicz/devops-toolkit/commit/7cc2128ee07008a5ab2f985b6b2c84b72534d514))
+
+
+### Bug Fixes
+
+* **create-logo.yml:** remove unused svg-to-ico conversion step ([ebcdd5e](https://github.com/robinmordasiewicz/devops-toolkit/commit/ebcdd5ee37c8a7f61bfa0a703a674b98779607d8))
+* **create-logo.yml:** replace imagemagick convert command with svg-to-ico npm package for favicon conversion ([d50b003](https://github.com/robinmordasiewicz/devops-toolkit/commit/d50b003aad4fcb6f00b8c31234c5a3f43c6965ce))
+* **favicon.json:** correct typo in favicon size specification ([d21f46e](https://github.com/robinmordasiewicz/devops-toolkit/commit/d21f46e90fd194f6f865ccd30933f9a4500c7d10))
+* **favicon.json:** simplify system message and update user content ([95c57fa](https://github.com/robinmordasiewicz/devops-toolkit/commit/95c57fa1ae5835d1e27e06f0c20db040c3fefcda))
+* **favicon.json:** update favicon content from "MC" to "8" horizontally ([024b85d](https://github.com/robinmordasiewicz/devops-toolkit/commit/024b85d6c524a0adb6ba17e01271fa159cbbfeea))
+* **logo.json:** clarify border instruction in logo design content ([4a5e2fc](https://github.com/robinmordasiewicz/devops-toolkit/commit/4a5e2fceb11cdf0ad419515c720b1836460d09c2))
+* **logo.json:** remove requirement for bright color letter in logo text ([fcf1b80](https://github.com/robinmordasiewicz/devops-toolkit/commit/fcf1b80a9320a2291dbb52fd8ec61bed1c3109fd))
+* **logo.json:** update model from 'gpt-4' to 'gpt-3.5-turbo-1106' ([444f03f](https://github.com/robinmordasiewicz/devops-toolkit/commit/444f03f9cc8ab194ddf961e4664b8c7cba347e52))
+
 ## [1.15.0](https://github.com/robinmordasiewicz/devops-toolkit/compare/v1.14.0...v1.15.0) (2023-12-01)
 
 
