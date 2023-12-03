@@ -55,6 +55,10 @@ jobs:
       - name: Github repository checkout
         uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11
 
+      - name: enable-azurerm-backend
+        run: |
+          ansible-playbook enable-azurerm-backend.yml
+
       - name: Microsoft Azure Authentication
         uses: azure/login@4c88f01b0e3a5600e08a37889921afd060f75cf0
         with:
@@ -150,6 +154,10 @@ jobs:
       - name: Github repository checkout
         uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11
 
+      - name: enable-azurerm-backend
+        run: |
+          ansible-playbook enable-azurerm-backend.yml
+
       - name: Microsoft Azure Authentication
         uses: azure/login@4c88f01b0e3a5600e08a37889921afd060f75cf0
         with:
@@ -196,6 +204,10 @@ jobs:
     steps:
       - name: Github repository checkout
         uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11
+
+      - name: enable-azurerm-backend
+        run: |
+          ansible-playbook enable-azurerm-backend.yml
 
       - name: Microsoft Azure Authentication
         uses: azure/login@4c88f01b0e3a5600e08a37889921afd060f75cf0
