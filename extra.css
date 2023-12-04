@@ -1,3 +1,8 @@
+.md-typeset .admonition,
+.md-typeset details {
+  border-width: 0;
+  border-left-width: 4px;
+}
 .md-grid {
   margin-left: 0;
   max-width: 75rem;
