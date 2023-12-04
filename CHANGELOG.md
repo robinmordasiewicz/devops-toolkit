@@ -1,5 +1,12 @@
 # CHANGELOG
 
+## [1.16.1](https://github.com/robinmordasiewicz/devops-toolkit/compare/v1.16.0...v1.16.1) (2023-12-04)
+
+
+### Bug Fixes
+
+* **mkdocs.yml:** update social link and icon for GitHub ([00b5fb4](https://github.com/robinmordasiewicz/devops-toolkit/commit/00b5fb4eb2f46620808a8670b122272546cee10f))
+
 ## [1.16.0](https://github.com/robinmordasiewicz/devops-toolkit/compare/v1.15.0...v1.16.0) (2023-12-03)
 
 
