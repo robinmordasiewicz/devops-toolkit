@@ -1,5 +1,17 @@
 # CHANGELOG
 
+## [1.17.0](https://github.com/robinmordasiewicz/devops-toolkit/compare/v1.16.2...v1.17.0) (2023-12-04)
+
+
+### Features
+
+* **docs:** add custom favicon and update social icon in mkdocs.yml ([92af7b2](https://github.com/robinmordasiewicz/devops-toolkit/commit/92af7b2ffbcc6ab08bc19724d8bdd27e2e2c5359))
+
+
+### Bug Fixes
+
+* **mkdocs.yml:** remove personal website link from social icons ([1ecb950](https://github.com/robinmordasiewicz/devops-toolkit/commit/1ecb9505a5bb8c9156d45eea5c330dda0f45da01))
+
 ## [1.16.2](https://github.com/robinmordasiewicz/devops-toolkit/compare/v1.16.1...v1.16.2) (2023-12-04)
 
 
