@@ -1,5 +1,12 @@
 # CHANGELOG
 
+## [1.16.2](https://github.com/robinmordasiewicz/devops-toolkit/compare/v1.16.1...v1.16.2) (2023-12-04)
+
+
+### Bug Fixes
+
+* **mkdocs.yml:** update GitHub icon reference from 'github-octocat-logo-svg-vector' to 'github-mark' ([0e75872](https://github.com/robinmordasiewicz/devops-toolkit/commit/0e75872e53c902dbbe4ae619d646f18d984f5858))
+
 ## [1.16.1](https://github.com/robinmordasiewicz/devops-toolkit/compare/v1.16.0...v1.16.1) (2023-12-04)
 
 
