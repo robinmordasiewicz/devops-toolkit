@@ -1,5 +1,12 @@
 # CHANGELOG
 
+## [1.17.1](https://github.com/robinmordasiewicz/devops-toolkit/compare/v1.17.0...v1.17.1) (2023-12-04)
+
+
+### Bug Fixes
+
+* **README.md:** correct the link of FortiDevSec SAST scanner badge ([ec3e20d](https://github.com/robinmordasiewicz/devops-toolkit/commit/ec3e20d19b92022118e69922f933b673c57301d9))
+
 ## [1.17.0](https://github.com/robinmordasiewicz/devops-toolkit/compare/v1.16.2...v1.17.0) (2023-12-04)
 
 
