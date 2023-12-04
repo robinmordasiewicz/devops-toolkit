@@ -1,5 +1,16 @@
 # CHANGELOG
 
+## [1.17.2](https://github.com/robinmordasiewicz/devops-toolkit/compare/v1.17.1...v1.17.2) (2023-12-04)
+
+
+### Bug Fixes
+
+* **screenshots.json:** adjust geometry property for better screenshot positioning ([9e64559](https://github.com/robinmordasiewicz/devops-toolkit/commit/9e645590f899782e9eef158fa075f5a3b3a5fc17))
+* **screenshots.json:** adjust geometry value for better screenshot positioning ([5850ac6](https://github.com/robinmordasiewicz/devops-toolkit/commit/5850ac60730bccaf35fa0ea460c1fed05544114c))
+* **screenshots.json:** adjust geometry values for better screenshot positioning ([d5e5410](https://github.com/robinmordasiewicz/devops-toolkit/commit/d5e5410774c8fc6ac657beaa7efacaf1b5572c32))
+* **screenshots.json:** adjust geometry values for better screenshot positioning ([6b1f0ce](https://github.com/robinmordasiewicz/devops-toolkit/commit/6b1f0ce5eb5c3a147b94e31b201d4063041a8a53))
+* **screenshots.json:** adjust pointerangle and geometry values for better screenshot positioning ([a8f250c](https://github.com/robinmordasiewicz/devops-toolkit/commit/a8f250c9563c0335c3f9cdf6e7f7014ee9933623))
+
 ## [1.17.1](https://github.com/robinmordasiewicz/devops-toolkit/compare/v1.17.0...v1.17.1) (2023-12-04)
 
 
