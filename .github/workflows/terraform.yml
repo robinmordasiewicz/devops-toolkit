@@ -63,7 +63,7 @@ jobs:
           ansible-playbook enable-azurerm-backend.yml
 
       - name: Microsoft Azure Authentication
-        uses: azure/login@4c88f01b0e3a5600e08a37889921afd060f75cf0
+        uses: azure/login@de95379fe4dadc2defb305917eaa7e5dde727294
         with:
           creds: ${{ secrets.AZURE_CREDENTIALS }}
 
@@ -162,7 +162,7 @@ jobs:
           ansible-playbook enable-azurerm-backend.yml
 
       - name: Microsoft Azure Authentication
-        uses: azure/login@4c88f01b0e3a5600e08a37889921afd060f75cf0
+        uses: azure/login@de95379fe4dadc2defb305917eaa7e5dde727294
         with:
           creds: ${{ secrets.AZURE_CREDENTIALS }}
 
@@ -213,7 +213,7 @@ jobs:
           ansible-playbook enable-azurerm-backend.yml
 
       - name: Microsoft Azure Authentication
-        uses: azure/login@4c88f01b0e3a5600e08a37889921afd060f75cf0
+        uses: azure/login@de95379fe4dadc2defb305917eaa7e5dde727294
         with:
           creds: ${{ secrets.AZURE_CREDENTIALS }}
 
