@@ -17,7 +17,7 @@ extra:
     json: [.s2]
   generator: false
   social:
-    - icon: custom/github-mark
+    - icon: custom/favicon
       link: https://robinmordasiewicz.github.io/robinmordasiewicz/
     - icon: custom/fc-lib-facebook
       link: https://www.facebook.com/robin.mordasiewicz/
