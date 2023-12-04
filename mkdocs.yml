@@ -7,7 +7,7 @@ site_author: Robin Mordasiewicz
 
 repo_name: "robinmordasiewicz/devops-toolkit"
 repo_url: https://github.com/robinmordasiewicz/devops-toolkit/
-# edit_uri: edit/main/docs/
+edit_uri: edit/main/docs/
 
 # yamllint disable-line rule:line-length
 copyright: "Try to be nice."
@@ -44,11 +44,9 @@ theme:
     repo: fontawesome/brands/github
   features:
     - announce.dismiss
-    - content.action.edit
     - content.action.view
     - content.code.annotate
     - content.code.copy
-    # - content.code.select
     # - content.tabs.link
     - content.tooltips
     - header.autohide
