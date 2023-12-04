@@ -26,4 +26,5 @@ hash -r
 git config --global user.name "John Doe"
 git config --global user.email johndoe@example.com
 gh auth login
+export GH_TOKEN=$(gh config get -h github.com oauth_token)
 ```
