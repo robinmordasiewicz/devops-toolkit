@@ -1,5 +1,22 @@
 # CHANGELOG
 
+## [1.18.0](https://github.com/robinmordasiewicz/devops-toolkit/compare/v1.17.2...v1.18.0) (2023-12-05)
+
+
+### Features
+
+* add screenshots ([38df5b9](https://github.com/robinmordasiewicz/devops-toolkit/commit/38df5b9512f1fc3ed8a2382c5079a6b287dfec0c))
+* add screenshots ([4bd4879](https://github.com/robinmordasiewicz/devops-toolkit/commit/4bd487951ec1a7de51a9c2d2704481b70048047b))
+* add screenshots ([9e9648f](https://github.com/robinmordasiewicz/devops-toolkit/commit/9e9648f735d559ef4ee440461c4b68257e023f85))
+* add screenshots ([b691bb0](https://github.com/robinmordasiewicz/devops-toolkit/commit/b691bb06eda334ae8f6614948925b2eda8bbe942))
+* add screenshots to README ([bff9d31](https://github.com/robinmordasiewicz/devops-toolkit/commit/bff9d313de3d3372e1641cabac979e67f360cc50))
+* new screenshot for azure cloud shell ([f79bc44](https://github.com/robinmordasiewicz/devops-toolkit/commit/f79bc44b54970a9e039808b9e90e6d18c71ae81f))
+
+
+### Bug Fixes
+
+* **tree.sh:** fix tree.sh ([6637e9d](https://github.com/robinmordasiewicz/devops-toolkit/commit/6637e9d713b5a873715a89d4beee09195665f084))
+
 ## [1.17.2](https://github.com/robinmordasiewicz/devops-toolkit/compare/v1.17.1...v1.17.2) (2023-12-04)
 
 
