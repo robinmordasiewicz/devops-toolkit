@@ -63,7 +63,7 @@ jobs:
       - uses: browser-actions/setup-chrome@52f10de5479c69bcbbab2eab094c9d373148005e
         if: ${{ matrix.url != '' }}
 
-      - uses: actions/setup-node@8f152de45cc393bb48ce5d89d36b731f54556e65
+      - uses: actions/setup-node@b39b52d1213e96004bfcb1c61a8a6fa8ab84f3e8
         if: ${{ matrix.url != '' }}
 
       - name: Install dependencies
