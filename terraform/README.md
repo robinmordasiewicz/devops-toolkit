@@ -33,7 +33,7 @@ internal_prefix     = "10.0.3.0/24"
 
 | Name | Version |
 |------|---------|
-| terraform | 1.6.5 |
+| terraform | 1.7.0 |
 | azurerm | 3.88.0 |
 | http | 3.4.1 |
 | random | 3.6.0 |
