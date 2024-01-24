@@ -1,0 +1,3 @@
+{
+  "Glob": ["**/.git/**", "**/megalinter-reports/**"]
+}
