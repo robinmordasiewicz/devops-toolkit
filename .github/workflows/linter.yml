@@ -40,6 +40,10 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
           fetch-depth: 0 # If you use VALIDATE_ALL_CODEBASE = true, you can remove this line to improve performances
 
+      - name: set .git folder as safe
+        run: |
+          git config --global --add safe.directory /github/workspace/.git
+
       # MegaLinter
       - name: MegaLinter
         id: ml
