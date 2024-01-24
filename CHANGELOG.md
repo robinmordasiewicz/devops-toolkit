@@ -1,5 +1,12 @@
 # CHANGELOG
 
+## [1.18.1](https://github.com/robinmordasiewicz/devops-toolkit/compare/v1.18.0...v1.18.1) (2024-01-23)
+
+
+### Bug Fixes
+
+* updating terraform ([82c596f](https://github.com/robinmordasiewicz/devops-toolkit/commit/82c596fb6b9bf176d530922601dd47c21c391f00))
+
 ## [1.18.0](https://github.com/robinmordasiewicz/devops-toolkit/compare/v1.17.2...v1.18.0) (2023-12-05)
 
 
