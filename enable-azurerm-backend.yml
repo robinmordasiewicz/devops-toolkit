@@ -9,4 +9,4 @@
       lineinfile:
         path: terraform/terraform.tf
         insertafter: '^terraform\s*{'
-        line: "  backend{}"
+        line: '  backend "azurerm" {}'
