@@ -33,7 +33,7 @@ internal_prefix     = "10.0.3.0/24"
 
 | Name | Version |
 |------|---------|
-| terraform | 1.7.0 |
+| terraform | 1.7.1 |
 | azurerm | 3.89.0 |
 | http | 3.4.1 |
 | random | 3.6.0 |
@@ -51,7 +51,7 @@ internal_prefix     = "10.0.3.0/24"
 | internal\_prefix | Internal Subnet Prefix. | `string` | n/a | yes |
 | location | Azure region for resource group. | `string` | n/a | yes |
 | owner\_email | Email address for use with Azure Owner tag. | `string` | n/a | yes |
-| resource\_group | Unique name of the Azure resource group. | `string` | n/a | yes |
+| resource\_group | Azure resource group. | `string` | n/a | yes |
 | vnet\_address\_prefix | Virtual Network Address prefix. | `string` | n/a | yes |
 ## Outputs
 
