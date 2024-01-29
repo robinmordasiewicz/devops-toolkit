@@ -1,5 +1,19 @@
 # CHANGELOG
 
+## [1.18.2](https://github.com/robinmordasiewicz/devops-toolkit/compare/v1.18.1...v1.18.2) (2024-01-29)
+
+
+### Bug Fixes
+
+* make release please work ([a6b7d0b](https://github.com/robinmordasiewicz/devops-toolkit/commit/a6b7d0b003083a2a020b12a754167393377e2549))
+* make terraform-docs work ([b8cc8be](https://github.com/robinmordasiewicz/devops-toolkit/commit/b8cc8be499291ac9e952c3cb26afea122e5efd49))
+* removing devskim ([9f7778f](https://github.com/robinmordasiewicz/devops-toolkit/commit/9f7778ffe23b4a6018a1b73f3529dbfc58227356))
+* removing devskim ([1fc0d5f](https://github.com/robinmordasiewicz/devops-toolkit/commit/1fc0d5ff6fb8a8cc1570012f73749f1c14ddf877))
+* updating devskim ([f20960e](https://github.com/robinmordasiewicz/devops-toolkit/commit/f20960ea0f30c88f2d18180c05b3f169a823a479))
+* updating terraform ([a2fe4b6](https://github.com/robinmordasiewicz/devops-toolkit/commit/a2fe4b66a2e1c80af972d29ad4387ef99b268f82))
+* updating terraform ([a4046e5](https://github.com/robinmordasiewicz/devops-toolkit/commit/a4046e5e54e9b05f54bdcbe16f9b032072e5077e))
+* updating terraform ([7fb2c6d](https://github.com/robinmordasiewicz/devops-toolkit/commit/7fb2c6d1b34a17485c48b70efd1e8ac56df98ba9))
+
 ## [1.18.1](https://github.com/robinmordasiewicz/devops-toolkit/compare/v1.18.0...v1.18.1) (2024-01-23)
 
 
