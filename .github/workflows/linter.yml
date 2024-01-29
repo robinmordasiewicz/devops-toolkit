@@ -40,10 +40,10 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
           fetch-depth: 0 # If you use VALIDATE_ALL_CODEBASE = true, you can remove this line to improve performances
 
-      - name: set .git folder as safe
+      - name: Set ownership
         run: |
-          git config --global --add safe.directory /github/workspace/.git
-          git config --global --add safe.directory /github/workspace
+          # this is to fix GIT not liking owner of the checkout dir
+          chown -R $(id -u):$(id -g) $PWD
 
       # MegaLinter
       - name: MegaLinter
