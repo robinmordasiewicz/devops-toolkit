@@ -9,7 +9,7 @@ variable "location" {
 }
 
 variable "resource_group" {
-  description = "Unique name of the Azure resource group."
+  description = "Azure resource group."
   type        = string
 }
 
