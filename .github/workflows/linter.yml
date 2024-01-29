@@ -43,6 +43,7 @@ jobs:
       - name: set .git folder as safe
         run: |
           git config --global --add safe.directory /github/workspace/.git
+          git config --global --add safe.directory /github/workspace
 
       # MegaLinter
       - name: MegaLinter
