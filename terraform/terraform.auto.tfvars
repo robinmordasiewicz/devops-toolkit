@@ -1,5 +1,5 @@
 location            = "canadacentral"
-resource_group      = "my-resource-group"
+resource_group      = "vmarin-code-resource-group"
 owner_email         = "root@example.com"
 vnet_address_prefix = "10.0.0.0/16"
 external_name       = "external"
