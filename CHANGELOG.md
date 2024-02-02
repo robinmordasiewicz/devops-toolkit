@@ -1,5 +1,12 @@
 # CHANGELOG
 
+## [1.18.3](https://github.com/robinmordasiewicz/devops-toolkit/compare/v1.18.2...v1.18.3) (2024-02-02)
+
+
+### Bug Fixes
+
+* trigger fortidevsec ([5fd90ab](https://github.com/robinmordasiewicz/devops-toolkit/commit/5fd90ab3c33a0a87d3f5450708c360bf4a636a48))
+
 ## [1.18.2](https://github.com/robinmordasiewicz/devops-toolkit/compare/v1.18.1...v1.18.2) (2024-01-29)
 
 
