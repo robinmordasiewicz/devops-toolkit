@@ -23,7 +23,7 @@ jobs:
         name: "init"
         shell: bash
         run: |
-          if [[ -n "${{ secrets.FORTIDASTORGID }}" && -n "${{ secrets.FORTIDASTAPPID }}" ]]
+          if [[ -n "${{ secrets.FORTIDEVSECORGID }}" && -n "${{ secrets.FORTIDEVSECAPPID }}" ]]
           then
               echo 'action=true' >> "${GITHUB_OUTPUT}"
           else
