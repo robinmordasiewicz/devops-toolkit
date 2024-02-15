@@ -1,5 +1,12 @@
 # CHANGELOG
 
+## [1.18.4](https://github.com/robinmordasiewicz/devops-toolkit/compare/v1.18.3...v1.18.4) (2024-02-15)
+
+
+### Bug Fixes
+
+* adding dast fortidevsec workflow ([b22cb34](https://github.com/robinmordasiewicz/devops-toolkit/commit/b22cb34850372d0424b1ff1f3e0c4e60fdca9245))
+
 ## [1.18.3](https://github.com/robinmordasiewicz/devops-toolkit/compare/v1.18.2...v1.18.3) (2024-02-02)
 
 
