@@ -1,9 +1,8 @@
 ---
-name: fortidevsec-sast
+name: fortidevsec
 
 on: # yamllint disable-line rule:truthy
-  push:
-    branches: [main]
+  pull_request:
 
 permissions:
   contents: read
