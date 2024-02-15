@@ -40,5 +40,6 @@ jobs:
       - name: Scan
         run: |
           env | grep -E "GITHUB_ACTIONS|GITHUB_RUN_NUMBER|GITHUB_REF_NAME|GITHUB_SHA" > /tmp/env
-          docker pull registry.fortidevsec.forticloud.com/fdevsec_sast:latest
-          docker run --rm --env-file /tmp/env --mount type=bind,source="$PWD",target=/scan registry.fortidevsec.forticloud.com/fdevsec_sast:latest main s --org-id ${{ secrets.FORTIDASTORGID }} --app-id ${{ secrets.FORTIDASTAPPID }} --risk_rating 1
+          #docker pull registry.fortidevsec.forticloud.com/fdevsec_sast:latest
+          docker run --pull always --rm --env-file /tmp/env --mount type=bind,source="$PWD",target=/scan registry.fortidevsec.forticloud.com/fdevsec_sast:latest main s --org-id ${{ secrets.FORTIDEVSECORGID }} --app-id ${{ secrets.FORTIDEVSECAPPID }} --risk_rating 1
+          docker run --pull always --rm --env-file /tmp/env --mount type=bind,source="$PWD",target=/scan registry.fortidevsec.forticloud.com/fdevsec_dast:latest main s --org-id ${{ secrets.FORTIDEVSECORGID }} --app-id ${{ secrets.FORTIDEVSECAPPID }} --url https://robinmordasiewicz.github.io/devops-toolkit/
