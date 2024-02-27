@@ -184,7 +184,7 @@ jobs:
         run: terraform -chdir=terraform init
 
       - name: Download Terraform Plan
-        uses: actions/download-artifact@eaceaf801fd36c7dee90939fad912460b18a1ffe
+        uses: actions/download-artifact@87c55149d96e628cc2ef7e6fc2aab372015aec85
         with:
           name: tfplan
           path: terraform
