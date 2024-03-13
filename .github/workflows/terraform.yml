@@ -53,7 +53,7 @@ jobs:
 
     steps:
       - name: Github repository checkout
-        uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11
+        uses: actions/checkout@9bb56186c3b09b4f86b1c65136769dd318469633
 
       - name: enable-azurerm-backend
         env:
@@ -155,7 +155,7 @@ jobs:
     needs: [terraform, plan]
     steps:
       - name: Github repository checkout
-        uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11
+        uses: actions/checkout@9bb56186c3b09b4f86b1c65136769dd318469633
 
       - name: enable-azurerm-backend
         run: |
@@ -206,7 +206,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Github repository checkout
-        uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11
+        uses: actions/checkout@9bb56186c3b09b4f86b1c65136769dd318469633
 
       - name: enable-azurerm-backend
         run: |
