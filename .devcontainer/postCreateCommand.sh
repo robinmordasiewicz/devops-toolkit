@@ -31,10 +31,26 @@ rm lazygit
 
 sudo -H env PATH="${PATH}" npm install -g npm@latest
 sudo -H env PATH="${PATH}" npm install -g opencommit
+sudo -H env PATH="${PATH}" oco hook set
 
 echo "chown takes a few minutes, be patient."
 sudo chown -R vscode:vscode /home/vscode/
-
-oco hook set
+sudo chown -R vscode:vscode /dc
 
 pre-commit install
+
+az config set auto-upgrade.enable=yes
+wget https://raw.githubusercontent.com/Azure/azure-cli/dev/az.completion -O ~/.oh-my-zsh/custom/az.zsh
+
+if ! [ -d ~/.vim/pack/plugin/start ]; then
+	mkdir -p ~/.vim/pack/plugin/start
+fi
+
+if ! [ -d ~/.vim/pack/plugin/start/vim-airline ]; then
+	git clone https://github.com/vim-airline/vim-airline ~/.vim/pack/plugin/start/vim-airline
+else
+	cd ~/.vim/pack/plugin/start/vim-airline || return
+	git pull
+fi
+
+cp .devcontainer/.vimrc ~/

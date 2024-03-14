@@ -43,9 +43,6 @@
     "ghcr.io/devcontainers/features/common-utils:2": {
       "configureZshAsDefaultShell": true
     },
-    "ghcr.io/devcontainers/features/conda:1": {
-      "addCondaForge": true
-    },
     "ghcr.io/devcontainers/features/docker-outside-of-docker:1": {},
     "ghcr.io/devcontainers/features/github-cli:1": {},
     "ghcr.io/devcontainers/features/python:1": {
@@ -75,7 +72,6 @@
     "ghcr.io/devcontainers-contrib/features/black:2": {},
     "ghcr.io/devcontainers-contrib/features/curl-apt-get:1": {},
     "ghcr.io/devcontainers-contrib/features/devcontainers-cli:1": {},
-    "ghcr.io/devcontainers-contrib/features/exa:1": {},
     "ghcr.io/devcontainers-contrib/features/fzf:1": {},
     "ghcr.io/devcontainers-contrib/features/markdownlint-cli2:1": {},
     "ghcr.io/devcontainers-contrib/features/mkdocs:2": {},
@@ -85,8 +81,8 @@
     "ghcr.io/devcontainers-contrib/features/wget-apt-get:1": {},
     "ghcr.io/devcontainers-contrib/features/yamllint:2": {},
     "ghcr.io/devcontainers-contrib/features/zsh-plugins:0": {
-      "plugins": "zsh-syntax-highlighting zsh-autosuggestions ubuntu jsontools gh common-aliases conda-zsh-completion",
-      "omzPlugins": "https://github.com/zsh-users/zsh-autosuggestions.git https://github.com/zsh-users/zsh-syntax-highlighting.git https://github.com/conda-incubator/conda-zsh-completion.git"
+      "plugins": "zsh-syntax-highlighting zsh-autosuggestions ubuntu jsontools gh common-aliases zsh-eza",
+      "omzPlugins": "https://github.com/zsh-users/zsh-autosuggestions.git https://github.com/zsh-users/zsh-syntax-highlighting.git https://github.com/z-shell/zsh-eza.git"
     },
     "ghcr.io/devcontainers-community/npm-features/prettier:1": {},
     "ghcr.io/guiyomh/features/vim:0": {},
@@ -100,7 +96,7 @@
     "ghcr.io/stuartleeks/dev-container-features/azure-cli-persistence:0": {}
   },
   "postStartCommand": "",
-  "postCreateCommand": "./.devcontainer/postCreateCommand.sh",
+  "postCreateCommand": "git config --global --add safe.directory ${containerWorkspaceFolder} ; ./.devcontainer/postCreateCommand.sh",
   "appPort": [],
   "containerEnv": {},
   "runArgs": ["--name", "devops-toolkit"],
