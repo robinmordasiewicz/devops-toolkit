@@ -1,0 +1,26 @@
+diff --git a/out/cli.cjs b/out/cli.cjs
+index 52581c3..f91cdc9 100755
+--- a/out/cli.cjs
++++ b/out/cli.cjs
+@@ -22006,7 +22006,7 @@ var api = new OpenAi();
+ var OllamaAi = class {
+   async generateCommitMessage(messages) {
+     const model = "mistral";
+-    const url3 = "http://localhost:11434/api/chat";
++    const url3 = "http://192.168.2.28:11434/api/chat";
+     const p4 = {
+       model,
+       messages,
+diff --git a/src/engine/ollama.ts b/src/engine/ollama.ts
+index f431ee1..517f0c3 100644
+--- a/src/engine/ollama.ts
++++ b/src/engine/ollama.ts
+@@ -11,7 +11,7 @@ export class OllamaAi implements AiEngine {
+     //console.log(messages);
+     //process.exit()
+
+-    const url = 'http://localhost:11434/api/chat';
++    const url = 'http://192.168.2.28:11434/api/chat';
+     const p = {
+       model,
+       messages,
