@@ -25,3 +25,11 @@ gh repo edit \
   --add-topic terraform \
   --add-topic azure
 ```
+
+## Devcontainer
+
+To log into a running devcontainer
+
+```
+devcontainer exec --workspace-folder ./ pwsh
+```
