@@ -26,6 +26,9 @@ echo 'eval "$(oh-my-posh init zsh --config ~/.oh-my-posh/themes/powerlevel10k.om
 conda init --all
 wget https://raw.githubusercontent.com/Azure/azure-cli/dev/az.completion -O ~/.oh-my-zsh/custom/az.zsh
 
+tfenv install
+tfenv use
+
 if ! [ -d ~/.vim/pack/plugin/start ]; then
 	mkdir -p ~/.vim/pack/plugin/start
 fi

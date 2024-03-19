@@ -4,7 +4,7 @@ content: |-
   ## Example terraform.auto.tfvars
 
   ```hcl
-  {{ include "terraform.auto.tfvars.example" }}
+  {{ include "terraform.auto.tfvars" }}
   ```
 
   {{ .Header }}
