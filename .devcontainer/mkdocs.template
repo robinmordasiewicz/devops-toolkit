@@ -1,0 +1,135 @@
+---
+site_name: GITHUBREPOSITORYNAME
+site_description: >-
+  GITHUBREPOSITORYDESCRIPTION
+site_url: GITHUBPAGESURL
+site_author: FIRSTNAMELASTNAME
+docs_dir: docs
+site_dir: site
+
+repo_name: GITHUBUSERNAME/GITHUBREPOSITORYNAME
+repo_url: GITHUBREPOSITORYCANONICALURL
+edit_uri: edit/main/docs/
+
+# yamllint disable-line rule:line-length
+copyright: "Try to be nice."
+
+extra:
+  annotate:
+    json: [.s2]
+  generator: false
+  social:
+    - icon: custom/fc-lib-facebook
+      link: https://www.facebook.com/robin.mordasiewicz/
+    - icon: custom/fc-lib-twitter
+      link: https://twitter.com/r_mordasiewicz
+    - icon: custom/fc-lib-youtube
+      link: https://www.youtube.com/channel/UCc2rQTQp22P2WEhCArzlUoQ
+    - icon: custom/fc-lib-linkedin
+      link: https://www.linkedin.com/in/robin-mordasiewicz
+
+validation:
+  omitted_files: warn
+  absolute_links: warn
+  unrecognized_links: warn
+
+extra_css: [extra.css]
+
+theme:
+  name: material
+  custom_dir: docs/overrides
+  include_sidebar: false
+  logo: logo.svg
+  favicon: favicon.ico
+  icon:
+    repo: fontawesome/brands/github
+  features:
+    - announce.dismiss
+    - content.action.view
+    - content.code.annotate
+    - content.code.copy
+    # - content.tabs.link
+    - content.tooltips
+    - header.autohide
+    - navigation.footer
+    # - navigation.indexes
+    - navigation.instant
+    - navigation.instant.prefetch
+    - navigation.instant.progress
+    # - navigation.prune
+    # - navigation.sections
+    - navigation.tabs
+    - navigation.top
+    - navigation.tracking
+    - navigation.path
+    - search.highlight
+    - search.share
+    - search.suggest
+    - toc.follow
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      primary: black
+      accent: grey
+      scheme: default
+      toggle:
+        icon: material/toggle-switch-off-outline
+        name: Switch to dark mode
+    - media: "(prefers-color-scheme: dark)"
+      primary: grey
+      accent: black
+      scheme: slate
+      toggle:
+        icon: material/toggle-switch
+  font:
+    text: Roboto
+    code: Roboto Mono
+
+markdown_extensions:
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+      options:
+        custom_icons:
+          - overrides/.icons
+  - abbr
+  - admonition
+  - attr_list
+  - def_list
+  - footnotes
+  - md_in_html
+  - toc:
+      toc_depth: "1-1"
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.tilde
+  - pymdownx.keys
+  - pymdownx.magiclink:
+      normalize_issue_symbols: true
+      repo_url_shorthand: true
+      user: GITHUBUSERNAME
+      repo: GITHUBREPOSITORYNAME
+  - pymdownx.mark
+  - pymdownx.smartsymbols
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.tabbed:
+      alternate_style: true
+      combine_header_slug: true
+      slugify: !!python/object/apply:pymdownx.slugs.slugify
+        kwds:
+
+plugins:
+  - glightbox
+  - search:
+      separator: '[\s\u200b\-_,:!=\[\]()"`/]+|\.(?!\d)|&[lg]t;|(?!\b)(?=[A-Z][a-z])'
+#  - blog:
+#      blog_dir: concepts
+#      post_dir: "{blog}/articles"
+#      post_readtime: false
+#      archive: false
+#      authors: false
