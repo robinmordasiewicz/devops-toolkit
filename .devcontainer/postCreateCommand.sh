@@ -23,11 +23,16 @@ oh-my-posh font install Meslo
 wget https://raw.githubusercontent.com/robinmordasiewicz/dotfiles/main/powerlevel10k.omp.json -O ~/.oh-my-posh/themes/powerlevel10k.omp.json
 # shellcheck disable=SC2016
 echo 'eval "$(oh-my-posh init zsh --config ~/.oh-my-posh/themes/powerlevel10k.omp.json)"' >>~/.zshrc
-conda init --all
-wget https://raw.githubusercontent.com/Azure/azure-cli/dev/az.completion -O ~/.oh-my-zsh/custom/az.zsh
+# shellcheck disable=SC2016
+echo 'eval "$(oh-my-posh init bash --config ~/.oh-my-posh/themes/powerlevel10k.omp.json)"' >>~/.bashrc
+if ! [ -f ~/.z ]; then
+	wget https://raw.githubusercontent.com/rupa/z/master/z.sh -O ~/.z
+fi
 
-tfenv install
-tfenv use
+conda init --all
+conda config --set changeps1 False
+
+wget https://raw.githubusercontent.com/Azure/azure-cli/dev/az.completion -O ~/.oh-my-zsh/custom/az.zsh
 
 if ! [ -d ~/.vim/pack/plugin/start ]; then
 	mkdir -p ~/.vim/pack/plugin/start
@@ -114,4 +119,4 @@ yes y | conda update -n base -c conda-forge conda --repodata-fn=repodata.json
 # shellcheck disable=SC1091
 source /opt/conda/etc/profile.d/conda.sh
 
-conda env create -f ./docs/mkdocs-environment.yml
+cd "${REPODIR}" && conda env create -f ./.devcontainer/mkdocs-environment.yml
