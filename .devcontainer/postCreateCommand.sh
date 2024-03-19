@@ -80,7 +80,11 @@ sed -i "s,GITHUBREPOSITORYDESCRIPTION,${GITHUBREPOSITORYDESCRIPTION},g" "mkdocs.
 sed -i "s,GITHUBPAGESURL,${GITHUBPAGESURL},g" "mkdocs.yml"
 
 LAZYGIT_VERSION=$(curl -s "https://api.github.com/repos/jesseduffield/lazygit/releases/latest" | grep -Po '"tag_name": "v\K[^"]*')
-curl -Lo lazygit.tar.gz "https://github.com/jesseduffield/lazygit/releases/latest/download/lazygit_${LAZYGIT_VERSION}_Linux_$(dpkg-architecture -q DEB_BUILD_ARCH).tar.gz"
+ARCH=$(dpkg-architecture -q DEB_BUILD_ARCH)
+if [ "${ARCH}" == "amd64" ]; then
+	ARCH="32-bit"
+fi
+wget https://github.com/jesseduffield/lazygit/releases/download/v"${LAZYGIT_VERSION}"/lazygit_"${LAZYGIT_VERSION}"_Linux_"${ARCH}".tar.gz -O lazygit.tar.gz
 tar xf lazygit.tar.gz lazygit
 rm lazygit.tar.gz
 sudo install lazygit /usr/local/bin
