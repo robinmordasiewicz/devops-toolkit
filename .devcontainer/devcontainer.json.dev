@@ -1,5 +1,5 @@
 {
-  "name": "devops-toolkit",
+  "name": "devcontainer",
   "image": "mcr.microsoft.com/devcontainers/base:ubuntu22.04",
   "customizations": {
     "vscode": {
@@ -12,15 +12,13 @@
         "ms-azuretools.vscode-docker",
         "MS-CST-E.vscode-devskim",
         "ms-python.python",
-        "ms-ossdata.vscode-postgresql",
-        "ms-toolsai.jupyter",
-        "ms-toolsai.jupyter-renderers",
-        "ms-toolsai.vscode-jupyter-powertoys",
+        "ms-python.vscode-pylance",
         "ms-vscode.azure-account",
         "ms-azuretools.vscode-azureterraform",
-        "mtxr.sqltools",
-        "mtxr.sqltools-driver-pg",
-        "visualstudioexptteam.vscodeintellicode"
+        "alphaxek.github-actions-locally",
+        "amazonwebservices.aws-toolkit-vscode",
+        "github.vscode-github-actions",
+        "OmarTawfik.github-actions-vscode"
       ],
       "settings": {
         "terminal.integrated.profiles.linux": {
@@ -67,35 +65,26 @@
         "software-properties-common",
         "iputils-ping",
         "cmake",
-        "libpoppler-cpp-dev",
         "libsecret-1-dev",
         "yelp-tools",
         "libyelp-dev",
         "libgif-dev",
         "autoconf",
-        "tesseract-ocr",
-        "ubuntu-drivers-common",
         "nodejs"
       ]
     },
     "ghcr.io/devcontainers-contrib/features/black:2": {},
     "ghcr.io/devcontainers-contrib/features/curl-apt-get:1": {},
-    "ghcr.io/devcontainers-contrib/features/devcontainers-cli:1": {},
-    "ghcr.io/devcontainers-contrib/features/ffmpeg-apt-get:1": {},
     "ghcr.io/devcontainers-contrib/features/fzf:1": {},
     "ghcr.io/devcontainers-contrib/features/markdownlint-cli2:1": {},
-    "ghcr.io/devcontainers-contrib/features/poppler-utils-apt-get:1": {},
-    "ghcr.io/devcontainers-contrib/features/pylint:2": {},
-    "ghcr.io/devcontainers-contrib/features/qrcode:2": {},
     "ghcr.io/devcontainers-contrib/features/tmux-apt-get:1": {},
     "ghcr.io/devcontainers-contrib/features/vscode-cli:1": {},
     "ghcr.io/devcontainers-contrib/features/vscode-server:1": {},
     "ghcr.io/devcontainers-contrib/features/wget-apt-get:1": {},
     "ghcr.io/devcontainers-contrib/features/yamllint:2": {},
-    "ghcr.io/devcontainers-contrib/features/yt-dlp:2": {},
     "ghcr.io/devcontainers-contrib/features/zsh-plugins:0": {
-      "plugins": "zsh-syntax-highlighting zsh-autosuggestions ubuntu jsontools gh common-aliases zsh-aliases-lsd zsh-tfenv conda-zsh-completion",
-      "omzPlugins": "https://github.com/zsh-users/zsh-autosuggestions.git https://github.com/zsh-users/zsh-syntax-highlighting.git https://github.com/conda-incubator/conda-zsh-completion.git https://github.com/z-shell/zsh-eza.git https://github.com/cda0/zsh-tfenv.git https://github.com/yuhonas/zsh-aliases-lsd.git"
+      "plugins": "zsh-syntax-highlighting zsh-autosuggestions ubuntu jsontools gh common-aliases zsh-tfenv conda-zsh-completion",
+      "omzPlugins": "https://github.com/zsh-users/zsh-autosuggestions.git https://github.com/zsh-users/zsh-syntax-highlighting.git https://github.com/cda0/zsh-tfenv.git https://github.com/conda-incubator/conda-zsh-completion.git"
     },
     "ghcr.io/devcontainers-community/npm-features/prettier:1": {},
     "ghcr.io/guiyomh/features/vim:0": {},
@@ -107,13 +96,14 @@
     "ghcr.io/mikaello/devcontainer-features/modern-shell-utils:1": {},
     "ghcr.io/prulloac/devcontainer-features/pre-commit:1": {},
     "ghcr.io/rocker-org/devcontainer-features/miniforge:1": {},
-    "ghcr.io/stuartleeks/dev-container-features/azure-cli-persistence:0": {},
-    "ghcr.io/warrenbuckley/codespace-features/sqlite:1": {}
+    "ghcr.io/stuartleeks/dev-container-features/azure-cli-persistence:0": {}
   },
-  "postStartCommand": "./.devcontainer/postStartCommand.sh",
-  "postCreateCommand": "sudo chown -R vscode:vscode ${containerWorkspaceFolder} ; git config --global --add safe.directory ${containerWorkspaceFolder} && ./.devcontainer/postCreateCommand.sh",
-  "appPort": ["8081:8081"],
-  "containerEnv": {},
-  "runArgs": ["--name", "devops-toolkit"],
+  "postStartCommand": "${containerWorkspaceFolder}/.devcontainer/postStartCommand.sh",
+  "postCreateCommand": "git config --global --add safe.directory ${containerWorkspaceFolder} ; ${containerWorkspaceFolder}/.devcontainer/postCreateCommand.sh",
+  "appPort": [],
+  "containerEnv": {
+    "PRE_COMMIT_ALLOW_NO_CONFIG": "1"
+  },
+  "runArgs": ["--name", "devcontainer"],
   "mounts": []
 }
