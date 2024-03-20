@@ -1,4 +1,4 @@
 {
   "name": "devops-toolkit",
-  "image": "docker.io/robinmordasiewicz/devcontainer:0.0.10"
+  "image": "docker.io/robinmordasiewicz/devcontainer:latest"
 }
