@@ -1,4 +1,5 @@
 {
   "name": "devops-toolkit",
-  "image": "docker.io/robinmordasiewicz/devcontainer:latest"
+  "image": "docker.io/robinmordasiewicz/devcontainer:latest",
+  "initializeCommand": "docker pull robinmordasiewicz/devcontainer:latest"
 }
