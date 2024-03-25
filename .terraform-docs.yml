@@ -1,7 +1,7 @@
 formatter: "markdown table" # this is required
 
 content: |-
-  ## Example terraform.auto.tfvars
+  ## terraform.auto.tfvars
 
   ```hcl
   {{ include "terraform.auto.tfvars" }}
