@@ -33,7 +33,7 @@ jobs:
           exclude: data,var,output
 
       - name: Render terraform docs inside the README.md and push changes back to PR branch
-        uses: terraform-docs/gh-actions@f6d59f89a280fa0a3febf55ef68f146784b20ba0
+        uses: terraform-docs/gh-actions@7a62208a0090636af2df1b739da46d27fd90bdc6
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
