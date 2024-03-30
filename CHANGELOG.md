@@ -1,5 +1,12 @@
 # CHANGELOG
 
+## [1.18.6](https://github.com/robinmordasiewicz/devops-toolkit/compare/v1.18.5...v1.18.6) (2024-03-30)
+
+
+### Bug Fixes
+
+* **devcontainer.json:** update runArgs array elements to use equals sign instead of commas for name value assignment ([9123368](https://github.com/robinmordasiewicz/devops-toolkit/commit/91233688f56f54b3207c470618fe9325f3017354))
+
 ## [1.18.5](https://github.com/robinmordasiewicz/devops-toolkit/compare/v1.18.4...v1.18.5) (2024-02-16)
 
 
