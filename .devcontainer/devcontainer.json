@@ -7,8 +7,8 @@
     "ghcr.io/robinmordasiewicz/features/azure-cli-persistence": {},
     "ghcr.io/stuartleeks/dev-container-features/shell-history": {}
   },
-  "image": "ghcr.io/robinmordasiewicz/devcontainer:latest",
-  "initializeCommand": "docker pull ghcr.io/robinmordasiewicz/devcontainer:latest",
+  "image": "docker.io/robinmordasiewicz/devcontainer:latest",
+  "initializeCommand": "docker pull docker.io/robinmordasiewicz/devcontainer:latest",
   "name": "devops-toolkit",
   "runArgs": ["--name=devops-toolkit", "--hostname=devops-toolkit"]
 }
