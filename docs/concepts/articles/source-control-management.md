@@ -5,15 +5,17 @@ date: 2023-11-30
 comments: true
 ---
 
-Source Code Management (SCM) is an indispensable tool in the Software Development Life Cycle (SDLC), including the Quality Assurance (QA), Staging, and promotion to production environments. Through enabling efficient tracking, control, and management of changes made to code, SCM serves as the foundation of DevOps, ensuring smooth, accurate, and reliable software delivery processes. The growing complexity of software development projects requires such a system that oversees and facilitates collaboration, code versioning, and workflow management.
+Source Code Management (SCM) is an indispensable tool in the Software Development Life Cycle (SDLC), including the Quality Assurance (QA), Staging, and promotion to production environments. Through enabling efficient tracking, control, and collaborative changes to code, SCM has become a crucial component of the DevOps methodology. Its role in maintaining code integrity and facilitating smooth operation between development teams makes it a cornerstone technology in modern software development.
 
 <!-- more -->
 
-GitHub is the most widely utilized SCM system today due to its extensive features, user-friendly interface, and the backing of a large and active community. Nonetheless, there are several other SCM platforms out there garnering considerable attention. Here are the top four:
+GitHub is widely recognized as one of the most popular SCM platforms due to its user-friendly interface and extensive functionality. However, it is not the only player; several other platforms are durable alternatives. Here are the top four competitors:
 
-- [:octocat: GitHub](https://github.com/)
-- [:gitlab: GitLab](https://about.gitlab.com/)
-- [:bitbucket-square: Bitbucket](https://bitbucket.org/)
-- [:align-left: AWS CodeCommit](https://aws.amazon.com/codecommit/)
+- [Bitbucket](https://bitbucket.org) :font_awesome_icon:`fab fa-bitbucket`
+- [GitLab](https://gitlab.com) :font_awesome_icon:`fab fa-gitlab`
+- [AWS CodeCommit](https://aws.amazon.com/codecommit/) :font_awesome_icon:`fab fa-aws`
+- [Azure Repos](https://azure.microsoft.com/en-us/services/devops/repos/) :font_awesome_icon:`fab fa-microsoft`
 
-Mentioning SCM within DevOps context, it's hard to forget Git - the software that underpins GitHub, GitLab, and many other platforms. Git is in the essence of Continuous Integration and Continuous Deployment (CI/CD) pipelines, providing the necessary mechanism for maintaining, updating, and deploying the codebase. The integral role Git plays within DevOps practices means an understanding of its operations is crucial for any DevOps professional.
+**Bitbucket** and **GitLab** offer self-hosted options in addition to their cloud-based services, allowing for further customization and control, while **AWS CodeCommit** and **Azure Repos** are integrated with their respective cloud platforms, simplifying storage and deployment for users of these cloud services.
+
+At its core, git forms the backbone of a Continuous Integration / Continuous Deployment (CICD) DevOps pipeline, allowing for live tracking of changes, rollback capabilities, and failure tracing. This makes it an invaluable asset to development teams and aligns with DevOps principles of continuous improvement and automation of the software development process.
