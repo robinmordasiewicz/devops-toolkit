@@ -1,46 +1,46 @@
 {
   "include": [
     {
-      "url": "https://github.com/robinmordasiewicz",
       "filename": "github-profile.png",
+      "geometry": "+522+158",
       "pointerangle": "315",
-      "geometry": "+522+158"
+      "url": "https://github.com/robinmordasiewicz"
     },
     {
-      "url": "https://github.com/robinmordasiewicz/devops-toolkit",
       "filename": "github-fork.png",
+      "geometry": "+1000+35",
       "pointerangle": "45",
-      "geometry": "+1000+35"
+      "url": "https://github.com/robinmordasiewicz/devops-toolkit"
     },
     {
-      "url": "",
       "filename": "github-repositories.png",
+      "geometry": "+1095+108",
       "pointerangle": "45",
-      "geometry": "+1095+108"
+      "url": ""
     },
     {
-      "url": "",
       "filename": "github-new.png",
+      "geometry": "+375+450",
       "pointerangle": "225",
-      "geometry": "+375+450"
+      "url": ""
     },
     {
-      "url": "",
       "filename": "azure-cloud-shell.png",
+      "geometry": "+805-45",
       "pointerangle": "45",
-      "geometry": "+805-45"
+      "url": ""
     },
     {
-      "url": "",
       "filename": "azure-cloud-shell-select-storage-advanced.png",
+      "geometry": "+710+268",
       "pointerangle": "135",
-      "geometry": "+710+268"
+      "url": ""
     },
     {
-      "url": "",
       "filename": "azure-cloud-shell-select-storage-advanced-create-storage.png",
+      "geometry": "+260+55",
       "pointerangle": "225",
-      "geometry": "+260+55"
+      "url": ""
     }
   ]
 }

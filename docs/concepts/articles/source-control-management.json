@@ -1,14 +1,14 @@
 {
-  "model": "gpt-4",
-  "seed": 1000,
   "messages": [
     {
-      "role": "system",
-      "content": "Author syntactically correct Markdown README.md files following the GitHub Flavored Markdown Spec and including mkdocs metadata frontmatter. The frontmatter should consist of the title, author (robinmordasiewicz), date (2023-11-30), and comments set to true. Wrap the frontmatter section in three dashes. Exclude any please or thank you messages, welcome messages, goodbye messages, signatures, greetings, closings, salutations, and summaries. Create the article as a technical instructional blog in an instructional style, keeping content concise with bullet points and tables. Avoid fluff, filler, unnecessary words, sentences, paragraphs, sections, chapters, or pages. Limit the content length to one page. Ensure the markdown generated adheres to GitHub README.md style. The title should be exactly three words. Omit the markdown fence line at the top of the document. Use the metadata without quotes around values. Exclude a summarize section. If using font-awesome icons in links, enclose the icon in a colon character. After the first paragraph, insert the line \"<!-- more -->\". Do not enclose the document with fenced three backticks. Write the technical blog in an instructional style without enclosing the markdown document in fenced backticks to maintain syntactical correctness."
+      "content": "Author syntactically correct Markdown README.md files following the GitHub Flavored Markdown Spec and including mkdocs metadata frontmatter. The frontmatter should consist of the title, author (robinmordasiewicz), date (2023-11-30), and comments set to true. Wrap the frontmatter section in three dashes. Exclude any please or thank you messages, welcome messages, goodbye messages, signatures, greetings, closings, salutations, and summaries. Create the article as a technical instructional blog in an instructional style, keeping content concise with bullet points and tables. Avoid fluff, filler, unnecessary words, sentences, paragraphs, sections, chapters, or pages. Limit the content length to one page. Ensure the markdown generated adheres to GitHub README.md style. The title should be exactly three words. Omit the markdown fence line at the top of the document. Use the metadata without quotes around values. Exclude a summarize section. If using font-awesome icons in links, enclose the icon in a colon character. After the first paragraph, insert the line \"<!-- more -->\". Do not enclose the document with fenced three backticks. Write the technical blog in an instructional style without enclosing the markdown document in fenced backticks to maintain syntactical correctness.",
+      "role": "system"
     },
     {
-      "role": "user",
-      "content": "Title the blog \"Source Code Mangement\". Start the article with a three sentence paragraph explaining why source code management is so important in the SDLC QA Staging and promotion to production environments, and why SCM has become the foundation of DevOps. In the second paragraph talk about how GitHub is the most widely used SCM, but also provide a list the top 4 source code management platforms in bullet points with links and associated font-awesome icons. In the final section write a single oaragraph explaining how git is the backbone of a CICD devops pipeline."
+      "content": "Title the blog \"Source Code Mangement\". Start the article with a three sentence paragraph explaining why source code management is so important in the SDLC QA Staging and promotion to production environments, and why SCM has become the foundation of DevOps. In the second paragraph talk about how GitHub is the most widely used SCM, but also provide a list the top 4 source code management platforms in bullet points with links and associated font-awesome icons. In the final section write a single oaragraph explaining how git is the backbone of a CICD devops pipeline.",
+      "role": "user"
     }
-  ]
+  ],
+  "model": "gpt-4",
+  "seed": 1000
 }
