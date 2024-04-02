@@ -27,5 +27,3 @@ gh repo edit \
 ```
 
 ## Devcontainer
-
-

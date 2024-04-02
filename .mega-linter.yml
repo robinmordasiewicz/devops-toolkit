@@ -1,3 +1,4 @@
+---
 ACTION_ACTIONLINT_ARGUMENTS:
   - -shellcheck=
 APPLY_FIXES: all
