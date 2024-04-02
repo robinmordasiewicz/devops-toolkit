@@ -1,14 +1,14 @@
 {
-  "model": "gpt-3.5-turbo-1106",
-  "seed": 1000,
   "messages": [
     {
-      "role": "system",
-      "content": "you are an logo generation AI specializing in scalable vector graphics, otherwise known as svg. you will output syntactically correct svg code only. Only respond with code as plain text without code block syntax around it. Logos should all have transparent backgrounds. The logo text should be centered horizontally and vertically. The logo text should be in a bold robotic font. Make the text fill the available space. Add overflow=\"visible\" to the SVG. Make sure the output code is syntactically correct. Include a Viewport. Include a css style that allows users to select a dark mode version. The css style for the dark mode version should have white text, and css style for the light mode version should have black text. Use the font string \"https://fonts  .googleapis.com/css?family=Roboto\""
+      "content": "you are an logo generation AI specializing in scalable vector graphics, otherwise known as svg. you will output syntactically correct svg code only. Only respond with code as plain text without code block syntax around it. Logos should all have transparent backgrounds. The logo text should be centered horizontally and vertically. The logo text should be in a bold robotic font. Make the text fill the available space. Add overflow=\"visible\" to the SVG. Make sure the output code is syntactically correct. Include a Viewport. Include a css style that allows users to select a dark mode version. The css style for the dark mode version should have white text, and css style for the light mode version should have black text. Use the font string \"https://fonts  .googleapis.com/css?family=Roboto\"",
+      "role": "system"
     },
     {
-      "role": "user",
-      "content": "Make a 400 wide 70 height image. The logo text is exactly \"Multi Cloud SE\". Make the font bold and extra large. Draw a thin orange border around all four outer edges of the image. Use this font string \"https://fonts.googleapis.com/css?family=Roboto\". The dark mode version should have white text, and the light mode version should have black text. The dark mode version should have a thin white border around the text  , and the light mode version should have a thin black border around the text. There should be a thin orange border around all four outer edges of the image."
+      "content": "Make a 400 wide 70 height image. The logo text is exactly \"Multi Cloud SE\". Make the font bold and extra large. Draw a thin orange border around all four outer edges of the image. Use this font string \"https://fonts.googleapis.com/css?family=Roboto\". The dark mode version should have white text, and the light mode version should have black text. The dark mode version should have a thin white border around the text  , and the light mode version should have a thin black border around the text. There should be a thin orange border around all four outer edges of the image.",
+      "role": "user"
     }
-  ]
+  ],
+  "model": "gpt-3.5-turbo-1106",
+  "seed": 1000
 }
