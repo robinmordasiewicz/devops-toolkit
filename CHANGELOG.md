@@ -1,5 +1,17 @@
 # CHANGELOG
 
+## [1.19.0](https://github.com/robinmordasiewicz/devops-toolkit/compare/v1.18.6...v1.19.0) (2024-04-02)
+
+
+### Features
+
+* **devcontainer.json:** add support for various dev container features, including AWS CLI, GitHub CLI, Terraform CLI, Azure CLI persistence and shell history. ([5233b7b](https://github.com/robinmordasiewicz/devops-toolkit/commit/5233b7b86d88869fe2ceeb040013a206db4c2d53))
+
+
+### Bug Fixes
+
+* **devcontainer.json:** update image and initializeCommand references to use Docker Hub instead of GitHub Container Registry ([2d68e98](https://github.com/robinmordasiewicz/devops-toolkit/commit/2d68e98bf70973de50e2b9bedb0e94e00dc19874))
+
 ## [1.18.6](https://github.com/robinmordasiewicz/devops-toolkit/compare/v1.18.5...v1.18.6) (2024-03-30)
 
 
