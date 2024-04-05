@@ -13,7 +13,7 @@ classDef cs fill:#f7f8fa,stroke:#dce0e6,stroke-width:2px
 ```
 
 <!-- BEGIN_TF_DOCS -->
-## Example terraform.auto.tfvars
+## terraform.auto.tfvars
 
 ```hcl
 location            = "canadacentral"
@@ -31,37 +31,35 @@ internal_prefix     = "10.0.3.0/24"
 
 ## Requirements
 
-| Name      | Version |
-|-----------|---------|
-| terraform | 1.7.5   |
-| azurerm   | 3.97.1  |
-| http      | 3.4.1   |
-| random    | 3.6.0   |
-| tls       | 4.0.5   |
+| Name | Version |
+|------|---------|
+| terraform | 1.7.5 |
+| azurerm | 3.98.0 |
+| http | 3.4.1 |
+| random | 3.6.0 |
+| tls | 4.0.5 |
 
 ## Inputs
 
-| Name                  | Description                                 | Type     | Default | Required |
-|-----------------------|---------------------------------------------|----------|---------|:--------:|
-| dmz\_name             | DMZ Subnet Name.                            | `string` | n/a     |   yes    |
-| dmz\_prefix           | DMZ Subnet Prefix.                          | `string` | n/a     |   yes    |
-| external\_name        | External Subnet Name.                       | `string` | n/a     |   yes    |
-| external\_prefix      | External Subnet Prefix.                     | `string` | n/a     |   yes    |
-| internal\_name        | Internal Subnet Name.                       | `string` | n/a     |   yes    |
-| internal\_prefix      | Internal Subnet Prefix.                     | `string` | n/a     |   yes    |
-| location              | Azure region for resource group.            | `string` | n/a     |   yes    |
-| owner\_email          | Email address for use with Azure Owner tag. | `string` | n/a     |   yes    |
-| resource\_group       | Azure resource group.                       | `string` | n/a     |   yes    |
-| vnet\_address\_prefix | Virtual Network Address prefix.             | `string` | n/a     |   yes    |
-
+| Name | Description | Type | Default | Required |
+|------|-------------|------|---------|:--------:|
+| dmz\_name | DMZ Subnet Name. | `string` | n/a | yes |
+| dmz\_prefix | DMZ Subnet Prefix. | `string` | n/a | yes |
+| external\_name | External Subnet Name. | `string` | n/a | yes |
+| external\_prefix | External Subnet Prefix. | `string` | n/a | yes |
+| internal\_name | Internal Subnet Name. | `string` | n/a | yes |
+| internal\_prefix | Internal Subnet Prefix. | `string` | n/a | yes |
+| location | Azure region for resource group. | `string` | n/a | yes |
+| owner\_email | Email address for use with Azure Owner tag. | `string` | n/a | yes |
+| resource\_group | Azure resource group. | `string` | n/a | yes |
+| vnet\_address\_prefix | Virtual Network Address prefix. | `string` | n/a | yes |
 ## Outputs
 
-| Name                           | Description                |
-|--------------------------------|----------------------------|
-| admin\_username                | Username for admin account |
-| fortigate\_public\_ip\_address | Management IP address      |
-| terraform\_version             | Terraform Version          |
-| tls\_private\_key              | TSL private key            |
-| vip\_public\_ip\_address       | Public IP address          |
-
+| Name | Description |
+|------|-------------|
+| admin\_username | Username for admin account |
+| fortigate\_public\_ip\_address | Management IP address |
+| terraform\_version | Terraform Version |
+| tls\_private\_key | TSL private key |
+| vip\_public\_ip\_address | Public IP address |
 <!-- END_TF_DOCS -->
