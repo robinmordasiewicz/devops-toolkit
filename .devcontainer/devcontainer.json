@@ -1,6 +1,6 @@
 {
-  "image": "docker.io/robinmordasiewicz/devcontainer:latest",
-  "initializeCommand": "docker pull docker.io/robinmordasiewicz/devcontainer:latest",
+  "image": "docker.io/robinmordasiewicz/devops-toolkit:latest",
+  "initializeCommand": "docker pull docker.io/robinmordasiewicz/devops-toolkit:latest",
   "name": "devops-toolkit",
   "runArgs": ["--name=devops-toolkit", "--hostname=devops-toolkit"]
 }
