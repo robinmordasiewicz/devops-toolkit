@@ -32,7 +32,8 @@ resource "azurerm_public_ip" "vip_public_ip" {
   name                = "vip_public_ip"
   location            = azurerm_resource_group.azure_resource_group.location
   resource_group_name = azurerm_resource_group.azure_resource_group.name
-  allocation_method   = "Dynamic"
+  allocation_method   = "Static"
+  sku                 = "Standard"
 }
 
 resource "azurerm_network_interface_security_group_association" "fortigate_association" {

@@ -1,17 +1,26 @@
-resource "azurerm_network_security_group" "nsg" { #tfsec:ignore:azure-network-no-public-ingress
-  #checkov:skip=CKV_AZURE_160: Port 80 and 443 are open the internet
-  name                = "nsg"
+resource "azurerm_network_security_group" "private_nsg" {
+  name                = "private_nsg"
   location            = azurerm_resource_group.azure_resource_group.location
   resource_group_name = azurerm_resource_group.azure_resource_group.name
-
   security_rule {
-    name                       = "allow_http-https_tcp"
+    name                       = "block-all-in"
     priority                   = 100
     direction                  = "Inbound"
-    access                     = "Allow"
-    protocol                   = "Tcp"
+    access                     = "Deny"
+    protocol                   = "*"
     source_port_range          = "*"
-    destination_port_ranges    = ["80", "443"]
+    destination_port_range     = "*"
+    source_address_prefix      = "*"
+    destination_address_prefix = "*"
+  }
+  security_rule {
+    name                       = "block-all-out"
+    priority                   = 101
+    direction                  = "Outbound"
+    access                     = "Deny"
+    protocol                   = "*"
+    source_port_range          = "*"
+    destination_port_range     = "*"
     source_address_prefix      = "*"
     destination_address_prefix = "*"
   }
