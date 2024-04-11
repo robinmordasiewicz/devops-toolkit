@@ -1,6 +1,6 @@
 # Create network interface
-resource "azurerm_network_interface" "ubuntu_nic" {
-  name                = "ubuntuNIC"
+resource "azurerm_network_interface" "ubuntu_dmz_network_interface" {
+  name                = "ubuntu_dmz_network_interface"
   location            = azurerm_resource_group.azure_resource_group.location
   resource_group_name = azurerm_resource_group.azure_resource_group.name
 
@@ -13,17 +13,17 @@ resource "azurerm_network_interface" "ubuntu_nic" {
 }
 
 # Connect the security group to the network interface
-resource "azurerm_network_interface_security_group_association" "example" {
-  network_interface_id      = azurerm_network_interface.ubuntu_nic.id
+resource "azurerm_network_interface_security_group_association" "ubuntu_association" {
+  network_interface_id      = azurerm_network_interface.ubuntu_dmz_network_interface.id
   network_security_group_id = azurerm_network_security_group.private_nsg.id
 }
 
 # Create virtual machine
-resource "azurerm_linux_virtual_machine" "ubuntu_vm" {
-  name                  = "ubuntuVM"
+resource "azurerm_linux_virtual_machine" "ubuntu_virtual_machine" {
+  name                  = "ubuntu_virtual_machine"
   location              = azurerm_resource_group.azure_resource_group.location
   resource_group_name   = azurerm_resource_group.azure_resource_group.name
-  network_interface_ids = [azurerm_network_interface.ubuntu_nic.id]
+  network_interface_ids = [azurerm_network_interface.ubuntu_dmz_network_interface.id]
   size                  = "Standard_DS1_v2"
 
   admin_ssh_key {
