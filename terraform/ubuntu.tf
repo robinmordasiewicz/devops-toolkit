@@ -33,7 +33,6 @@ resource "azurerm_linux_virtual_machine" "ubuntu_virtual_machine" {
   }
 
   os_disk {
-    name                 = "ubuntuOsDisk"
     caching              = "ReadWrite"
     storage_account_type = "Premium_LRS"
   }
