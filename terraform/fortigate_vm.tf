@@ -4,11 +4,21 @@ resource "random_pet" "admin_username" {
   }
 }
 
-resource "azurerm_public_ip" "fortigate_public_ip" {
-  name                = "fortigate_public_ip"
+resource "azurerm_network_security_group" "mgmt_allow_https_tcp_nsg" { #tfsec:ignore:azure-network-no-public-ingress
+  name                = "mgmt_allow_https_tcp_nsg"
   location            = azurerm_resource_group.azure_resource_group.location
   resource_group_name = azurerm_resource_group.azure_resource_group.name
-  allocation_method   = "Dynamic"
+  security_rule {
+    name                       = "MGMT-allow_https_tcp"
+    priority                   = 100
+    direction                  = "Inbound"
+    access                     = "Allow"
+    protocol                   = "Tcp"
+    source_port_range          = "*"
+    destination_port_ranges    = ["443"]
+    source_address_prefix      = "*"
+    destination_address_prefix = "*"
+  }
 }
 
 resource "azurerm_network_security_group" "vip_allow_https_tcp_nsg" { #tfsec:ignore:azure-network-no-public-ingress
@@ -28,6 +38,14 @@ resource "azurerm_network_security_group" "vip_allow_https_tcp_nsg" { #tfsec:ign
   }
 }
 
+resource "azurerm_public_ip" "mgmt_public_ip" {
+  name                = "mgmt_public_ip"
+  location            = azurerm_resource_group.azure_resource_group.location
+  resource_group_name = azurerm_resource_group.azure_resource_group.name
+  allocation_method   = "Static"
+  sku                 = "Standard"
+}
+
 resource "azurerm_public_ip" "vip_public_ip" {
   name                = "vip_public_ip"
   location            = azurerm_resource_group.azure_resource_group.location
@@ -37,6 +55,7 @@ resource "azurerm_public_ip" "vip_public_ip" {
 }
 
 resource "azurerm_network_interface_security_group_association" "fortigate_association" {
+  depends_on                = [azurerm_network_interface.fortigate_external_network_interface]
   network_interface_id      = azurerm_network_interface.fortigate_external_network_interface.id
   network_security_group_id = azurerm_network_security_group.vip_allow_https_tcp_nsg.id
 }
@@ -52,6 +71,7 @@ resource "azurerm_network_interface" "fortigate_external_network_interface" {
     private_ip_address_allocation = "Static"
     private_ip_address            = cidrhost(var.external_prefix, 4)
     subnet_id                     = azurerm_subnet.external_subnet.id
+    public_ip_address_id          = azurerm_public_ip.mgmt_public_ip.id
   }
   ip_configuration {
     name                          = "VIP-external-ipconfig"
@@ -62,15 +82,15 @@ resource "azurerm_network_interface" "fortigate_external_network_interface" {
   }
 }
 
-resource "azurerm_network_interface" "fortigate_dmz_network_interface" {
-  name                = "fortigate_dmz_network_interface"
+resource "azurerm_network_interface" "fortigate_internal_network_interface" {
+  name                = "fortigate_internal_network_interface"
   location            = azurerm_resource_group.azure_resource_group.location
   resource_group_name = azurerm_resource_group.azure_resource_group.name
   ip_configuration {
-    name                          = "fortigate-dmz-ipconfig"
+    name                          = "fortigate-internal-ipconfig"
     private_ip_address_allocation = "Static"
-    private_ip_address            = cidrhost(var.dmz_prefix, 4)
-    subnet_id                     = azurerm_subnet.dmz_subnet.id
+    private_ip_address            = cidrhost(var.internal_prefix, 4)
+    subnet_id                     = azurerm_subnet.internal_subnet.id
   }
 }
 
@@ -90,7 +110,7 @@ resource "azurerm_linux_virtual_machine" "fortigate_virtual_machine" {
   disable_password_authentication = true
   location                        = azurerm_resource_group.azure_resource_group.location
   resource_group_name             = azurerm_resource_group.azure_resource_group.name
-  network_interface_ids           = [azurerm_network_interface.fortigate_external_network_interface.id, azurerm_network_interface.fortigate_dmz_network_interface.id]
+  network_interface_ids           = [azurerm_network_interface.fortigate_external_network_interface.id, azurerm_network_interface.fortigate_internal_network_interface.id]
   size                            = "Standard_F4s"
   admin_ssh_key {
     username   = random_pet.admin_username.id
@@ -129,8 +149,8 @@ data "azurerm_public_ip" "vip_public_ip" {
   ]
 }
 
-data "azurerm_public_ip" "fortigate_public_ip" {
-  name                = azurerm_public_ip.fortigate_public_ip.name
+data "azurerm_public_ip" "mgmt_public_ip" {
+  name                = azurerm_public_ip.mgmt_public_ip.name
   resource_group_name = azurerm_resource_group.azure_resource_group.name
   depends_on = [
     azurerm_linux_virtual_machine.fortigate_virtual_machine,
@@ -142,9 +162,9 @@ output "vip_public_ip_address" {
   value       = data.azurerm_public_ip.vip_public_ip.ip_address
 }
 
-output "fortigate_public_ip_address" {
+output "mgmt_public_ip_address" {
   description = "Management IP address"
-  value       = data.azurerm_public_ip.fortigate_public_ip.ip_address
+  value       = data.azurerm_public_ip.mgmt_public_ip.ip_address
 }
 
 output "admin_username" {
