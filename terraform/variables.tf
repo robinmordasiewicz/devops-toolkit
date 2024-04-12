@@ -13,13 +13,13 @@ variable "resource_group" {
   type        = string
 }
 
-variable "dmz_name" {
-  description = "DMZ Subnet Name."
+variable "internal_name" {
+  description = "Internal Subnet Name."
   type        = string
 }
 
-variable "dmz_prefix" {
-  description = "DMZ Subnet Prefix."
+variable "internal_prefix" {
+  description = "Internal Subnet Prefix."
   type        = string
 }
 
@@ -30,16 +30,6 @@ variable "external_name" {
 
 variable "external_prefix" {
   description = "External Subnet Prefix."
-  type        = string
-}
-
-variable "internal_name" {
-  description = "Internal Subnet Name."
-  type        = string
-}
-
-variable "internal_prefix" {
-  description = "Internal Subnet Prefix."
   type        = string
 }
 
