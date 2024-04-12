@@ -5,6 +5,19 @@ repos:
     rev: v1.5.4
     hooks:
       - id: remove-crlf
+  - repo: https://github.com/antonbabenko/pre-commit-terraform
+    rev: v1.88.4
+    hooks:
+      - id: terraform_fmt
+        args:
+          - --args=-recursive
+      - id: terraform_tflint
+      - id: terraform_validate
+      - id: terraform_trivy
+      - id: terrascan
+        args:
+          - --args=--non-recursive # avoids scan errors on subdirectories without Terraform config files
+          - --args=--policy-type=azure
   - repo: https://github.com/pre-commit/pre-commit-hooks
     rev: v4.5.0
     hooks:
