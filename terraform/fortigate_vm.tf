@@ -4,40 +4,6 @@ resource "random_pet" "admin_username" {
   }
 }
 
-resource "azurerm_network_security_group" "mgmt_allow_https_tcp_nsg" { #tfsec:ignore:azure-network-no-public-ingress
-  name                = "mgmt_allow_https_tcp_nsg"
-  location            = azurerm_resource_group.azure_resource_group.location
-  resource_group_name = azurerm_resource_group.azure_resource_group.name
-  security_rule {
-    name                       = "MGMT-allow_https_tcp"
-    priority                   = 100
-    direction                  = "Inbound"
-    access                     = "Allow"
-    protocol                   = "Tcp"
-    source_port_range          = "*"
-    destination_port_ranges    = ["443"]
-    source_address_prefix      = "*"
-    destination_address_prefix = "*"
-  }
-}
-
-resource "azurerm_network_security_group" "vip_allow_https_tcp_nsg" { #tfsec:ignore:azure-network-no-public-ingress
-  name                = "vip_allow_https_tcp_nsg"
-  location            = azurerm_resource_group.azure_resource_group.location
-  resource_group_name = azurerm_resource_group.azure_resource_group.name
-  security_rule {
-    name                       = "VIP-allow_https_tcp"
-    priority                   = 100
-    direction                  = "Inbound"
-    access                     = "Allow"
-    protocol                   = "Tcp"
-    source_port_range          = "*"
-    destination_port_ranges    = ["443"]
-    source_address_prefix      = "*"
-    destination_address_prefix = "*"
-  }
-}
-
 resource "azurerm_public_ip" "mgmt_public_ip" {
   name                = "mgmt_public_ip"
   location            = azurerm_resource_group.azure_resource_group.location
@@ -52,12 +18,6 @@ resource "azurerm_public_ip" "vip_public_ip" {
   resource_group_name = azurerm_resource_group.azure_resource_group.name
   allocation_method   = "Static"
   sku                 = "Standard"
-}
-
-resource "azurerm_network_interface_security_group_association" "fortigate_association" {
-  depends_on                = [azurerm_network_interface.fortigate_external_network_interface]
-  network_interface_id      = azurerm_network_interface.fortigate_external_network_interface.id
-  network_security_group_id = azurerm_network_security_group.vip_allow_https_tcp_nsg.id
 }
 
 resource "azurerm_network_interface" "fortigate_external_network_interface" {
