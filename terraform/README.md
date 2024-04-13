@@ -1,5 +1,11 @@
 # Terraform Docs
 
+## Sizing
+
+https://learn.microsoft.com/en-us/azure/virtual-machines/fsv2-series
+
+## Diagram
+
 ```mermaid
 %%tfmermaid
 %%{init:{"theme":"default","themeVariables":{"lineColor":"#6f7682","textColor":"#6f7682"}}}%%
