@@ -13,19 +13,20 @@ repos:
           - --args=-recursive
       - id: terraform_tflint
       - id: terraform_validate
+      - id: terraform_checkov
+        args:
+          - --args=--quiet
       - id: terraform_trivy
       - id: terrascan
         args:
-          - --args=--non-recursive # avoids scan errors on subdirectories without Terraform config files
+          - --args=--non-recursive
           - --args=--policy-type=azure
   - repo: https://github.com/pre-commit/pre-commit-hooks
     rev: v4.5.0
     hooks:
       - id: check-added-large-files
-      - id: check-ast
       - id: check-yaml
         args: ["--unsafe"]
-      - id: check-toml
       - id: check-json
       - id: check-byte-order-marker
         exclude: .gitignore

@@ -1,4 +1,3 @@
-
 resource "azurerm_network_interface" "ubuntu_internal_network_interface" {
   name                = "ubuntu_internal_network_interface"
   location            = azurerm_resource_group.azure_resource_group.location
@@ -12,18 +11,18 @@ resource "azurerm_network_interface" "ubuntu_internal_network_interface" {
   }
 }
 
-# Create virtual machine
 resource "azurerm_linux_virtual_machine" "ubuntu_virtual_machine" {
-  name                  = "ubuntu_virtual_machine"
-  location              = azurerm_resource_group.azure_resource_group.location
-  resource_group_name   = azurerm_resource_group.azure_resource_group.name
-  network_interface_ids = [azurerm_network_interface.ubuntu_internal_network_interface.id]
-  size                  = "Standard_DS1_v2"
+  depends_on                 = [azurerm_linux_virtual_machine.fortigate_virtual_machine]
+  name                       = "ubuntu_virtual_machine"
+  location                   = azurerm_resource_group.azure_resource_group.location
+  resource_group_name        = azurerm_resource_group.azure_resource_group.name
+  network_interface_ids      = [azurerm_network_interface.ubuntu_internal_network_interface.id]
+  size                       = "Standard_DS1_v2"
+  allow_extension_operations = false
 
   admin_ssh_key {
     username   = random_pet.admin_username.id
     public_key = tls_private_key.ssh_key.public_key_openssh
-    #public_key = file("~/.ssh/id_rsa.pub")
   }
 
   os_disk {
@@ -40,5 +39,6 @@ resource "azurerm_linux_virtual_machine" "ubuntu_virtual_machine" {
 
   computer_name  = "ubuntu"
   admin_username = random_pet.admin_username.id
+  custom_data    = filebase64("cloud-init/ubuntu.conf")
 
 }
