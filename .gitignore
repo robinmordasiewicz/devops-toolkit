@@ -35,7 +35,6 @@ creds.json
 .ipynb_checkpoints
 .python-version
 .scrapy
-.terraformrc
 .tox/
 .venv
 ENV/
@@ -74,6 +73,7 @@ site
 site*/
 target/
 terraform.rc
+.terraform.lock.hcl
 tmp
 var/
 venv
