@@ -23,14 +23,6 @@ config system interface
   next
 end
 
-config router static
-    edit 1
-        set dst 10.1.0.0 255.255.0.0
-        set gateway 10.0.2.1
-        set device "port2"
-    next
-end
-
 config system ntp
     set ntpsync enable
     set type custom
@@ -50,10 +42,8 @@ config system ntp
 end
 
 config firewall ldb-monitor
-    edit "dvwa-check"
+    edit "http-check"
         set type http
-        set http-get "/login.php"
-        set http-match "200 OK"
     next
 end
 
@@ -68,12 +58,8 @@ config firewall vip
         set extport 80
         config realservers
           edit 1
-            set ip 10.1.0.5
+            set ip 10.0.2.5
             set port 80
-          next
-          edit 2
-            set ip 10.1.0.5
-            set port 81
           next
         end
     next
@@ -83,17 +69,13 @@ config firewall vip
         set extip 10.0.1.100
         set extintf "port1"
         set server-type https
-        set monitor "dvwa-check"
+        set monitor "http-check"
         set ldb-method round-robin
         set extport 443
         config realservers
           edit 1
-            set ip 10.1.0.5
+            set ip 10.0.2.5
             set port 80
-          next
-          edit 2
-            set ip 10.1.0.5
-            set port 81
           next
         end
         set ssl-certificate Fortinet_SSL_RSA2048
@@ -101,7 +83,7 @@ config firewall vip
 end
 
 config firewall policy
-    edit 1
+    edit 9
         set name "vip-policy"
         set srcintf "port1"
         set dstintf "port2"
@@ -118,23 +100,11 @@ config firewall policy
         set file-filter-profile "default"
         set ips-sensor "high_security"
         set waf-profile "vip-waf_profile"
-        set inspection-mode proxy
         set logtraffic all
         set auto-asic-offload disable
-    next
-    edit 2
-        set name "spoke-to-wan_policy"
-        set srcintf "port2"
-        set dstintf "port1"
-        set action accept
-        set srcaddr "all"
-        set dstaddr "all"
-        set schedule "always"
-        set service "ALL"
         set nat enable
     next
 end
-
 
 config waf profile
     edit "vip-waf_profile"
@@ -270,5 +240,6 @@ config waf profile
         end
     next
 end
+
 
 --==AZURE==--
