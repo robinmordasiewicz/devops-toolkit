@@ -1,4 +1,0 @@
-/*
-This terraform plan will create a fortigate VM in azure without any public ip address.
-Adjust settings in variables.tf
-*/

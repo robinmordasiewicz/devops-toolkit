@@ -2,5 +2,8 @@
   "image": "docker.io/robinmordasiewicz/devcontainer:latest",
   "initializeCommand": "docker pull docker.io/robinmordasiewicz/devcontainer:latest",
   "name": "devops-toolkit",
-  "runArgs": ["--name=devops-toolkit", "--hostname=devops-toolkit"]
+  "runArgs": [
+    "--name=devops-toolkit",
+    "--hostname=devops-toolkit"
+  ]
 }
