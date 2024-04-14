@@ -12,7 +12,6 @@ resource "azurerm_network_interface" "ubuntu_spoke_network_interface" {
 }
 
 resource "azurerm_linux_virtual_machine" "ubuntu_virtual_machine" {
-  depends_on            = [azurerm_linux_virtual_machine.fortigate_virtual_machine]
   name                  = "ubuntu_virtual_machine"
   location              = azurerm_resource_group.azure_resource_group.location
   resource_group_name   = azurerm_resource_group.azure_resource_group.name

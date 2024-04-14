@@ -181,13 +181,13 @@ resource "azurerm_network_security_group" "spoke_nsg" { #tfsec:ignore:azure-netw
   location            = azurerm_resource_group.azure_resource_group.location
   resource_group_name = azurerm_resource_group.azure_resource_group.name
   security_rule {
-    name                       = "inbound-allow-tcp-80_rule"
+    name                       = "inbound-allow-http_rule"
     priority                   = 106
     direction                  = "Inbound"
     access                     = "Allow"
     protocol                   = "Tcp"
     source_port_range          = "*"
-    destination_port_range     = "80"
+    destination_port_ranges    = ["80", "81"]
     source_address_prefix      = "*"
     destination_address_prefix = "*"
   }
