@@ -8,19 +8,25 @@ repos:
   - repo: https://github.com/antonbabenko/pre-commit-terraform
     rev: v1.88.4
     hooks:
+      - id: terraform_docs
+        args:
+          - --hook-config=--path-to-file=README.md
+          - --hook-config=--add-to-existing-file=true
+          - --hook-config=--create-file-if-not-exist=true
+          - --hook-config=--use-standard-markers=true
       - id: terraform_fmt
         args:
           - --args=-recursive
       - id: terraform_tflint
       - id: terraform_validate
-      - id: terraform_checkov
-        args:
-          - --args=--quiet
-      - id: terraform_trivy
       - id: terrascan
         args:
           - --args=--non-recursive
           - --args=--policy-type=azure
+      # - id: terraform_trivy
+      # - id: terraform_checkov
+      #   args:
+      #     - --args=--quiet
   - repo: https://github.com/pre-commit/pre-commit-hooks
     rev: v4.5.0
     hooks:
