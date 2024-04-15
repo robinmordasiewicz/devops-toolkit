@@ -1,5 +1,12 @@
 # CHANGELOG
 
+## [1.19.1](https://github.com/robinmordasiewicz/devops-toolkit/compare/v1.19.0...v1.19.1) (2024-04-14)
+
+
+### Performance Improvements
+
+* **terraform:** modify the Terraform configuration to create a new network interface named "ubuntu\_dmz\_network\_interface" and update the security group association accordingly. This change is intended to improve the security posture of the Ubuntu VM by placing it in a DMZ network. ([15bb93b](https://github.com/robinmordasiewicz/devops-toolkit/commit/15bb93b36a9c0381abfba641fa2e8177fda58c2b))
+
 ## [1.19.0](https://github.com/robinmordasiewicz/devops-toolkit/compare/v1.18.6...v1.19.0) (2024-04-02)
 
 
