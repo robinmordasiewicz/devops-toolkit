@@ -102,7 +102,7 @@ resource "azurerm_network_security_group" "hub-external_network_security_group" 
     name                       = "MGMT_rule"
     priority                   = 100
     direction                  = "Inbound"
-    access                     = "Allow"
+    access                     = "Deny"
     protocol                   = "Tcp"
     source_port_range          = "*"
     destination_port_range     = "443"
