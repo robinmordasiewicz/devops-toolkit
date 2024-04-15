@@ -1,22 +1,12 @@
-# Terraform Docs
+# Changing PIP/UDR
+
+## Diagram
+
+![Changing PIP/UDR](https://learn.microsoft.com/en-us/azure/architecture/networking/guide/images/nvaha-pipudr-internet.png)
 
 ## Sizing
 
 https://learn.microsoft.com/en-us/azure/virtual-machines/fsv2-series
-
-## Diagram
-
-```mermaid
-%%tfmermaid
-%%{init:{"theme":"default","themeVariables":{"lineColor":"#6f7682","textColor":"#6f7682"}}}%%
-flowchart LR
-classDef r fill:#5c4ee5,stroke:#444,color:#fff
-classDef v fill:#eeedfc,stroke:#eeedfc,color:#5c4ee5
-classDef ms fill:none,stroke:#dce0e6,stroke-width:2px
-classDef vs fill:none,stroke:#dce0e6,stroke-width:4px,stroke-dasharray:10
-classDef ps fill:none,stroke:none
-classDef cs fill:#f7f8fa,stroke:#dce0e6,stroke-width:2px
-```
 
 <!-- BEGIN_TF_DOCS -->
 ## terraform.auto.tfvars
