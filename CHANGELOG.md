@@ -1,5 +1,12 @@
 # CHANGELOG
 
+## [1.19.2](https://github.com/robinmordasiewicz/devops-toolkit/compare/v1.19.1...v1.19.2) (2024-04-15)
+
+
+### Bug Fixes
+
+* **create-github-secrets.sh:** change script file name from create-github-secrets.sh to create-github-secrets-v2.sh to avoid overwriting the original file. ([0d0b1b4](https://github.com/robinmordasiewicz/devops-toolkit/commit/0d0b1b417647b37d4f580e666234b5ed10dfda49))
+
 ## [1.19.1](https://github.com/robinmordasiewicz/devops-toolkit/compare/v1.19.0...v1.19.1) (2024-04-14)
 
 
