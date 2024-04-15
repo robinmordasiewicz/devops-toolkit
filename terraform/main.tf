@@ -37,14 +37,3 @@ resource "random_password" "admin_password" {
   #min_special = 1
   special = false
 }
-
-output "admin_username" {
-  description = "Username for admin account"
-  value       = random_pet.admin_username.id
-}
-
-output "admin_password" {
-  description = "Password for admin account"
-  value       = random_password.admin_password.result
-  sensitive   = true
-}
