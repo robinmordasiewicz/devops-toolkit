@@ -13,8 +13,8 @@ az account set -s CSE-SE-DevOps
 
 ```bash
 az group create -n myusername-tfstate-RG -l canadacentral
-az storage account create -n myusernamesaccount -g myusername-tfstate-RG -l canadacentral --sku Standard_LRS
-az storage container create -n myusernametfstate --account-name myusernamesaccount --auth-mode login
+az storage account create -n myusernameaccount -g myusername-tfstate-RG -l canadacentral --sku Standard_LRS
+az storage container create -n myusernametfstate --account-name myusernameaccount --auth-mode login
 ```
 
 - Authenticate with a GitHub.com account.
@@ -28,7 +28,7 @@ gh auth login
 - Create GitHub secrets.
 
 ```bash
-gh secret set AZURE_STORAGE_ACCOUNT_NAME -b "myusernamesaccount"
+gh secret set AZURE_STORAGE_ACCOUNT_NAME -b "myusernameaccount"
 gh secret set TFSTATE_CONTAINER_NAME -b "myusernametfstate"
 gh secret set AZURE_RESOURCE_GROUP_NAME -b "myusername-tfstate-RG"
 ```
