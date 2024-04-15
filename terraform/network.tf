@@ -102,7 +102,7 @@ resource "azurerm_network_security_group" "hub-external_network_security_group" 
     name                       = "MGMT_rule"
     priority                   = 100
     direction                  = "Inbound"
-    access                     = "Deny"
+    access                     = "Allow"
     protocol                   = "Tcp"
     source_port_range          = "*"
     destination_port_range     = "443"
@@ -231,34 +231,4 @@ resource "azurerm_public_ip" "hub-nva-vip_public_ip" {
   allocation_method   = "Static"
   sku                 = "Standard"
   domain_name_label   = "dvwa"
-}
-
-data "azurerm_public_ip" "hub-nva-vip_public_ip" {
-  name                = azurerm_public_ip.hub-nva-vip_public_ip.name
-  resource_group_name = azurerm_resource_group.azure_resource_group.name
-}
-
-data "azurerm_public_ip" "hub-nva-management_public_ip" {
-  name                = azurerm_public_ip.hub-nva-management_public_ip.name
-  resource_group_name = azurerm_resource_group.azure_resource_group.name
-}
-
-output "hub-nva-vip_public_ip" {
-  description = "VIP IP address"
-  value       = data.azurerm_public_ip.hub-nva-vip_public_ip.ip_address
-}
-
-output "hub-nva-management_public_ip" {
-  description = "Management IP address"
-  value       = data.azurerm_public_ip.hub-nva-management_public_ip.ip_address
-}
-
-output "management_fqdn" {
-  description = "Management FQDN"
-  value       = "https://${data.azurerm_public_ip.hub-nva-management_public_ip.fqdn}"
-}
-
-output "vip_fqdn" {
-  description = "VIP FQDN"
-  value       = "https://${data.azurerm_public_ip.hub-nva-vip_public_ip.fqdn}"
 }
