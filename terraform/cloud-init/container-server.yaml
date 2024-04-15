@@ -51,7 +51,7 @@ write_files:
 runcmd:
   - export LANG="en_US.UTF-8"
   - export DEBIAN_FRONTEND=noninteractive
-  - for pkg in docker.io docker-doc docker-compose docker-compose-v2 podman-docker containerd runc; do sudo apt-get remove $pkg; done
+  - for pkg in docker.io docker-doc docker-compose docker-compose-v2 podman-docker containerd runc openssh-server; do apt-get -y remove $pkg; done
   - /root/wait-for-internet.sh
   - apt-get update -y
   - /root/wait-for-internet.sh

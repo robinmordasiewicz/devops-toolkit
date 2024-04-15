@@ -16,12 +16,14 @@
 
 resource "azurerm_linux_virtual_machine" "hub-nva_virtual_machine" {
   #checkov:skip=CKV_AZURE_178: Allow Fortigate to present HTTPS login UI instead of SSH
+  #checkov:skip=CKV_AZURE_149: Allow Fortigate to present HTTPS login UI instead of SSH
+  #checkov:skip=CKV_AZURE_1: Allow Fortigate to present HTTPS login UI instead of SSH
   #  depends_on                      = [azurerm_marketplace_agreement.fortigate]
   name                            = "hub-nva_virtual_machine"
   computer_name                   = "hub-nva"
   availability_set_id             = azurerm_availability_set.hub-nva_availability_set.id
   admin_username                  = random_pet.admin_username.id
-  disable_password_authentication = true
+  disable_password_authentication = false #tfsec:ignore:AVD-AZU-0039
   admin_password                  = random_password.admin_password.result
   location                        = azurerm_resource_group.azure_resource_group.location
   resource_group_name             = azurerm_resource_group.azure_resource_group.name
