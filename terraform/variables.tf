@@ -13,23 +13,33 @@ variable "resource_group" {
   type        = string
 }
 
-variable "internal-subnet_name" {
-  description = "Internal Subnet Name."
+variable "hub-virtual-network_address_prefix" {
+  description = "Hub Virtual Network Address prefix."
   type        = string
 }
 
-variable "internal-subnet_prefix" {
-  description = "Internal Subnet Prefix."
+variable "hub-internal-subnet_name" {
+  description = "Hub Subnet Name."
   type        = string
 }
 
-variable "external-subnet_name" {
+variable "hub-internal-subnet_prefix" {
+  description = "Hub Subnet Prefix."
+  type        = string
+}
+
+variable "hub-external-subnet_name" {
   description = "External Subnet Name."
   type        = string
 }
 
-variable "external-subnet_prefix" {
+variable "hub-external-subnet_prefix" {
   description = "External Subnet Prefix."
+  type        = string
+}
+
+variable "spoke-virtual-network_address_prefix" {
+  description = "Spoke Virtual Network Address prefix."
   type        = string
 }
 
@@ -40,15 +50,5 @@ variable "spoke-subnet_name" {
 
 variable "spoke-subnet_prefix" {
   description = "Spoke Subnet Prefix."
-  type        = string
-}
-
-variable "hub-vnet_address_prefix" {
-  description = "Virtual Network Address prefix."
-  type        = string
-}
-
-variable "spoke-vnet_address_prefix" {
-  description = "Virtual Network Address prefix."
   type        = string
 }

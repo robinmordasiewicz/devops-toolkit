@@ -1,23 +1,58 @@
-resource "azurerm_virtual_network_peering" "hub_peer" {
-  name                      = "hub_to_spoke"
+resource "azurerm_virtual_network" "hub_virtual_network" {
+  name                = "hub_virtual_network"
+  address_space       = [var.hub-virtual-network_address_prefix]
+  location            = azurerm_resource_group.azure_resource_group.location
+  resource_group_name = azurerm_resource_group.azure_resource_group.name
+}
+
+resource "azurerm_virtual_network" "spoke_virtual_network" {
+  name                = "spoke_virtual_network"
+  address_space       = [var.spoke-virtual-network_address_prefix]
+  location            = azurerm_resource_group.azure_resource_group.location
+  resource_group_name = azurerm_resource_group.azure_resource_group.name
+}
+
+resource "azurerm_virtual_network_peering" "hub-to-spoke_virtual_network_peering" {
+  name                      = "hub-to-spoke_virtual_network_peering"
   resource_group_name       = azurerm_resource_group.azure_resource_group.name
-  virtual_network_name      = azurerm_virtual_network.hub-vnet.name
-  remote_virtual_network_id = azurerm_virtual_network.spoke-vnet.id
+  virtual_network_name      = azurerm_virtual_network.hub_virtual_network.name
+  remote_virtual_network_id = azurerm_virtual_network.spoke_virtual_network.id
   allow_forwarded_traffic   = true
   allow_gateway_transit     = true
 }
 
-resource "azurerm_virtual_network_peering" "spoke_peer" {
-  name                      = "spoke_to_hub"
+resource "azurerm_virtual_network_peering" "spoke-to-hub_virtual_network_peering" {
+  name                      = "spoke-to-hub_virtual_network_peering"
   resource_group_name       = azurerm_resource_group.azure_resource_group.name
-  virtual_network_name      = azurerm_virtual_network.spoke-vnet.name
-  remote_virtual_network_id = azurerm_virtual_network.hub-vnet.id
+  virtual_network_name      = azurerm_virtual_network.spoke_virtual_network.name
+  remote_virtual_network_id = azurerm_virtual_network.hub_virtual_network.id
   allow_forwarded_traffic   = true
   allow_gateway_transit     = true
 }
 
-resource "azurerm_route_table" "hub-route_table" {
-  name                          = "hub-route_table"
+resource "azurerm_subnet" "hub-external_subnet" {
+  address_prefixes     = [var.hub-external-subnet_prefix]
+  name                 = var.hub-external-subnet_name
+  resource_group_name  = azurerm_resource_group.azure_resource_group.name
+  virtual_network_name = azurerm_virtual_network.hub_virtual_network.name
+}
+
+resource "azurerm_subnet" "hub-internal_subnet" {
+  address_prefixes     = [var.hub-internal-subnet_prefix]
+  name                 = var.hub-internal-subnet_name
+  resource_group_name  = azurerm_resource_group.azure_resource_group.name
+  virtual_network_name = azurerm_virtual_network.hub_virtual_network.name
+}
+
+resource "azurerm_subnet" "spoke_subnet" {
+  address_prefixes     = [var.spoke-subnet_prefix]
+  name                 = var.spoke-subnet_name
+  resource_group_name  = azurerm_resource_group.azure_resource_group.name
+  virtual_network_name = azurerm_virtual_network.spoke_virtual_network.name
+}
+
+resource "azurerm_route_table" "hub_route_table" {
+  name                          = "hub_route_table"
   location                      = azurerm_resource_group.azure_resource_group.location
   resource_group_name           = azurerm_resource_group.azure_resource_group.name
   disable_bgp_route_propagation = false
@@ -29,20 +64,18 @@ resource "azurerm_route_table" "hub-route_table" {
   }
 }
 
-resource "azurerm_subnet_route_table_association" "hub-internal-routing_table_association" {
-  subnet_id      = azurerm_subnet.internal_subnet.id
-  route_table_id = azurerm_route_table.hub-route_table.id
-  depends_on     = [azurerm_subnet.internal_subnet]
+resource "azurerm_subnet_route_table_association" "hub-internal-routing-table_association" {
+  subnet_id      = azurerm_subnet.hub-internal_subnet.id
+  route_table_id = azurerm_route_table.hub_route_table.id
 }
 
-resource "azurerm_subnet_route_table_association" "hub-external-routing_table_association" {
-  subnet_id      = azurerm_subnet.external_subnet.id
-  route_table_id = azurerm_route_table.hub-route_table.id
-  depends_on     = [azurerm_subnet.external_subnet]
+resource "azurerm_subnet_route_table_association" "hub-external-route-table_association" {
+  subnet_id      = azurerm_subnet.hub-external_subnet.id
+  route_table_id = azurerm_route_table.hub_route_table.id
 }
 
-resource "azurerm_route_table" "spoke-route_table" {
-  name                          = "spoke-route_table"
+resource "azurerm_route_table" "spoke_route_table" {
+  name                          = "spoke_route_table"
   location                      = azurerm_resource_group.azure_resource_group.location
   resource_group_name           = azurerm_resource_group.azure_resource_group.name
   disable_bgp_route_propagation = false
@@ -55,66 +88,18 @@ resource "azurerm_route_table" "spoke-route_table" {
   }
 }
 
-resource "azurerm_subnet_route_table_association" "spoke-routing_table_association" {
+resource "azurerm_subnet_route_table_association" "spoke-route-table_association" {
   subnet_id      = azurerm_subnet.spoke_subnet.id
-  route_table_id = azurerm_route_table.spoke-route_table.id
+  route_table_id = azurerm_route_table.spoke_route_table.id
   depends_on     = [azurerm_subnet.spoke_subnet]
 }
 
-# kics-scan disable=b4cc2c52-34a6-4b43-b57c-4bdeb4514a5a
-resource "azurerm_virtual_network" "hub-vnet" {
-  address_space       = [var.hub-vnet_address_prefix]
-  name                = "hub-vnet"
-  location            = azurerm_resource_group.azure_resource_group.location
-  resource_group_name = azurerm_resource_group.azure_resource_group.name
-}
-
-resource "azurerm_virtual_network" "spoke-vnet" {
-  address_space       = [var.spoke-vnet_address_prefix]
-  name                = "spoke-vnet"
-  location            = azurerm_resource_group.azure_resource_group.location
-  resource_group_name = azurerm_resource_group.azure_resource_group.name
-}
-
-resource "azurerm_public_ip" "mgmt_public_ip" {
-  name                = "mgmt_public_ip"
-  location            = azurerm_resource_group.azure_resource_group.location
-  resource_group_name = azurerm_resource_group.azure_resource_group.name
-  allocation_method   = "Static"
-  sku                 = "Standard"
-  domain_name_label   = "fortigate"
-}
-
-resource "azurerm_public_ip" "vip_public_ip" {
-  name                = "vip_public_ip"
-  location            = azurerm_resource_group.azure_resource_group.location
-  resource_group_name = azurerm_resource_group.azure_resource_group.name
-  allocation_method   = "Static"
-  sku                 = "Standard"
-  domain_name_label   = "dvwa"
-}
-
-resource "azurerm_subnet_network_security_group_association" "external_association" {
-  subnet_id                 = azurerm_subnet.external_subnet.id
-  network_security_group_id = azurerm_network_security_group.external_nsg.id
-}
-
-resource "azurerm_subnet_network_security_group_association" "internal_association" {
-  subnet_id                 = azurerm_subnet.internal_subnet.id
-  network_security_group_id = azurerm_network_security_group.internal_nsg.id
-}
-
-resource "azurerm_subnet_network_security_group_association" "spoke_association" {
-  subnet_id                 = azurerm_subnet.spoke_subnet.id
-  network_security_group_id = azurerm_network_security_group.spoke_nsg.id
-}
-
-resource "azurerm_network_security_group" "external_nsg" { #tfsec:ignore:azure-network-no-public-ingress
-  name                = "external_nsg"
+resource "azurerm_network_security_group" "hub-external_network_security_group" { #tfsec:ignore:azure-network-no-public-ingress
+  name                = "hub-external_network_security_group"
   location            = azurerm_resource_group.azure_resource_group.location
   resource_group_name = azurerm_resource_group.azure_resource_group.name
   security_rule {
-    name                       = "MGMT-allow_rule"
+    name                       = "MGMT_rule"
     priority                   = 100
     direction                  = "Inbound"
     access                     = "Allow"
@@ -122,135 +107,158 @@ resource "azurerm_network_security_group" "external_nsg" { #tfsec:ignore:azure-n
     source_port_range          = "*"
     destination_port_range     = "443"
     source_address_prefix      = "*"
-    destination_address_prefix = cidrhost(var.external-subnet_prefix, 4)
+    destination_address_prefix = cidrhost(var.hub-external-subnet_prefix, 4)
   }
   security_rule {
-    name                       = "VIP-allow_rule"
-    priority                   = 102
+    name                       = "VIP_rule"
+    priority                   = 101
+    direction                  = "Inbound"
+    access                     = "Allow"
+    protocol                   = "Tcp"
+    source_port_range          = "*"
+    destination_port_ranges    = ["80", "443"] #checkov:skip=CKV_AZURE_160: Allow HTTP redirects
+    source_address_prefix      = "*"
+    destination_address_prefix = cidrhost(var.hub-external-subnet_prefix, 100)
+  }
+}
+
+resource "azurerm_subnet_network_security_group_association" "hub-external-subnet-network-security-group_association" {
+  subnet_id                 = azurerm_subnet.hub-external_subnet.id
+  network_security_group_id = azurerm_network_security_group.hub-external_network_security_group.id
+}
+
+resource "azurerm_network_security_group" "hub-internal_network_security_group" {
+  name                = "hub-internal_network_security_group"
+  location            = azurerm_resource_group.azure_resource_group.location
+  resource_group_name = azurerm_resource_group.azure_resource_group.name
+  security_rule {
+    name                       = "container-server_to_internet_rule"
+    priority                   = 100
     direction                  = "Inbound"
     access                     = "Allow"
     protocol                   = "Tcp"
     source_port_range          = "*"
     destination_port_ranges    = ["80", "443"]
-    source_address_prefix      = "*"
-    destination_address_prefix = cidrhost(var.external-subnet_prefix, 100)
-  }
-  security_rule {
-    name                       = "outbound-allow_rule"
-    priority                   = 103
-    direction                  = "Outbound"
-    access                     = "Allow"
-    protocol                   = "*"
-    source_port_range          = "*"
-    destination_port_range     = "*"
-    source_address_prefix      = "*"
+    source_address_prefix      = cidrhost(var.spoke-subnet_prefix, 5)
     destination_address_prefix = "*"
   }
-}
-
-resource "azurerm_network_security_group" "internal_nsg" { #tfsec:ignore:azure-network-no-public-ingress
-  name                = "internal_nsg"
-  location            = azurerm_resource_group.azure_resource_group.location
-  resource_group_name = azurerm_resource_group.azure_resource_group.name
   security_rule {
-    name                       = "inbound-allow_rule"
-    priority                   = 104
+    name                       = "icmp_to_google-dns_rule"
+    priority                   = 101
     direction                  = "Inbound"
     access                     = "Allow"
-    protocol                   = "*"
+    protocol                   = "Icmp"
     source_port_range          = "*"
     destination_port_range     = "*"
-    source_address_prefix      = "*"
-    destination_address_prefix = "*"
+    source_address_prefix      = cidrhost(var.spoke-subnet_prefix, 5)
+    destination_address_prefix = "8.8.8.8"
   }
   security_rule {
-    name                       = "outbound-allow_rule"
-    priority                   = 105
+    name                       = "outbound-http_rule"
+    priority                   = 102
     direction                  = "Outbound"
-    access                     = "Allow"
-    protocol                   = "*"
-    source_port_range          = "*"
-    destination_port_range     = "*"
-    source_address_prefix      = "*"
-    destination_address_prefix = "*"
-  }
-}
-
-resource "azurerm_network_security_group" "spoke_nsg" { #tfsec:ignore:azure-network-no-public-ingress
-  name                = "spoke_nsg"
-  location            = azurerm_resource_group.azure_resource_group.location
-  resource_group_name = azurerm_resource_group.azure_resource_group.name
-  security_rule {
-    name                       = "inbound-allow-http_rule"
-    priority                   = 106
-    direction                  = "Inbound"
     access                     = "Allow"
     protocol                   = "Tcp"
     source_port_range          = "*"
     destination_port_ranges    = ["80", "81"]
     source_address_prefix      = "*"
-    destination_address_prefix = "*"
+    destination_address_prefix = cidrhost(var.spoke-subnet_prefix, 5)
+  }
+}
+
+resource "azurerm_subnet_network_security_group_association" "hub-internal-subnet-network-security-group_association" {
+  subnet_id                 = azurerm_subnet.hub-internal_subnet.id
+  network_security_group_id = azurerm_network_security_group.hub-internal_network_security_group.id
+}
+
+resource "azurerm_network_security_group" "spoke_network_security_group" {
+  name                = "spoke_network_security_group"
+  location            = azurerm_resource_group.azure_resource_group.location
+  resource_group_name = azurerm_resource_group.azure_resource_group.name
+  security_rule { #tfsec:ignore:AVD-AZU-0047
+    name                       = "inbound-http_rule"
+    priority                   = 100
+    direction                  = "Inbound"
+    access                     = "Allow"
+    protocol                   = "Tcp"
+    source_port_range          = "*"
+    destination_port_ranges    = ["80", "81"] #checkov:skip=CKV_AZURE_160: Allow containers to serve
+    source_address_prefix      = "*"
+    destination_address_prefix = cidrhost(var.spoke-subnet_prefix, 5)
   }
   security_rule {
-    name                       = "outbound-allow_rule"
-    priority                   = 107
+    name                       = "container-server_to_internet_rule"
+    priority                   = 100
     direction                  = "Outbound"
     access                     = "Allow"
-    protocol                   = "*"
+    protocol                   = "Tcp"
+    source_port_range          = "*"
+    destination_port_ranges    = ["80", "443"]
+    source_address_prefix      = cidrhost(var.spoke-subnet_prefix, 5)
+    destination_address_prefix = "*" #tfsec:ignore:AVD-AZU-0051
+  }
+  security_rule { #tfsec:ignore:AVD-AZU-0051
+    name                       = "icmp_to_google-dns_rule"
+    priority                   = 101
+    direction                  = "Outbound"
+    access                     = "Allow"
+    protocol                   = "Icmp"
     source_port_range          = "*"
     destination_port_range     = "*"
-    source_address_prefix      = "*"
-    destination_address_prefix = "*"
+    source_address_prefix      = cidrhost(var.spoke-subnet_prefix, 5)
+    destination_address_prefix = "8.8.8.8"
   }
 }
 
-resource "azurerm_subnet" "external_subnet" {
-  address_prefixes     = [var.external-subnet_prefix]
-  name                 = var.external-subnet_name
-  resource_group_name  = azurerm_resource_group.azure_resource_group.name
-  virtual_network_name = azurerm_virtual_network.hub-vnet.name
+resource "azurerm_subnet_network_security_group_association" "spokesubnet-network-security-group__association" {
+  subnet_id                 = azurerm_subnet.spoke_subnet.id
+  network_security_group_id = azurerm_network_security_group.spoke_network_security_group.id
 }
 
-resource "azurerm_subnet" "internal_subnet" {
-  address_prefixes     = [var.internal-subnet_prefix]
-  name                 = var.internal-subnet_name
-  resource_group_name  = azurerm_resource_group.azure_resource_group.name
-  virtual_network_name = azurerm_virtual_network.hub-vnet.name
+resource "azurerm_public_ip" "hub-nva-management_public_ip" {
+  name                = "hub-nva-management_public_ip"
+  location            = azurerm_resource_group.azure_resource_group.location
+  resource_group_name = azurerm_resource_group.azure_resource_group.name
+  allocation_method   = "Static"
+  sku                 = "Standard"
+  domain_name_label   = "nva"
 }
 
-resource "azurerm_subnet" "spoke_subnet" {
-  address_prefixes     = [var.spoke-subnet_prefix]
-  name                 = var.spoke-subnet_name
-  resource_group_name  = azurerm_resource_group.azure_resource_group.name
-  virtual_network_name = azurerm_virtual_network.spoke-vnet.name
+resource "azurerm_public_ip" "hub-nva-vip_public_ip" {
+  name                = "hub-nva-vip_public_ip"
+  location            = azurerm_resource_group.azure_resource_group.location
+  resource_group_name = azurerm_resource_group.azure_resource_group.name
+  allocation_method   = "Static"
+  sku                 = "Standard"
+  domain_name_label   = "dvwa"
 }
 
-data "azurerm_public_ip" "vip_public_ip" {
-  name                = azurerm_public_ip.vip_public_ip.name
+data "azurerm_public_ip" "hub-nva-vip_public_ip" {
+  name                = azurerm_public_ip.hub-nva-vip_public_ip.name
   resource_group_name = azurerm_resource_group.azure_resource_group.name
 }
 
-data "azurerm_public_ip" "mgmt_public_ip" {
-  name                = azurerm_public_ip.mgmt_public_ip.name
+data "azurerm_public_ip" "hub-nva-management_public_ip" {
+  name                = azurerm_public_ip.hub-nva-management_public_ip.name
   resource_group_name = azurerm_resource_group.azure_resource_group.name
 }
 
-output "vip_public_ip_address" {
+output "hub-nva-vip_public_ip" {
   description = "VIP IP address"
-  value       = data.azurerm_public_ip.vip_public_ip.ip_address
+  value       = data.azurerm_public_ip.hub-nva-vip_public_ip.ip_address
 }
 
-output "mgmt_public_ip_address" {
+output "hub-nva-management_public_ip" {
   description = "Management IP address"
-  value       = data.azurerm_public_ip.mgmt_public_ip.ip_address
+  value       = data.azurerm_public_ip.hub-nva-management_public_ip.ip_address
 }
 
-output "mgmt_fqdn" {
+output "management_fqdn" {
   description = "Management FQDN"
-  value       = "https://${data.azurerm_public_ip.mgmt_public_ip.fqdn}"
+  value       = "https://${data.azurerm_public_ip.hub-nva-management_public_ip.fqdn}"
 }
 
 output "vip_fqdn" {
   description = "VIP FQDN"
-  value       = "https://${data.azurerm_public_ip.vip_public_ip.fqdn}"
+  value       = "https://${data.azurerm_public_ip.hub-nva-vip_public_ip.fqdn}"
 }
