@@ -70,6 +70,5 @@ spoke-subnet_prefix                  = "10.1.0.0/24"
 | hub-nva-management\_public\_ip | Management IP address |
 | hub-nva-vip\_public\_ip | VIP IP address |
 | management\_fqdn | Management FQDN |
-| tls\_private\_key | TSL private key |
 | vip\_fqdn | VIP FQDN |
 <!-- END_TF_DOCS -->
