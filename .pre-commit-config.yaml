@@ -23,10 +23,10 @@ repos:
         args:
           - --args=--non-recursive
           - --args=--policy-type=azure
-      # - id: terraform_trivy
-      # - id: terraform_checkov
-      #   args:
-      #     - --args=--quiet
+      - id: terraform_trivy
+      - id: terraform_checkov
+        args:
+          - --args=--quiet
   - repo: https://github.com/pre-commit/pre-commit-hooks
     rev: v4.5.0
     hooks:
