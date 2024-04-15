@@ -1,18 +1,17 @@
 resource "azurerm_linux_virtual_machine" "spoke-container-server_virtual_machine" {
+  #checkov:skip=CKV_AZURE_178: SSH is disabled
+  #checkov:skip=CKV_AZURE_149: SSH is disabled
+  #checkov:skip=CKV_AZURE_1: SSH is disabled
   name                            = "spoke-container-server_virtual_machine"
   computer_name                   = "container-server"
   admin_username                  = random_pet.admin_username.id
-  disable_password_authentication = true
+  disable_password_authentication = false #tfsec:ignore:AVD-AZU-0039
+  admin_password                  = random_password.admin_password.result
   location                        = azurerm_resource_group.azure_resource_group.location
   resource_group_name             = azurerm_resource_group.azure_resource_group.name
   network_interface_ids           = [azurerm_network_interface.spoke-container-server_network_interface.id]
   size                            = "Standard_DS1_v2"
   allow_extension_operations      = false
-
-  admin_ssh_key {
-    username   = random_pet.admin_username.id
-    public_key = tls_private_key.ssh_key.public_key_openssh
-  }
 
   os_disk {
     caching              = "ReadWrite"
