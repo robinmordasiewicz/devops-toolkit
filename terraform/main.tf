@@ -48,14 +48,3 @@ output "admin_password" {
   value       = random_password.admin_password.result
   sensitive   = true
 }
-
-resource "tls_private_key" "ssh_key" {
-  algorithm = "RSA"
-  rsa_bits  = 4096
-}
-
-output "tls_private_key" {
-  description = "TSL private key"
-  value       = tls_private_key.ssh_key.private_key_pem
-  sensitive   = true
-}
