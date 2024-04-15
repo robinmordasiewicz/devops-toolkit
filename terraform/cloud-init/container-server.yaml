@@ -1,0 +1,73 @@
+#cloud-config
+write_files:
+- content: |
+    #!/bin/bash
+    #
+    RESULT=1
+    while [ ${RESULT} != 0 ]
+    do
+      ping -c1 -n -W 2 8.8.8.8
+      RESULT="$?"
+      echo "Waiting for internet: `date`"
+    done
+  path: /root/wait-for-internet.sh
+  permissions: '0755'
+- content: |
+    volumes:
+      dvwa:
+    services:
+      dvwa80:
+        image: ghcr.io/digininja/dvwa:latest
+        pull_policy: always
+        environment:
+          - DB_SERVER=db
+        depends_on:
+          - db
+        ports:
+          - 80:80
+        restart: always
+      dvwa81:
+        image: ghcr.io/digininja/dvwa:latest
+        pull_policy: always
+        environment:
+          - DB_SERVER=db
+        depends_on:
+          - db
+        ports:
+          - 81:80
+        restart: always
+      db:
+        image: docker.io/library/mariadb:10
+        environment:
+          - MYSQL_ROOT_PASSWORD=dvwa
+          - MYSQL_DATABASE=dvwa
+          - MYSQL_USER=dvwa
+          - MYSQL_PASSWORD=p@ssw0rd
+        volumes:
+          - dvwa:/var/lib/mysql
+        restart: unless-stopped
+  path: /root/compose.yml
+
+runcmd:
+  - export LANG="en_US.UTF-8"
+  - export DEBIAN_FRONTEND=noninteractive
+  - for pkg in docker.io docker-doc docker-compose docker-compose-v2 podman-docker containerd runc openssh-server; do apt-get -y remove $pkg; done
+  - /root/wait-for-internet.sh
+  - apt-get update -y
+  - /root/wait-for-internet.sh
+  - apt-get install -y ca-certificates curl apt-transport-https software-properties-common
+  - install -m 0755 -d /etc/apt/keyrings
+  - /root/wait-for-internet.sh
+  - curl -fsSL https://download.docker.com/linux/ubuntu/gpg -o /etc/apt/keyrings/docker.asc
+  - chmod a+r /etc/apt/keyrings/docker.asc
+  - |
+    echo \
+    "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.asc] https://download.docker.com/linux/ubuntu \
+    $(. /etc/os-release && echo "$VERSION_CODENAME") stable" | \
+    tee /etc/apt/sources.list.d/docker.list > /dev/null
+  - /root/wait-for-internet.sh
+  - apt-get -y update
+  - /root/wait-for-internet.sh
+  - apt-get install -y docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
+  - /root/wait-for-internet.sh
+  - docker compose -f /root/compose.yml up -d
