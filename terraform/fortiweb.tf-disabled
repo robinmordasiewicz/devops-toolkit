@@ -1,0 +1,84 @@
+resource "null_resource" "marketplace_agreement" {
+  provisioner "local-exec" {
+    command = "az vm image terms accept --publisher ${var.hub-nva-publisher} --offer ${var.hub-nva-offer} --plan ${var.hub-nva-sku}"
+  }
+}
+
+resource "azurerm_managed_disk" "hub-nva_managed_disk" {
+  create_option        = "Empty"
+  location             = azurerm_resource_group.azure_resource_group.location
+  resource_group_name  = azurerm_resource_group.azure_resource_group.name
+  name                 = "${azurerm_linux_virtual_machine.hub-nva_virtual_machine.name}-DISK"
+  storage_account_type = "Premium_LRS"
+  disk_size_gb         = "80"
+}
+
+resource "azurerm_virtual_machine_data_disk_attachment" "hub-nva_disk_attachment" {
+  caching            = "None"
+  create_option      = "Empty"
+  lun                = 0
+  managed_disk_id    = azurerm_managed_disk.hub-nva_managed_disk.id
+  virtual_machine_id = azurerm_linux_virtual_machine.hub-nva_virtual_machine.id
+}
+
+resource "azurerm_linux_virtual_machine" "hub-nva_virtual_machine" {
+  #dynamic "storage_data_disk" {
+  #  content {
+  #  name = azurerm_managed_disk.hub-nva_managed_disk.name
+  #  managed_disk_id   = azurerm_managed_disk.hub-nva_managed_disk.id
+  #  disk_size_gb = azurerm_managed_disk.hub-nva_managed_disk.disk_size_gb
+  #  caching = "None"
+  #  create_option = "Empty"
+  #  lun = 0
+  #  }
+  #}
+  depends_on                      = [null_resource.marketplace_agreement]
+  name                            = "hub-nva_virtual_machine"
+  location                        = azurerm_resource_group.azure_resource_group.location
+  resource_group_name             = azurerm_resource_group.azure_resource_group.name
+  availability_set_id             = azurerm_availability_set.hub-nva_availability_set.id
+  network_interface_ids           = [azurerm_network_interface.hub-nva-external_network_interface.id, azurerm_network_interface.hub-nva-internal_network_interface.id]
+  computer_name                   = "hub-nva"
+  admin_password                  = random_password.admin_password.result
+  admin_username                  = random_pet.admin_username.id
+  disable_password_authentication = false
+  size                            = var.hub-nva-size
+  custom_data                     = filebase64("cloud-init/hub-nva.conf")
+  boot_diagnostics {
+    storage_account_uri = "https://fortiwebdiagnostics.blob.core.windows.net/"
+  }
+  identity {
+    type = "SystemAssigned"
+  }
+  os_disk {
+    caching              = "ReadWrite"
+    storage_account_type = "Premium_LRS"
+  }
+  plan {
+    name      = var.hub-nva-sku
+    product   = var.hub-nva-offer
+    publisher = var.hub-nva-publisher
+  }
+  source_image_reference {
+    offer     = var.hub-nva-offer
+    publisher = var.hub-nva-publisher
+    sku       = var.hub-nva-sku
+    version   = "latest"
+  }
+}
+
+resource "azurerm_storage_account" "storage_account" {
+  account_kind                     = "Storage"
+  account_replication_type         = "LRS"
+  account_tier                     = "Standard"
+  allow_nested_items_to_be_public  = false
+  cross_tenant_replication_enabled = false
+  location                         = azurerm_resource_group.azure_resource_group.location
+  min_tls_version                  = "TLS1_0"
+  name                             = "fortiwebdiagnostics"
+  resource_group_name              = azurerm_resource_group.azure_resource_group.name
+}
+resource "azurerm_storage_container" "bootdiagnosticfortiweb" {
+  name                 = "bootdiagnosticfortiweb"
+  storage_account_name = "fortiwebdiagnostics"
+}
