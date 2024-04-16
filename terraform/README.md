@@ -1,5 +1,7 @@
 # Changing PIP/UDR
 
+https://learn.microsoft.com/en-us/azure/architecture/networking/guide/nva-ha#pip-udr-nvas-without-snat
+
 ## Diagram
 
 ![Changing PIP/UDR](https://learn.microsoft.com/en-us/azure/architecture/networking/guide/images/nvaha-pipudr-internet.png)
