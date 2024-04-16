@@ -8,11 +8,6 @@ variable "location" {
   type        = string
 }
 
-variable "resource_group" {
-  description = "Azure resource group."
-  type        = string
-}
-
 variable "hub-virtual-network_address_prefix" {
   description = "Hub Virtual Network Address prefix."
   type        = string
@@ -78,6 +73,21 @@ variable "hub-nva-management-port" {
   type        = string
 }
 
+variable "hub-nva-management-ip" {
+  description = "Hub NVA Management IP Address"
+  type        = string
+}
+
+variable "hub-nva-gateway" {
+  description = "Hub NVA Gateway IP Address"
+  type        = string
+}
+
+variable "hub-nva-vip" {
+  description = "Hub NVA Gateway Virtual IP Address"
+  type        = string
+}
+
 variable "hub-nva-management-action" {
   description = "Allow or Deny access to Management"
   type        = string
@@ -100,5 +110,15 @@ variable "spoke-container-server-offer" {
 
 variable "spoke-container-server-size" {
   description = "Spoke Container Server Size"
+  type        = string
+}
+
+variable "spoke-container-server-ip" {
+  description = "Spoke Container Server IP Address"
+  type        = string
+}
+
+variable "spoke-check-internet-up-ip" {
+  description = "Spoke Container Server Checks the Internet at this IP Address"
   type        = string
 }
