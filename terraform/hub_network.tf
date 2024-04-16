@@ -59,10 +59,10 @@ resource "azurerm_network_security_group" "hub-external_network_security_group" 
     name                       = "MGMT_rule"
     priority                   = 100
     direction                  = "Inbound"
-    access                     = "Allow"
+    access                     = var.hub-nva-management-action
     protocol                   = "Tcp"
     source_port_range          = "*"
-    destination_port_range     = "443"
+    destination_port_range     = var.hub-nva-management-port
     source_address_prefix      = "*"
     destination_address_prefix = cidrhost(var.hub-external-subnet_prefix, 4)
   }

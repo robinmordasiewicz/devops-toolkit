@@ -73,6 +73,16 @@ variable "hub-nva-size" {
   type        = string
 }
 
+variable "hub-nva-management-port" {
+  description = "Hub NVA Management TCP Port"
+  type        = string
+}
+
+variable "hub-nva-management-action" {
+  description = "Allow or Deny access to Management"
+  type        = string
+}
+
 variable "spoke-container-server-sku" {
   description = "Spoke Container Server SKU"
   type        = string
