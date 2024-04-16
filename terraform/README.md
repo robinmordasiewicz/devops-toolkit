@@ -33,7 +33,7 @@ spoke-subnet_prefix                  = "10.1.0.0/24"
 | terraform | 1.8.0 |
 | azurerm | 3.99.0 |
 | http | 3.4.1 |
-| random | 3.6.0 |
+| random | 3.6.1 |
 | tls | 4.0.5 |
 
 ## Inputs
