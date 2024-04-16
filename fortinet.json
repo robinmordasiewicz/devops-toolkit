@@ -1,0 +1,2874 @@
+[
+  {
+    "architecture": "x64",
+    "offer": "fortinet-fortiadc",
+    "publisher": "fortinet",
+    "sku": "fad-vm-byol",
+    "urn": "fortinet:fortinet-fortiadc:fad-vm-byol:7.0.1",
+    "version": "7.0.1"
+  },
+  {
+    "architecture": "x64",
+    "offer": "fortinet-fortiadc",
+    "publisher": "fortinet",
+    "sku": "fad-vm-byol",
+    "urn": "fortinet:fortinet-fortiadc:fad-vm-byol:7.2.0",
+    "version": "7.2.0"
+  },
+  {
+    "architecture": "x64",
+    "offer": "fortinet-fortiadc",
+    "publisher": "fortinet",
+    "sku": "fortinet-fad-vm_payg-100mbps",
+    "urn": "fortinet:fortinet-fortiadc:fortinet-fad-vm_payg-100mbps:7.0.1",
+    "version": "7.0.1"
+  },
+  {
+    "architecture": "x64",
+    "offer": "fortinet-fortiadc",
+    "publisher": "fortinet",
+    "sku": "fortinet-fad-vm_payg-100mbps",
+    "urn": "fortinet:fortinet-fortiadc:fortinet-fad-vm_payg-100mbps:7.2.0",
+    "version": "7.2.0"
+  },
+  {
+    "architecture": "x64",
+    "offer": "fortinet-fortiadc",
+    "publisher": "fortinet",
+    "sku": "fortinet-fad-vm_payg-10gbps",
+    "urn": "fortinet:fortinet-fortiadc:fortinet-fad-vm_payg-10gbps:7.0.1",
+    "version": "7.0.1"
+  },
+  {
+    "architecture": "x64",
+    "offer": "fortinet-fortiadc",
+    "publisher": "fortinet",
+    "sku": "fortinet-fad-vm_payg-10gbps",
+    "urn": "fortinet:fortinet-fortiadc:fortinet-fad-vm_payg-10gbps:7.2.0",
+    "version": "7.2.0"
+  },
+  {
+    "architecture": "x64",
+    "offer": "fortinet-fortiadc",
+    "publisher": "fortinet",
+    "sku": "fortinet-fad-vm_payg-1gbps",
+    "urn": "fortinet:fortinet-fortiadc:fortinet-fad-vm_payg-1gbps:7.0.1",
+    "version": "7.0.1"
+  },
+  {
+    "architecture": "x64",
+    "offer": "fortinet-fortiadc",
+    "publisher": "fortinet",
+    "sku": "fortinet-fad-vm_payg-1gbps",
+    "urn": "fortinet:fortinet-fortiadc:fortinet-fad-vm_payg-1gbps:7.2.0",
+    "version": "7.2.0"
+  },
+  {
+    "architecture": "x64",
+    "offer": "fortinet-fortiadc",
+    "publisher": "fortinet",
+    "sku": "fortinet-fad-vm_payg-500mbps",
+    "urn": "fortinet:fortinet-fortiadc:fortinet-fad-vm_payg-500mbps:7.0.1",
+    "version": "7.0.1"
+  },
+  {
+    "architecture": "x64",
+    "offer": "fortinet-fortiadc",
+    "publisher": "fortinet",
+    "sku": "fortinet-fad-vm_payg-500mbps",
+    "urn": "fortinet:fortinet-fortiadc:fortinet-fad-vm_payg-500mbps:7.2.0",
+    "version": "7.2.0"
+  },
+  {
+    "architecture": "x64",
+    "offer": "fortinet-fortiadc",
+    "publisher": "fortinet",
+    "sku": "fortinet-fad-vm_payg-5gbps",
+    "urn": "fortinet:fortinet-fortiadc:fortinet-fad-vm_payg-5gbps:7.0.1",
+    "version": "7.0.1"
+  },
+  {
+    "architecture": "x64",
+    "offer": "fortinet-fortiadc",
+    "publisher": "fortinet",
+    "sku": "fortinet-fad-vm_payg-5gbps",
+    "urn": "fortinet:fortinet-fortiadc:fortinet-fad-vm_payg-5gbps:7.2.0",
+    "version": "7.2.0"
+  },
+  {
+    "architecture": "x64",
+    "offer": "fortinet-fortianalyzer",
+    "publisher": "fortinet",
+    "sku": "fortinet-fortianalyzer",
+    "urn": "fortinet:fortinet-fortianalyzer:fortinet-fortianalyzer:6.2.0",
+    "version": "6.2.0"
+  },
+  {
+    "architecture": "x64",
+    "offer": "fortinet-fortianalyzer",
+    "publisher": "fortinet",
+    "sku": "fortinet-fortianalyzer",
+    "urn": "fortinet:fortinet-fortianalyzer:fortinet-fortianalyzer:6.2.1",
+    "version": "6.2.1"
+  },
+  {
+    "architecture": "x64",
+    "offer": "fortinet-fortianalyzer",
+    "publisher": "fortinet",
+    "sku": "fortinet-fortianalyzer",
+    "urn": "fortinet:fortinet-fortianalyzer:fortinet-fortianalyzer:6.2.2",
+    "version": "6.2.2"
+  },
+  {
+    "architecture": "x64",
+    "offer": "fortinet-fortianalyzer",
+    "publisher": "fortinet",
+    "sku": "fortinet-fortianalyzer",
+    "urn": "fortinet:fortinet-fortianalyzer:fortinet-fortianalyzer:6.2.3",
+    "version": "6.2.3"
+  },
+  {
+    "architecture": "x64",
+    "offer": "fortinet-fortianalyzer",
+    "publisher": "fortinet",
+    "sku": "fortinet-fortianalyzer",
+    "urn": "fortinet:fortinet-fortianalyzer:fortinet-fortianalyzer:6.2.5",
+    "version": "6.2.5"
+  },
+  {
+    "architecture": "x64",
+    "offer": "fortinet-fortianalyzer",
+    "publisher": "fortinet",
+    "sku": "fortinet-fortianalyzer",
+    "urn": "fortinet:fortinet-fortianalyzer:fortinet-fortianalyzer:6.4.0",
+    "version": "6.4.0"
+  },
+  {
+    "architecture": "x64",
+    "offer": "fortinet-fortianalyzer",
+    "publisher": "fortinet",
+    "sku": "fortinet-fortianalyzer",
+    "urn": "fortinet:fortinet-fortianalyzer:fortinet-fortianalyzer:6.4.1",
+    "version": "6.4.1"
+  },
+  {
+    "architecture": "x64",
+    "offer": "fortinet-fortianalyzer",
+    "publisher": "fortinet",
+    "sku": "fortinet-fortianalyzer",
+    "urn": "fortinet:fortinet-fortianalyzer:fortinet-fortianalyzer:6.4.10",
+    "version": "6.4.10"
+  },
+  {
+    "architecture": "x64",
+    "offer": "fortinet-fortianalyzer",
+    "publisher": "fortinet",
+    "sku": "fortinet-fortianalyzer",
+    "urn": "fortinet:fortinet-fortianalyzer:fortinet-fortianalyzer:6.4.11",
+    "version": "6.4.11"
+  },
+  {
+    "architecture": "x64",
+    "offer": "fortinet-fortianalyzer",
+    "publisher": "fortinet",
+    "sku": "fortinet-fortianalyzer",
+    "urn": "fortinet:fortinet-fortianalyzer:fortinet-fortianalyzer:6.4.12",
+    "version": "6.4.12"
+  },
+  {
+    "architecture": "x64",
+    "offer": "fortinet-fortianalyzer",
+    "publisher": "fortinet",
+    "sku": "fortinet-fortianalyzer",
+    "urn": "fortinet:fortinet-fortianalyzer:fortinet-fortianalyzer:6.4.13",
+    "version": "6.4.13"
+  },
+  {
+    "architecture": "x64",
+    "offer": "fortinet-fortianalyzer",
+    "publisher": "fortinet",
+    "sku": "fortinet-fortianalyzer",
+    "urn": "fortinet:fortinet-fortianalyzer:fortinet-fortianalyzer:6.4.14",
+    "version": "6.4.14"
+  },
+  {
+    "architecture": "x64",
+    "offer": "fortinet-fortianalyzer",
+    "publisher": "fortinet",
+    "sku": "fortinet-fortianalyzer",
+    "urn": "fortinet:fortinet-fortianalyzer:fortinet-fortianalyzer:6.4.2",
+    "version": "6.4.2"
+  },
+  {
+    "architecture": "x64",
+    "offer": "fortinet-fortianalyzer",
+    "publisher": "fortinet",
+    "sku": "fortinet-fortianalyzer",
+    "urn": "fortinet:fortinet-fortianalyzer:fortinet-fortianalyzer:6.4.5",
+    "version": "6.4.5"
+  },
+  {
+    "architecture": "x64",
+    "offer": "fortinet-fortianalyzer",
+    "publisher": "fortinet",
+    "sku": "fortinet-fortianalyzer",
+    "urn": "fortinet:fortinet-fortianalyzer:fortinet-fortianalyzer:6.4.6",
+    "version": "6.4.6"
+  },
+  {
+    "architecture": "x64",
+    "offer": "fortinet-fortianalyzer",
+    "publisher": "fortinet",
+    "sku": "fortinet-fortianalyzer",
+    "urn": "fortinet:fortinet-fortianalyzer:fortinet-fortianalyzer:6.4.7",
+    "version": "6.4.7"
+  },
+  {
+    "architecture": "x64",
+    "offer": "fortinet-fortianalyzer",
+    "publisher": "fortinet",
+    "sku": "fortinet-fortianalyzer",
+    "urn": "fortinet:fortinet-fortianalyzer:fortinet-fortianalyzer:6.4.8",
+    "version": "6.4.8"
+  },
+  {
+    "architecture": "x64",
+    "offer": "fortinet-fortianalyzer",
+    "publisher": "fortinet",
+    "sku": "fortinet-fortianalyzer",
+    "urn": "fortinet:fortinet-fortianalyzer:fortinet-fortianalyzer:6.4.9",
+    "version": "6.4.9"
+  },
+  {
+    "architecture": "x64",
+    "offer": "fortinet-fortianalyzer",
+    "publisher": "fortinet",
+    "sku": "fortinet-fortianalyzer",
+    "urn": "fortinet:fortinet-fortianalyzer:fortinet-fortianalyzer:7.0.0",
+    "version": "7.0.0"
+  },
+  {
+    "architecture": "x64",
+    "offer": "fortinet-fortianalyzer",
+    "publisher": "fortinet",
+    "sku": "fortinet-fortianalyzer",
+    "urn": "fortinet:fortinet-fortianalyzer:fortinet-fortianalyzer:7.0.1",
+    "version": "7.0.1"
+  },
+  {
+    "architecture": "x64",
+    "offer": "fortinet-fortianalyzer",
+    "publisher": "fortinet",
+    "sku": "fortinet-fortianalyzer",
+    "urn": "fortinet:fortinet-fortianalyzer:fortinet-fortianalyzer:7.0.10",
+    "version": "7.0.10"
+  },
+  {
+    "architecture": "x64",
+    "offer": "fortinet-fortianalyzer",
+    "publisher": "fortinet",
+    "sku": "fortinet-fortianalyzer",
+    "urn": "fortinet:fortinet-fortianalyzer:fortinet-fortianalyzer:7.0.11",
+    "version": "7.0.11"
+  },
+  {
+    "architecture": "x64",
+    "offer": "fortinet-fortianalyzer",
+    "publisher": "fortinet",
+    "sku": "fortinet-fortianalyzer",
+    "urn": "fortinet:fortinet-fortianalyzer:fortinet-fortianalyzer:7.0.2",
+    "version": "7.0.2"
+  },
+  {
+    "architecture": "x64",
+    "offer": "fortinet-fortianalyzer",
+    "publisher": "fortinet",
+    "sku": "fortinet-fortianalyzer",
+    "urn": "fortinet:fortinet-fortianalyzer:fortinet-fortianalyzer:7.0.3",
+    "version": "7.0.3"
+  },
+  {
+    "architecture": "x64",
+    "offer": "fortinet-fortianalyzer",
+    "publisher": "fortinet",
+    "sku": "fortinet-fortianalyzer",
+    "urn": "fortinet:fortinet-fortianalyzer:fortinet-fortianalyzer:7.0.4",
+    "version": "7.0.4"
+  },
+  {
+    "architecture": "x64",
+    "offer": "fortinet-fortianalyzer",
+    "publisher": "fortinet",
+    "sku": "fortinet-fortianalyzer",
+    "urn": "fortinet:fortinet-fortianalyzer:fortinet-fortianalyzer:7.0.5",
+    "version": "7.0.5"
+  },
+  {
+    "architecture": "x64",
+    "offer": "fortinet-fortianalyzer",
+    "publisher": "fortinet",
+    "sku": "fortinet-fortianalyzer",
+    "urn": "fortinet:fortinet-fortianalyzer:fortinet-fortianalyzer:7.0.6",
+    "version": "7.0.6"
+  },
+  {
+    "architecture": "x64",
+    "offer": "fortinet-fortianalyzer",
+    "publisher": "fortinet",
+    "sku": "fortinet-fortianalyzer",
+    "urn": "fortinet:fortinet-fortianalyzer:fortinet-fortianalyzer:7.0.7",
+    "version": "7.0.7"
+  },
+  {
+    "architecture": "x64",
+    "offer": "fortinet-fortianalyzer",
+    "publisher": "fortinet",
+    "sku": "fortinet-fortianalyzer",
+    "urn": "fortinet:fortinet-fortianalyzer:fortinet-fortianalyzer:7.0.9",
+    "version": "7.0.9"
+  },
+  {
+    "architecture": "x64",
+    "offer": "fortinet-fortianalyzer",
+    "publisher": "fortinet",
+    "sku": "fortinet-fortianalyzer",
+    "urn": "fortinet:fortinet-fortianalyzer:fortinet-fortianalyzer:7.2.0",
+    "version": "7.2.0"
+  },
+  {
+    "architecture": "x64",
+    "offer": "fortinet-fortianalyzer",
+    "publisher": "fortinet",
+    "sku": "fortinet-fortianalyzer",
+    "urn": "fortinet:fortinet-fortianalyzer:fortinet-fortianalyzer:7.2.1",
+    "version": "7.2.1"
+  },
+  {
+    "architecture": "x64",
+    "offer": "fortinet-fortianalyzer",
+    "publisher": "fortinet",
+    "sku": "fortinet-fortianalyzer",
+    "urn": "fortinet:fortinet-fortianalyzer:fortinet-fortianalyzer:7.2.2",
+    "version": "7.2.2"
+  },
+  {
+    "architecture": "x64",
+    "offer": "fortinet-fortianalyzer",
+    "publisher": "fortinet",
+    "sku": "fortinet-fortianalyzer",
+    "urn": "fortinet:fortinet-fortianalyzer:fortinet-fortianalyzer:7.2.3",
+    "version": "7.2.3"
+  },
+  {
+    "architecture": "x64",
+    "offer": "fortinet-fortianalyzer",
+    "publisher": "fortinet",
+    "sku": "fortinet-fortianalyzer",
+    "urn": "fortinet:fortinet-fortianalyzer:fortinet-fortianalyzer:7.2.4",
+    "version": "7.2.4"
+  },
+  {
+    "architecture": "x64",
+    "offer": "fortinet-fortianalyzer",
+    "publisher": "fortinet",
+    "sku": "fortinet-fortianalyzer",
+    "urn": "fortinet:fortinet-fortianalyzer:fortinet-fortianalyzer:7.2.5",
+    "version": "7.2.5"
+  },
+  {
+    "architecture": "x64",
+    "offer": "fortinet-fortianalyzer",
+    "publisher": "fortinet",
+    "sku": "fortinet-fortianalyzer",
+    "urn": "fortinet:fortinet-fortianalyzer:fortinet-fortianalyzer:7.4.0",
+    "version": "7.4.0"
+  },
+  {
+    "architecture": "x64",
+    "offer": "fortinet-fortianalyzer",
+    "publisher": "fortinet",
+    "sku": "fortinet-fortianalyzer",
+    "urn": "fortinet:fortinet-fortianalyzer:fortinet-fortianalyzer:7.4.1",
+    "version": "7.4.1"
+  },
+  {
+    "architecture": "x64",
+    "offer": "fortinet-fortianalyzer",
+    "publisher": "fortinet",
+    "sku": "fortinet-fortianalyzer",
+    "urn": "fortinet:fortinet-fortianalyzer:fortinet-fortianalyzer:7.4.2",
+    "version": "7.4.2"
+  },
+  {
+    "architecture": "x64",
+    "offer": "fortinet-fortianalyzer-azurestack",
+    "publisher": "fortinet",
+    "sku": "fortinet-fortianalyzer-azurestack",
+    "urn": "fortinet:fortinet-fortianalyzer-azurestack:fortinet-fortianalyzer-azurestack:7.2.3",
+    "version": "7.2.3"
+  },
+  {
+    "architecture": "x64",
+    "offer": "fortinet-fortiauthenticator-vm",
+    "publisher": "fortinet",
+    "sku": "fortinet-fac-vm",
+    "urn": "fortinet:fortinet-fortiauthenticator-vm:fortinet-fac-vm:6.0.2",
+    "version": "6.0.2"
+  },
+  {
+    "architecture": "x64",
+    "offer": "fortinet-fortiflex",
+    "publisher": "fortinet",
+    "sku": "fortiflex",
+    "urn": "fortinet:fortinet-fortiflex:fortiflex:7.4.1",
+    "version": "7.4.1"
+  },
+  {
+    "architecture": "x64",
+    "offer": "fortinet-fortiflex",
+    "publisher": "fortinet",
+    "sku": "fortiflex-private",
+    "urn": "fortinet:fortinet-fortiflex:fortiflex-private:7.4.1",
+    "version": "7.4.1"
+  },
+  {
+    "architecture": "x64",
+    "offer": "fortinet-fortigate_vm-azurestack",
+    "publisher": "fortinet",
+    "sku": "fortinet-fortigate_vm-azurestack",
+    "urn": "fortinet:fortinet-fortigate_vm-azurestack:fortinet-fortigate_vm-azurestack:7.2.5",
+    "version": "7.2.5"
+  },
+  {
+    "architecture": "x64",
+    "offer": "fortinet-fortimanager",
+    "publisher": "fortinet",
+    "sku": "fortinet-fortimanager",
+    "urn": "fortinet:fortinet-fortimanager:fortinet-fortimanager:6.2.0",
+    "version": "6.2.0"
+  },
+  {
+    "architecture": "x64",
+    "offer": "fortinet-fortimanager",
+    "publisher": "fortinet",
+    "sku": "fortinet-fortimanager",
+    "urn": "fortinet:fortinet-fortimanager:fortinet-fortimanager:6.2.1",
+    "version": "6.2.1"
+  },
+  {
+    "architecture": "x64",
+    "offer": "fortinet-fortimanager",
+    "publisher": "fortinet",
+    "sku": "fortinet-fortimanager",
+    "urn": "fortinet:fortinet-fortimanager:fortinet-fortimanager:6.2.2",
+    "version": "6.2.2"
+  },
+  {
+    "architecture": "x64",
+    "offer": "fortinet-fortimanager",
+    "publisher": "fortinet",
+    "sku": "fortinet-fortimanager",
+    "urn": "fortinet:fortinet-fortimanager:fortinet-fortimanager:6.2.3",
+    "version": "6.2.3"
+  },
+  {
+    "architecture": "x64",
+    "offer": "fortinet-fortimanager",
+    "publisher": "fortinet",
+    "sku": "fortinet-fortimanager",
+    "urn": "fortinet:fortinet-fortimanager:fortinet-fortimanager:6.2.5",
+    "version": "6.2.5"
+  },
+  {
+    "architecture": "x64",
+    "offer": "fortinet-fortimanager",
+    "publisher": "fortinet",
+    "sku": "fortinet-fortimanager",
+    "urn": "fortinet:fortinet-fortimanager:fortinet-fortimanager:6.4.0",
+    "version": "6.4.0"
+  },
+  {
+    "architecture": "x64",
+    "offer": "fortinet-fortimanager",
+    "publisher": "fortinet",
+    "sku": "fortinet-fortimanager",
+    "urn": "fortinet:fortinet-fortimanager:fortinet-fortimanager:6.4.1",
+    "version": "6.4.1"
+  },
+  {
+    "architecture": "x64",
+    "offer": "fortinet-fortimanager",
+    "publisher": "fortinet",
+    "sku": "fortinet-fortimanager",
+    "urn": "fortinet:fortinet-fortimanager:fortinet-fortimanager:6.4.10",
+    "version": "6.4.10"
+  },
+  {
+    "architecture": "x64",
+    "offer": "fortinet-fortimanager",
+    "publisher": "fortinet",
+    "sku": "fortinet-fortimanager",
+    "urn": "fortinet:fortinet-fortimanager:fortinet-fortimanager:6.4.11",
+    "version": "6.4.11"
+  },
+  {
+    "architecture": "x64",
+    "offer": "fortinet-fortimanager",
+    "publisher": "fortinet",
+    "sku": "fortinet-fortimanager",
+    "urn": "fortinet:fortinet-fortimanager:fortinet-fortimanager:6.4.12",
+    "version": "6.4.12"
+  },
+  {
+    "architecture": "x64",
+    "offer": "fortinet-fortimanager",
+    "publisher": "fortinet",
+    "sku": "fortinet-fortimanager",
+    "urn": "fortinet:fortinet-fortimanager:fortinet-fortimanager:6.4.13",
+    "version": "6.4.13"
+  },
+  {
+    "architecture": "x64",
+    "offer": "fortinet-fortimanager",
+    "publisher": "fortinet",
+    "sku": "fortinet-fortimanager",
+    "urn": "fortinet:fortinet-fortimanager:fortinet-fortimanager:6.4.14",
+    "version": "6.4.14"
+  },
+  {
+    "architecture": "x64",
+    "offer": "fortinet-fortimanager",
+    "publisher": "fortinet",
+    "sku": "fortinet-fortimanager",
+    "urn": "fortinet:fortinet-fortimanager:fortinet-fortimanager:6.4.2",
+    "version": "6.4.2"
+  },
+  {
+    "architecture": "x64",
+    "offer": "fortinet-fortimanager",
+    "publisher": "fortinet",
+    "sku": "fortinet-fortimanager",
+    "urn": "fortinet:fortinet-fortimanager:fortinet-fortimanager:6.4.5",
+    "version": "6.4.5"
+  },
+  {
+    "architecture": "x64",
+    "offer": "fortinet-fortimanager",
+    "publisher": "fortinet",
+    "sku": "fortinet-fortimanager",
+    "urn": "fortinet:fortinet-fortimanager:fortinet-fortimanager:6.4.6",
+    "version": "6.4.6"
+  },
+  {
+    "architecture": "x64",
+    "offer": "fortinet-fortimanager",
+    "publisher": "fortinet",
+    "sku": "fortinet-fortimanager",
+    "urn": "fortinet:fortinet-fortimanager:fortinet-fortimanager:6.4.7",
+    "version": "6.4.7"
+  },
+  {
+    "architecture": "x64",
+    "offer": "fortinet-fortimanager",
+    "publisher": "fortinet",
+    "sku": "fortinet-fortimanager",
+    "urn": "fortinet:fortinet-fortimanager:fortinet-fortimanager:6.4.8",
+    "version": "6.4.8"
+  },
+  {
+    "architecture": "x64",
+    "offer": "fortinet-fortimanager",
+    "publisher": "fortinet",
+    "sku": "fortinet-fortimanager",
+    "urn": "fortinet:fortinet-fortimanager:fortinet-fortimanager:6.4.9",
+    "version": "6.4.9"
+  },
+  {
+    "architecture": "x64",
+    "offer": "fortinet-fortimanager",
+    "publisher": "fortinet",
+    "sku": "fortinet-fortimanager",
+    "urn": "fortinet:fortinet-fortimanager:fortinet-fortimanager:7.0.0",
+    "version": "7.0.0"
+  },
+  {
+    "architecture": "x64",
+    "offer": "fortinet-fortimanager",
+    "publisher": "fortinet",
+    "sku": "fortinet-fortimanager",
+    "urn": "fortinet:fortinet-fortimanager:fortinet-fortimanager:7.0.1",
+    "version": "7.0.1"
+  },
+  {
+    "architecture": "x64",
+    "offer": "fortinet-fortimanager",
+    "publisher": "fortinet",
+    "sku": "fortinet-fortimanager",
+    "urn": "fortinet:fortinet-fortimanager:fortinet-fortimanager:7.0.10",
+    "version": "7.0.10"
+  },
+  {
+    "architecture": "x64",
+    "offer": "fortinet-fortimanager",
+    "publisher": "fortinet",
+    "sku": "fortinet-fortimanager",
+    "urn": "fortinet:fortinet-fortimanager:fortinet-fortimanager:7.0.11",
+    "version": "7.0.11"
+  },
+  {
+    "architecture": "x64",
+    "offer": "fortinet-fortimanager",
+    "publisher": "fortinet",
+    "sku": "fortinet-fortimanager",
+    "urn": "fortinet:fortinet-fortimanager:fortinet-fortimanager:7.0.2",
+    "version": "7.0.2"
+  },
+  {
+    "architecture": "x64",
+    "offer": "fortinet-fortimanager",
+    "publisher": "fortinet",
+    "sku": "fortinet-fortimanager",
+    "urn": "fortinet:fortinet-fortimanager:fortinet-fortimanager:7.0.3",
+    "version": "7.0.3"
+  },
+  {
+    "architecture": "x64",
+    "offer": "fortinet-fortimanager",
+    "publisher": "fortinet",
+    "sku": "fortinet-fortimanager",
+    "urn": "fortinet:fortinet-fortimanager:fortinet-fortimanager:7.0.4",
+    "version": "7.0.4"
+  },
+  {
+    "architecture": "x64",
+    "offer": "fortinet-fortimanager",
+    "publisher": "fortinet",
+    "sku": "fortinet-fortimanager",
+    "urn": "fortinet:fortinet-fortimanager:fortinet-fortimanager:7.0.5",
+    "version": "7.0.5"
+  },
+  {
+    "architecture": "x64",
+    "offer": "fortinet-fortimanager",
+    "publisher": "fortinet",
+    "sku": "fortinet-fortimanager",
+    "urn": "fortinet:fortinet-fortimanager:fortinet-fortimanager:7.0.6",
+    "version": "7.0.6"
+  },
+  {
+    "architecture": "x64",
+    "offer": "fortinet-fortimanager",
+    "publisher": "fortinet",
+    "sku": "fortinet-fortimanager",
+    "urn": "fortinet:fortinet-fortimanager:fortinet-fortimanager:7.0.7",
+    "version": "7.0.7"
+  },
+  {
+    "architecture": "x64",
+    "offer": "fortinet-fortimanager",
+    "publisher": "fortinet",
+    "sku": "fortinet-fortimanager",
+    "urn": "fortinet:fortinet-fortimanager:fortinet-fortimanager:7.0.9",
+    "version": "7.0.9"
+  },
+  {
+    "architecture": "x64",
+    "offer": "fortinet-fortimanager",
+    "publisher": "fortinet",
+    "sku": "fortinet-fortimanager",
+    "urn": "fortinet:fortinet-fortimanager:fortinet-fortimanager:7.2.0",
+    "version": "7.2.0"
+  },
+  {
+    "architecture": "x64",
+    "offer": "fortinet-fortimanager",
+    "publisher": "fortinet",
+    "sku": "fortinet-fortimanager",
+    "urn": "fortinet:fortinet-fortimanager:fortinet-fortimanager:7.2.1",
+    "version": "7.2.1"
+  },
+  {
+    "architecture": "x64",
+    "offer": "fortinet-fortimanager",
+    "publisher": "fortinet",
+    "sku": "fortinet-fortimanager",
+    "urn": "fortinet:fortinet-fortimanager:fortinet-fortimanager:7.2.2",
+    "version": "7.2.2"
+  },
+  {
+    "architecture": "x64",
+    "offer": "fortinet-fortimanager",
+    "publisher": "fortinet",
+    "sku": "fortinet-fortimanager",
+    "urn": "fortinet:fortinet-fortimanager:fortinet-fortimanager:7.2.3",
+    "version": "7.2.3"
+  },
+  {
+    "architecture": "x64",
+    "offer": "fortinet-fortimanager",
+    "publisher": "fortinet",
+    "sku": "fortinet-fortimanager",
+    "urn": "fortinet:fortinet-fortimanager:fortinet-fortimanager:7.2.4",
+    "version": "7.2.4"
+  },
+  {
+    "architecture": "x64",
+    "offer": "fortinet-fortimanager",
+    "publisher": "fortinet",
+    "sku": "fortinet-fortimanager",
+    "urn": "fortinet:fortinet-fortimanager:fortinet-fortimanager:7.2.5",
+    "version": "7.2.5"
+  },
+  {
+    "architecture": "x64",
+    "offer": "fortinet-fortimanager",
+    "publisher": "fortinet",
+    "sku": "fortinet-fortimanager",
+    "urn": "fortinet:fortinet-fortimanager:fortinet-fortimanager:7.4.0",
+    "version": "7.4.0"
+  },
+  {
+    "architecture": "x64",
+    "offer": "fortinet-fortimanager",
+    "publisher": "fortinet",
+    "sku": "fortinet-fortimanager",
+    "urn": "fortinet:fortinet-fortimanager:fortinet-fortimanager:7.4.1",
+    "version": "7.4.1"
+  },
+  {
+    "architecture": "x64",
+    "offer": "fortinet-fortimanager",
+    "publisher": "fortinet",
+    "sku": "fortinet-fortimanager",
+    "urn": "fortinet:fortinet-fortimanager:fortinet-fortimanager:7.4.2",
+    "version": "7.4.2"
+  },
+  {
+    "architecture": "x64",
+    "offer": "fortinet-fortimanager-azurestack",
+    "publisher": "fortinet",
+    "sku": "fortinet-fortimanager-azurestack",
+    "urn": "fortinet:fortinet-fortimanager-azurestack:fortinet-fortimanager-azurestack:7.2.3",
+    "version": "7.2.3"
+  },
+  {
+    "architecture": "x64",
+    "offer": "fortinet-fortipam",
+    "publisher": "fortinet",
+    "sku": "fortinet-fpam",
+    "urn": "fortinet:fortinet-fortipam:fortinet-fpam:1.1.2",
+    "version": "1.1.2"
+  },
+  {
+    "architecture": "x64",
+    "offer": "fortinet-fortiportal",
+    "publisher": "fortinet",
+    "sku": "fpc-byol",
+    "urn": "fortinet:fortinet-fortiportal:fpc-byol:7.0.3",
+    "version": "7.0.3"
+  },
+  {
+    "architecture": "x64",
+    "offer": "fortinet-fortiportal",
+    "publisher": "fortinet",
+    "sku": "fpc-byol",
+    "urn": "fortinet:fortinet-fortiportal:fpc-byol:7.0.4",
+    "version": "7.0.4"
+  },
+  {
+    "architecture": "x64",
+    "offer": "fortinet-fortiportal",
+    "publisher": "fortinet",
+    "sku": "fpc-byol",
+    "urn": "fortinet:fortinet-fortiportal:fpc-byol:7.0.8",
+    "version": "7.0.8"
+  },
+  {
+    "architecture": "x64",
+    "offer": "fortinet-fortiproxy",
+    "publisher": "fortinet",
+    "sku": "fpx-vm-byol",
+    "urn": "fortinet:fortinet-fortiproxy:fpx-vm-byol:7.0.12",
+    "version": "7.0.12"
+  },
+  {
+    "architecture": "x64",
+    "offer": "fortinet-fortiproxy",
+    "publisher": "fortinet",
+    "sku": "fpx-vm-byol",
+    "urn": "fortinet:fortinet-fortiproxy:fpx-vm-byol:7.0.13",
+    "version": "7.0.13"
+  },
+  {
+    "architecture": "x64",
+    "offer": "fortinet-fortiproxy",
+    "publisher": "fortinet",
+    "sku": "fpx-vm-byol",
+    "urn": "fortinet:fortinet-fortiproxy:fpx-vm-byol:7.0.16",
+    "version": "7.0.16"
+  },
+  {
+    "architecture": "x64",
+    "offer": "fortinet-fortiproxy",
+    "publisher": "fortinet",
+    "sku": "fpx-vm-byol",
+    "urn": "fortinet:fortinet-fortiproxy:fpx-vm-byol:7.2.6",
+    "version": "7.2.6"
+  },
+  {
+    "architecture": "x64",
+    "offer": "fortinet-fortiproxy",
+    "publisher": "fortinet",
+    "sku": "fpx-vm-byol",
+    "urn": "fortinet:fortinet-fortiproxy:fpx-vm-byol:7.2.7",
+    "version": "7.2.7"
+  },
+  {
+    "architecture": "x64",
+    "offer": "fortinet-fortiproxy",
+    "publisher": "fortinet",
+    "sku": "fpx-vm-byol",
+    "urn": "fortinet:fortinet-fortiproxy:fpx-vm-byol:7.2.9",
+    "version": "7.2.9"
+  },
+  {
+    "architecture": "x64",
+    "offer": "fortinet-fortiproxy",
+    "publisher": "fortinet",
+    "sku": "fpx-vm-byol",
+    "urn": "fortinet:fortinet-fortiproxy:fpx-vm-byol:7.4.3",
+    "version": "7.4.3"
+  },
+  {
+    "architecture": "x64",
+    "offer": "fortinet-fortirecorder",
+    "publisher": "fortinet",
+    "sku": "fortirecorder-byol",
+    "urn": "fortinet:fortinet-fortirecorder:fortirecorder-byol:6.4.1",
+    "version": "6.4.1"
+  },
+  {
+    "architecture": "x64",
+    "offer": "fortinet-fortisiem-vm",
+    "publisher": "fortinet",
+    "sku": "fortinet-fortisiem-byol",
+    "urn": "fortinet:fortinet-fortisiem-vm:fortinet-fortisiem-byol:6.4.1",
+    "version": "6.4.1"
+  },
+  {
+    "architecture": "x64",
+    "offer": "fortinet-fortisiem-vm",
+    "publisher": "fortinet",
+    "sku": "fortinet-fortisiem-byol",
+    "urn": "fortinet:fortinet-fortisiem-vm:fortinet-fortisiem-byol:6.4.2",
+    "version": "6.4.2"
+  },
+  {
+    "architecture": "x64",
+    "offer": "fortinet-fortisiem-vm",
+    "publisher": "fortinet",
+    "sku": "fortinet-fortisiem-byol",
+    "urn": "fortinet:fortinet-fortisiem-vm:fortinet-fortisiem-byol:6.4.3",
+    "version": "6.4.3"
+  },
+  {
+    "architecture": "x64",
+    "offer": "fortinet-fortisiem-vm",
+    "publisher": "fortinet",
+    "sku": "fortinet-fortisiem-byol",
+    "urn": "fortinet:fortinet-fortisiem-vm:fortinet-fortisiem-byol:6.4.4",
+    "version": "6.4.4"
+  },
+  {
+    "architecture": "x64",
+    "offer": "fortinet-fortisiem-vm",
+    "publisher": "fortinet",
+    "sku": "fortinet-fortisiem-byol",
+    "urn": "fortinet:fortinet-fortisiem-vm:fortinet-fortisiem-byol:6.5.1",
+    "version": "6.5.1"
+  },
+  {
+    "architecture": "x64",
+    "offer": "fortinet-fortisiem-vm",
+    "publisher": "fortinet",
+    "sku": "fortinet-fortisiem-byol",
+    "urn": "fortinet:fortinet-fortisiem-vm:fortinet-fortisiem-byol:6.5.2",
+    "version": "6.5.2"
+  },
+  {
+    "architecture": "x64",
+    "offer": "fortinet-fortisiem-vm",
+    "publisher": "fortinet",
+    "sku": "fortinet-fortisiem-byol",
+    "urn": "fortinet:fortinet-fortisiem-vm:fortinet-fortisiem-byol:6.5.3",
+    "version": "6.5.3"
+  },
+  {
+    "architecture": "x64",
+    "offer": "fortinet-fortisiem-vm",
+    "publisher": "fortinet",
+    "sku": "fortinet-fortisiem-byol",
+    "urn": "fortinet:fortinet-fortisiem-vm:fortinet-fortisiem-byol:6.6.3",
+    "version": "6.6.3"
+  },
+  {
+    "architecture": "x64",
+    "offer": "fortinet-fortisiem-vm",
+    "publisher": "fortinet",
+    "sku": "fortinet-fortisiem-byol",
+    "urn": "fortinet:fortinet-fortisiem-vm:fortinet-fortisiem-byol:6.6.4",
+    "version": "6.6.4"
+  },
+  {
+    "architecture": "x64",
+    "offer": "fortinet-fortisiem-vm",
+    "publisher": "fortinet",
+    "sku": "fortinet-fortisiem-byol",
+    "urn": "fortinet:fortinet-fortisiem-vm:fortinet-fortisiem-byol:6.6.5",
+    "version": "6.6.5"
+  },
+  {
+    "architecture": "x64",
+    "offer": "fortinet-fortisiem-vm",
+    "publisher": "fortinet",
+    "sku": "fortinet-fortisiem-byol",
+    "urn": "fortinet:fortinet-fortisiem-vm:fortinet-fortisiem-byol:6.7.5",
+    "version": "6.7.5"
+  },
+  {
+    "architecture": "x64",
+    "offer": "fortinet-fortisiem-vm",
+    "publisher": "fortinet",
+    "sku": "fortinet-fortisiem-byol",
+    "urn": "fortinet:fortinet-fortisiem-vm:fortinet-fortisiem-byol:6.7.6",
+    "version": "6.7.6"
+  },
+  {
+    "architecture": "x64",
+    "offer": "fortinet-fortisiem-vm",
+    "publisher": "fortinet",
+    "sku": "fortinet-fortisiem-byol",
+    "urn": "fortinet:fortinet-fortisiem-vm:fortinet-fortisiem-byol:6.7.7",
+    "version": "6.7.7"
+  },
+  {
+    "architecture": "x64",
+    "offer": "fortinet-fortisiem-vm",
+    "publisher": "fortinet",
+    "sku": "fortinet-fortisiem-byol",
+    "urn": "fortinet:fortinet-fortisiem-vm:fortinet-fortisiem-byol:6.7.8",
+    "version": "6.7.8"
+  },
+  {
+    "architecture": "x64",
+    "offer": "fortinet-fortisiem-vm",
+    "publisher": "fortinet",
+    "sku": "fortinet-fortisiem-byol",
+    "urn": "fortinet:fortinet-fortisiem-vm:fortinet-fortisiem-byol:6.7.9",
+    "version": "6.7.9"
+  },
+  {
+    "architecture": "x64",
+    "offer": "fortinet-fortisiem-vm",
+    "publisher": "fortinet",
+    "sku": "fortinet-fortisiem-byol",
+    "urn": "fortinet:fortinet-fortisiem-vm:fortinet-fortisiem-byol:7.0.0",
+    "version": "7.0.0"
+  },
+  {
+    "architecture": "x64",
+    "offer": "fortinet-fortisiem-vm",
+    "publisher": "fortinet",
+    "sku": "fortinet-fortisiem-byol",
+    "urn": "fortinet:fortinet-fortisiem-vm:fortinet-fortisiem-byol:7.0.1",
+    "version": "7.0.1"
+  },
+  {
+    "architecture": "x64",
+    "offer": "fortinet-fortisiem-vm",
+    "publisher": "fortinet",
+    "sku": "fortinet-fortisiem-byol",
+    "urn": "fortinet:fortinet-fortisiem-vm:fortinet-fortisiem-byol:7.0.2",
+    "version": "7.0.2"
+  },
+  {
+    "architecture": "x64",
+    "offer": "fortinet-fortisiem-vm",
+    "publisher": "fortinet",
+    "sku": "fortinet-fortisiem-byol",
+    "urn": "fortinet:fortinet-fortisiem-vm:fortinet-fortisiem-byol:7.0.3",
+    "version": "7.0.3"
+  },
+  {
+    "architecture": "x64",
+    "offer": "fortinet-fortisiem-vm",
+    "publisher": "fortinet",
+    "sku": "fortinet-fortisiem-byol",
+    "urn": "fortinet:fortinet-fortisiem-vm:fortinet-fortisiem-byol:7.1.3",
+    "version": "7.1.3"
+  },
+  {
+    "architecture": "x64",
+    "offer": "fortinet-fortitester",
+    "publisher": "fortinet",
+    "sku": "fts-vm-byol",
+    "urn": "fortinet:fortinet-fortitester:fts-vm-byol:3.7.00",
+    "version": "3.7.00"
+  },
+  {
+    "architecture": "x64",
+    "offer": "fortinet-fortitester",
+    "publisher": "fortinet",
+    "sku": "fts-vm-byol",
+    "urn": "fortinet:fortinet-fortitester:fts-vm-byol:3.8.0",
+    "version": "3.8.0"
+  },
+  {
+    "architecture": "x64",
+    "offer": "fortinet-fortitester",
+    "publisher": "fortinet",
+    "sku": "fts-vm-byol",
+    "urn": "fortinet:fortinet-fortitester:fts-vm-byol:7.1.0",
+    "version": "7.1.0"
+  },
+  {
+    "architecture": "x64",
+    "offer": "fortinet_fortigate-vm_v5",
+    "publisher": "fortinet",
+    "sku": "fortinet_fg-vm",
+    "urn": "fortinet:fortinet_fortigate-vm_v5:fortinet_fg-vm:6.2.0",
+    "version": "6.2.0"
+  },
+  {
+    "architecture": "x64",
+    "offer": "fortinet_fortigate-vm_v5",
+    "publisher": "fortinet",
+    "sku": "fortinet_fg-vm",
+    "urn": "fortinet:fortinet_fortigate-vm_v5:fortinet_fg-vm:6.2.2",
+    "version": "6.2.2"
+  },
+  {
+    "architecture": "x64",
+    "offer": "fortinet_fortigate-vm_v5",
+    "publisher": "fortinet",
+    "sku": "fortinet_fg-vm",
+    "urn": "fortinet:fortinet_fortigate-vm_v5:fortinet_fg-vm:6.2.4",
+    "version": "6.2.4"
+  },
+  {
+    "architecture": "x64",
+    "offer": "fortinet_fortigate-vm_v5",
+    "publisher": "fortinet",
+    "sku": "fortinet_fg-vm",
+    "urn": "fortinet:fortinet_fortigate-vm_v5:fortinet_fg-vm:6.2.5",
+    "version": "6.2.5"
+  },
+  {
+    "architecture": "x64",
+    "offer": "fortinet_fortigate-vm_v5",
+    "publisher": "fortinet",
+    "sku": "fortinet_fg-vm",
+    "urn": "fortinet:fortinet_fortigate-vm_v5:fortinet_fg-vm:6.4.0",
+    "version": "6.4.0"
+  },
+  {
+    "architecture": "x64",
+    "offer": "fortinet_fortigate-vm_v5",
+    "publisher": "fortinet",
+    "sku": "fortinet_fg-vm",
+    "urn": "fortinet:fortinet_fortigate-vm_v5:fortinet_fg-vm:6.4.10",
+    "version": "6.4.10"
+  },
+  {
+    "architecture": "x64",
+    "offer": "fortinet_fortigate-vm_v5",
+    "publisher": "fortinet",
+    "sku": "fortinet_fg-vm",
+    "urn": "fortinet:fortinet_fortigate-vm_v5:fortinet_fg-vm:6.4.11",
+    "version": "6.4.11"
+  },
+  {
+    "architecture": "x64",
+    "offer": "fortinet_fortigate-vm_v5",
+    "publisher": "fortinet",
+    "sku": "fortinet_fg-vm",
+    "urn": "fortinet:fortinet_fortigate-vm_v5:fortinet_fg-vm:6.4.12",
+    "version": "6.4.12"
+  },
+  {
+    "architecture": "x64",
+    "offer": "fortinet_fortigate-vm_v5",
+    "publisher": "fortinet",
+    "sku": "fortinet_fg-vm",
+    "urn": "fortinet:fortinet_fortigate-vm_v5:fortinet_fg-vm:6.4.13",
+    "version": "6.4.13"
+  },
+  {
+    "architecture": "x64",
+    "offer": "fortinet_fortigate-vm_v5",
+    "publisher": "fortinet",
+    "sku": "fortinet_fg-vm",
+    "urn": "fortinet:fortinet_fortigate-vm_v5:fortinet_fg-vm:6.4.15",
+    "version": "6.4.15"
+  },
+  {
+    "architecture": "x64",
+    "offer": "fortinet_fortigate-vm_v5",
+    "publisher": "fortinet",
+    "sku": "fortinet_fg-vm",
+    "urn": "fortinet:fortinet_fortigate-vm_v5:fortinet_fg-vm:6.4.2",
+    "version": "6.4.2"
+  },
+  {
+    "architecture": "x64",
+    "offer": "fortinet_fortigate-vm_v5",
+    "publisher": "fortinet",
+    "sku": "fortinet_fg-vm",
+    "urn": "fortinet:fortinet_fortigate-vm_v5:fortinet_fg-vm:6.4.3",
+    "version": "6.4.3"
+  },
+  {
+    "architecture": "x64",
+    "offer": "fortinet_fortigate-vm_v5",
+    "publisher": "fortinet",
+    "sku": "fortinet_fg-vm",
+    "urn": "fortinet:fortinet_fortigate-vm_v5:fortinet_fg-vm:6.4.5",
+    "version": "6.4.5"
+  },
+  {
+    "architecture": "x64",
+    "offer": "fortinet_fortigate-vm_v5",
+    "publisher": "fortinet",
+    "sku": "fortinet_fg-vm",
+    "urn": "fortinet:fortinet_fortigate-vm_v5:fortinet_fg-vm:6.4.6",
+    "version": "6.4.6"
+  },
+  {
+    "architecture": "x64",
+    "offer": "fortinet_fortigate-vm_v5",
+    "publisher": "fortinet",
+    "sku": "fortinet_fg-vm",
+    "urn": "fortinet:fortinet_fortigate-vm_v5:fortinet_fg-vm:6.4.7",
+    "version": "6.4.7"
+  },
+  {
+    "architecture": "x64",
+    "offer": "fortinet_fortigate-vm_v5",
+    "publisher": "fortinet",
+    "sku": "fortinet_fg-vm",
+    "urn": "fortinet:fortinet_fortigate-vm_v5:fortinet_fg-vm:6.4.8",
+    "version": "6.4.8"
+  },
+  {
+    "architecture": "x64",
+    "offer": "fortinet_fortigate-vm_v5",
+    "publisher": "fortinet",
+    "sku": "fortinet_fg-vm",
+    "urn": "fortinet:fortinet_fortigate-vm_v5:fortinet_fg-vm:6.4.9",
+    "version": "6.4.9"
+  },
+  {
+    "architecture": "x64",
+    "offer": "fortinet_fortigate-vm_v5",
+    "publisher": "fortinet",
+    "sku": "fortinet_fg-vm",
+    "urn": "fortinet:fortinet_fortigate-vm_v5:fortinet_fg-vm:7.0.0",
+    "version": "7.0.0"
+  },
+  {
+    "architecture": "x64",
+    "offer": "fortinet_fortigate-vm_v5",
+    "publisher": "fortinet",
+    "sku": "fortinet_fg-vm",
+    "urn": "fortinet:fortinet_fortigate-vm_v5:fortinet_fg-vm:7.0.1",
+    "version": "7.0.1"
+  },
+  {
+    "architecture": "x64",
+    "offer": "fortinet_fortigate-vm_v5",
+    "publisher": "fortinet",
+    "sku": "fortinet_fg-vm",
+    "urn": "fortinet:fortinet_fortigate-vm_v5:fortinet_fg-vm:7.0.10",
+    "version": "7.0.10"
+  },
+  {
+    "architecture": "x64",
+    "offer": "fortinet_fortigate-vm_v5",
+    "publisher": "fortinet",
+    "sku": "fortinet_fg-vm",
+    "urn": "fortinet:fortinet_fortigate-vm_v5:fortinet_fg-vm:7.0.11",
+    "version": "7.0.11"
+  },
+  {
+    "architecture": "x64",
+    "offer": "fortinet_fortigate-vm_v5",
+    "publisher": "fortinet",
+    "sku": "fortinet_fg-vm",
+    "urn": "fortinet:fortinet_fortigate-vm_v5:fortinet_fg-vm:7.0.12",
+    "version": "7.0.12"
+  },
+  {
+    "architecture": "x64",
+    "offer": "fortinet_fortigate-vm_v5",
+    "publisher": "fortinet",
+    "sku": "fortinet_fg-vm",
+    "urn": "fortinet:fortinet_fortigate-vm_v5:fortinet_fg-vm:7.0.13",
+    "version": "7.0.13"
+  },
+  {
+    "architecture": "x64",
+    "offer": "fortinet_fortigate-vm_v5",
+    "publisher": "fortinet",
+    "sku": "fortinet_fg-vm",
+    "urn": "fortinet:fortinet_fortigate-vm_v5:fortinet_fg-vm:7.0.14",
+    "version": "7.0.14"
+  },
+  {
+    "architecture": "x64",
+    "offer": "fortinet_fortigate-vm_v5",
+    "publisher": "fortinet",
+    "sku": "fortinet_fg-vm",
+    "urn": "fortinet:fortinet_fortigate-vm_v5:fortinet_fg-vm:7.0.15",
+    "version": "7.0.15"
+  },
+  {
+    "architecture": "x64",
+    "offer": "fortinet_fortigate-vm_v5",
+    "publisher": "fortinet",
+    "sku": "fortinet_fg-vm",
+    "urn": "fortinet:fortinet_fortigate-vm_v5:fortinet_fg-vm:7.0.2",
+    "version": "7.0.2"
+  },
+  {
+    "architecture": "x64",
+    "offer": "fortinet_fortigate-vm_v5",
+    "publisher": "fortinet",
+    "sku": "fortinet_fg-vm",
+    "urn": "fortinet:fortinet_fortigate-vm_v5:fortinet_fg-vm:7.0.3",
+    "version": "7.0.3"
+  },
+  {
+    "architecture": "x64",
+    "offer": "fortinet_fortigate-vm_v5",
+    "publisher": "fortinet",
+    "sku": "fortinet_fg-vm",
+    "urn": "fortinet:fortinet_fortigate-vm_v5:fortinet_fg-vm:7.0.4",
+    "version": "7.0.4"
+  },
+  {
+    "architecture": "x64",
+    "offer": "fortinet_fortigate-vm_v5",
+    "publisher": "fortinet",
+    "sku": "fortinet_fg-vm",
+    "urn": "fortinet:fortinet_fortigate-vm_v5:fortinet_fg-vm:7.0.5",
+    "version": "7.0.5"
+  },
+  {
+    "architecture": "x64",
+    "offer": "fortinet_fortigate-vm_v5",
+    "publisher": "fortinet",
+    "sku": "fortinet_fg-vm",
+    "urn": "fortinet:fortinet_fortigate-vm_v5:fortinet_fg-vm:7.0.6",
+    "version": "7.0.6"
+  },
+  {
+    "architecture": "x64",
+    "offer": "fortinet_fortigate-vm_v5",
+    "publisher": "fortinet",
+    "sku": "fortinet_fg-vm",
+    "urn": "fortinet:fortinet_fortigate-vm_v5:fortinet_fg-vm:7.0.8",
+    "version": "7.0.8"
+  },
+  {
+    "architecture": "x64",
+    "offer": "fortinet_fortigate-vm_v5",
+    "publisher": "fortinet",
+    "sku": "fortinet_fg-vm",
+    "urn": "fortinet:fortinet_fortigate-vm_v5:fortinet_fg-vm:7.0.9",
+    "version": "7.0.9"
+  },
+  {
+    "architecture": "x64",
+    "offer": "fortinet_fortigate-vm_v5",
+    "publisher": "fortinet",
+    "sku": "fortinet_fg-vm",
+    "urn": "fortinet:fortinet_fortigate-vm_v5:fortinet_fg-vm:7.2.0",
+    "version": "7.2.0"
+  },
+  {
+    "architecture": "x64",
+    "offer": "fortinet_fortigate-vm_v5",
+    "publisher": "fortinet",
+    "sku": "fortinet_fg-vm",
+    "urn": "fortinet:fortinet_fortigate-vm_v5:fortinet_fg-vm:7.2.1",
+    "version": "7.2.1"
+  },
+  {
+    "architecture": "x64",
+    "offer": "fortinet_fortigate-vm_v5",
+    "publisher": "fortinet",
+    "sku": "fortinet_fg-vm",
+    "urn": "fortinet:fortinet_fortigate-vm_v5:fortinet_fg-vm:7.2.2",
+    "version": "7.2.2"
+  },
+  {
+    "architecture": "x64",
+    "offer": "fortinet_fortigate-vm_v5",
+    "publisher": "fortinet",
+    "sku": "fortinet_fg-vm",
+    "urn": "fortinet:fortinet_fortigate-vm_v5:fortinet_fg-vm:7.2.3",
+    "version": "7.2.3"
+  },
+  {
+    "architecture": "x64",
+    "offer": "fortinet_fortigate-vm_v5",
+    "publisher": "fortinet",
+    "sku": "fortinet_fg-vm",
+    "urn": "fortinet:fortinet_fortigate-vm_v5:fortinet_fg-vm:7.2.4",
+    "version": "7.2.4"
+  },
+  {
+    "architecture": "x64",
+    "offer": "fortinet_fortigate-vm_v5",
+    "publisher": "fortinet",
+    "sku": "fortinet_fg-vm",
+    "urn": "fortinet:fortinet_fortigate-vm_v5:fortinet_fg-vm:7.2.5",
+    "version": "7.2.5"
+  },
+  {
+    "architecture": "x64",
+    "offer": "fortinet_fortigate-vm_v5",
+    "publisher": "fortinet",
+    "sku": "fortinet_fg-vm",
+    "urn": "fortinet:fortinet_fortigate-vm_v5:fortinet_fg-vm:7.2.6",
+    "version": "7.2.6"
+  },
+  {
+    "architecture": "x64",
+    "offer": "fortinet_fortigate-vm_v5",
+    "publisher": "fortinet",
+    "sku": "fortinet_fg-vm",
+    "urn": "fortinet:fortinet_fortigate-vm_v5:fortinet_fg-vm:7.2.7",
+    "version": "7.2.7"
+  },
+  {
+    "architecture": "x64",
+    "offer": "fortinet_fortigate-vm_v5",
+    "publisher": "fortinet",
+    "sku": "fortinet_fg-vm",
+    "urn": "fortinet:fortinet_fortigate-vm_v5:fortinet_fg-vm:7.2.8",
+    "version": "7.2.8"
+  },
+  {
+    "architecture": "x64",
+    "offer": "fortinet_fortigate-vm_v5",
+    "publisher": "fortinet",
+    "sku": "fortinet_fg-vm",
+    "urn": "fortinet:fortinet_fortigate-vm_v5:fortinet_fg-vm:7.4.0",
+    "version": "7.4.0"
+  },
+  {
+    "architecture": "x64",
+    "offer": "fortinet_fortigate-vm_v5",
+    "publisher": "fortinet",
+    "sku": "fortinet_fg-vm",
+    "urn": "fortinet:fortinet_fortigate-vm_v5:fortinet_fg-vm:7.4.1",
+    "version": "7.4.1"
+  },
+  {
+    "architecture": "x64",
+    "offer": "fortinet_fortigate-vm_v5",
+    "publisher": "fortinet",
+    "sku": "fortinet_fg-vm",
+    "urn": "fortinet:fortinet_fortigate-vm_v5:fortinet_fg-vm:7.4.2",
+    "version": "7.4.2"
+  },
+  {
+    "architecture": "x64",
+    "offer": "fortinet_fortigate-vm_v5",
+    "publisher": "fortinet",
+    "sku": "fortinet_fg-vm",
+    "urn": "fortinet:fortinet_fortigate-vm_v5:fortinet_fg-vm:7.4.3",
+    "version": "7.4.3"
+  },
+  {
+    "architecture": "x64",
+    "offer": "fortinet_fortigate-vm_v5",
+    "publisher": "fortinet",
+    "sku": "fortinet_fg-vm_payg",
+    "urn": "fortinet:fortinet_fortigate-vm_v5:fortinet_fg-vm_payg:5.6.5",
+    "version": "5.6.5"
+  },
+  {
+    "architecture": "x64",
+    "offer": "fortinet_fortigate-vm_v5",
+    "publisher": "fortinet",
+    "sku": "fortinet_fg-vm_payg",
+    "urn": "fortinet:fortinet_fortigate-vm_v5:fortinet_fg-vm_payg:5.6.6",
+    "version": "5.6.6"
+  },
+  {
+    "architecture": "x64",
+    "offer": "fortinet_fortigate-vm_v5",
+    "publisher": "fortinet",
+    "sku": "fortinet_fg-vm_payg",
+    "urn": "fortinet:fortinet_fortigate-vm_v5:fortinet_fg-vm_payg:6.0.02",
+    "version": "6.0.02"
+  },
+  {
+    "architecture": "x64",
+    "offer": "fortinet_fortigate-vm_v5",
+    "publisher": "fortinet",
+    "sku": "fortinet_fg-vm_payg",
+    "urn": "fortinet:fortinet_fortigate-vm_v5:fortinet_fg-vm_payg:6.0.3",
+    "version": "6.0.3"
+  },
+  {
+    "architecture": "x64",
+    "offer": "fortinet_fortigate-vm_v5",
+    "publisher": "fortinet",
+    "sku": "fortinet_fg-vm_payg",
+    "urn": "fortinet:fortinet_fortigate-vm_v5:fortinet_fg-vm_payg:6.0.4",
+    "version": "6.0.4"
+  },
+  {
+    "architecture": "x64",
+    "offer": "fortinet_fortigate-vm_v5",
+    "publisher": "fortinet",
+    "sku": "fortinet_fg-vm_payg_20190624",
+    "urn": "fortinet:fortinet_fortigate-vm_v5:fortinet_fg-vm_payg_20190624:6.2.0",
+    "version": "6.2.0"
+  },
+  {
+    "architecture": "x64",
+    "offer": "fortinet_fortigate-vm_v5",
+    "publisher": "fortinet",
+    "sku": "fortinet_fg-vm_payg_20190624",
+    "urn": "fortinet:fortinet_fortigate-vm_v5:fortinet_fg-vm_payg_20190624:6.2.2",
+    "version": "6.2.2"
+  },
+  {
+    "architecture": "x64",
+    "offer": "fortinet_fortigate-vm_v5",
+    "publisher": "fortinet",
+    "sku": "fortinet_fg-vm_payg_20190624",
+    "urn": "fortinet:fortinet_fortigate-vm_v5:fortinet_fg-vm_payg_20190624:6.2.4",
+    "version": "6.2.4"
+  },
+  {
+    "architecture": "x64",
+    "offer": "fortinet_fortigate-vm_v5",
+    "publisher": "fortinet",
+    "sku": "fortinet_fg-vm_payg_20190624",
+    "urn": "fortinet:fortinet_fortigate-vm_v5:fortinet_fg-vm_payg_20190624:6.2.5",
+    "version": "6.2.5"
+  },
+  {
+    "architecture": "x64",
+    "offer": "fortinet_fortigate-vm_v5",
+    "publisher": "fortinet",
+    "sku": "fortinet_fg-vm_payg_20190624",
+    "urn": "fortinet:fortinet_fortigate-vm_v5:fortinet_fg-vm_payg_20190624:6.4.0",
+    "version": "6.4.0"
+  },
+  {
+    "architecture": "x64",
+    "offer": "fortinet_fortigate-vm_v5",
+    "publisher": "fortinet",
+    "sku": "fortinet_fg-vm_payg_20190624",
+    "urn": "fortinet:fortinet_fortigate-vm_v5:fortinet_fg-vm_payg_20190624:6.4.2",
+    "version": "6.4.2"
+  },
+  {
+    "architecture": "x64",
+    "offer": "fortinet_fortigate-vm_v5",
+    "publisher": "fortinet",
+    "sku": "fortinet_fg-vm_payg_20190624",
+    "urn": "fortinet:fortinet_fortigate-vm_v5:fortinet_fg-vm_payg_20190624:6.4.3",
+    "version": "6.4.3"
+  },
+  {
+    "architecture": "x64",
+    "offer": "fortinet_fortigate-vm_v5",
+    "publisher": "fortinet",
+    "sku": "fortinet_fg-vm_payg_20190624",
+    "urn": "fortinet:fortinet_fortigate-vm_v5:fortinet_fg-vm_payg_20190624:6.4.5",
+    "version": "6.4.5"
+  },
+  {
+    "architecture": "x64",
+    "offer": "fortinet_fortigate-vm_v5",
+    "publisher": "fortinet",
+    "sku": "fortinet_fg-vm_payg_20190624",
+    "urn": "fortinet:fortinet_fortigate-vm_v5:fortinet_fg-vm_payg_20190624:6.4.6",
+    "version": "6.4.6"
+  },
+  {
+    "architecture": "x64",
+    "offer": "fortinet_fortigate-vm_v5",
+    "publisher": "fortinet",
+    "sku": "fortinet_fg-vm_payg_20190624",
+    "urn": "fortinet:fortinet_fortigate-vm_v5:fortinet_fg-vm_payg_20190624:6.4.7",
+    "version": "6.4.7"
+  },
+  {
+    "architecture": "x64",
+    "offer": "fortinet_fortigate-vm_v5",
+    "publisher": "fortinet",
+    "sku": "fortinet_fg-vm_payg_20190624",
+    "urn": "fortinet:fortinet_fortigate-vm_v5:fortinet_fg-vm_payg_20190624:6.4.8",
+    "version": "6.4.8"
+  },
+  {
+    "architecture": "x64",
+    "offer": "fortinet_fortigate-vm_v5",
+    "publisher": "fortinet",
+    "sku": "fortinet_fg-vm_payg_20190624",
+    "urn": "fortinet:fortinet_fortigate-vm_v5:fortinet_fg-vm_payg_20190624:7.0.0",
+    "version": "7.0.0"
+  },
+  {
+    "architecture": "x64",
+    "offer": "fortinet_fortigate-vm_v5",
+    "publisher": "fortinet",
+    "sku": "fortinet_fg-vm_payg_20190624",
+    "urn": "fortinet:fortinet_fortigate-vm_v5:fortinet_fg-vm_payg_20190624:7.0.1",
+    "version": "7.0.1"
+  },
+  {
+    "architecture": "x64",
+    "offer": "fortinet_fortigate-vm_v5",
+    "publisher": "fortinet",
+    "sku": "fortinet_fg-vm_payg_20190624",
+    "urn": "fortinet:fortinet_fortigate-vm_v5:fortinet_fg-vm_payg_20190624:7.0.2",
+    "version": "7.0.2"
+  },
+  {
+    "architecture": "x64",
+    "offer": "fortinet_fortigate-vm_v5",
+    "publisher": "fortinet",
+    "sku": "fortinet_fg-vm_payg_20190624",
+    "urn": "fortinet:fortinet_fortigate-vm_v5:fortinet_fg-vm_payg_20190624:7.0.3",
+    "version": "7.0.3"
+  },
+  {
+    "architecture": "x64",
+    "offer": "fortinet_fortigate-vm_v5",
+    "publisher": "fortinet",
+    "sku": "fortinet_fg-vm_payg_20190624",
+    "urn": "fortinet:fortinet_fortigate-vm_v5:fortinet_fg-vm_payg_20190624:7.0.4",
+    "version": "7.0.4"
+  },
+  {
+    "architecture": "x64",
+    "offer": "fortinet_fortigate-vm_v5",
+    "publisher": "fortinet",
+    "sku": "fortinet_fg-vm_payg_20190624",
+    "urn": "fortinet:fortinet_fortigate-vm_v5:fortinet_fg-vm_payg_20190624:7.0.5",
+    "version": "7.0.5"
+  },
+  {
+    "architecture": "x64",
+    "offer": "fortinet_fortigate-vm_v5",
+    "publisher": "fortinet",
+    "sku": "fortinet_fg-vm_payg_2022",
+    "urn": "fortinet:fortinet_fortigate-vm_v5:fortinet_fg-vm_payg_2022:6.4.10",
+    "version": "6.4.10"
+  },
+  {
+    "architecture": "x64",
+    "offer": "fortinet_fortigate-vm_v5",
+    "publisher": "fortinet",
+    "sku": "fortinet_fg-vm_payg_2022",
+    "urn": "fortinet:fortinet_fortigate-vm_v5:fortinet_fg-vm_payg_2022:6.4.11",
+    "version": "6.4.11"
+  },
+  {
+    "architecture": "x64",
+    "offer": "fortinet_fortigate-vm_v5",
+    "publisher": "fortinet",
+    "sku": "fortinet_fg-vm_payg_2022",
+    "urn": "fortinet:fortinet_fortigate-vm_v5:fortinet_fg-vm_payg_2022:6.4.12",
+    "version": "6.4.12"
+  },
+  {
+    "architecture": "x64",
+    "offer": "fortinet_fortigate-vm_v5",
+    "publisher": "fortinet",
+    "sku": "fortinet_fg-vm_payg_2022",
+    "urn": "fortinet:fortinet_fortigate-vm_v5:fortinet_fg-vm_payg_2022:6.4.13",
+    "version": "6.4.13"
+  },
+  {
+    "architecture": "x64",
+    "offer": "fortinet_fortigate-vm_v5",
+    "publisher": "fortinet",
+    "sku": "fortinet_fg-vm_payg_2022",
+    "urn": "fortinet:fortinet_fortigate-vm_v5:fortinet_fg-vm_payg_2022:6.4.7",
+    "version": "6.4.7"
+  },
+  {
+    "architecture": "x64",
+    "offer": "fortinet_fortigate-vm_v5",
+    "publisher": "fortinet",
+    "sku": "fortinet_fg-vm_payg_2022",
+    "urn": "fortinet:fortinet_fortigate-vm_v5:fortinet_fg-vm_payg_2022:6.4.8",
+    "version": "6.4.8"
+  },
+  {
+    "architecture": "x64",
+    "offer": "fortinet_fortigate-vm_v5",
+    "publisher": "fortinet",
+    "sku": "fortinet_fg-vm_payg_2022",
+    "urn": "fortinet:fortinet_fortigate-vm_v5:fortinet_fg-vm_payg_2022:6.4.9",
+    "version": "6.4.9"
+  },
+  {
+    "architecture": "x64",
+    "offer": "fortinet_fortigate-vm_v5",
+    "publisher": "fortinet",
+    "sku": "fortinet_fg-vm_payg_2022",
+    "urn": "fortinet:fortinet_fortigate-vm_v5:fortinet_fg-vm_payg_2022:7.0.10",
+    "version": "7.0.10"
+  },
+  {
+    "architecture": "x64",
+    "offer": "fortinet_fortigate-vm_v5",
+    "publisher": "fortinet",
+    "sku": "fortinet_fg-vm_payg_2022",
+    "urn": "fortinet:fortinet_fortigate-vm_v5:fortinet_fg-vm_payg_2022:7.0.11",
+    "version": "7.0.11"
+  },
+  {
+    "architecture": "x64",
+    "offer": "fortinet_fortigate-vm_v5",
+    "publisher": "fortinet",
+    "sku": "fortinet_fg-vm_payg_2022",
+    "urn": "fortinet:fortinet_fortigate-vm_v5:fortinet_fg-vm_payg_2022:7.0.12",
+    "version": "7.0.12"
+  },
+  {
+    "architecture": "x64",
+    "offer": "fortinet_fortigate-vm_v5",
+    "publisher": "fortinet",
+    "sku": "fortinet_fg-vm_payg_2022",
+    "urn": "fortinet:fortinet_fortigate-vm_v5:fortinet_fg-vm_payg_2022:7.0.3",
+    "version": "7.0.3"
+  },
+  {
+    "architecture": "x64",
+    "offer": "fortinet_fortigate-vm_v5",
+    "publisher": "fortinet",
+    "sku": "fortinet_fg-vm_payg_2022",
+    "urn": "fortinet:fortinet_fortigate-vm_v5:fortinet_fg-vm_payg_2022:7.0.4",
+    "version": "7.0.4"
+  },
+  {
+    "architecture": "x64",
+    "offer": "fortinet_fortigate-vm_v5",
+    "publisher": "fortinet",
+    "sku": "fortinet_fg-vm_payg_2022",
+    "urn": "fortinet:fortinet_fortigate-vm_v5:fortinet_fg-vm_payg_2022:7.0.5",
+    "version": "7.0.5"
+  },
+  {
+    "architecture": "x64",
+    "offer": "fortinet_fortigate-vm_v5",
+    "publisher": "fortinet",
+    "sku": "fortinet_fg-vm_payg_2022",
+    "urn": "fortinet:fortinet_fortigate-vm_v5:fortinet_fg-vm_payg_2022:7.0.6",
+    "version": "7.0.6"
+  },
+  {
+    "architecture": "x64",
+    "offer": "fortinet_fortigate-vm_v5",
+    "publisher": "fortinet",
+    "sku": "fortinet_fg-vm_payg_2022",
+    "urn": "fortinet:fortinet_fortigate-vm_v5:fortinet_fg-vm_payg_2022:7.0.8",
+    "version": "7.0.8"
+  },
+  {
+    "architecture": "x64",
+    "offer": "fortinet_fortigate-vm_v5",
+    "publisher": "fortinet",
+    "sku": "fortinet_fg-vm_payg_2022",
+    "urn": "fortinet:fortinet_fortigate-vm_v5:fortinet_fg-vm_payg_2022:7.0.9",
+    "version": "7.0.9"
+  },
+  {
+    "architecture": "x64",
+    "offer": "fortinet_fortigate-vm_v5",
+    "publisher": "fortinet",
+    "sku": "fortinet_fg-vm_payg_2022",
+    "urn": "fortinet:fortinet_fortigate-vm_v5:fortinet_fg-vm_payg_2022:7.2.0",
+    "version": "7.2.0"
+  },
+  {
+    "architecture": "x64",
+    "offer": "fortinet_fortigate-vm_v5",
+    "publisher": "fortinet",
+    "sku": "fortinet_fg-vm_payg_2022",
+    "urn": "fortinet:fortinet_fortigate-vm_v5:fortinet_fg-vm_payg_2022:7.2.1",
+    "version": "7.2.1"
+  },
+  {
+    "architecture": "x64",
+    "offer": "fortinet_fortigate-vm_v5",
+    "publisher": "fortinet",
+    "sku": "fortinet_fg-vm_payg_2022",
+    "urn": "fortinet:fortinet_fortigate-vm_v5:fortinet_fg-vm_payg_2022:7.2.2",
+    "version": "7.2.2"
+  },
+  {
+    "architecture": "x64",
+    "offer": "fortinet_fortigate-vm_v5",
+    "publisher": "fortinet",
+    "sku": "fortinet_fg-vm_payg_2022",
+    "urn": "fortinet:fortinet_fortigate-vm_v5:fortinet_fg-vm_payg_2022:7.2.3",
+    "version": "7.2.3"
+  },
+  {
+    "architecture": "x64",
+    "offer": "fortinet_fortigate-vm_v5",
+    "publisher": "fortinet",
+    "sku": "fortinet_fg-vm_payg_2022",
+    "urn": "fortinet:fortinet_fortigate-vm_v5:fortinet_fg-vm_payg_2022:7.2.4",
+    "version": "7.2.4"
+  },
+  {
+    "architecture": "x64",
+    "offer": "fortinet_fortigate-vm_v5",
+    "publisher": "fortinet",
+    "sku": "fortinet_fg-vm_payg_2022",
+    "urn": "fortinet:fortinet_fortigate-vm_v5:fortinet_fg-vm_payg_2022:7.2.5",
+    "version": "7.2.5"
+  },
+  {
+    "architecture": "x64",
+    "offer": "fortinet_fortigate-vm_v5",
+    "publisher": "fortinet",
+    "sku": "fortinet_fg-vm_payg_2022",
+    "urn": "fortinet:fortinet_fortigate-vm_v5:fortinet_fg-vm_payg_2022:7.4.0",
+    "version": "7.4.0"
+  },
+  {
+    "architecture": "x64",
+    "offer": "fortinet_fortigate-vm_v5",
+    "publisher": "fortinet",
+    "sku": "fortinet_fg-vm_payg_2023",
+    "urn": "fortinet:fortinet_fortigate-vm_v5:fortinet_fg-vm_payg_2023:6.4.13",
+    "version": "6.4.13"
+  },
+  {
+    "architecture": "x64",
+    "offer": "fortinet_fortigate-vm_v5",
+    "publisher": "fortinet",
+    "sku": "fortinet_fg-vm_payg_2023",
+    "urn": "fortinet:fortinet_fortigate-vm_v5:fortinet_fg-vm_payg_2023:6.4.15",
+    "version": "6.4.15"
+  },
+  {
+    "architecture": "x64",
+    "offer": "fortinet_fortigate-vm_v5",
+    "publisher": "fortinet",
+    "sku": "fortinet_fg-vm_payg_2023",
+    "urn": "fortinet:fortinet_fortigate-vm_v5:fortinet_fg-vm_payg_2023:7.0.12",
+    "version": "7.0.12"
+  },
+  {
+    "architecture": "x64",
+    "offer": "fortinet_fortigate-vm_v5",
+    "publisher": "fortinet",
+    "sku": "fortinet_fg-vm_payg_2023",
+    "urn": "fortinet:fortinet_fortigate-vm_v5:fortinet_fg-vm_payg_2023:7.0.13",
+    "version": "7.0.13"
+  },
+  {
+    "architecture": "x64",
+    "offer": "fortinet_fortigate-vm_v5",
+    "publisher": "fortinet",
+    "sku": "fortinet_fg-vm_payg_2023",
+    "urn": "fortinet:fortinet_fortigate-vm_v5:fortinet_fg-vm_payg_2023:7.0.14",
+    "version": "7.0.14"
+  },
+  {
+    "architecture": "x64",
+    "offer": "fortinet_fortigate-vm_v5",
+    "publisher": "fortinet",
+    "sku": "fortinet_fg-vm_payg_2023",
+    "urn": "fortinet:fortinet_fortigate-vm_v5:fortinet_fg-vm_payg_2023:7.0.15",
+    "version": "7.0.15"
+  },
+  {
+    "architecture": "x64",
+    "offer": "fortinet_fortigate-vm_v5",
+    "publisher": "fortinet",
+    "sku": "fortinet_fg-vm_payg_2023",
+    "urn": "fortinet:fortinet_fortigate-vm_v5:fortinet_fg-vm_payg_2023:7.2.5",
+    "version": "7.2.5"
+  },
+  {
+    "architecture": "x64",
+    "offer": "fortinet_fortigate-vm_v5",
+    "publisher": "fortinet",
+    "sku": "fortinet_fg-vm_payg_2023",
+    "urn": "fortinet:fortinet_fortigate-vm_v5:fortinet_fg-vm_payg_2023:7.2.6",
+    "version": "7.2.6"
+  },
+  {
+    "architecture": "x64",
+    "offer": "fortinet_fortigate-vm_v5",
+    "publisher": "fortinet",
+    "sku": "fortinet_fg-vm_payg_2023",
+    "urn": "fortinet:fortinet_fortigate-vm_v5:fortinet_fg-vm_payg_2023:7.2.7",
+    "version": "7.2.7"
+  },
+  {
+    "architecture": "x64",
+    "offer": "fortinet_fortigate-vm_v5",
+    "publisher": "fortinet",
+    "sku": "fortinet_fg-vm_payg_2023",
+    "urn": "fortinet:fortinet_fortigate-vm_v5:fortinet_fg-vm_payg_2023:7.2.8",
+    "version": "7.2.8"
+  },
+  {
+    "architecture": "x64",
+    "offer": "fortinet_fortigate-vm_v5",
+    "publisher": "fortinet",
+    "sku": "fortinet_fg-vm_payg_2023",
+    "urn": "fortinet:fortinet_fortigate-vm_v5:fortinet_fg-vm_payg_2023:7.4.0",
+    "version": "7.4.0"
+  },
+  {
+    "architecture": "x64",
+    "offer": "fortinet_fortigate-vm_v5",
+    "publisher": "fortinet",
+    "sku": "fortinet_fg-vm_payg_2023",
+    "urn": "fortinet:fortinet_fortigate-vm_v5:fortinet_fg-vm_payg_2023:7.4.1",
+    "version": "7.4.1"
+  },
+  {
+    "architecture": "x64",
+    "offer": "fortinet_fortigate-vm_v5",
+    "publisher": "fortinet",
+    "sku": "fortinet_fg-vm_payg_2023",
+    "urn": "fortinet:fortinet_fortigate-vm_v5:fortinet_fg-vm_payg_2023:7.4.2",
+    "version": "7.4.2"
+  },
+  {
+    "architecture": "x64",
+    "offer": "fortinet_fortigate-vm_v5",
+    "publisher": "fortinet",
+    "sku": "fortinet_fg-vm_payg_2023",
+    "urn": "fortinet:fortinet_fortigate-vm_v5:fortinet_fg-vm_payg_2023:7.4.3",
+    "version": "7.4.3"
+  },
+  {
+    "architecture": "x64",
+    "offer": "fortinet_fortigate-vm_v5",
+    "publisher": "fortinet",
+    "sku": "fortinet_fg_ey_private_offer_20210303",
+    "urn": "fortinet:fortinet_fortigate-vm_v5:fortinet_fg_ey_private_offer_20210303:6.2.0",
+    "version": "6.2.0"
+  },
+  {
+    "architecture": "x64",
+    "offer": "fortinet_fortigate-vm_v5",
+    "publisher": "fortinet",
+    "sku": "fortinet_fg_ey_private_offer_20210303",
+    "urn": "fortinet:fortinet_fortigate-vm_v5:fortinet_fg_ey_private_offer_20210303:6.2.2",
+    "version": "6.2.2"
+  },
+  {
+    "architecture": "x64",
+    "offer": "fortinet_fortigate-vm_v5",
+    "publisher": "fortinet",
+    "sku": "fortinet_fg_ey_private_offer_20210303",
+    "urn": "fortinet:fortinet_fortigate-vm_v5:fortinet_fg_ey_private_offer_20210303:6.2.4",
+    "version": "6.2.4"
+  },
+  {
+    "architecture": "x64",
+    "offer": "fortinet_fortigate-vm_v5",
+    "publisher": "fortinet",
+    "sku": "fortinet_fg_ey_private_offer_20210303",
+    "urn": "fortinet:fortinet_fortigate-vm_v5:fortinet_fg_ey_private_offer_20210303:6.2.5",
+    "version": "6.2.5"
+  },
+  {
+    "architecture": "x64",
+    "offer": "fortinet_fortigate-vm_v5",
+    "publisher": "fortinet",
+    "sku": "fortinet_fg_ey_private_offer_20210303",
+    "urn": "fortinet:fortinet_fortigate-vm_v5:fortinet_fg_ey_private_offer_20210303:6.4.0",
+    "version": "6.4.0"
+  },
+  {
+    "architecture": "x64",
+    "offer": "fortinet_fortigate-vm_v5",
+    "publisher": "fortinet",
+    "sku": "fortinet_fg_ey_private_offer_20210303",
+    "urn": "fortinet:fortinet_fortigate-vm_v5:fortinet_fg_ey_private_offer_20210303:6.4.2",
+    "version": "6.4.2"
+  },
+  {
+    "architecture": "x64",
+    "offer": "fortinet_fortigate-vm_v5",
+    "publisher": "fortinet",
+    "sku": "fortinet_fg_ey_private_offer_20210303",
+    "urn": "fortinet:fortinet_fortigate-vm_v5:fortinet_fg_ey_private_offer_20210303:6.4.3",
+    "version": "6.4.3"
+  },
+  {
+    "architecture": "x64",
+    "offer": "fortinet_fortigate-vm_v5",
+    "publisher": "fortinet",
+    "sku": "fortinet_fg_ey_private_offer_20210303",
+    "urn": "fortinet:fortinet_fortigate-vm_v5:fortinet_fg_ey_private_offer_20210303:6.4.5",
+    "version": "6.4.5"
+  },
+  {
+    "architecture": "x64",
+    "offer": "fortinet_fortigate-vm_v5",
+    "publisher": "fortinet",
+    "sku": "fortinet_fg_ey_private_offer_20210303",
+    "urn": "fortinet:fortinet_fortigate-vm_v5:fortinet_fg_ey_private_offer_20210303:6.4.6",
+    "version": "6.4.6"
+  },
+  {
+    "architecture": "x64",
+    "offer": "fortinet_fortigate-vm_v5",
+    "publisher": "fortinet",
+    "sku": "fortinet_fg_ey_private_offer_20210303",
+    "urn": "fortinet:fortinet_fortigate-vm_v5:fortinet_fg_ey_private_offer_20210303:6.4.7",
+    "version": "6.4.7"
+  },
+  {
+    "architecture": "x64",
+    "offer": "fortinet_fortigate-vm_v5",
+    "publisher": "fortinet",
+    "sku": "fortinet_fg_ey_private_offer_20210303",
+    "urn": "fortinet:fortinet_fortigate-vm_v5:fortinet_fg_ey_private_offer_20210303:6.4.8",
+    "version": "6.4.8"
+  },
+  {
+    "architecture": "x64",
+    "offer": "fortinet_fortigate-vm_v5",
+    "publisher": "fortinet",
+    "sku": "fortinet_fg_ey_private_offer_20210303",
+    "urn": "fortinet:fortinet_fortigate-vm_v5:fortinet_fg_ey_private_offer_20210303:7.0.0",
+    "version": "7.0.0"
+  },
+  {
+    "architecture": "x64",
+    "offer": "fortinet_fortigate-vm_v5",
+    "publisher": "fortinet",
+    "sku": "fortinet_fg_ey_private_offer_20210303",
+    "urn": "fortinet:fortinet_fortigate-vm_v5:fortinet_fg_ey_private_offer_20210303:7.0.1",
+    "version": "7.0.1"
+  },
+  {
+    "architecture": "x64",
+    "offer": "fortinet_fortigate-vm_v5",
+    "publisher": "fortinet",
+    "sku": "fortinet_fg_ey_private_offer_20210303",
+    "urn": "fortinet:fortinet_fortigate-vm_v5:fortinet_fg_ey_private_offer_20210303:7.0.2",
+    "version": "7.0.2"
+  },
+  {
+    "architecture": "x64",
+    "offer": "fortinet_fortigate-vm_v5",
+    "publisher": "fortinet",
+    "sku": "fortinet_fg_ey_private_offer_20210303",
+    "urn": "fortinet:fortinet_fortigate-vm_v5:fortinet_fg_ey_private_offer_20210303:7.0.3",
+    "version": "7.0.3"
+  },
+  {
+    "architecture": "x64",
+    "offer": "fortinet_fortigate-vm_v5",
+    "publisher": "fortinet",
+    "sku": "fortinet_fg_ey_private_offer_20210303",
+    "urn": "fortinet:fortinet_fortigate-vm_v5:fortinet_fg_ey_private_offer_20210303:7.0.4",
+    "version": "7.0.4"
+  },
+  {
+    "architecture": "x64",
+    "offer": "fortinet_fortigate-vm_v5",
+    "publisher": "fortinet",
+    "sku": "fortinet_fg_ey_private_offer_20210303",
+    "urn": "fortinet:fortinet_fortigate-vm_v5:fortinet_fg_ey_private_offer_20210303:7.0.5",
+    "version": "7.0.5"
+  },
+  {
+    "architecture": "x64",
+    "offer": "fortinet_fortigate-vm_v5",
+    "publisher": "fortinet",
+    "sku": "fortinet_fg_ey_private_offer_20221102",
+    "urn": "fortinet:fortinet_fortigate-vm_v5:fortinet_fg_ey_private_offer_20221102:6.4.10",
+    "version": "6.4.10"
+  },
+  {
+    "architecture": "x64",
+    "offer": "fortinet_fortigate-vm_v5",
+    "publisher": "fortinet",
+    "sku": "fortinet_fg_ey_private_offer_20221102",
+    "urn": "fortinet:fortinet_fortigate-vm_v5:fortinet_fg_ey_private_offer_20221102:6.4.11",
+    "version": "6.4.11"
+  },
+  {
+    "architecture": "x64",
+    "offer": "fortinet_fortigate-vm_v5",
+    "publisher": "fortinet",
+    "sku": "fortinet_fg_ey_private_offer_20221102",
+    "urn": "fortinet:fortinet_fortigate-vm_v5:fortinet_fg_ey_private_offer_20221102:6.4.12",
+    "version": "6.4.12"
+  },
+  {
+    "architecture": "x64",
+    "offer": "fortinet_fortigate-vm_v5",
+    "publisher": "fortinet",
+    "sku": "fortinet_fg_ey_private_offer_20221102",
+    "urn": "fortinet:fortinet_fortigate-vm_v5:fortinet_fg_ey_private_offer_20221102:6.4.13",
+    "version": "6.4.13"
+  },
+  {
+    "architecture": "x64",
+    "offer": "fortinet_fortigate-vm_v5",
+    "publisher": "fortinet",
+    "sku": "fortinet_fg_ey_private_offer_20221102",
+    "urn": "fortinet:fortinet_fortigate-vm_v5:fortinet_fg_ey_private_offer_20221102:6.4.7",
+    "version": "6.4.7"
+  },
+  {
+    "architecture": "x64",
+    "offer": "fortinet_fortigate-vm_v5",
+    "publisher": "fortinet",
+    "sku": "fortinet_fg_ey_private_offer_20221102",
+    "urn": "fortinet:fortinet_fortigate-vm_v5:fortinet_fg_ey_private_offer_20221102:6.4.8",
+    "version": "6.4.8"
+  },
+  {
+    "architecture": "x64",
+    "offer": "fortinet_fortigate-vm_v5",
+    "publisher": "fortinet",
+    "sku": "fortinet_fg_ey_private_offer_20221102",
+    "urn": "fortinet:fortinet_fortigate-vm_v5:fortinet_fg_ey_private_offer_20221102:6.4.9",
+    "version": "6.4.9"
+  },
+  {
+    "architecture": "x64",
+    "offer": "fortinet_fortigate-vm_v5",
+    "publisher": "fortinet",
+    "sku": "fortinet_fg_ey_private_offer_20221102",
+    "urn": "fortinet:fortinet_fortigate-vm_v5:fortinet_fg_ey_private_offer_20221102:7.0.10",
+    "version": "7.0.10"
+  },
+  {
+    "architecture": "x64",
+    "offer": "fortinet_fortigate-vm_v5",
+    "publisher": "fortinet",
+    "sku": "fortinet_fg_ey_private_offer_20221102",
+    "urn": "fortinet:fortinet_fortigate-vm_v5:fortinet_fg_ey_private_offer_20221102:7.0.11",
+    "version": "7.0.11"
+  },
+  {
+    "architecture": "x64",
+    "offer": "fortinet_fortigate-vm_v5",
+    "publisher": "fortinet",
+    "sku": "fortinet_fg_ey_private_offer_20221102",
+    "urn": "fortinet:fortinet_fortigate-vm_v5:fortinet_fg_ey_private_offer_20221102:7.0.12",
+    "version": "7.0.12"
+  },
+  {
+    "architecture": "x64",
+    "offer": "fortinet_fortigate-vm_v5",
+    "publisher": "fortinet",
+    "sku": "fortinet_fg_ey_private_offer_20221102",
+    "urn": "fortinet:fortinet_fortigate-vm_v5:fortinet_fg_ey_private_offer_20221102:7.0.3",
+    "version": "7.0.3"
+  },
+  {
+    "architecture": "x64",
+    "offer": "fortinet_fortigate-vm_v5",
+    "publisher": "fortinet",
+    "sku": "fortinet_fg_ey_private_offer_20221102",
+    "urn": "fortinet:fortinet_fortigate-vm_v5:fortinet_fg_ey_private_offer_20221102:7.0.4",
+    "version": "7.0.4"
+  },
+  {
+    "architecture": "x64",
+    "offer": "fortinet_fortigate-vm_v5",
+    "publisher": "fortinet",
+    "sku": "fortinet_fg_ey_private_offer_20221102",
+    "urn": "fortinet:fortinet_fortigate-vm_v5:fortinet_fg_ey_private_offer_20221102:7.0.5",
+    "version": "7.0.5"
+  },
+  {
+    "architecture": "x64",
+    "offer": "fortinet_fortigate-vm_v5",
+    "publisher": "fortinet",
+    "sku": "fortinet_fg_ey_private_offer_20221102",
+    "urn": "fortinet:fortinet_fortigate-vm_v5:fortinet_fg_ey_private_offer_20221102:7.0.6",
+    "version": "7.0.6"
+  },
+  {
+    "architecture": "x64",
+    "offer": "fortinet_fortigate-vm_v5",
+    "publisher": "fortinet",
+    "sku": "fortinet_fg_ey_private_offer_20221102",
+    "urn": "fortinet:fortinet_fortigate-vm_v5:fortinet_fg_ey_private_offer_20221102:7.0.8",
+    "version": "7.0.8"
+  },
+  {
+    "architecture": "x64",
+    "offer": "fortinet_fortigate-vm_v5",
+    "publisher": "fortinet",
+    "sku": "fortinet_fg_ey_private_offer_20221102",
+    "urn": "fortinet:fortinet_fortigate-vm_v5:fortinet_fg_ey_private_offer_20221102:7.0.9",
+    "version": "7.0.9"
+  },
+  {
+    "architecture": "x64",
+    "offer": "fortinet_fortigate-vm_v5",
+    "publisher": "fortinet",
+    "sku": "fortinet_fg_ey_private_offer_20221102",
+    "urn": "fortinet:fortinet_fortigate-vm_v5:fortinet_fg_ey_private_offer_20221102:7.2.0",
+    "version": "7.2.0"
+  },
+  {
+    "architecture": "x64",
+    "offer": "fortinet_fortigate-vm_v5",
+    "publisher": "fortinet",
+    "sku": "fortinet_fg_ey_private_offer_20221102",
+    "urn": "fortinet:fortinet_fortigate-vm_v5:fortinet_fg_ey_private_offer_20221102:7.2.1",
+    "version": "7.2.1"
+  },
+  {
+    "architecture": "x64",
+    "offer": "fortinet_fortigate-vm_v5",
+    "publisher": "fortinet",
+    "sku": "fortinet_fg_ey_private_offer_20221102",
+    "urn": "fortinet:fortinet_fortigate-vm_v5:fortinet_fg_ey_private_offer_20221102:7.2.2",
+    "version": "7.2.2"
+  },
+  {
+    "architecture": "x64",
+    "offer": "fortinet_fortigate-vm_v5",
+    "publisher": "fortinet",
+    "sku": "fortinet_fg_ey_private_offer_20221102",
+    "urn": "fortinet:fortinet_fortigate-vm_v5:fortinet_fg_ey_private_offer_20221102:7.2.3",
+    "version": "7.2.3"
+  },
+  {
+    "architecture": "x64",
+    "offer": "fortinet_fortigate-vm_v5",
+    "publisher": "fortinet",
+    "sku": "fortinet_fg_ey_private_offer_20221102",
+    "urn": "fortinet:fortinet_fortigate-vm_v5:fortinet_fg_ey_private_offer_20221102:7.2.4",
+    "version": "7.2.4"
+  },
+  {
+    "architecture": "x64",
+    "offer": "fortinet_fortigate-vm_v5",
+    "publisher": "fortinet",
+    "sku": "fortinet_fg_ey_private_offer_20221102",
+    "urn": "fortinet:fortinet_fortigate-vm_v5:fortinet_fg_ey_private_offer_20221102:7.2.5",
+    "version": "7.2.5"
+  },
+  {
+    "architecture": "x64",
+    "offer": "fortinet_fortigate-vm_v5",
+    "publisher": "fortinet",
+    "sku": "fortinet_fg_ey_private_offer_20221102",
+    "urn": "fortinet:fortinet_fortigate-vm_v5:fortinet_fg_ey_private_offer_20221102:7.4.0",
+    "version": "7.4.0"
+  },
+  {
+    "architecture": "x64",
+    "offer": "fortinet_fortigate-vm_v5",
+    "publisher": "fortinet",
+    "sku": "fortinet_fg_ul_private_offer",
+    "urn": "fortinet:fortinet_fortigate-vm_v5:fortinet_fg_ul_private_offer:5.6.5",
+    "version": "5.6.5"
+  },
+  {
+    "architecture": "x64",
+    "offer": "fortinet_fortigate-vm_v5",
+    "publisher": "fortinet",
+    "sku": "fortinet_fg_ul_private_offer",
+    "urn": "fortinet:fortinet_fortigate-vm_v5:fortinet_fg_ul_private_offer:5.6.6",
+    "version": "5.6.6"
+  },
+  {
+    "architecture": "x64",
+    "offer": "fortinet_fortigate-vm_v5",
+    "publisher": "fortinet",
+    "sku": "fortinet_fg_ul_private_offer",
+    "urn": "fortinet:fortinet_fortigate-vm_v5:fortinet_fg_ul_private_offer:6.0.02",
+    "version": "6.0.02"
+  },
+  {
+    "architecture": "x64",
+    "offer": "fortinet_fortigate-vm_v5",
+    "publisher": "fortinet",
+    "sku": "fortinet_fg_ul_private_offer",
+    "urn": "fortinet:fortinet_fortigate-vm_v5:fortinet_fg_ul_private_offer:6.0.3",
+    "version": "6.0.3"
+  },
+  {
+    "architecture": "x64",
+    "offer": "fortinet_fortigate-vm_v5",
+    "publisher": "fortinet",
+    "sku": "fortinet_fg_ul_private_offer",
+    "urn": "fortinet:fortinet_fortigate-vm_v5:fortinet_fg_ul_private_offer:6.0.4",
+    "version": "6.0.4"
+  },
+  {
+    "architecture": "x64",
+    "offer": "fortinet_fortigate-vm_v5",
+    "publisher": "fortinet",
+    "sku": "fortinet_fg_ul_private_offer_20210415",
+    "urn": "fortinet:fortinet_fortigate-vm_v5:fortinet_fg_ul_private_offer_20210415:6.2.0",
+    "version": "6.2.0"
+  },
+  {
+    "architecture": "x64",
+    "offer": "fortinet_fortigate-vm_v5",
+    "publisher": "fortinet",
+    "sku": "fortinet_fg_ul_private_offer_20210415",
+    "urn": "fortinet:fortinet_fortigate-vm_v5:fortinet_fg_ul_private_offer_20210415:6.2.2",
+    "version": "6.2.2"
+  },
+  {
+    "architecture": "x64",
+    "offer": "fortinet_fortigate-vm_v5",
+    "publisher": "fortinet",
+    "sku": "fortinet_fg_ul_private_offer_20210415",
+    "urn": "fortinet:fortinet_fortigate-vm_v5:fortinet_fg_ul_private_offer_20210415:6.2.4",
+    "version": "6.2.4"
+  },
+  {
+    "architecture": "x64",
+    "offer": "fortinet_fortigate-vm_v5",
+    "publisher": "fortinet",
+    "sku": "fortinet_fg_ul_private_offer_20210415",
+    "urn": "fortinet:fortinet_fortigate-vm_v5:fortinet_fg_ul_private_offer_20210415:6.2.5",
+    "version": "6.2.5"
+  },
+  {
+    "architecture": "x64",
+    "offer": "fortinet_fortigate-vm_v5",
+    "publisher": "fortinet",
+    "sku": "fortinet_fg_ul_private_offer_20210415",
+    "urn": "fortinet:fortinet_fortigate-vm_v5:fortinet_fg_ul_private_offer_20210415:6.4.0",
+    "version": "6.4.0"
+  },
+  {
+    "architecture": "x64",
+    "offer": "fortinet_fortigate-vm_v5",
+    "publisher": "fortinet",
+    "sku": "fortinet_fg_ul_private_offer_20210415",
+    "urn": "fortinet:fortinet_fortigate-vm_v5:fortinet_fg_ul_private_offer_20210415:6.4.2",
+    "version": "6.4.2"
+  },
+  {
+    "architecture": "x64",
+    "offer": "fortinet_fortigate-vm_v5",
+    "publisher": "fortinet",
+    "sku": "fortinet_fg_ul_private_offer_20210415",
+    "urn": "fortinet:fortinet_fortigate-vm_v5:fortinet_fg_ul_private_offer_20210415:6.4.3",
+    "version": "6.4.3"
+  },
+  {
+    "architecture": "x64",
+    "offer": "fortinet_fortigate-vm_v5",
+    "publisher": "fortinet",
+    "sku": "fortinet_fg_ul_private_offer_20210415",
+    "urn": "fortinet:fortinet_fortigate-vm_v5:fortinet_fg_ul_private_offer_20210415:6.4.5",
+    "version": "6.4.5"
+  },
+  {
+    "architecture": "x64",
+    "offer": "fortinet_fortigate-vm_v5",
+    "publisher": "fortinet",
+    "sku": "fortinet_fg_ul_private_offer_20210415",
+    "urn": "fortinet:fortinet_fortigate-vm_v5:fortinet_fg_ul_private_offer_20210415:6.4.6",
+    "version": "6.4.6"
+  },
+  {
+    "architecture": "x64",
+    "offer": "fortinet_fortigate-vm_v5",
+    "publisher": "fortinet",
+    "sku": "fortinet_fg_ul_private_offer_20210415",
+    "urn": "fortinet:fortinet_fortigate-vm_v5:fortinet_fg_ul_private_offer_20210415:6.4.7",
+    "version": "6.4.7"
+  },
+  {
+    "architecture": "x64",
+    "offer": "fortinet_fortigate-vm_v5",
+    "publisher": "fortinet",
+    "sku": "fortinet_fg_ul_private_offer_20210415",
+    "urn": "fortinet:fortinet_fortigate-vm_v5:fortinet_fg_ul_private_offer_20210415:6.4.8",
+    "version": "6.4.8"
+  },
+  {
+    "architecture": "x64",
+    "offer": "fortinet_fortigate-vm_v5",
+    "publisher": "fortinet",
+    "sku": "fortinet_fg_ul_private_offer_20210415",
+    "urn": "fortinet:fortinet_fortigate-vm_v5:fortinet_fg_ul_private_offer_20210415:7.0.0",
+    "version": "7.0.0"
+  },
+  {
+    "architecture": "x64",
+    "offer": "fortinet_fortigate-vm_v5",
+    "publisher": "fortinet",
+    "sku": "fortinet_fg_ul_private_offer_20210415",
+    "urn": "fortinet:fortinet_fortigate-vm_v5:fortinet_fg_ul_private_offer_20210415:7.0.1",
+    "version": "7.0.1"
+  },
+  {
+    "architecture": "x64",
+    "offer": "fortinet_fortigate-vm_v5",
+    "publisher": "fortinet",
+    "sku": "fortinet_fg_ul_private_offer_20210415",
+    "urn": "fortinet:fortinet_fortigate-vm_v5:fortinet_fg_ul_private_offer_20210415:7.0.2",
+    "version": "7.0.2"
+  },
+  {
+    "architecture": "x64",
+    "offer": "fortinet_fortigate-vm_v5",
+    "publisher": "fortinet",
+    "sku": "fortinet_fg_ul_private_offer_20210415",
+    "urn": "fortinet:fortinet_fortigate-vm_v5:fortinet_fg_ul_private_offer_20210415:7.0.3",
+    "version": "7.0.3"
+  },
+  {
+    "architecture": "x64",
+    "offer": "fortinet_fortigate-vm_v5",
+    "publisher": "fortinet",
+    "sku": "fortinet_fg_ul_private_offer_20210415",
+    "urn": "fortinet:fortinet_fortigate-vm_v5:fortinet_fg_ul_private_offer_20210415:7.0.4",
+    "version": "7.0.4"
+  },
+  {
+    "architecture": "x64",
+    "offer": "fortinet_fortigate-vm_v5",
+    "publisher": "fortinet",
+    "sku": "fortinet_fg_ul_private_offer_20210415",
+    "urn": "fortinet:fortinet_fortigate-vm_v5:fortinet_fg_ul_private_offer_20210415:7.0.5",
+    "version": "7.0.5"
+  },
+  {
+    "architecture": "x64",
+    "offer": "fortinet_fortimail",
+    "publisher": "fortinet",
+    "sku": "fortimail-byol",
+    "urn": "fortinet:fortinet_fortimail:fortimail-byol:6.2.3",
+    "version": "6.2.3"
+  },
+  {
+    "architecture": "x64",
+    "offer": "fortinet_fortimail",
+    "publisher": "fortinet",
+    "sku": "fortimail-byol",
+    "urn": "fortinet:fortinet_fortimail:fortimail-byol:6.4.3",
+    "version": "6.4.3"
+  },
+  {
+    "architecture": "x64",
+    "offer": "fortinet_fortimail",
+    "publisher": "fortinet",
+    "sku": "fortimail-byol",
+    "urn": "fortinet:fortinet_fortimail:fortimail-byol:7.0.0",
+    "version": "7.0.0"
+  },
+  {
+    "architecture": "x64",
+    "offer": "fortinet_fortisandbox_vm",
+    "publisher": "fortinet",
+    "sku": "fortinet_fsa-vm",
+    "urn": "fortinet:fortinet_fortisandbox_vm:fortinet_fsa-vm:3.1.2",
+    "version": "3.1.2"
+  },
+  {
+    "architecture": "x64",
+    "offer": "fortinet_fortisandbox_vm",
+    "publisher": "fortinet",
+    "sku": "fortinet_fsa-vm",
+    "urn": "fortinet:fortinet_fortisandbox_vm:fortinet_fsa-vm:4.0.1",
+    "version": "4.0.1"
+  },
+  {
+    "architecture": "x64",
+    "offer": "fortinet_fortisandbox_vm",
+    "publisher": "fortinet",
+    "sku": "fortinet_fsa-vm",
+    "urn": "fortinet:fortinet_fortisandbox_vm:fortinet_fsa-vm:4.0.2",
+    "version": "4.0.2"
+  },
+  {
+    "architecture": "x64",
+    "offer": "fortinet_fortisandbox_vm",
+    "publisher": "fortinet",
+    "sku": "fortinet_fsa-vm",
+    "urn": "fortinet:fortinet_fortisandbox_vm:fortinet_fsa-vm:4.2.0",
+    "version": "4.2.0"
+  },
+  {
+    "architecture": "x64",
+    "offer": "fortinet_fortisandbox_vm",
+    "publisher": "fortinet",
+    "sku": "fortinet_fsa-vm",
+    "urn": "fortinet:fortinet_fortisandbox_vm:fortinet_fsa-vm:4.2.1",
+    "version": "4.2.1"
+  },
+  {
+    "architecture": "x64",
+    "offer": "fortinet_fortisandbox_vm",
+    "publisher": "fortinet",
+    "sku": "fortinet_fsa-vm",
+    "urn": "fortinet:fortinet_fortisandbox_vm:fortinet_fsa-vm:4.2.3",
+    "version": "4.2.3"
+  },
+  {
+    "architecture": "x64",
+    "offer": "fortinet_fortisandbox_vm",
+    "publisher": "fortinet",
+    "sku": "fortinet_fsa-vm",
+    "urn": "fortinet:fortinet_fortisandbox_vm:fortinet_fsa-vm:4.2.4",
+    "version": "4.2.4"
+  },
+  {
+    "architecture": "x64",
+    "offer": "fortinet_fortisandbox_vm",
+    "publisher": "fortinet",
+    "sku": "fortinet_fsa-vm",
+    "urn": "fortinet:fortinet_fortisandbox_vm:fortinet_fsa-vm:4.4.0",
+    "version": "4.4.0"
+  },
+  {
+    "architecture": "x64",
+    "offer": "fortinet_fortisandbox_vm",
+    "publisher": "fortinet",
+    "sku": "fortinet_fsa-vm",
+    "urn": "fortinet:fortinet_fortisandbox_vm:fortinet_fsa-vm:4.4.3",
+    "version": "4.4.3"
+  },
+  {
+    "architecture": "x64",
+    "offer": "fortinet_fortisandbox_vm",
+    "publisher": "fortinet",
+    "sku": "fortinet_fsa-vm",
+    "urn": "fortinet:fortinet_fortisandbox_vm:fortinet_fsa-vm:4.4.4",
+    "version": "4.4.4"
+  },
+  {
+    "architecture": "x64",
+    "offer": "fortinet_fortisandbox_vm",
+    "publisher": "fortinet",
+    "sku": "fortinet_fsa-vm_payg",
+    "urn": "fortinet:fortinet_fortisandbox_vm:fortinet_fsa-vm_payg:3.1.00",
+    "version": "3.1.00"
+  },
+  {
+    "architecture": "x64",
+    "offer": "fortinet_fortisandbox_vm",
+    "publisher": "fortinet",
+    "sku": "fortinet_fsa-vm_payg",
+    "urn": "fortinet:fortinet_fortisandbox_vm:fortinet_fsa-vm_payg:4.0.1",
+    "version": "4.0.1"
+  },
+  {
+    "architecture": "x64",
+    "offer": "fortinet_fortisandbox_vm",
+    "publisher": "fortinet",
+    "sku": "fortinet_fsa-vm_payg",
+    "urn": "fortinet:fortinet_fortisandbox_vm:fortinet_fsa-vm_payg:4.0.2",
+    "version": "4.0.2"
+  },
+  {
+    "architecture": "x64",
+    "offer": "fortinet_fortisandbox_vm",
+    "publisher": "fortinet",
+    "sku": "fortinet_fsa-vm_payg",
+    "urn": "fortinet:fortinet_fortisandbox_vm:fortinet_fsa-vm_payg:4.2.0",
+    "version": "4.2.0"
+  },
+  {
+    "architecture": "x64",
+    "offer": "fortinet_fortisandbox_vm",
+    "publisher": "fortinet",
+    "sku": "fortinet_fsa-vm_payg",
+    "urn": "fortinet:fortinet_fortisandbox_vm:fortinet_fsa-vm_payg:4.2.1",
+    "version": "4.2.1"
+  },
+  {
+    "architecture": "x64",
+    "offer": "fortinet_fortisandbox_vm",
+    "publisher": "fortinet",
+    "sku": "fortinet_fsa-vm_payg",
+    "urn": "fortinet:fortinet_fortisandbox_vm:fortinet_fsa-vm_payg:4.2.3",
+    "version": "4.2.3"
+  },
+  {
+    "architecture": "x64",
+    "offer": "fortinet_fortisandbox_vm",
+    "publisher": "fortinet",
+    "sku": "fortinet_fsa-vm_payg",
+    "urn": "fortinet:fortinet_fortisandbox_vm:fortinet_fsa-vm_payg:4.2.4",
+    "version": "4.2.4"
+  },
+  {
+    "architecture": "x64",
+    "offer": "fortinet_fortisandbox_vm",
+    "publisher": "fortinet",
+    "sku": "fortinet_fsa-vm_payg",
+    "urn": "fortinet:fortinet_fortisandbox_vm:fortinet_fsa-vm_payg:4.4.0",
+    "version": "4.4.0"
+  },
+  {
+    "architecture": "x64",
+    "offer": "fortinet_fortisandbox_vm",
+    "publisher": "fortinet",
+    "sku": "fortinet_fsa-vm_payg",
+    "urn": "fortinet:fortinet_fortisandbox_vm:fortinet_fsa-vm_payg:4.4.3",
+    "version": "4.4.3"
+  },
+  {
+    "architecture": "x64",
+    "offer": "fortinet_fortisandbox_vm",
+    "publisher": "fortinet",
+    "sku": "fortinet_fsa-vm_payg",
+    "urn": "fortinet:fortinet_fortisandbox_vm:fortinet_fsa-vm_payg:4.4.4",
+    "version": "4.4.4"
+  },
+  {
+    "architecture": "x64",
+    "offer": "fortinet_fortisandbox_vm",
+    "publisher": "fortinet",
+    "sku": "fortinet_fsa-vm_payg",
+    "urn": "fortinet:fortinet_fortisandbox_vm:fortinet_fsa-vm_payg:4.4.5",
+    "version": "4.4.5"
+  },
+  {
+    "architecture": "x64",
+    "offer": "fortinet_fortivoice",
+    "publisher": "fortinet",
+    "sku": "fortinet_fortivoice",
+    "urn": "fortinet:fortinet_fortivoice:fortinet_fortivoice:5.3.11",
+    "version": "5.3.11"
+  },
+  {
+    "architecture": "x64",
+    "offer": "fortinet_fortivoice",
+    "publisher": "fortinet",
+    "sku": "fortinet_fortivoice",
+    "urn": "fortinet:fortinet_fortivoice:fortinet_fortivoice:6.0.05",
+    "version": "6.0.05"
+  },
+  {
+    "architecture": "x64",
+    "offer": "fortinet_fortiweb-vm_v5",
+    "publisher": "fortinet",
+    "sku": "fortinet_fw-vm",
+    "urn": "fortinet:fortinet_fortiweb-vm_v5:fortinet_fw-vm:6.1.0",
+    "version": "6.1.0"
+  },
+  {
+    "architecture": "x64",
+    "offer": "fortinet_fortiweb-vm_v5",
+    "publisher": "fortinet",
+    "sku": "fortinet_fw-vm",
+    "urn": "fortinet:fortinet_fortiweb-vm_v5:fortinet_fw-vm:6.3.17",
+    "version": "6.3.17"
+  },
+  {
+    "architecture": "x64",
+    "offer": "fortinet_fortiweb-vm_v5",
+    "publisher": "fortinet",
+    "sku": "fortinet_fw-vm",
+    "urn": "fortinet:fortinet_fortiweb-vm_v5:fortinet_fw-vm:7.0.0",
+    "version": "7.0.0"
+  },
+  {
+    "architecture": "x64",
+    "offer": "fortinet_fortiweb-vm_v5",
+    "publisher": "fortinet",
+    "sku": "fortinet_fw-vm",
+    "urn": "fortinet:fortinet_fortiweb-vm_v5:fortinet_fw-vm:7.0.3",
+    "version": "7.0.3"
+  },
+  {
+    "architecture": "x64",
+    "offer": "fortinet_fortiweb-vm_v5",
+    "publisher": "fortinet",
+    "sku": "fortinet_fw-vm",
+    "urn": "fortinet:fortinet_fortiweb-vm_v5:fortinet_fw-vm:7.0.8",
+    "version": "7.0.8"
+  },
+  {
+    "architecture": "x64",
+    "offer": "fortinet_fortiweb-vm_v5",
+    "publisher": "fortinet",
+    "sku": "fortinet_fw-vm",
+    "urn": "fortinet:fortinet_fortiweb-vm_v5:fortinet_fw-vm:7.2.0",
+    "version": "7.2.0"
+  },
+  {
+    "architecture": "x64",
+    "offer": "fortinet_fortiweb-vm_v5",
+    "publisher": "fortinet",
+    "sku": "fortinet_fw-vm",
+    "urn": "fortinet:fortinet_fortiweb-vm_v5:fortinet_fw-vm:7.2.3",
+    "version": "7.2.3"
+  },
+  {
+    "architecture": "x64",
+    "offer": "fortinet_fortiweb-vm_v5",
+    "publisher": "fortinet",
+    "sku": "fortinet_fw-vm",
+    "urn": "fortinet:fortinet_fortiweb-vm_v5:fortinet_fw-vm:7.2.4",
+    "version": "7.2.4"
+  },
+  {
+    "architecture": "x64",
+    "offer": "fortinet_fortiweb-vm_v5",
+    "publisher": "fortinet",
+    "sku": "fortinet_fw-vm",
+    "urn": "fortinet:fortinet_fortiweb-vm_v5:fortinet_fw-vm:7.4.0",
+    "version": "7.4.0"
+  },
+  {
+    "architecture": "x64",
+    "offer": "fortinet_fortiweb-vm_v5",
+    "publisher": "fortinet",
+    "sku": "fortinet_fw-vm_payg_v2",
+    "urn": "fortinet:fortinet_fortiweb-vm_v5:fortinet_fw-vm_payg_v2:6.3.17",
+    "version": "6.3.17"
+  },
+  {
+    "architecture": "x64",
+    "offer": "fortinet_fortiweb-vm_v5",
+    "publisher": "fortinet",
+    "sku": "fortinet_fw-vm_payg_v2",
+    "urn": "fortinet:fortinet_fortiweb-vm_v5:fortinet_fw-vm_payg_v2:7.0.0",
+    "version": "7.0.0"
+  },
+  {
+    "architecture": "x64",
+    "offer": "fortinet_fortiweb-vm_v5",
+    "publisher": "fortinet",
+    "sku": "fortinet_fw-vm_payg_v2",
+    "urn": "fortinet:fortinet_fortiweb-vm_v5:fortinet_fw-vm_payg_v2:7.0.2",
+    "version": "7.0.2"
+  },
+  {
+    "architecture": "x64",
+    "offer": "fortinet_fortiweb-vm_v5",
+    "publisher": "fortinet",
+    "sku": "fortinet_fw-vm_payg_v2",
+    "urn": "fortinet:fortinet_fortiweb-vm_v5:fortinet_fw-vm_payg_v2:7.0.3",
+    "version": "7.0.3"
+  },
+  {
+    "architecture": "x64",
+    "offer": "fortinet_fortiweb-vm_v5",
+    "publisher": "fortinet",
+    "sku": "fortinet_fw-vm_payg_v2",
+    "urn": "fortinet:fortinet_fortiweb-vm_v5:fortinet_fw-vm_payg_v2:7.0.8",
+    "version": "7.0.8"
+  },
+  {
+    "architecture": "x64",
+    "offer": "fortinet_fortiweb-vm_v5",
+    "publisher": "fortinet",
+    "sku": "fortinet_fw-vm_payg_v2",
+    "urn": "fortinet:fortinet_fortiweb-vm_v5:fortinet_fw-vm_payg_v2:7.2.3",
+    "version": "7.2.3"
+  },
+  {
+    "architecture": "x64",
+    "offer": "fortinet_fortiweb-vm_v5",
+    "publisher": "fortinet",
+    "sku": "fortinet_fw-vm_payg_v2",
+    "urn": "fortinet:fortinet_fortiweb-vm_v5:fortinet_fw-vm_payg_v2:7.2.4",
+    "version": "7.2.4"
+  },
+  {
+    "architecture": "x64",
+    "offer": "fortinet_fortiweb-vm_v5",
+    "publisher": "fortinet",
+    "sku": "fortinet_fw-vm_payg_v2",
+    "urn": "fortinet:fortinet_fortiweb-vm_v5:fortinet_fw-vm_payg_v2:7.4.0",
+    "version": "7.4.0"
+  },
+  {
+    "architecture": "x64",
+    "offer": "fortinet_fortiweb-vm_v5",
+    "publisher": "fortinet",
+    "sku": "fortinet_fw-vm_payg_v3",
+    "urn": "fortinet:fortinet_fortiweb-vm_v5:fortinet_fw-vm_payg_v3:7.4.0",
+    "version": "7.4.0"
+  },
+  {
+    "architecture": "x64",
+    "offer": "pbhanuprakash_test",
+    "publisher": "fortinet",
+    "sku": "pbrk_fosbyol",
+    "urn": "fortinet:pbhanuprakash_test:pbrk_fosbyol:7.0.5",
+    "version": "7.0.5"
+  },
+  {
+    "architecture": "x64",
+    "offer": "pbhanuprakash_test",
+    "publisher": "fortinet",
+    "sku": "pbrk_fosbyol",
+    "urn": "fortinet:pbhanuprakash_test:pbrk_fosbyol:7.2.101236",
+    "version": "7.2.101236"
+  },
+  {
+    "architecture": "x64",
+    "offer": "pbhanuprakash_test",
+    "publisher": "fortinet",
+    "sku": "pbrk_fosbyol",
+    "urn": "fortinet:pbhanuprakash_test:pbrk_fosbyol:7.2.104067",
+    "version": "7.2.104067"
+  },
+  {
+    "architecture": "x64",
+    "offer": "pbhanuprakash_test",
+    "publisher": "fortinet",
+    "sku": "pbrk_fosbyol",
+    "urn": "fortinet:pbhanuprakash_test:pbrk_fosbyol:7.2.111252",
+    "version": "7.2.111252"
+  },
+  {
+    "architecture": "x64",
+    "offer": "pbhanuprakash_test",
+    "publisher": "fortinet",
+    "sku": "pbrk_fosbyol",
+    "urn": "fortinet:pbhanuprakash_test:pbrk_fosbyol:7.2.111254",
+    "version": "7.2.111254"
+  },
+  {
+    "architecture": "x64",
+    "offer": "pbhanuprakash_test",
+    "publisher": "fortinet",
+    "sku": "pbrk_fosbyol",
+    "urn": "fortinet:pbhanuprakash_test:pbrk_fosbyol:7.2.11254",
+    "version": "7.2.11254"
+  },
+  {
+    "architecture": "x64",
+    "offer": "pbhanuprakash_test",
+    "publisher": "fortinet",
+    "sku": "pbrk_fosbyol",
+    "urn": "fortinet:pbhanuprakash_test:pbrk_fosbyol:7.2.4",
+    "version": "7.2.4"
+  },
+  {
+    "architecture": "x64",
+    "offer": "pbhanuprakash_test",
+    "publisher": "fortinet",
+    "sku": "pbrk_fosbyol",
+    "urn": "fortinet:pbhanuprakash_test:pbrk_fosbyol:7.2.502303",
+    "version": "7.2.502303"
+  },
+  {
+    "architecture": "x64",
+    "offer": "pbhanuprakash_test",
+    "publisher": "fortinet",
+    "sku": "pbrk_fosbyol",
+    "urn": "fortinet:pbhanuprakash_test:pbrk_fosbyol:7.4.4004682",
+    "version": "7.4.4004682"
+  },
+  {
+    "architecture": "x64",
+    "offer": "pbhanuprakash_test",
+    "publisher": "fortinet",
+    "sku": "pbrk_fosbyol_g2",
+    "urn": "fortinet:pbhanuprakash_test:pbrk_fosbyol_g2:1.0.1",
+    "version": "1.0.1"
+  },
+  {
+    "architecture": "x64",
+    "offer": "pbhanuprakash_test",
+    "publisher": "fortinet",
+    "sku": "pbrk_vwanpayg",
+    "urn": "fortinet:pbhanuprakash_test:pbrk_vwanpayg:7.4.0",
+    "version": "7.4.0"
+  },
+  {
+    "architecture": "x64",
+    "offer": "pbhanuprakash_test",
+    "publisher": "fortinet",
+    "sku": "pbrk_vwanpayg",
+    "urn": "fortinet:pbhanuprakash_test:pbrk_vwanpayg:7.4.2002488",
+    "version": "7.4.2002488"
+  },
+  {
+    "architecture": "x64",
+    "offer": "pbhanuprakash_test",
+    "publisher": "fortinet",
+    "sku": "pbrk_vwanpayg",
+    "urn": "fortinet:pbhanuprakash_test:pbrk_vwanpayg:7.4.2002536",
+    "version": "7.4.2002536"
+  },
+  {
+    "architecture": "x64",
+    "offer": "pbhanuprakash_test",
+    "publisher": "fortinet",
+    "sku": "pbrk_vwanpayg",
+    "urn": "fortinet:pbhanuprakash_test:pbrk_vwanpayg:7.4.4002636",
+    "version": "7.4.4002636"
+  },
+  {
+    "architecture": "x64",
+    "offer": "pbhanuprakash_test",
+    "publisher": "fortinet",
+    "sku": "pbrk_vwanpayg",
+    "urn": "fortinet:pbhanuprakash_test:pbrk_vwanpayg:7.4.4004682",
+    "version": "7.4.4004682"
+  },
+  {
+    "architecture": "x64",
+    "offer": "pbhanuprakash_test",
+    "publisher": "fortinet",
+    "sku": "pbrk_vwanpayg",
+    "urn": "fortinet:pbhanuprakash_test:pbrk_vwanpayg:7.4.4004683",
+    "version": "7.4.4004683"
+  },
+  {
+    "architecture": "x64",
+    "offer": "pbhanuprakash_test",
+    "publisher": "fortinet",
+    "sku": "pbrk_vwanpayg",
+    "urn": "fortinet:pbhanuprakash_test:pbrk_vwanpayg:7.4.4004687",
+    "version": "7.4.4004687"
+  },
+  {
+    "architecture": "x64",
+    "offer": "pbhanuprakash_test",
+    "publisher": "fortinet",
+    "sku": "pbrk_vwanpayg",
+    "urn": "fortinet:pbhanuprakash_test:pbrk_vwanpayg:7.4.4004688",
+    "version": "7.4.4004688"
+  },
+  {
+    "architecture": "x64",
+    "offer": "pbhanuprakash_test",
+    "publisher": "fortinet",
+    "sku": "pbrk_vwanpayg",
+    "urn": "fortinet:pbhanuprakash_test:pbrk_vwanpayg:7.4.4004691",
+    "version": "7.4.4004691"
+  },
+  {
+    "architecture": "x64",
+    "offer": "pbhanuprakash_test",
+    "publisher": "fortinet",
+    "sku": "pbrk_vwanpayg",
+    "urn": "fortinet:pbhanuprakash_test:pbrk_vwanpayg:7.4.4004707",
+    "version": "7.4.4004707"
+  }
+]

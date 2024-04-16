@@ -52,3 +52,43 @@ variable "spoke-subnet_prefix" {
   description = "Spoke Subnet Prefix."
   type        = string
 }
+
+variable "hub-nva-sku" {
+  description = "Hub NVA SKU"
+  type        = string
+}
+
+variable "hub-nva-publisher" {
+  description = "Hub NVA Publisher"
+  type        = string
+}
+
+variable "hub-nva-offer" {
+  description = "Hub NVA Offer"
+  type        = string
+}
+
+variable "hub-nva-size" {
+  description = "Hub NVA Size"
+  type        = string
+}
+
+variable "spoke-container-server-sku" {
+  description = "Spoke Container Server SKU"
+  type        = string
+}
+
+variable "spoke-container-server-publisher" {
+  description = "Spoke Container Server Publisher"
+  type        = string
+}
+
+variable "spoke-container-server-offer" {
+  description = "Spoke Container Server Offer"
+  type        = string
+}
+
+variable "spoke-container-server-size" {
+  description = "Spoke Container Server Size"
+  type        = string
+}
