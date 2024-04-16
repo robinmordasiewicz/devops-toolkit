@@ -134,7 +134,7 @@ resource "azurerm_public_ip" "hub-nva-management_public_ip" {
   resource_group_name = azurerm_resource_group.azure_resource_group.name
   allocation_method   = "Static"
   sku                 = "Standard"
-  domain_name_label   = "${random_pet.admin_username.id}.management"
+  domain_name_label   = "${random_pet.admin_username.id}-management"
 }
 
 resource "azurerm_public_ip" "hub-nva-vip_public_ip" {
