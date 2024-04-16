@@ -8,6 +8,10 @@
 
 https://learn.microsoft.com/en-us/azure/virtual-machines/fsv2-series
 
+## Marketplace SKUs
+
+az vm image list --publisher fortinet --all
+
 <!-- BEGIN_TF_DOCS -->
 ## terraform.auto.tfvars
 

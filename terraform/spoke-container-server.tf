@@ -10,7 +10,7 @@ resource "azurerm_linux_virtual_machine" "spoke-container-server_virtual_machine
   location                        = azurerm_resource_group.azure_resource_group.location
   resource_group_name             = azurerm_resource_group.azure_resource_group.name
   network_interface_ids           = [azurerm_network_interface.spoke-container-server_network_interface.id]
-  size                            = "Standard_DS1_v2"
+  size                            = var.spoke-container-server-size
   allow_extension_operations      = false
 
   os_disk {
@@ -19,9 +19,9 @@ resource "azurerm_linux_virtual_machine" "spoke-container-server_virtual_machine
   }
 
   source_image_reference {
-    publisher = "Canonical"
-    offer     = "0001-com-ubuntu-server-jammy"
-    sku       = "22_04-lts-gen2"
+    publisher = var.spoke-container-server-publisher
+    offer     = var.spoke-container-server-offer
+    sku       = var.spoke-container-server-sku
     version   = "latest"
   }
 
