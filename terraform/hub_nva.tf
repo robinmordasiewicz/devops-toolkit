@@ -1,24 +1,14 @@
-#resource "azurerm_marketplace_agreement" "fortigate" {
-#  publisher = "fortinet"
-#  offer     = "fortinet_fortigate-vm_v5"
-#  plan      = "fortinet_fg-vm_payg_2022"
-#}
-
-#data "azurerm_marketplace_agreement" "fortigate" {
-#  publisher = "fortigate"
-#  offer     = "fortinet_fortigate-vm_v5"
-#  plan      = "fortinet_fg-vm_payg_2022"
-#}
-
-#output "azurerm_marketplace_agreement_id" {
-#  value = data.azurerm_marketplace_agreement.fortigate.id
-#}
+resource "null_resource" "marketplace_agreement" {
+  provisioner "local-exec" {
+    command = "az vm image terms accept --publisher ${var.hub-nva-publisher} --offer ${var.hub-nva-offer} --plan ${var.hub-nva-sku}"
+  }
+}
 
 resource "azurerm_linux_virtual_machine" "hub-nva_virtual_machine" {
   #checkov:skip=CKV_AZURE_178: Allow Fortigate to present HTTPS login UI instead of SSH
   #checkov:skip=CKV_AZURE_149: Allow Fortigate to present HTTPS login UI instead of SSH
   #checkov:skip=CKV_AZURE_1: Allow Fortigate to present HTTPS login UI instead of SSH
-  #  depends_on                      = [azurerm_marketplace_agreement.fortigate]
+  depends_on                      = [null_resource.marketplace_agreement]
   name                            = "hub-nva_virtual_machine"
   computer_name                   = "hub-nva"
   availability_set_id             = azurerm_availability_set.hub-nva_availability_set.id
@@ -28,7 +18,7 @@ resource "azurerm_linux_virtual_machine" "hub-nva_virtual_machine" {
   location                        = azurerm_resource_group.azure_resource_group.location
   resource_group_name             = azurerm_resource_group.azure_resource_group.name
   network_interface_ids           = [azurerm_network_interface.hub-nva-external_network_interface.id, azurerm_network_interface.hub-nva-internal_network_interface.id]
-  size                            = "Standard_F8s_v2"
+  size                            = var.hub-nva-size
   allow_extension_operations      = false
 
   identity {
@@ -39,15 +29,15 @@ resource "azurerm_linux_virtual_machine" "hub-nva_virtual_machine" {
     storage_account_type = "Premium_LRS"
   }
   plan {
-    name      = "fortinet_fg-vm_payg_2022"
-    product   = "fortinet_fortigate-vm_v5"
-    publisher = "fortinet"
+    name      = var.hub-nva-sku
+    product   = var.hub-nva-offer
+    publisher = var.hub-nva-publisher
   }
   source_image_reference {
-    offer     = "fortinet_fortigate-vm_v5"
-    publisher = "fortinet"
-    sku       = "fortinet_fg-vm_payg_2022"
+    offer     = var.hub-nva-offer
+    publisher = var.hub-nva-publisher
+    sku       = var.hub-nva-sku
     version   = "latest"
   }
-  custom_data = filebase64("cloud-init/fortigate.conf")
+  custom_data = filebase64("cloud-init/hub-nva.conf")
 }

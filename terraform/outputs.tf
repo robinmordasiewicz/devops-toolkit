@@ -20,7 +20,7 @@ output "hub-nva-management_public_ip" {
 
 output "management_fqdn" {
   description = "Management FQDN"
-  value       = "https://${data.azurerm_public_ip.hub-nva-management_public_ip.fqdn}"
+  value       = "https://${data.azurerm_public_ip.hub-nva-management_public_ip.fqdn}:${var.hub-nva-management-port}"
 }
 
 output "vip_fqdn" {
