@@ -39,5 +39,5 @@ resource "azurerm_linux_virtual_machine" "hub-nva_virtual_machine" {
     sku       = var.hub-nva-sku
     version   = "latest"
   }
-  custom_data = filebase64("cloud-init/hub-nva.conf")
+  custom_data = filebase64("cloud-init/${var.hub-nva-offer}.conf")
 }
