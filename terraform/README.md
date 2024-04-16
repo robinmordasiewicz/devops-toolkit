@@ -31,6 +31,8 @@ hub-nva-publisher                    = "fortinet"
 hub-nva-offer                        = "fortinet_fortigate-vm_v5"
 hub-nva-sku                          = "fortinet_fg-vm_payg_2022"
 hub-nva-size                         = "Standard_F8s_v2"
+hub-nva-management-action            = "Allow" # Can be either Allow or Deny
+hub-nva-management-port              = "443"
 spoke-container-server-publisher     = "Canonical"
 spoke-container-server-offer         = "0001-com-ubuntu-server-jammy"
 spoke-container-server-sku           = "22_04-lts-gen2"
@@ -57,6 +59,8 @@ spoke-container-server-size          = "Standard_DS1_v2"
 | hub-external-subnet\_prefix | External Subnet Prefix. | `string` | n/a | yes |
 | hub-internal-subnet\_name | Hub Subnet Name. | `string` | n/a | yes |
 | hub-internal-subnet\_prefix | Hub Subnet Prefix. | `string` | n/a | yes |
+| hub-nva-management-action | Allow or Deny access to Management | `string` | n/a | yes |
+| hub-nva-management-port | Hub NVA Management TCP Port | `string` | n/a | yes |
 | hub-nva-offer | Hub NVA Offer | `string` | n/a | yes |
 | hub-nva-publisher | Hub NVA Publisher | `string` | n/a | yes |
 | hub-nva-size | Hub NVA Size | `string` | n/a | yes |
