@@ -48,7 +48,7 @@ spoke-container-server-size          = "Standard_DS1_v2"
 | azurerm | 3.99.0 |
 | http | 3.4.1 |
 | null | 3.2.2 |
-| random | 3.6.0 |
+| random | 3.6.1 |
 | tls | 4.0.5 |
 
 ## Inputs
