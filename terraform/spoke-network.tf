@@ -31,7 +31,7 @@ resource "azurerm_route_table" "spoke_route_table" {
     name                   = "default"
     address_prefix         = "0.0.0.0/0"
     next_hop_type          = "VirtualAppliance"
-    next_hop_in_ip_address = "10.0.2.4"
+    next_hop_in_ip_address = var.hub-nva-gateway
   }
 }
 
@@ -54,7 +54,7 @@ resource "azurerm_network_security_group" "spoke_network_security_group" {
     source_port_range          = "*"
     destination_port_ranges    = ["80", "81"] #checkov:skip=CKV_AZURE_160: Allow containers to serve
     source_address_prefix      = "*"
-    destination_address_prefix = cidrhost(var.spoke-subnet_prefix, 5)
+    destination_address_prefix = var.spoke-container-server-ip
   }
   security_rule {
     name                       = "container-server_to_internet_rule"
@@ -64,7 +64,7 @@ resource "azurerm_network_security_group" "spoke_network_security_group" {
     protocol                   = "Tcp"
     source_port_range          = "*"
     destination_port_ranges    = ["80", "443"]
-    source_address_prefix      = cidrhost(var.spoke-subnet_prefix, 5)
+    source_address_prefix      = var.spoke-container-server-ip
     destination_address_prefix = "*" #tfsec:ignore:AVD-AZU-0051
   }
   security_rule { #tfsec:ignore:AVD-AZU-0051
@@ -75,7 +75,7 @@ resource "azurerm_network_security_group" "spoke_network_security_group" {
     protocol                   = "Icmp"
     source_port_range          = "*"
     destination_port_range     = "*"
-    source_address_prefix      = cidrhost(var.spoke-subnet_prefix, 5)
+    source_address_prefix      = var.spoke-container-server-ip
     destination_address_prefix = "8.8.8.8"
   }
 }
@@ -93,7 +93,7 @@ resource "azurerm_network_interface" "spoke-container-server_network_interface" 
   ip_configuration {
     name                          = "spoke-container-server_ip_configuration"
     private_ip_address_allocation = "Static"
-    private_ip_address            = cidrhost(var.spoke-subnet_prefix, 5)
+    private_ip_address            = var.spoke-container-server-ip
     subnet_id                     = azurerm_subnet.spoke_subnet.id
   }
 }

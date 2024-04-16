@@ -64,7 +64,7 @@ resource "azurerm_network_security_group" "hub-external_network_security_group" 
     source_port_range          = "*"
     destination_port_range     = var.hub-nva-management-port
     source_address_prefix      = "*"
-    destination_address_prefix = cidrhost(var.hub-external-subnet_prefix, 4)
+    destination_address_prefix = var.hub-nva-management-ip
   }
   security_rule {
     name                       = "VIP_rule"
@@ -75,7 +75,7 @@ resource "azurerm_network_security_group" "hub-external_network_security_group" 
     source_port_range          = "*"
     destination_port_ranges    = ["80", "443"] #checkov:skip=CKV_AZURE_160: Allow HTTP redirects
     source_address_prefix      = "*"
-    destination_address_prefix = cidrhost(var.hub-external-subnet_prefix, 100)
+    destination_address_prefix = var.hub-nva-vip
   }
 }
 
@@ -96,7 +96,7 @@ resource "azurerm_network_security_group" "hub-internal_network_security_group" 
     protocol                   = "Tcp"
     source_port_range          = "*"
     destination_port_ranges    = ["80", "443"]
-    source_address_prefix      = cidrhost(var.spoke-subnet_prefix, 5)
+    source_address_prefix      = var.spoke-container-server-ip
     destination_address_prefix = "*"
   }
   security_rule {
@@ -107,8 +107,8 @@ resource "azurerm_network_security_group" "hub-internal_network_security_group" 
     protocol                   = "Icmp"
     source_port_range          = "*"
     destination_port_range     = "*"
-    source_address_prefix      = cidrhost(var.spoke-subnet_prefix, 5)
-    destination_address_prefix = "8.8.8.8"
+    source_address_prefix      = var.spoke-container-server-ip
+    destination_address_prefix = var.spoke-check-internet-up-ip
   }
   security_rule {
     name                       = "outbound-http_rule"
@@ -119,7 +119,7 @@ resource "azurerm_network_security_group" "hub-internal_network_security_group" 
     source_port_range          = "*"
     destination_port_ranges    = ["80", "81"]
     source_address_prefix      = "*"
-    destination_address_prefix = cidrhost(var.spoke-subnet_prefix, 5)
+    destination_address_prefix = var.spoke-container-server-ip
   }
 }
 
@@ -134,7 +134,7 @@ resource "azurerm_public_ip" "hub-nva-management_public_ip" {
   resource_group_name = azurerm_resource_group.azure_resource_group.name
   allocation_method   = "Static"
   sku                 = "Standard"
-  domain_name_label   = "nva"
+  domain_name_label   = "${random_pet.admin_username.id}-management"
 }
 
 resource "azurerm_public_ip" "hub-nva-vip_public_ip" {
@@ -143,7 +143,7 @@ resource "azurerm_public_ip" "hub-nva-vip_public_ip" {
   resource_group_name = azurerm_resource_group.azure_resource_group.name
   allocation_method   = "Static"
   sku                 = "Standard"
-  domain_name_label   = "dvwa"
+  domain_name_label   = random_pet.admin_username.id
 }
 
 resource "azurerm_network_interface" "hub-nva-external_network_interface" {
@@ -155,14 +155,14 @@ resource "azurerm_network_interface" "hub-nva-external_network_interface" {
     name                          = "hub-nva-management-external_ip_configuration"
     primary                       = true
     private_ip_address_allocation = "Static"
-    private_ip_address            = cidrhost(var.hub-external-subnet_prefix, 4)
+    private_ip_address            = var.hub-nva-management-ip
     subnet_id                     = azurerm_subnet.hub-external_subnet.id
     public_ip_address_id          = azurerm_public_ip.hub-nva-management_public_ip.id #checkov:skip=CKV_AZURE_119:Fortigate gets a public IP
   }
   ip_configuration {
     name                          = "hub-nva-vip-external-ip_configuration"
     private_ip_address_allocation = "Static"
-    private_ip_address            = cidrhost(var.hub-external-subnet_prefix, 100)
+    private_ip_address            = var.hub-nva-vip
     subnet_id                     = azurerm_subnet.hub-external_subnet.id
     public_ip_address_id          = azurerm_public_ip.hub-nva-vip_public_ip.id #checkov:skip=CKV_AZURE_119:Fortigate gets a public IP
   }
@@ -177,7 +177,7 @@ resource "azurerm_network_interface" "hub-nva-internal_network_interface" {
   ip_configuration {
     name                          = "hub-nva-internal_ip_configuration"
     private_ip_address_allocation = "Static"
-    private_ip_address            = cidrhost(var.hub-internal-subnet_prefix, 4)
+    private_ip_address            = var.hub-nva-gateway
     subnet_id                     = azurerm_subnet.hub-internal_subnet.id
   }
 }
