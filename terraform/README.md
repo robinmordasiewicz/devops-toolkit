@@ -31,7 +31,7 @@ hub-nva-offer                        = "fortinet_fortiweb-vm_v5"
 hub-nva-sku                          = "fortinet_fw-vm_payg_v3"
 hub-nva-size                         = "Standard_F8s_v2"
 hub-nva-management-action            = "Allow" # Can be either Allow or Deny
-hub-nva-management-port              = "443"
+hub-nva-management-port              = "8443"
 hub-nva-management-ip                = "10.0.0.4"
 hub-nva-vip                          = "10.0.0.5"
 hub-nva-gateway                      = "10.0.0.37"
@@ -51,7 +51,7 @@ spoke-check-internet-up-ip           = "8.8.8.8"
 
 | Name | Version |
 |------|---------|
-| terraform | 1.8.0 |
+| terraform | >=1.6 |
 | azurerm | 3.99.0 |
 | http | 3.4.1 |
 | null | 3.2.2 |
@@ -93,8 +93,10 @@ spoke-check-internet-up-ip           = "8.8.8.8"
 |------|-------------|
 | admin\_password | Password for admin account |
 | admin\_username | Username for admin account |
+| cert\_pem | n/a |
 | hub-nva-management\_public\_ip | Management IP address |
 | hub-nva-vip\_public\_ip | VIP IP address |
 | management\_fqdn | Management FQDN |
+| private\_key\_pem | n/a |
 | vip\_fqdn | VIP FQDN |
 <!-- END_TF_DOCS -->
