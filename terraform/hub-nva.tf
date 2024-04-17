@@ -39,5 +39,16 @@ resource "azurerm_linux_virtual_machine" "hub-nva_virtual_machine" {
     sku       = var.hub-nva-sku
     version   = "latest"
   }
-  custom_data = filebase64("cloud-init/${var.hub-nva-offer}.conf")
+  #custom_data = filebase64("cloud-init/${var.hub-nva-offer}.conf")
+  custom_data = base64encode(
+    templatefile("cloud-init/${var.hub-nva-offer}.conf",
+      {
+        VAR-hub-external-subnet-gateway = var.hub-external-subnet-gateway
+        VAR-CERTIFICATE                 = tls_self_signed_cert.self_signed_cert.cert_pem
+        VAR-PRIVATEKEY                  = tls_private_key.private_key.private_key_pem
+        VAR-fwb_license_file            = ""
+        VAR-fwb_license_fortiflex       = ""
+      }
+    )
+  )
 }

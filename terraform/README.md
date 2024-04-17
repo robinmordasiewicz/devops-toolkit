@@ -23,6 +23,7 @@ owner_email                        = "root@example.com"
 hub-virtual-network_address_prefix = "10.0.0.0/24"
 hub-external-subnet_name           = "hub-external_subnet"
 hub-external-subnet_prefix         = "10.0.0.0/27"
+hub-external-subnet-gateway        = "10.0.0.1"
 hub-internal-subnet_name           = "hub-internal_subnet"
 hub-internal-subnet_prefix         = "10.0.0.32/27"
 hub-nva-publisher                  = "fortinet"
@@ -62,6 +63,7 @@ spoke-check-internet-up-ip           = "8.8.8.8"
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
+| hub-external-subnet-gateway | Azure gateway IP address to the Internet | `string` | n/a | yes |
 | hub-external-subnet\_name | External Subnet Name. | `string` | n/a | yes |
 | hub-external-subnet\_prefix | External Subnet Prefix. | `string` | n/a | yes |
 | hub-internal-subnet\_name | Hub Subnet Name. | `string` | n/a | yes |
@@ -93,10 +95,8 @@ spoke-check-internet-up-ip           = "8.8.8.8"
 |------|-------------|
 | admin\_password | Password for admin account |
 | admin\_username | Username for admin account |
-| cert\_pem | n/a |
 | hub-nva-management\_public\_ip | Management IP address |
 | hub-nva-vip\_public\_ip | VIP IP address |
 | management\_fqdn | Management FQDN |
-| private\_key\_pem | n/a |
 | vip\_fqdn | VIP FQDN |
 <!-- END_TF_DOCS -->
