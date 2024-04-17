@@ -152,7 +152,7 @@ resource "azurerm_network_interface" "hub-nva-external_network_interface" {
   resource_group_name           = azurerm_resource_group.azure_resource_group.name
   enable_accelerated_networking = true
   ip_configuration {
-    name                          = "hub-nva-management-external_ip_configuration"
+    name                          = "hub-nva-external-management_ip_configuration"
     primary                       = true
     private_ip_address_allocation = "Static"
     private_ip_address            = var.hub-nva-management-ip
@@ -160,7 +160,7 @@ resource "azurerm_network_interface" "hub-nva-external_network_interface" {
     public_ip_address_id          = azurerm_public_ip.hub-nva-management_public_ip.id #checkov:skip=CKV_AZURE_119:Fortigate gets a public IP
   }
   ip_configuration {
-    name                          = "hub-nva-vip-external-ip_configuration"
+    name                          = "hub-nva-external-vip_configuration"
     private_ip_address_allocation = "Static"
     private_ip_address            = var.hub-nva-vip
     subnet_id                     = azurerm_subnet.hub-external_subnet.id
