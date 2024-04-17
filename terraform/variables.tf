@@ -33,6 +33,11 @@ variable "hub-external-subnet_prefix" {
   type        = string
 }
 
+variable "hub-external-subnet-gateway" {
+  description = "Azure gateway IP address to the Internet"
+  type        = string
+}
+
 variable "spoke-virtual-network_address_prefix" {
   description = "Spoke Virtual Network Address prefix."
   type        = string
