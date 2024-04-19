@@ -14,6 +14,8 @@ https://learn.microsoft.com/en-us/azure/virtual-machines/fsv2-series
 
 az vm image list --publisher fortinet --all
 
+az account list-locations --query "[].name" --output json
+
 <!-- BEGIN_TF_DOCS -->
 ## terraform.auto.tfvars
 
