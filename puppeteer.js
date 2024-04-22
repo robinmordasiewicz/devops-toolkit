@@ -41,7 +41,7 @@ const w = 1500;
   const page = await browser.newPage()
   await page.setViewport({ width: w, height: h })
   await page.goto(url, { waitUntil: 'networkidle2' })
-  await page.waitForTimeout(5000)
+  // await page.waitForTimeout(5000)
   await page.screenshot({
     path: destination
   })
