@@ -170,6 +170,10 @@ variable "hub-nva-sku" {
   default     = "fortinet_fg-vm_payg_2023"
   description = "Hub NVA SKU"
   type        = string
+  validation {
+    condition     = var.hub-nva-sku == "fortinet_fg-vm_payg_2023" || var.hub-nva-sku == "fortinet_fw-vm_payg_v3"
+    error_message = "The SKU must be either 'fortinet_fg-vm_payg_2023' or 'fortinet_fw-vm_payg_v3'."
+  }
 }
 
 variable "hub-nva-publisher" {
