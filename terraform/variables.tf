@@ -247,8 +247,8 @@ variable "hub-nva-management-action" {
   description = "Allow or Deny access to Management"
   type        = string
   validation {
-    condition     = var.hub-nva-management-action == "Accept" || var.hub-nva-management-action == "Deny"
-    error_message = "The management action must be either 'Accept' or 'Deny'."
+    condition     = var.hub-nva-management-action == "Allow" || var.hub-nva-management-action == "Deny"
+    error_message = "The management action must be either 'Allow' or 'Deny'."
   }
 }
 
