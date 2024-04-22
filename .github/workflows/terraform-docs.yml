@@ -26,11 +26,11 @@ jobs:
           ref: ${{ github.event.pull_request.head.ref }}
           fetch-depth: 0
 
-      - uses: asannou/tfmermaid-action@dae450b175614c7448d85e5081f79b19e99fc1f8
-        with:
-          working-directory: terraform/
-          file: README.md
-          exclude: data,var,output
+#      - uses: asannou/tfmermaid-action@dae450b175614c7448d85e5081f79b19e99fc1f8
+#        with:
+#          working-directory: terraform/
+#          file: README.md
+#          exclude: data,var,output
 
       - name: Render terraform docs inside the README.md and push changes back to PR branch
         uses: terraform-docs/gh-actions@7a62208a0090636af2df1b739da46d27fd90bdc6
