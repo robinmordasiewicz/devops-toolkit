@@ -21,6 +21,10 @@ terraform {
       source  = "hashicorp/null"
       version = "3.2.2"
     }
+    template = {
+      source  = "hashicorp/template"
+      version = "2.2.0"
+    }
   }
   # backend "azurerm" {}
 }
@@ -37,3 +41,4 @@ provider "azurerm" {
 provider "random" {}
 provider "tls" {}
 provider "http" {}
+provider "template" {}

@@ -166,49 +166,13 @@ variable "hub-external-subnet-gateway" {
   }
 }
 
-variable "hub-nva-sku" {
-  default     = "fortinet_fg-vm_payg_2023"
-  description = "Hub NVA SKU"
+variable "hub-nva-image" {
+  default     = "fortigate"
+  description = "NVA image product"
   type        = string
   validation {
-    condition     = var.hub-nva-sku == "fortinet_fg-vm_payg_2023" || var.hub-nva-sku == "fortinet_fw-vm_payg_v3"
-    error_message = "The SKU must be either 'fortinet_fg-vm_payg_2023' or 'fortinet_fw-vm_payg_v3'."
-  }
-}
-
-variable "hub-nva-publisher" {
-  default     = "fortinet"
-  description = "Hub NVA Publisher"
-  type        = string
-}
-
-variable "hub-nva-offer" {
-  default     = "fortinet_fortigate-vm_v5"
-  description = "Hub NVA Offer"
-  type        = string
-  validation {
-    condition     = var.hub-nva-offer == "fortinet_fortigate-vm_v5" || var.hub-nva-offer == "fortinet_fortiweb-vm_v5"
-    error_message = "Invalid SKU. The SKU must be either 'fortinet_fortigate-vm_v5' or 'fortinet_fortiweb-vm_v5'."
-  }
-}
-
-variable "hub-nva-size" {
-  default     = "Standard_DS1_v2"
-  description = "Hub NVA Size"
-  type        = string
-}
-
-variable "hub-nva-management-port" {
-  default     = "443"
-  description = "Hub NVA Management TCP Port"
-  type        = number
-  validation {
-    condition = (
-      can(tonumber(var.hub-nva-management-port)) &&
-      tonumber(var.hub-nva-management-port) >= 1 &&
-      tonumber(var.hub-nva-management-port) <= 65433
-    )
-    error_message = "The port number must be an integer between 1 and 65433."
+    condition     = var.hub-nva-image == "fortigate" || var.hub-nva-image == "fortiweb"
+    error_message = "The SKU must be either 'fortiweb' or 'fortigate'."
   }
 }
 
@@ -252,6 +216,16 @@ variable "hub-nva-management-action" {
   }
 }
 
+variable "spoke-container-server-image" {
+  default     = "ubuntu"
+  description = "Container server image product"
+  type        = string
+  validation {
+    condition     = var.spoke-container-server-image == "ubuntu" || var.spoke-container-server-image == "almalinux"
+    error_message = "The SKU must be either 'ubuntu' or 'almalinux'."
+  }
+}
+
 variable "spoke-virtual-network_address_prefix" {
   default     = "10.1.1.0/24"
   description = "Spoke Virtual Network Address prefix."
@@ -280,30 +254,6 @@ variable "spoke-subnet_prefix" {
     condition     = can(regex("^((25[0-5]|2[0-4][0-9]|1[0-9][0-9]|[1-9]?[0-9])\\.){3}(25[0-5]|2[0-4][0-9]|1[0-9][0-9]|[1-9]?[0-9])/(3[0-2]|[12]?[0-9])$", var.spoke-subnet_prefix))
     error_message = "The subnet must be in the format of 'xxx.xxx.xxx.xxx/xx', where xxx is between 0 and 255, and xx is between 0 and 32."
   }
-}
-
-variable "spoke-container-server-sku" {
-  default     = "22_04-lts-gen2"
-  description = "Spoke Container Server SKU"
-  type        = string
-}
-
-variable "spoke-container-server-publisher" {
-  default     = "Canonical"
-  description = "Spoke Container Server Publisher"
-  type        = string
-}
-
-variable "spoke-container-server-offer" {
-  default     = "0001-com-ubuntu-server-jammy"
-  description = "Spoke Container Server Offer"
-  type        = string
-}
-
-variable "spoke-container-server-size" {
-  default     = "Standard_DS1_v2"
-  description = "Spoke Container Server Size"
-  type        = string
 }
 
 variable "spoke-container-server-ip" {
