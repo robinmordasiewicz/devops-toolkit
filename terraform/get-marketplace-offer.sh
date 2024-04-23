@@ -53,6 +53,8 @@ done
 
 if [[ "${publisher}" == "fortinet" && "${sku}" != *"pay"* ]]; then
   az vm image list --publisher "${publisher}" --location "${location}" --all -o json --query "sort_by([?contains(offer, '${offer}') && !contains(sku, '${sku}')], &version)[-1]"
-else
+elseif [[ "${publisher}" == "fortinet" ]]; then
   az vm image list --publisher "${publisher}" --location "${location}" --all -o json --query "sort_by([?contains(offer, '${offer}') && contains(sku, '${sku}')], &version)[-1]"
-fi
+else
+  az vm image list --publisher "${publisher}" --location "${location}" --all -o json --query "sort_by([?contains(offer, '${offer}')"
+  az vm image list --publisher "${publisher}" --location "${location}" --sku "22_04-lts-gen2" --offer "0001-com-ubuntu-server-jammy" --all -o json --query "sort_by(@, &version)[-1]"
