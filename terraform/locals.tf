@@ -35,6 +35,16 @@ locals {
       management-port = "8443"
       version         = "latest"
       terms           = true
+    },
+    "fortiadc" = {
+      publisher       = "fortinet"
+      offer           = "fortinet-fortiadc"
+      size            = "Standard_D4s_v3"
+      version         = "latest"
+      sku             = "fortinet-fad-vm_payg-10gbps"
+      management-port = "443"
+      version         = "latest"
+      terms           = true
     }
   }
 }

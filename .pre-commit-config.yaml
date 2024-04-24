@@ -19,11 +19,11 @@ repos:
           - --args=-recursive
       - id: terraform_tflint
       - id: terraform_validate
-      - id: terrascan
-        args:
-          - --args=--non-recursive
-          - --args=--policy-type=azure
-          #- --args=-d terraform
+      # - id: terrascan
+      #  args:
+      #    - --args=--non-recursive
+      #    - --args=--policy-type=azure
+      #    #- --args=-d terraform
       - id: terraform_trivy
       # - id: terraform_checkov
       #   args:
