@@ -171,8 +171,8 @@ variable "hub-nva-image" {
   description = "NVA image product"
   type        = string
   validation {
-    condition     = var.hub-nva-image == "fortigate" || var.hub-nva-image == "fortiweb"
-    error_message = "The SKU must be either 'fortiweb' or 'fortigate'."
+    condition     = var.hub-nva-image == "fortigate" || var.hub-nva-image == "fortiweb" || var.hub-nva-image == "fortiadc"
+    error_message = "The SKU must be either 'fortiweb', 'fortigate', or 'fortiadc'"
   }
 }
 

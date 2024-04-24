@@ -34,9 +34,11 @@ config global
     next
   end
   edit "${VAR-admin-username}"
+    set domains root
     config gui-dashboard
         edit 8
           set name "OWASP Top 10 Compliance"
+          set vdom root
           set layout-type standalone
           set widget-table sys_${VAR-admin-username}_8_root
         next
@@ -50,6 +52,7 @@ config global
     edit "hub-nva-external-vip"
       set vip ${VAR-hub-nva-vip}/32
       set interface port1
+      set domains root
     next
   end
   config router static
@@ -197,6 +200,7 @@ config vdom
       edit "hub-nva-external-vip"
         set vip ${VAR-hub-nva-vip}/32
         set interface port1
+        set domains root
       next
     end
     config server-policy health
