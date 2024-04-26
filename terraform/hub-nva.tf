@@ -21,6 +21,7 @@ resource "azurerm_linux_virtual_machine" "hub-nva_virtual_machine" {
   os_disk {
     caching              = "ReadWrite"
     storage_account_type = "Premium_LRS"
+    #disk_size_gb         = 256
   }
   plan {
     name      = local.vm-image[var.hub-nva-image].sku
@@ -44,6 +45,7 @@ resource "azurerm_linux_virtual_machine" "hub-nva_virtual_machine" {
         VAR-spoke-virtual-network_netmask        = cidrnetmask(var.spoke-virtual-network_address_prefix)
         VAR-spoke-container-server-ip            = var.spoke-container-server-ip
         VAR-hub-nva-vip                          = var.hub-nva-vip
+        VAR-admin-username                       = random_pet.admin_username.id
         VAR-CERTIFICATE                          = tls_self_signed_cert.self_signed_cert.cert_pem
         VAR-PRIVATEKEY                           = tls_private_key.private_key.private_key_pem
         VAR-fwb_license_file                     = ""
