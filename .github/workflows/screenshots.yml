@@ -60,7 +60,7 @@ jobs:
           ref: ${{ github.event.pull_request.head.ref }}
           fetch-depth: 0
 
-      - uses: browser-actions/setup-chrome@82b9ce628cc5595478a9ebadc480958a36457dc2
+      - uses: browser-actions/setup-chrome@361a23fcf94a523a91c9cfae6f11c2a5c2d87f64
         if: ${{ matrix.url != '' }}
 
       - uses: actions/setup-node@60edb5dd545a775178f52524783378180af0d1f8
