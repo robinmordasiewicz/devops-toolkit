@@ -226,6 +226,12 @@ variable "spoke-container-server-image" {
   }
 }
 
+variable "spoke-container-server-image-gpu" {
+  default = false
+  description = "Set to true to enable GPU workloads"
+  type = bool
+}
+
 variable "spoke-virtual-network_address_prefix" {
   default     = "10.1.1.0/24"
   description = "Spoke Virtual Network Address prefix."
