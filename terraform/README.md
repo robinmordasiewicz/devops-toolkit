@@ -20,9 +20,9 @@ az account list-locations --query "[].name" --output json
 ## terraform.auto.tfvars
 
 ```hcl
-location                             = "canadacentral"
+location                             = "eastus"
 owner_email                          = "root@example.com"
-hub-nva-image                        = "fortiweb"
+hub-nva-image                        = "fortigate"
 hub-virtual-network_address_prefix   = "10.0.0.0/24"
 hub-external-subnet_name             = "hub-external_subnet"
 hub-external-subnet_prefix           = "10.0.0.0/27"
@@ -33,6 +33,7 @@ hub-nva-management-action            = "Allow"
 hub-nva-management-ip                = "10.0.0.4"
 hub-nva-vip                          = "10.0.0.5"
 hub-nva-gateway                      = "10.0.0.37"
+spoke-container-server-image-gpu     = false
 spoke-virtual-network_address_prefix = "10.1.1.0/24"
 spoke-subnet_name                    = "spoke_subnet"
 spoke-subnet_prefix                  = "10.1.1.0/24"
@@ -50,7 +51,6 @@ spoke-check-internet-up-ip           = "8.8.8.8"
 | http | 3.4.1 |
 | null | 3.2.2 |
 | random | 3.6.1 |
-| template | 2.2.0 |
 | tls | 4.0.5 |
 
 ## Inputs
@@ -72,6 +72,7 @@ spoke-check-internet-up-ip           = "8.8.8.8"
 | owner\_email | Email address for use with Azure Owner tag. | `string` | `"root@example.com"` | no |
 | spoke-check-internet-up-ip | Spoke Container Server Checks the Internet at this IP Address | `string` | `"8.8.8.8"` | no |
 | spoke-container-server-image | Container server image product | `string` | `"ubuntu"` | no |
+| spoke-container-server-image-gpu | Set to true to enable GPU workloads | `bool` | `false` | no |
 | spoke-container-server-ip | Spoke Container Server IP Address | `string` | `"10.1.1.5"` | no |
 | spoke-subnet\_name | Spoke Subnet Name. | `string` | `"spoke_subnet"` | no |
 | spoke-subnet\_prefix | Spoke Subnet Prefix. | `string` | `"10.1.1.0/24"` | no |
