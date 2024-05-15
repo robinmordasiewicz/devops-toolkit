@@ -281,3 +281,15 @@ variable "spoke-check-internet-up-ip" {
     error_message = "The IP address must be a valid IPv4 format (e.g., 8.8.8.8)."
   }
 }
+
+variable "spoke-container-server-ollama-port" {
+  default = "11434"
+  description = "Port for ollama"
+  type = string
+}
+
+variable "spoke-container-server-ollama-webui-port" {
+  default = "8080"
+  description = "Port for the ollama web ui"
+  type = string
+}
