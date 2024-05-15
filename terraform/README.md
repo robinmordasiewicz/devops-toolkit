@@ -33,7 +33,7 @@ hub-nva-management-action            = "Allow"
 hub-nva-management-ip                = "10.0.0.4"
 hub-nva-vip                          = "10.0.0.5"
 hub-nva-gateway                      = "10.0.0.37"
-spoke-container-server-image-gpu     = false
+spoke-container-server-image-gpu     = true
 spoke-virtual-network_address_prefix = "10.1.1.0/24"
 spoke-subnet_name                    = "spoke_subnet"
 spoke-subnet_prefix                  = "10.1.1.0/24"
@@ -74,6 +74,8 @@ spoke-check-internet-up-ip           = "8.8.8.8"
 | spoke-container-server-image | Container server image product | `string` | `"ubuntu"` | no |
 | spoke-container-server-image-gpu | Set to true to enable GPU workloads | `bool` | `false` | no |
 | spoke-container-server-ip | Spoke Container Server IP Address | `string` | `"10.1.1.5"` | no |
+| spoke-container-server-ollama-port | Port for ollama | `string` | `"11434"` | no |
+| spoke-container-server-ollama-webui-port | Port for the ollama web ui | `string` | `"8080"` | no |
 | spoke-subnet\_name | Spoke Subnet Name. | `string` | `"spoke_subnet"` | no |
 | spoke-subnet\_prefix | Spoke Subnet Prefix. | `string` | `"10.1.1.0/24"` | no |
 | spoke-virtual-network\_address\_prefix | Spoke Virtual Network Address prefix. | `string` | `"10.1.1.0/24"` | no |
