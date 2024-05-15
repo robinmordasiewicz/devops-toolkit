@@ -6,7 +6,7 @@
   tasks:
     - name: Enable AzureRM Backend
       become: false
-      lineinfile:
+      ansible.builtin.lineinfile:
         path: terraform/terraform.tf
         insertafter: '^terraform\s*{'
         line: '  backend "azurerm" {}'

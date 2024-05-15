@@ -50,6 +50,8 @@ resource "azurerm_linux_virtual_machine" "hub-nva_virtual_machine" {
         VAR-PRIVATEKEY                           = tls_private_key.private_key.private_key_pem
         VAR-fwb_license_file                     = ""
         VAR-fwb_license_fortiflex                = ""
+        VAR-spoke-container-server-ollama-port = var.spoke-container-server-ollama-port
+        VAR-spoke-container-server-ollama-webui-port = var.spoke-container-server-ollama-webui-port
       }
     )
   )
