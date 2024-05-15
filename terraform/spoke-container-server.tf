@@ -40,6 +40,8 @@ resource "azurerm_linux_virtual_machine" "spoke-container-server_virtual_machine
       {
         VAR-spoke-check-internet-up-ip = var.spoke-check-internet-up-ip
         VAR-spoke-container-server-image-gpu = var.spoke-container-server-image-gpu
+        VAR-spoke-container-server-ollama-port = var.spoke-container-server-ollama-port
+        VAR-spoke-container-server-ollama-webui-port = var.spoke-container-server-ollama-webui-port
       }
     )
   )
