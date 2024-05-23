@@ -50,7 +50,7 @@ spoke-check-internet-up-ip           = "8.8.8.8"
 | azurerm | 3.104.2 |
 | http | 3.4.1 |
 | null | 3.2.2 |
-| random | 3.6.1 |
+| random | 3.6.2 |
 | tls | 4.0.5 |
 
 ## Inputs
@@ -83,6 +83,7 @@ spoke-check-internet-up-ip           = "8.8.8.8"
 
 | Name | Description |
 |------|-------------|
+| OLLAMA\_HOST | OLLAMA\_HOST URI |
 | admin\_password | Password for admin account |
 | admin\_username | Username for admin account |
 | management\_fqdn | Management FQDN |
