@@ -47,8 +47,11 @@ spoke-check-internet-up-ip           = "8.8.8.8"
 | Name | Version |
 |------|---------|
 | terraform | >=1.6 |
-| azurerm | 3.105.0 |
+
+| azurerm | 3.106.1 |
 | http | 3.4.3 |
+=======
+
 | null | 3.2.2 |
 | random | 3.6.2 |
 | tls | 4.0.5 |

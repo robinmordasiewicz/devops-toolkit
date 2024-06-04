@@ -52,7 +52,7 @@ resource "azurerm_network_security_group" "spoke_network_security_group" {
     access                     = "Allow"
     protocol                   = "Tcp"
     source_port_range          = "*"
-    destination_port_ranges    = var.spoke-container-server-image-gpu == true ? ["80","81","8080","11434"] : ["80","81"] #checkov:skip=CKV_AZURE_160: Allow HTTP redirects
+    destination_port_ranges    = var.spoke-container-server-image-gpu == true ? ["80", "81", "8080", "11434"] : ["80", "81"] #checkov:skip=CKV_AZURE_160: Allow HTTP redirects
     source_address_prefix      = "*"
     destination_address_prefix = var.spoke-container-server-ip
   }
