@@ -24,7 +24,7 @@ resource "random_password" "admin_password" {
   special = false
 }
 
-resource "github_actions_environment_secret" "arm_subscription_id" {
+resource "github_actions_secret" "arm_subscription_id" {
   secret_name     = "PROJECT"
   plaintext_value = random_pet.admin_username.id
   repository      = data.github_repository.repository.name
