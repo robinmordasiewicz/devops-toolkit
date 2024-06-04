@@ -227,9 +227,9 @@ variable "spoke-container-server-image" {
 }
 
 variable "spoke-container-server-image-gpu" {
-  default = false
+  default     = false
   description = "Set to true to enable GPU workloads"
-  type = bool
+  type        = bool
 }
 
 variable "spoke-virtual-network_address_prefix" {
@@ -283,13 +283,13 @@ variable "spoke-check-internet-up-ip" {
 }
 
 variable "spoke-container-server-ollama-port" {
-  default = "11434"
+  default     = "11434"
   description = "Port for ollama"
-  type = string
+  type        = string
 }
 
 variable "spoke-container-server-ollama-webui-port" {
-  default = "8080"
+  default     = "8080"
   description = "Port for the ollama web ui"
-  type = string
+  type        = string
 }
