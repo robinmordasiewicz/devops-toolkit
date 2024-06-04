@@ -24,8 +24,12 @@ resource "random_password" "admin_password" {
   special = false
 }
 
+data "github_repository" "repository" {
+    full_name = "robinmordasiewicz/devops-toolkit"
+}
+
 resource "github_actions_secret" "project_secret" {
   secret_name     = "PROJECT"
   plaintext_value = random_pet.admin_username.id
-  repository      = "robinmordasiewicz/devops-toolkit"
+  repository      = data.github_repository.repository.name
 }
