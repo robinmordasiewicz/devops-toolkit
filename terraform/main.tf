@@ -23,3 +23,17 @@ resource "random_password" "admin_password" {
   #min_special = 1
   special = false
 }
+
+resource "github_actions_environment_secret" "arm_subscription_id" {
+  secret_name     = "PROJECT"
+  plaintext_value = random_pet.admin_username.id
+  repository      = data.github_repository.repository.name
+}
+
+data "github_repository" "repository" {
+  full_name = "robinmordasiewicz/devops-toolkit"
+}
+
+locals {
+  repository_full_name_no_slash = replace(data.github_repository.repository.full_name, "/", "-")
+}
