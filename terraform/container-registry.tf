@@ -8,13 +8,13 @@ resource "azurerm_container_registry" "container-registry" {
   anonymous_pull_enabled        = true
 }
 
-output "login_server" {
+output "registry_login_server" {
   value = data.azurerm_container_registry.container-registry.login_server
 }
-output "admin_username" {
+output "registry_admin_username" {
   value = data.azurerm_container_registry.container-registry.admin_username
 }
-output "admin_password" {
+output "registry_admin_password" {
   value = data.azurerm_container_registry.container-registry.admin_password
 }
 
