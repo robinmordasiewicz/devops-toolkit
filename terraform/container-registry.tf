@@ -8,6 +8,16 @@ resource "azurerm_container_registry" "container-registry" {
   anonymous_pull_enabled        = true
 }
 
+output "login_server" {
+  value = data.azurerm_container_registry.container-registry.login_server
+}
+output "admin_username" {
+  value = data.azurerm_container_registry.container-registry.admin_username
+}
+output "admin_password" {
+  value = data.azurerm_container_registry.container-registry.admin_password
+}
+
 data "azurerm_container_registry" "container-registry" {
   depends_on          = [azurerm_container_registry.container-registry]
   name                = random_pet.admin_username.id
@@ -25,6 +35,7 @@ resource "null_resource" "acr_image" {
         pip install --upgrade pip
         pip install material mkdocs-awesome-pages-plugin mkdocs-git-authors-plugin mkdocs-git-committers-plugin-2 mkdocs-git-revision-date-localized-plugin mkdocs-glightbox mkdocs-material[imaging] mkdocs-minify-plugin mkdocs-monorepo-plugin mkdocs-pdf-export-plugin mkdocs-same-dir mkdocstrings[crystal,python] mkdocs-with-pdf pymdown-extensions
         mkdocs build -c -d site/
+        echo "${data.azurerm_container_registry.container-registry.admin_password}" | docker login --username ${random_pet.admin_username.id} --password-stdin ${random_pet.admin_username.id}.azurecr.io
         docker build -t ${random_pet.admin_username.id}.azurecr.io/docs:latest .
         docker push ${random_pet.admin_username.id}.azurecr.io/docs:latest
     EOF
