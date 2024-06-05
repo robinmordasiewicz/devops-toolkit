@@ -6,6 +6,7 @@ on: #  yamllint disable-line rule:truthy
   push:
     paths:
       - "terraform/**.tf"
+      - "terraform/terraform.auto.tfvars"
       - "terraform/cloud-init/*"
     branches:
       - "main"
