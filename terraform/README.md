@@ -47,11 +47,8 @@ spoke-check-internet-up-ip           = "8.8.8.8"
 | Name | Version |
 |------|---------|
 | terraform | >=1.6 |
-
-| azurerm | 3.106.1 |
+| azurerm | 3.107.0 |
 | http | 3.4.3 |
-=======
-
 | null | 3.2.2 |
 | random | 3.6.2 |
 | tls | 4.0.5 |
@@ -90,5 +87,8 @@ spoke-check-internet-up-ip           = "8.8.8.8"
 | admin\_password | Password for admin account |
 | admin\_username | Username for admin account |
 | management\_fqdn | Management FQDN |
+| registry\_admin\_password | n/a |
+| registry\_admin\_username | n/a |
+| registry\_login\_server | n/a |
 | vip\_fqdn | VIP FQDN |
 <!-- END_TF_DOCS -->
