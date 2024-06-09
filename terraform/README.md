@@ -47,11 +47,9 @@ spoke-check-internet-up-ip           = "8.8.8.8"
 | Name | Version |
 |------|---------|
 | terraform | >=1.6 |
-
+| azapi | ~>1.5 |
 | azurerm | 3.106.1 |
 | http | 3.4.3 |
-=======
-
 | null | 3.2.2 |
 | random | 3.6.2 |
 | tls | 4.0.5 |
@@ -89,6 +87,18 @@ spoke-check-internet-up-ip           = "8.8.8.8"
 | OLLAMA\_HOST | OLLAMA\_HOST URI |
 | admin\_password | Password for admin account |
 | admin\_username | Username for admin account |
+| client\_certificate | n/a |
+| client\_key | n/a |
+| cluster\_ca\_certificate | n/a |
+| cluster\_password | n/a |
+| cluster\_username | n/a |
+| host | n/a |
+| key\_data | n/a |
+| kube\_config | n/a |
+| kubernetes\_cluster\_name | n/a |
 | management\_fqdn | Management FQDN |
+| registry\_admin\_password | n/a |
+| registry\_admin\_username | n/a |
+| registry\_login\_server | n/a |
 | vip\_fqdn | VIP FQDN |
 <!-- END_TF_DOCS -->
