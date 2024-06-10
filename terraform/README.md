@@ -33,7 +33,7 @@ hub-nva-management-action            = "Allow"
 hub-nva-management-ip                = "10.0.0.4"
 hub-nva-vip                          = "10.0.0.5"
 hub-nva-gateway                      = "10.0.0.37"
-spoke-container-server-image-gpu     = true
+spoke-container-server-image-gpu     = false
 spoke-virtual-network_address_prefix = "10.1.1.0/24"
 spoke-subnet_name                    = "spoke_subnet"
 spoke-subnet_prefix                  = "10.1.1.0/24"
@@ -93,7 +93,6 @@ spoke-check-internet-up-ip           = "8.8.8.8"
 | cluster\_password | n/a |
 | cluster\_username | n/a |
 | host | n/a |
-| key\_data | n/a |
 | kube\_config | n/a |
 | kubernetes\_cluster\_name | n/a |
 | management\_fqdn | Management FQDN |
