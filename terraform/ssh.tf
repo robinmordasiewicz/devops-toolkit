@@ -14,6 +14,6 @@ resource "azapi_resource" "ssh_public_key" {
   parent_id = azurerm_resource_group.azure_resource_group.id
 }
 
-output "key_data" {
-  value = jsondecode(azapi_resource_action.ssh_public_key_gen.output).publicKey
-}
+#output "key_data" {
+#  value = jsondecode(azapi_resource_action.ssh_public_key_gen.output).publicKey
+#}
