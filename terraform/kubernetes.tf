@@ -1,22 +1,24 @@
+data "azurerm_kubernetes_service_versions" "current" {
+  location                          = azurerm_resource_group.azure_resource_group.location
+  include_preview = false
+}
+
 resource "azurerm_kubernetes_cluster" "k8s" {
   location                          = azurerm_resource_group.azure_resource_group.location
   name                              = random_pet.admin_username.id
   resource_group_name               = azurerm_resource_group.azure_resource_group.name
   dns_prefix                        = random_pet.admin_username.id
+  kubernetes_version  = data.azurerm_kubernetes_service_versions.current.latest_version
   role_based_access_control_enabled = true
-  service_principal {
-    client_id     = random_pet.admin_username.id
-    client_secret = random_password.admin_password.result
-  }
   api_server_access_profile {
     authorized_ip_ranges = [
       "1.2.3.4/32"
     ]
 
   }
-  oms_agent {
-    log_analytics_workspace_id = random_pet.admin_username.id
-  }
+  #oms_agent {
+  #  log_analytics_workspace_id = random_pet.admin_username.id
+  #}
 
   identity {
     type = "SystemAssigned"
