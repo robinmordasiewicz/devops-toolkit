@@ -1,5 +1,17 @@
 # CHANGELOG
 
+## [1.19.3](https://github.com/robinmordasiewicz/devops-toolkit/compare/v1.19.2...v1.19.3) (2024-06-09)
+
+
+### Features
+
+* adding kubernetes ([05065d8](https://github.com/robinmordasiewicz/devops-toolkit/commit/05065d8b44e91a7c20988a79171168ab0e28758c))
+
+
+### Bug Fixes
+
+* [#6](https://github.com/robinmordasiewicz/devops-toolkit/issues/6) silence the gh auth output ([9cba37f](https://github.com/robinmordasiewicz/devops-toolkit/commit/9cba37f3c69861dbb9556ec72b2b59fa2e61e59f))
+
 ## [1.19.2](https://github.com/robinmordasiewicz/devops-toolkit/compare/v1.19.1...v1.19.2) (2024-04-15)
 
 
