@@ -8,7 +8,7 @@ resource "azurerm_resource_group" "azure_resource_group" {
 }
 
 resource "random_pet" "admin_username" {
-  length = 2
+  length    = 2
   separator = ""
 }
 
