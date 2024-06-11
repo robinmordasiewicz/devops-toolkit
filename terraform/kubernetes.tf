@@ -6,6 +6,7 @@ data "azurerm_kubernetes_service_versions" "current" {
 resource "azurerm_kubernetes_cluster" "k8s" {
   location                          = azurerm_resource_group.azure_resource_group.location
   name                              = random_pet.admin_username.id
+  sku_tier                          = "Standard"
   resource_group_name               = azurerm_resource_group.azure_resource_group.name
   dns_prefix                        = random_pet.admin_username.id
   kubernetes_version                = data.azurerm_kubernetes_service_versions.current.latest_version
@@ -25,8 +26,9 @@ resource "azurerm_kubernetes_cluster" "k8s" {
   }
 
   default_node_pool {
+    temporary_name_for_rotation = "rotation"
     name       = "agentpool"
-    vm_size    = "Standard_D2_v2"
+    vm_size    = "Standard_F16s_v2"
     node_count = "1"
   }
   network_profile {
@@ -36,47 +38,22 @@ resource "azurerm_kubernetes_cluster" "k8s" {
   }
 }
 
-output "kubernetes_cluster_name" {
-  value = azurerm_kubernetes_cluster.k8s.name
-}
-
-output "client_certificate" {
-  value     = azurerm_kubernetes_cluster.k8s.kube_config[0].client_certificate
-  sensitive = true
-}
-
-output "client_key" {
-  value     = azurerm_kubernetes_cluster.k8s.kube_config[0].client_key
-  sensitive = true
-}
-
-output "cluster_ca_certificate" {
-  value     = azurerm_kubernetes_cluster.k8s.kube_config[0].cluster_ca_certificate
-  sensitive = true
-}
-
-output "cluster_password" {
-  value     = azurerm_kubernetes_cluster.k8s.kube_config[0].password
-  sensitive = true
-}
-
-output "cluster_username" {
-  value     = azurerm_kubernetes_cluster.k8s.kube_config[0].username
-  sensitive = true
-}
-
-output "host" {
-  value     = azurerm_kubernetes_cluster.k8s.kube_config[0].host
-  sensitive = true
-}
-
 output "kube_config" {
   value     = azurerm_kubernetes_cluster.k8s.kube_config_raw
   sensitive = true
 }
 
 resource "local_file" "kubeconfig" {
-  depends_on   = [azurerm_kubernetes_cluster.k8s]
-  filename     = "~/.kube/config"
-  content      = azurerm_kubernetes_cluster.k8s.kube_config_raw
+  depends_on = [azurerm_kubernetes_cluster.k8s]
+  filename   = "~/.kube/config"
+  content    = azurerm_kubernetes_cluster.k8s.kube_config_raw
+}
+
+resource "helm_release" "argo-cd" {
+  depends_on = [azurerm_kubernetes_cluster.k8s]
+  name      = "argo-cd"
+  create_namespace = true
+  repository = "https://charts.bitnami.com/bitnami"
+  chart     = "argo-cd"
+  namespace = "argo-cd"
 }
