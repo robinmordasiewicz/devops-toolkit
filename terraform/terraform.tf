@@ -5,10 +5,6 @@ terraform {
       source  = "azure/azapi"
       version = "~>1.5"
     }
-    argocd = {
-      source = "oboukili/argocd"
-      version = "6.1.1"
-    }
     azurerm = {
       source  = "hashicorp/azurerm"
       version = "3.107.0"
@@ -29,17 +25,13 @@ terraform {
       source  = "hashicorp/null"
       version = "3.2.2"
     }
-    helm = {
-      source = "hashicorp/helm"
-      version = "2.13.2"
-    }
     kubernetes = {
-      source = "hashicorp/kubernetes"
+      source  = "hashicorp/kubernetes"
       version = "2.30.0"
     }
-    kubectl = {
-      source = "gavinbunney/kubectl"
-      version = "1.14.0"
+    local = {
+      source  = "hashicorp/local"
+      version = "2.5.1"
     }
   }
   # backend "azurerm" {}
@@ -57,12 +49,4 @@ provider "azurerm" {
 provider "random" {}
 provider "tls" {}
 provider "http" {}
-provider "helm" {
-  kubernetes {
-    config_path = "~/.kube/config"
-  }
-}
-provider "kubectl" {}
-provider "argocd" {
-  core = true
-}
+provider "local" {}
