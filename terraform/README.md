@@ -57,6 +57,8 @@ spoke-check-internet-up-ip           = "8.8.8.8"
 | azapi | ~>1.5 |
 | azurerm | 3.107.0 |
 | http | 3.4.3 |
+| kubernetes | 2.30.0 |
+| local | 2.5.1 |
 | null | 3.2.2 |
 | random | 3.6.2 |
 | tls | 4.0.5 |
@@ -94,14 +96,7 @@ spoke-check-internet-up-ip           = "8.8.8.8"
 | OLLAMA\_HOST | OLLAMA\_HOST URI |
 | admin\_password | Password for admin account |
 | admin\_username | Username for admin account |
-| client\_certificate | n/a |
-| client\_key | n/a |
-| cluster\_ca\_certificate | n/a |
-| cluster\_password | n/a |
-| cluster\_username | n/a |
-| host | n/a |
 | kube\_config | n/a |
-| kubernetes\_cluster\_name | n/a |
 | management\_fqdn | Management FQDN |
 | registry\_admin\_password | n/a |
 | registry\_admin\_username | n/a |
