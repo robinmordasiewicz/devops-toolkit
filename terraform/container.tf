@@ -7,7 +7,7 @@ resource "null_resource" "acr_image" {
     command = <<EOF
         cd ${path.module}/..
         pip install --upgrade pip
-        pip install material mkdocs-awesome-pages-plugin mkdocs-git-authors-plugin mkdocs-git-committers-plugin-2 mkdocs-git-revision-date-localized-plugin mkdocs-glightbox mkdocs-material[imaging] mkdocs-minify-plugin mkdocs-monorepo-plugin mkdocs-pdf-export-plugin mkdocs-same-dir mkdocstrings[crystal,python] mkdocs-with-pdf pymdown-extensions
+        pip install material mkdocs-awesome-pages-plugin mkdocs-git-authors-plugin mkdocs-git-committers-plugin-2 mkdocs-git-revision-date-localized-plugin mkdocs-glightbox mkdocs-material[imaging] mkdocs-minify-plugin mkdocs-monorepo-plugin mkdocs-pdf-export-plugin mkdocs-same-dir mkdocstrings[crystal,python] mkdocs-with-pdf pymdown-extensions --user
         mkdocs build -c -d site/
         echo "${data.azurerm_container_registry.container-registry.admin_password}" | docker login --username ${random_pet.admin_username.id} --password-stdin ${random_pet.admin_username.id}.azurecr.io
         docker build -t ${random_pet.admin_username.id}.azurecr.io/docs:latest .
