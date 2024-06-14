@@ -33,7 +33,7 @@ resource "azurerm_kubernetes_cluster" "k8s" {
     temporary_name_for_rotation = "rotation"
     name                        = "agentpool"
     vm_size                     = "Standard_F16s_v2"
-    node_count                  = "1"
+    node_count                  = "3"
   }
   network_profile {
     network_plugin    = "azure"
