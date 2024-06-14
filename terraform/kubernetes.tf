@@ -1,3 +1,7 @@
+data "http" "myip" {
+  url = "https://ipv4.icanhazip.com"
+}
+
 data "azurerm_kubernetes_service_versions" "current" {
   location        = azurerm_resource_group.azure_resource_group.location
   include_preview = false
@@ -13,7 +17,7 @@ resource "azurerm_kubernetes_cluster" "k8s" {
   role_based_access_control_enabled = true
   api_server_access_profile {
     authorized_ip_ranges = [
-      "1.2.3.4/32"
+      "${chomp(data.http.myip.response_body)}/32"
     ]
 
   }
