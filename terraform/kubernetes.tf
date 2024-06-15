@@ -65,3 +65,20 @@ resource "local_file" "kubeconfig" {
   filename   = "~/.kube/config"
   content    = azurerm_kubernetes_cluster.k8s.kube_config_raw
 }
+
+resource "azurerm_kubernetes_flux_configuration" "aks-store-demo-manifests" {
+  name       = "aks-store-demo-manifests"
+  cluster_id = azurerm_kubernetes_cluster.k8s.id
+  namespace  = "flux"
+  git_repository {
+    url             = "https://github.com/robinmordasiewicz/aks-store-demo-manifests"
+    reference_type  = "branch"
+    reference_value = "main"
+  }
+  kustomizations {
+    name = "dev"
+  }
+  depends_on = [
+    azurerm_kubernetes_cluster_extension.flux-extension
+  ]
+}
