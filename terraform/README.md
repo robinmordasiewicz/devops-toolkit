@@ -61,7 +61,7 @@ spoke-check-internet-up-ip           = "8.8.8.8"
 | azapi | ~>1.5 |
 | azurerm | 3.107.0 |
 | http | 3.4.3 |
-| kubernetes | 2.30.0 |
+| kubernetes | 2.31.0 |
 | local | 2.5.1 |
 | null | 3.2.2 |
 | random | 3.6.2 |
