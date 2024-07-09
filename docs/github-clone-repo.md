@@ -3,19 +3,25 @@ comments: true
 ---
 # Clone Repo
 
-- [x] Clone
+- Github Login
+
+```bash
+gh auth login
+```
+
+- Clone
 
 ```bash
 git clone https://github.com/<githubusername>/devops-toolkit
 ```
 
-- [x] CD into repository folder
+- CD into repository folder
 
 ```bash
 cd devops-toolkit
 ```
 
-- [x] List folder contents
+- List folder contents
 
 ```bash
 ls -al
