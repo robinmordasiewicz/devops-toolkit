@@ -1,6 +1,6 @@
 variable "owner_email" {
   default     = "root@example.com"
-  description = "Email address for use with Azure Owner tag."
+  description = "Email address for use with Owner tag."
   type        = string
   validation {
     condition     = can(regex("^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$", var.owner_email))
