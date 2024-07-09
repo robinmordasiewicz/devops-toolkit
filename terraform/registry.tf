@@ -8,16 +8,6 @@ resource "azurerm_container_registry" "container-registry" {
   anonymous_pull_enabled        = true
 }
 
-output "registry_login_server" {
-  value = data.azurerm_container_registry.container-registry.login_server
-}
-output "registry_admin_username" {
-  value = data.azurerm_container_registry.container-registry.admin_username
-}
-output "registry_admin_password" {
-  value = data.azurerm_container_registry.container-registry.admin_password
-}
-
 data "azurerm_container_registry" "container-registry" {
   depends_on          = [azurerm_container_registry.container-registry]
   name                = random_pet.admin_username.id
