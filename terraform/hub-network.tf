@@ -173,7 +173,7 @@ resource "azurerm_network_interface" "hub-nva-internal_network_interface" {
   location                       = azurerm_resource_group.azure_resource_group.location
   resource_group_name            = azurerm_resource_group.azure_resource_group.name
   accelerated_networking_enabled = true
-  enable_ip_forwarding           = true #checkov:skip=CKV_AZURE_118:Fortigate NIC needs IP forwarding.
+  ip_forwarding_enabled          = true #checkov:skip=CKV_AZURE_118:Fortigate NIC needs IP forwarding.
   ip_configuration {
     name                          = "hub-nva-internal_ip_configuration"
     private_ip_address_allocation = "Static"
