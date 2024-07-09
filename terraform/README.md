@@ -6,10 +6,6 @@ https://learn.microsoft.com/en-us/azure/architecture/networking/guide/nva-ha#pip
 
 ![Changing PIP/UDR](https://learn.microsoft.com/en-us/azure/architecture/networking/guide/images/nvaha-pipudr-internet.png)
 
-## Kubernetes
-
-https://paulyu.dev/article/git-going-with-gitops-on-aks/
-
 ## Sizing
 
 https://learn.microsoft.com/en-us/azure/virtual-machines/fsv2-series
@@ -19,12 +15,6 @@ https://learn.microsoft.com/en-us/azure/virtual-machines/fsv2-series
 ```bash
 az vm image list --publisher fortinet --all
 az account list-locations --query "[].name" --output json
-```
-
-## Kubernetes config
-
-```bash
-terraform output --json | jq -r '.kube_config.value' > ~/.kube/config
 ```
 
 <!-- BEGIN_TF_DOCS -->
