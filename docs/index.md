@@ -1,4 +1,4 @@
 ---
 comments: true
 ---
---8<-- "../terraform/README.md"
+--8<-- "README.md"
