@@ -14,7 +14,6 @@ https://learn.microsoft.com/en-us/azure/virtual-machines/fsv2-series
 
 ```bash
 az vm image list --publisher fortinet --all
-az account list-locations --query "[].name" --output json
 ```
 
 <!-- BEGIN_TF_DOCS -->
