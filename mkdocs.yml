@@ -157,7 +157,7 @@ nav:
       - terraform-deploy.md
   - "CI/CD":
       - azure-service-principal.md
-      - terraform-docs.md
+  - "Management":
       - fortimanager.md
       - fortimanager-ztp.md
   - links.md
