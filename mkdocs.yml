@@ -138,8 +138,6 @@ plugins:
 
 nav:
   - "Home": "index.md"
-  - "Concepts":
-      - concepts/index.md
   - "Accounts": "accounts.md"
   - "Platforms":
       - "Source Control":
