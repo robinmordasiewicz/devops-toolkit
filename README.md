@@ -25,5 +25,3 @@ gh repo edit \
   --add-topic terraform \
   --add-topic azure
 ```
-
-## Devcontainer
