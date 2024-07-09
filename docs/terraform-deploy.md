@@ -25,6 +25,12 @@ terraform apply
 terraform apply -auto-approve
 ```
 
+- Show sensitive values such as passwords
+
+```
+terraform output --json
+```
+
 - Destroy the infra$tructure
 ```bash
 terraform destroy

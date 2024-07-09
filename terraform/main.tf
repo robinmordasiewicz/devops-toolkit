@@ -5,6 +5,11 @@ resource "azurerm_resource_group" "azure_resource_group" {
   tags = {
     Username = var.owner_email
   }
+  lifecycle {
+    ignore_changes = [
+      tags["CreatedOnDate"],
+    ]
+  }
 }
 
 resource "random_pet" "admin_username" {
