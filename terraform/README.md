@@ -100,7 +100,6 @@ spoke-check-internet-up-ip           = "8.8.8.8"
 | OLLAMA\_HOST | OLLAMA\_HOST URI |
 | admin\_password | Password for admin account |
 | admin\_username | Username for admin account |
-| kube\_config | n/a |
 | management\_fqdn | Management FQDN |
 | registry\_admin\_password | n/a |
 | registry\_admin\_username | n/a |
