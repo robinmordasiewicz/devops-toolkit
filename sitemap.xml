@@ -191,17 +191,12 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://robinmordasiewicz.github.io/devops-toolkit/concepts/</loc>
-         <lastmod>2024-07-09</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://robinmordasiewicz.github.io/devops-toolkit/concepts/2023/11/30/source-code-management/</loc>
-         <lastmod>2024-07-09</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
          <loc>https://robinmordasiewicz.github.io/devops-toolkit/img/screenshots/</loc>
+         <lastmod>2024-07-09</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://robinmordasiewicz.github.io/devops-toolkit/concepts/</loc>
          <lastmod>2024-07-09</lastmod>
          <changefreq>daily</changefreq>
     </url>
