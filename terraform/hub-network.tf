@@ -147,10 +147,10 @@ resource "azurerm_public_ip" "hub-nva-vip_public_ip" {
 }
 
 resource "azurerm_network_interface" "hub-nva-external_network_interface" {
-  name                          = "hub-nva-external_network_interface"
-  location                      = azurerm_resource_group.azure_resource_group.location
-  resource_group_name           = azurerm_resource_group.azure_resource_group.name
-  enable_accelerated_networking = true
+  name                           = "hub-nva-external_network_interface"
+  location                       = azurerm_resource_group.azure_resource_group.location
+  resource_group_name            = azurerm_resource_group.azure_resource_group.name
+  accelerated_networking_enabled = true
   ip_configuration {
     name                          = "hub-nva-external-management_ip_configuration"
     primary                       = true
