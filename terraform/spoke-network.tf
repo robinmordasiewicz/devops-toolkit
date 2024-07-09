@@ -86,10 +86,10 @@ resource "azurerm_subnet_network_security_group_association" "spoke-subnet-netwo
 }
 
 resource "azurerm_network_interface" "spoke-container-server_network_interface" {
-  name                          = "spoke-container-server_network_interface"
-  location                      = azurerm_resource_group.azure_resource_group.location
-  resource_group_name           = azurerm_resource_group.azure_resource_group.name
-  enable_accelerated_networking = true
+  name                           = "spoke-container-server_network_interface"
+  location                       = azurerm_resource_group.azure_resource_group.location
+  resource_group_name            = azurerm_resource_group.azure_resource_group.name
+  accelerated_networking_enabled = true
   ip_configuration {
     name                          = "spoke-container-server_ip_configuration"
     private_ip_address_allocation = "Static"
