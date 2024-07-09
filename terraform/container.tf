@@ -1,8 +1,8 @@
 resource "null_resource" "acr_image" {
   depends_on = [data.azurerm_container_registry.container-registry]
-  triggers = {
-    always_run = timestamp()
-  }
+  #triggers = {
+  #  always_run = timestamp()
+  #}
   provisioner "local-exec" {
     command = <<EOF
         cd ${path.module}/..
@@ -25,6 +25,8 @@ resource "azurerm_container_group" "container" {
   os_type             = "Linux"
   dns_name_label      = random_pet.admin_username.id
   restart_policy      = "Always"
+  tags                = {}
+  zones               = []
   image_registry_credential {
     username = random_pet.admin_username.id
     password = data.azurerm_container_registry.container-registry.admin_password
@@ -32,10 +34,15 @@ resource "azurerm_container_group" "container" {
   }
 
   container {
-    name   = random_pet.admin_username.id
-    image  = "${random_pet.admin_username.id}.azurecr.io/docs:latest"
-    cpu    = 1
-    memory = 2
+    name  = random_pet.admin_username.id
+    image = "${random_pet.admin_username.id}.azurecr.io/docs:latest"
+
+    cpu                   = 1
+    memory                = 2
+    cpu_limit             = 0
+    environment_variables = {}
+    memory_limit          = 0
+
 
     ports {
       port     = 80
