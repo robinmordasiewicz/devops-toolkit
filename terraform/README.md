@@ -72,7 +72,7 @@ spoke-check-internet-up-ip           = "8.8.8.8"
 | hub-nva-vip | Hub NVA Gateway Virtual IP Address | `string` | `"10.0.0.5"` | no |
 | hub-virtual-network\_address\_prefix | Hub Virtual Network Address prefix. | `string` | `"10.0.0.0/24"` | no |
 | location | Azure region for resource group. | `string` | `"canadacentral"` | no |
-| owner\_email | Email address for use with Azure Owner tag. | `string` | `"root@example.com"` | no |
+| owner\_email | Email address for use with Owner tag. | `string` | `"root@example.com"` | no |
 | spoke-check-internet-up-ip | Spoke Container Server Checks the Internet at this IP Address | `string` | `"8.8.8.8"` | no |
 | spoke-container-server-image | Container server image product | `string` | `"ubuntu"` | no |
 | spoke-container-server-image-gpu | Set to true to enable GPU workloads | `bool` | `false` | no |
@@ -86,12 +86,8 @@ spoke-check-internet-up-ip           = "8.8.8.8"
 
 | Name | Description |
 |------|-------------|
-| OLLAMA\_HOST | OLLAMA\_HOST URI |
 | admin\_password | Password for admin account |
 | admin\_username | Username for admin account |
 | management\_fqdn | Management FQDN |
-| registry\_admin\_password | n/a |
-| registry\_admin\_username | n/a |
-| registry\_login\_server | n/a |
 | vip\_fqdn | VIP FQDN |
 <!-- END_TF_DOCS -->
