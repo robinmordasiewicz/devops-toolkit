@@ -19,11 +19,6 @@ output "vip_fqdn" {
   value       = "https://${data.azurerm_public_ip.hub-nva-vip_public_ip.fqdn}"
 }
 
-output "OLLAMA_HOST" {
-  description = "OLLAMA_HOST URI"
-  value       = "export OLLAMA_HOST=http://${data.azurerm_public_ip.hub-nva-vip_public_ip.fqdn}:11434"
-}
-
 output "admin_username" {
   description = "Username for admin account"
   value       = random_pet.admin_username.id
