@@ -32,7 +32,7 @@ jobs:
       #  - name: Configure GitHub Pages
       #  uses: actions/configure-pages@f156874f8191504dae5b037505266ed5dda6c382
 
-      - uses: actions/setup-python@82c7e631bb3cdc910f68e0081d67478d79c6982d
+      - uses: actions/setup-python@39cd14951b08e74b54015e9e001cdefcf80e669f
         with:
           python-version: 3.x
 
