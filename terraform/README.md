@@ -50,6 +50,7 @@ spoke-check-internet-up-ip           = "8.8.8.8"
 |------|---------|
 | terraform | >=1.6 |
 | azurerm | 3.112.0 |
+| git | 0.1.0 |
 | http | 3.4.3 |
 | local | 2.5.1 |
 | null | 3.2.2 |
@@ -88,6 +89,7 @@ spoke-check-internet-up-ip           = "8.8.8.8"
 |------|-------------|
 | admin\_password | Password for admin account |
 | admin\_username | Username for admin account |
+| kube\_config | kube config |
 | management\_fqdn | Management FQDN |
 | vip\_fqdn | VIP FQDN |
 <!-- END_TF_DOCS -->

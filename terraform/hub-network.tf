@@ -32,7 +32,7 @@ resource "azurerm_route_table" "hub_route_table" {
   name                          = "hub_route_table"
   location                      = azurerm_resource_group.azure_resource_group.location
   resource_group_name           = azurerm_resource_group.azure_resource_group.name
-  disable_bgp_route_propagation = false
+  bgp_route_propagation_enabled = false
 
   route {
     name           = "default"
