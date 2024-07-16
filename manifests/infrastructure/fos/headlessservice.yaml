@@ -1,0 +1,14 @@
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: fostest-headless
+  namespace: fos
+spec:
+  clusterIP: None
+  selector:
+    app: fos
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 80
