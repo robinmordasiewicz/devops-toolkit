@@ -1,0 +1,15 @@
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRoleBinding
+metadata:
+    name: read-svc
+    namespace: ollama
+subjects:
+    - kind: ServiceAccount
+      name: default
+      apiGroup: ""
+      namespace: ollama
+roleRef:
+    kind: ClusterRole
+    name: svc-reader
+    apiGroup: ""

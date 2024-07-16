@@ -1,0 +1,19 @@
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: nginx-ingress-to-fos
+  namespace: fos
+spec:
+  ingressClassName: nginx-internal
+  rules:
+  - host: www.bankexample.com
+    http:
+      paths:
+      - backend:
+          service:
+            name: fos
+            port:
+              number: 8001
+        path: /
+        pathType: Prefix
