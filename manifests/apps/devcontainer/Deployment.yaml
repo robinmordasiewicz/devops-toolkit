@@ -1,0 +1,43 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: devcontainer
+  namespace: ollama
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: devcontainer
+  template:
+    metadata:
+      labels:
+        app: devcontainer
+        api: allow
+    spec:
+      tolerations:
+      - key: "nvidia.com/gpu"
+        operator: "Exists"
+        effect: "NoSchedule"
+      nodeSelector:
+        "kubernetes.io/os": linux
+      containers:
+        - name: devcontainer
+          securityContext:
+            allowPrivilegeEscalation: true
+            runAsUser: 1000
+            runAsGroup: 1000
+          command:
+            - "sleep"
+            - "604800"
+          stdin: true
+          tty: true
+          image: ghcr.io/robinmordasiewicz/devcontainer:latest
+          workingDir: /home/vscode
+          resources:
+            requests:
+              cpu: 1m
+              memory: 200Mi
+            limits:
+              cpu: 1000m
+              memory: 512Mi

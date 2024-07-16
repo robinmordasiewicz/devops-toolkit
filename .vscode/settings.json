@@ -1,4 +1,44 @@
 {
-      "bashIde.explainshellEndpoint": "http://localhost:5000",
-      "ansible.python.interpreterPath": "/usr/local/python/current/bin/python"
+  "cSpell.enableFiletypes": [
+    "ansible",
+    "arm-template",
+    "bicep",
+    "dockercompose",
+    "dockerfile",
+    "drawio",
+    "github-actions",
+    "github-actions-workflow",
+    "mermaid",
+    "pip-requirements",
+    "shellscript",
+    "terraform",
+    "terraform-deploy",
+    "terraform-vars"
+  ],
+  "cSpell.words": [
+    "agentpool",
+    "azurerm",
+    "bankexample",
+    "canadacentral",
+    "codestral",
+    "CONFIGDATA",
+    "deepseek",
+    "devcontainer",
+    "digininja",
+    "dvwa",
+    "eastus",
+    "fluxcd",
+    "fortiweb",
+    "IPADDRESS",
+    "JSONDATA",
+    "Kustomization",
+    "kustomizations",
+    "kustomize",
+    "myip",
+    "myservice",
+    "nomic",
+    "oidc",
+    "ollama",
+    "YAMLDATA"
+  ]
 }

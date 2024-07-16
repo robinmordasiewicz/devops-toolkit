@@ -1,0 +1,37 @@
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: fos-vip-template
+  namespace: fos
+  labels:
+    category: template
+data:
+  type: partial
+  config: |-
+    config firewall vip
+        edit "VAR_APP_NAME"
+            set extip "fostest-headless"
+            set mappedip VAR_CLUSTER_IP
+            set extintf "eth0"
+            set portforward enable
+            set extport "8001"
+            set mappedport "11434"
+        next
+    end
+    config firewall policy
+        edit 1
+            set utm-status enable
+            set name "VAR_APP_NAME"
+            set srcintf "eth0"
+            set dstintf "eth0"
+            set srcaddr "all"
+            set dstaddr "VAR_APP_NAME"
+            set service "ALL"
+            set ssl-ssh-profile "certificate-inspection"
+            set av-profile "default"
+            set ips-sensor "default"
+            set application-list "default"
+            set nat enable
+        next
+    end

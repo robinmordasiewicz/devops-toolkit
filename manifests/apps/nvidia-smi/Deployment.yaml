@@ -1,0 +1,28 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nvidia-smi
+  namespace: nvidia-smi
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: nvidia-smi
+  template:
+    metadata:
+      labels:
+        app: nvidia-smi
+    spec:
+      tolerations:
+      - key: "nvidia.com/gpu"
+        operator: "Exists"
+        effect: "NoSchedule"
+      containers:
+        - name: nvidia-smi
+          image: nvidia/cuda:12.5.1-runtime-ubuntu22.04
+          command: ["/bin/bash", "-c", "--"]
+          args: ["while true; do sleep 600; done;"]
+          resources:
+            limits:
+              nvidia.com/gpu: 0

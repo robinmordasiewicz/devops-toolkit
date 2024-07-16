@@ -1,0 +1,56 @@
+---
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: ollama
+  namespace: cluster-config
+spec:
+  targetNamespace: ollama
+  releaseName: ollama
+  chart:
+    spec:
+      chart: ollama
+      sourceRef:
+        kind: HelmRepository
+        name: ollama
+        namespace: cluster-config
+  interval: 10m0s
+  install:
+    timeout: 20m
+    remediation:
+      retries: 5
+  upgrade:
+    timeout: 20m
+  values:
+    initContainers:
+      - name: init-myservice
+        image: alpine/k8s:1.30.2
+        command: ['sh', '-c', 'IPADDRESS=$(kubectl -n ollama get svc ollama -o json | jq -r ".spec.clusterIP"); CONFIGDATA=$(kubectl -n fos get configmaps fos-vip-template -o json | jq -r ".data.config" | sed -e "s/VAR_CLUSTER_IP/${IPADDRESS}/g" -e "s/VAR_APP_NAME/ollama/g" -e "s/^/    /g"); echo -e "---\nmetadata:\n  labels:\n    app: fos\n    category: config\n  name: ollama\n  namespace: fos\ndata:\n  config: |\n$CONFIGDATA\n  type: partial\napiVersion: v1\nkind: ConfigMap" > manifest.yaml; cat manifest.yaml; kubectl apply -f manifest.yaml']
+    runtimeClass: nvidia
+    extraEnv:
+      - name: OLLAMA_KEEP_ALIVE
+        value: "-1"
+    resources:
+      limits:
+        nvidia.com/gpu: "0"
+      requests:
+        nvidia.com/gpu: "0"
+    image:
+      tag: "latest"
+    ollama:
+      gpu:
+        enabled: true
+      models:
+        - nomic-embed-text
+        - codestral:latest
+    ingress:
+      enabled: false
+      className: "nginx"
+      hosts:
+        - host: www.bankexample.com
+          paths:
+            - path: /
+              pathType: Prefix
+    persistentVolume:
+      enabled: true
+      size: 100Gi
