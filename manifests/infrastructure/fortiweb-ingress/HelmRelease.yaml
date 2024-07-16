@@ -1,0 +1,21 @@
+---
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: fortiweb-ingress-controller
+  namespace: cluster-config
+spec:
+  targetNamespace: fortiweb-ingress
+  releaseName: fortiweb-ingress-controller
+  chart:
+    spec:
+      chart: fwb-k8s-ctrl
+      sourceRef:
+        kind: HelmRepository
+        name: fortiweb-ingress-controller
+        namespace: cluster-config
+      version: "2.0.0"
+  interval: 10m0s
+  install:
+    remediation:
+      retries: 3

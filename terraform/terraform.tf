@@ -25,12 +25,20 @@ terraform {
       source  = "hashicorp/local"
       version = "2.5.1"
     }
+    git = {
+      source  = "paultyng/git"
+      version = "0.1.0"
+    }
   }
   # backend "azurerm" {}
 }
 
 provider "azurerm" {
   features {
+    api_management {
+      purge_soft_delete_on_destroy = true
+      recover_soft_deleted         = false
+    }
     resource_group {
       prevent_deletion_if_contains_resources = false
     }
@@ -42,3 +50,4 @@ provider "random" {}
 provider "tls" {}
 provider "http" {}
 provider "local" {}
+provider "git" {}
