@@ -1,4 +1,4 @@
-location                             = "eastus"
+location                             = "canadacentral"
 owner_email                          = "root@example.com"
 hub-nva-image                        = "fortigate"
 hub-virtual-network_address_prefix   = "10.0.0.0/24"
