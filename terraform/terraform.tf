@@ -29,6 +29,10 @@ terraform {
       source  = "paultyng/git"
       version = "0.1.0"
     }
+    external = {
+      source  = "hashicorp/external"
+      version = "2.3.0"
+    }
   }
   # backend "azurerm" {}
 }
