@@ -216,15 +216,15 @@ variable "hub-nva-management-action" {
   }
 }
 
-variable "spoke-container-server-image" {
-  default     = "ubuntu"
-  description = "Container server image product"
-  type        = string
-  validation {
-    condition     = var.spoke-container-server-image == "ubuntu" || var.spoke-container-server-image == "almalinux"
-    error_message = "The SKU must be either 'ubuntu' or 'almalinux'."
-  }
-}
+#variable "spoke-container-server-image" {
+#  default     = "ubuntu"
+#  description = "Container server image product"
+#  type        = string
+#  validation {
+#    condition     = var.spoke-container-server-image == "ubuntu" || var.spoke-container-server-image == "almalinux"
+#    error_message = "The SKU must be either 'ubuntu' or 'almalinux'."
+#  }
+#}
 
 variable "spoke-container-server-image-gpu" {
   default     = false
