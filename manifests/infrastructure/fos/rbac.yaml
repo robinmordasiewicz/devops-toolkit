@@ -45,7 +45,7 @@ subjects:
       apiGroup: ""
       namespace: dvwa
     - kind: ServiceAccount
-      name: default
+      name: ollama
       apiGroup: ""
       namespace: ollama
 roleRef:
