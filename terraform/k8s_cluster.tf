@@ -15,6 +15,7 @@ resource "azurerm_log_analytics_workspace" "log_analytics" {
 }
 
 resource "azurerm_kubernetes_cluster" "kubernetes_cluster" {
+  depends_on                        = [azurerm_virtual_network_peering.spoke-to-hub_virtual_network_peering, azurerm_linux_virtual_machine.hub-nva_virtual_machine]
   name                              = "kubernetes_cluster"
   location                          = azurerm_resource_group.azure_resource_group.location
   resource_group_name               = azurerm_resource_group.azure_resource_group.name
@@ -92,6 +93,10 @@ data "git_repository" "current" {
   path = "${path.module}/.."
 }
 
+data "external" "git_url" {
+  program = ["sh", "-c", "git -C ${path.module}/.. config --get remote.origin.url | jq -R -r 'split(\"\\n\") | map(select(length > 0)) | map({url: .}) | add'"]
+}
+
 resource "azurerm_kubernetes_flux_configuration" "flux_configuration" {
   name                              = "flux-configuration"
   cluster_id                        = azurerm_kubernetes_cluster.kubernetes_cluster.id
@@ -99,7 +104,7 @@ resource "azurerm_kubernetes_flux_configuration" "flux_configuration" {
   scope                             = "cluster"
   continuous_reconciliation_enabled = true
   git_repository {
-    url                      = "https://github.com/robinmordasiewicz/devops-toolkit"
+    url                      = data.external.git_url.result["url"]
     reference_type           = "branch"
     reference_value          = data.git_repository.current.branch
     sync_interval_in_seconds = 60
@@ -132,7 +137,7 @@ output "kube_config" {
 
 resource "local_file" "kube_config" {
   content              = azurerm_kubernetes_cluster.kubernetes_cluster.kube_config_raw
-  filename             = "/home/vscode/.kube/config.yaml"
+  filename             = "/home/vscode/.kube/config"
   directory_permission = "0755"
   file_permission      = "0600"
 }

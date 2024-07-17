@@ -2,6 +2,11 @@
 "cloud-initd":"enable",
 "usr-cli":'
 config global
+  config system global
+    set adom-admin enable
+  end
+end
+config global
   config system advanced
     set owasp-top10-compliance enable
   end
@@ -80,10 +85,6 @@ config global
     edit "hub-nva-external-vip"
       set ip-address-value ${VAR-hub-nva-vip}
     next
-    edit "kubernetes_nodes"
-      set type ip-netmask
-      set ip-netmask 10.1.1.0/24
-    next
   end
   config system firewall service
     edit "http"
@@ -158,14 +159,6 @@ config global
         set service spoke-container-server-ports
         set action accept
       next
-      edit 8
-        set in-interface port2
-        set out-interface port1
-        set src-address kubernetes_nodes
-        set dest-address internet
-        set service all
-        set action accept
-      next
     end
   end
   config system firewall snat-policy
@@ -195,6 +188,8 @@ config global
     set severity notification
   end
 end
+config vdom
+  edit "root"
     config system certificate local
       edit "self-signed-cert"
         set certificate "${VAR-CERTIFICATE}
@@ -266,6 +261,8 @@ end
         set tlog enable
       next
     end
+  next
+end
 ',
 "HaAzureInit":"enable",
 "FwbLicenseBYOL":"${VAR-fwb_license_file}",

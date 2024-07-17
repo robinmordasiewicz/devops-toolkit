@@ -1,3 +1,39 @@
+resource "azurerm_network_interface" "hub-nva-external_network_interface" {
+  name                           = "hub-nva-external_network_interface"
+  location                       = azurerm_resource_group.azure_resource_group.location
+  resource_group_name            = azurerm_resource_group.azure_resource_group.name
+  accelerated_networking_enabled = true
+  ip_configuration {
+    name                          = "hub-nva-external-management_ip_configuration"
+    primary                       = true
+    private_ip_address_allocation = "Static"
+    private_ip_address            = var.hub-nva-management-ip
+    subnet_id                     = azurerm_subnet.hub-external_subnet.id
+    public_ip_address_id          = azurerm_public_ip.hub-nva-management_public_ip.id #checkov:skip=CKV_AZURE_119:Fortigate gets a public IP
+  }
+  ip_configuration {
+    name                          = "hub-nva-external-vip_configuration"
+    private_ip_address_allocation = "Static"
+    private_ip_address            = var.hub-nva-vip
+    subnet_id                     = azurerm_subnet.hub-external_subnet.id
+    public_ip_address_id          = azurerm_public_ip.hub-nva-vip_public_ip.id #checkov:skip=CKV_AZURE_119:Fortigate gets a public IP
+  }
+}
+
+resource "azurerm_network_interface" "hub-nva-internal_network_interface" {
+  name                           = "hub-nva-internal_network_interface"
+  location                       = azurerm_resource_group.azure_resource_group.location
+  resource_group_name            = azurerm_resource_group.azure_resource_group.name
+  accelerated_networking_enabled = true
+  ip_forwarding_enabled          = true #checkov:skip=CKV_AZURE_118:Fortigate NIC needs IP forwarding.
+  ip_configuration {
+    name                          = "hub-nva-internal_ip_configuration"
+    private_ip_address_allocation = "Static"
+    private_ip_address            = var.hub-nva-gateway
+    subnet_id                     = azurerm_subnet.hub-internal_subnet.id
+  }
+}
+
 resource "azurerm_linux_virtual_machine" "hub-nva_virtual_machine" {
   #checkov:skip=CKV_AZURE_178: Allow Fortigate to present HTTPS login UI instead of SSH
   #checkov:skip=CKV_AZURE_149: Allow Fortigate to present HTTPS login UI instead of SSH

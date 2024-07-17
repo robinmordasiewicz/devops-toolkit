@@ -1,6 +1,6 @@
 location                             = "canadacentral"
 owner_email                          = "root@example.com"
-hub-nva-image                        = "fortigate"
+hub-nva-image                        = "fortiweb"
 hub-virtual-network_address_prefix   = "10.0.0.0/24"
 hub-external-subnet_name             = "hub-external_subnet"
 hub-external-subnet_prefix           = "10.0.0.0/27"
