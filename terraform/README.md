@@ -1,6 +1,9 @@
 #Hub NVA
 
 - Microsoft Azure publishes NVA deployment use cases.
+- Hub & Spoke Architecture At its core, the Hub & Spoke model is a paradigm for dataflow management. It necessitates the capacity to oversee, document, and scrutinize data traversing in all directions—be it north-to-south or east-to-west.
+- As the best practice when working with AKS is to separate each cluster into different VNets
+- Don't create more than one AKS cluster in the same subnet.
 
 https://learn.microsoft.com/en-us/azure/architecture/networking/guide/nva-ha#pip-udr-nvas-without-snat
 
@@ -22,9 +25,9 @@ az vm image list --publisher fortinet --all
 ## terraform.auto.tfvars
 
 ```hcl
-location                             = "eastus"
+location                             = "canadacentral"
 owner_email                          = "root@example.com"
-hub-nva-image                        = "fortigate"
+hub-nva-image                        = "fortiweb"
 hub-virtual-network_address_prefix   = "10.0.0.0/24"
 hub-external-subnet_name             = "hub-external_subnet"
 hub-external-subnet_prefix           = "10.0.0.0/27"
@@ -50,6 +53,7 @@ spoke-check-internet-up-ip           = "8.8.8.8"
 |------|---------|
 | terraform | >=1.6 |
 | azurerm | 3.112.0 |
+| external | 2.3.0 |
 | git | 0.1.0 |
 | http | 3.4.3 |
 | local | 2.5.1 |
@@ -75,7 +79,6 @@ spoke-check-internet-up-ip           = "8.8.8.8"
 | location | Azure region for resource group. | `string` | `"canadacentral"` | no |
 | owner\_email | Email address for use with Owner tag. | `string` | `"root@example.com"` | no |
 | spoke-check-internet-up-ip | Spoke Container Server Checks the Internet at this IP Address | `string` | `"8.8.8.8"` | no |
-| spoke-container-server-image | Container server image product | `string` | `"ubuntu"` | no |
 | spoke-container-server-image-gpu | Set to true to enable GPU workloads | `bool` | `false` | no |
 | spoke-container-server-ip | Spoke Container Server IP Address | `string` | `"10.1.1.5"` | no |
 | spoke-container-server-ollama-port | Port for ollama | `string` | `"11434"` | no |

@@ -4,4 +4,4 @@ kind: Kustomization
 resources:
   - rbac.yaml
   - fos
-  - nginx-ingress-controller
+  - fortiweb-ingress

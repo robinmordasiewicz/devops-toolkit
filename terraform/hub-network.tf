@@ -89,14 +89,15 @@ resource "azurerm_network_security_group" "hub-internal_network_security_group" 
   location            = azurerm_resource_group.azure_resource_group.location
   resource_group_name = azurerm_resource_group.azure_resource_group.name
   security_rule {
-    name                       = "container-server_to_internet_rule"
-    priority                   = 100
-    direction                  = "Inbound"
-    access                     = "Allow"
-    protocol                   = "Tcp"
-    source_port_range          = "*"
-    destination_port_ranges    = ["80", "443"]
-    source_address_prefix      = var.spoke-container-server-ip
+    name                    = "container-server_to_internet_rule"
+    priority                = 100
+    direction               = "Inbound"
+    access                  = "Allow"
+    protocol                = "Tcp"
+    source_port_range       = "*"
+    destination_port_ranges = ["80", "443"]
+    #source_address_prefix      = var.spoke-container-server-ip
+    source_address_prefix      = "10.0.0.0/8"
     destination_address_prefix = "*"
   }
   security_rule {
@@ -144,42 +145,6 @@ resource "azurerm_public_ip" "hub-nva-vip_public_ip" {
   allocation_method   = "Static"
   sku                 = "Standard"
   domain_name_label   = random_pet.admin_username.id
-}
-
-resource "azurerm_network_interface" "hub-nva-external_network_interface" {
-  name                           = "hub-nva-external_network_interface"
-  location                       = azurerm_resource_group.azure_resource_group.location
-  resource_group_name            = azurerm_resource_group.azure_resource_group.name
-  accelerated_networking_enabled = true
-  ip_configuration {
-    name                          = "hub-nva-external-management_ip_configuration"
-    primary                       = true
-    private_ip_address_allocation = "Static"
-    private_ip_address            = var.hub-nva-management-ip
-    subnet_id                     = azurerm_subnet.hub-external_subnet.id
-    public_ip_address_id          = azurerm_public_ip.hub-nva-management_public_ip.id #checkov:skip=CKV_AZURE_119:Fortigate gets a public IP
-  }
-  ip_configuration {
-    name                          = "hub-nva-external-vip_configuration"
-    private_ip_address_allocation = "Static"
-    private_ip_address            = var.hub-nva-vip
-    subnet_id                     = azurerm_subnet.hub-external_subnet.id
-    public_ip_address_id          = azurerm_public_ip.hub-nva-vip_public_ip.id #checkov:skip=CKV_AZURE_119:Fortigate gets a public IP
-  }
-}
-
-resource "azurerm_network_interface" "hub-nva-internal_network_interface" {
-  name                           = "hub-nva-internal_network_interface"
-  location                       = azurerm_resource_group.azure_resource_group.location
-  resource_group_name            = azurerm_resource_group.azure_resource_group.name
-  accelerated_networking_enabled = true
-  ip_forwarding_enabled          = true #checkov:skip=CKV_AZURE_118:Fortigate NIC needs IP forwarding.
-  ip_configuration {
-    name                          = "hub-nva-internal_ip_configuration"
-    private_ip_address_allocation = "Static"
-    private_ip_address            = var.hub-nva-gateway
-    subnet_id                     = azurerm_subnet.hub-internal_subnet.id
-  }
 }
 
 resource "azurerm_availability_set" "hub-nva_availability_set" {
