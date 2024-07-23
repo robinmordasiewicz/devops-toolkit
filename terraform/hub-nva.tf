@@ -79,15 +79,15 @@ resource "azurerm_linux_virtual_machine" "hub-nva_virtual_machine" {
         VAR-spoke-virtual-network_address_prefix     = var.spoke-virtual-network_address_prefix
         VAR-spoke-virtual-network_subnet             = cidrhost(var.spoke-virtual-network_address_prefix, 0)
         VAR-spoke-virtual-network_netmask            = cidrnetmask(var.spoke-virtual-network_address_prefix)
-        VAR-spoke-container-server-ip                = var.spoke-container-server-ip
+        VAR-spoke-linux-server-ip                    = var.spoke-linux-server-ip
         VAR-hub-nva-vip                              = var.hub-nva-vip
         VAR-admin-username                           = random_pet.admin_username.id
         VAR-CERTIFICATE                              = tls_self_signed_cert.self_signed_cert.cert_pem
         VAR-PRIVATEKEY                               = tls_private_key.private_key.private_key_pem
         VAR-fwb_license_file                         = ""
         VAR-fwb_license_fortiflex                    = ""
-        VAR-spoke-container-server-ollama-port       = var.spoke-container-server-ollama-port
-        VAR-spoke-container-server-ollama-webui-port = var.spoke-container-server-ollama-webui-port
+        VAR-spoke-linux-server-ollama-port           = var.spoke-linux-server-ollama-port
+        VAR-spoke-linux-server-ollama-webui-port     = var.spoke-linux-server-ollama-webui-port
       }
     )
   )

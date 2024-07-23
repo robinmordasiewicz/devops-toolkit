@@ -73,7 +73,7 @@ resource "azurerm_network_security_group" "hub-external_network_security_group" 
     access                     = "Allow"
     protocol                   = "Tcp"
     source_port_range          = "*"
-    destination_port_ranges    = var.spoke-container-server-image-gpu == true ? ["80", "443", "8080", "11434"] : ["80", "443"] #checkov:skip=CKV_AZURE_160: Allow HTTP redirects
+    destination_port_ranges    = var.spoke-linux-server-image-gpu == true ? ["80", "443", "8080", "11434"] : ["80", "443"] #checkov:skip=CKV_AZURE_160: Allow HTTP redirects
     source_address_prefix      = "*"
     destination_address_prefix = var.hub-nva-vip
   }
@@ -96,7 +96,7 @@ resource "azurerm_network_security_group" "hub-internal_network_security_group" 
     protocol                = "Tcp"
     source_port_range       = "*"
     destination_port_ranges = ["80", "443"]
-    #source_address_prefix      = var.spoke-container-server-ip
+    #source_address_prefix      = var.spoke-linux-server-ip
     source_address_prefix      = "10.0.0.0/8"
     destination_address_prefix = "*"
   }
@@ -108,7 +108,7 @@ resource "azurerm_network_security_group" "hub-internal_network_security_group" 
     protocol                   = "Icmp"
     source_port_range          = "*"
     destination_port_range     = "*"
-    source_address_prefix      = var.spoke-container-server-ip
+    source_address_prefix      = var.spoke-linux-server-ip
     destination_address_prefix = var.spoke-check-internet-up-ip
   }
   security_rule {
@@ -120,7 +120,7 @@ resource "azurerm_network_security_group" "hub-internal_network_security_group" 
     source_port_range          = "*"
     destination_port_ranges    = ["80", "81"]
     source_address_prefix      = "*"
-    destination_address_prefix = var.spoke-container-server-ip
+    destination_address_prefix = var.spoke-linux-server-ip
   }
 }
 

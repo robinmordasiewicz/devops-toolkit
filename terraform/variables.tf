@@ -216,17 +216,17 @@ variable "hub-nva-management-action" {
   }
 }
 
-#variable "spoke-container-server-image" {
+#variable "spoke-linux-server-image" {
 #  default     = "ubuntu"
 #  description = "Container server image product"
 #  type        = string
 #  validation {
-#    condition     = var.spoke-container-server-image == "ubuntu" || var.spoke-container-server-image == "almalinux"
+#    condition     = var.spoke-linux-server-image == "ubuntu" || var.spoke-linux-server-image == "almalinux"
 #    error_message = "The SKU must be either 'ubuntu' or 'almalinux'."
 #  }
 #}
 
-variable "spoke-container-server-image-gpu" {
+variable "spoke-linux-server-image-gpu" {
   default     = false
   description = "Set to true to enable GPU workloads"
   type        = bool
@@ -262,12 +262,12 @@ variable "spoke-subnet_prefix" {
   }
 }
 
-variable "spoke-container-server-ip" {
+variable "spoke-linux-server-ip" {
   default     = "10.1.1.5"
   description = "Spoke Container Server IP Address"
   type        = string
   validation {
-    condition     = can(regex("^((25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\.){3}(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$", var.spoke-container-server-ip))
+    condition     = can(regex("^((25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\.){3}(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$", var.spoke-linux-server-ip))
     error_message = "The IP address must be a valid IPv4 format (e.g., 10.1.1.5)."
   }
 }
@@ -282,13 +282,13 @@ variable "spoke-check-internet-up-ip" {
   }
 }
 
-variable "spoke-container-server-ollama-port" {
+variable "spoke-linux-server-ollama-port" {
   default     = "11434"
   description = "Port for ollama"
   type        = string
 }
 
-variable "spoke-container-server-ollama-webui-port" {
+variable "spoke-linux-server-ollama-webui-port" {
   default     = "8080"
   description = "Port for the ollama web ui"
   type        = string
