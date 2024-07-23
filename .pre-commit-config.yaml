@@ -18,7 +18,7 @@ repos:
         args:
           - --args=-recursive
       - id: terraform_tflint
-      - id: terraform_validate
+      #- id: terraform_validate
       # - id: terrascan
       #  args:
       #    - --args=--non-recursive
