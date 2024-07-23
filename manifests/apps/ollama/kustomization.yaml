@@ -6,4 +6,3 @@ resources:
   - HelmRepository.yaml
   - namespace.yaml
   - rbac.yaml
-  - Ingress.yaml
