@@ -16,7 +16,7 @@ resource "azurerm_log_analytics_workspace" "log_analytics" {
 
 resource "azurerm_kubernetes_cluster" "kubernetes_cluster" {
   depends_on                        = [azurerm_virtual_network_peering.spoke-to-hub_virtual_network_peering, azurerm_linux_virtual_machine.hub-nva_virtual_machine]
-  name                              = "kubernetes_cluster"
+  name                              = "spoke_kubernetes_cluster"
   location                          = azurerm_resource_group.azure_resource_group.location
   resource_group_name               = azurerm_resource_group.azure_resource_group.name
   dns_prefix                        = azurerm_resource_group.azure_resource_group.name
