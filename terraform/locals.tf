@@ -11,17 +11,6 @@ locals {
       zone         = "2"
       terms        = false
     },
-    "almalinux" = {
-      publisher    = "almalinux"
-      offer        = "almalinux"
-      size         = "Standard_F16s_v2"
-      size_gpu     = "Standard_NC24ads_A100_v4"
-      disk_size_gb = "1024"
-      version      = "latest"
-      sku          = "8-gen2"
-      zone         = "2"
-      terms        = true
-    },
     "fortigate" = {
       publisher       = "fortinet"
       offer           = "fortinet_fortigate-vm_v5"
