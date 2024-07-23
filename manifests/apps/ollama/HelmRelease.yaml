@@ -55,4 +55,4 @@ spec:
       enabled: true
       size: 100Gi
     service:
-      type: nodePort
+      type: NodePort
