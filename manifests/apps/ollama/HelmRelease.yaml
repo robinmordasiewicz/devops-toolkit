@@ -54,3 +54,5 @@ spec:
     persistentVolume:
       enabled: true
       size: 100Gi
+    service:
+      type: nodePort
