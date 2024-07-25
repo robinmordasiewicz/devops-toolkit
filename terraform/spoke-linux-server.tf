@@ -15,6 +15,7 @@ resource "azurerm_linux_virtual_machine" "spoke-linux-server_virtual_machine" {
   #checkov:skip=CKV_AZURE_178: SSH is disabled
   #checkov:skip=CKV_AZURE_149: SSH is disabled
   #checkov:skip=CKV_AZURE_1: SSH is disabled
+  depends_on                      = [azurerm_virtual_network_peering.spoke-to-hub_virtual_network_peering, azurerm_linux_virtual_machine.hub-nva_virtual_machine]
   name                            = "spoke-linux-server_virtual_machine"
   computer_name                   = "linux-server"
   admin_username                  = random_pet.admin_username.id
