@@ -44,7 +44,7 @@ spoke-subnet_prefix                  = "10.1.1.0/24"
 spoke-check-internet-up-ip           = "8.8.8.8"
 spoke-linux-server-ip                = "10.1.1.5"
 spoke-linux-server-image-gpu         = false
-spoke-k8s-node-pool-gpu              = false
+spoke-k8s-node-pool-gpu              = true
 ```
 
 
@@ -81,7 +81,7 @@ spoke-k8s-node-pool-gpu              = false
 | owner\_email | Email address for use with Owner tag. | `string` | `"root@example.com"` | no |
 | spoke-check-internet-up-ip | Spoke Container Server Checks the Internet at this IP Address | `string` | `"8.8.8.8"` | no |
 | spoke-k8s-node-pool-gpu | Set to true to enable GPU workloads | `bool` | `false` | no |
-| spoke-linux-server-image | Container server image product | `string` | `"ubuntu"` | no |
+| spoke-linux-server-image | Container server image product | `string` | `"linux-server"` | no |
 | spoke-linux-server-image-gpu | Set to true to enable GPU workloads | `bool` | `false` | no |
 | spoke-linux-server-ip | Spoke Container Server IP Address | `string` | `"10.1.1.5"` | no |
 | spoke-linux-server-ollama-port | Port for ollama | `string` | `"11434"` | no |
