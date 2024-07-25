@@ -38,8 +38,9 @@ resource "azurerm_kubernetes_cluster" "kubernetes_cluster" {
     temporary_name_for_rotation = "rotation"
     name                        = "default"
     node_count                  = 1
-    vm_size                     = "Standard_B4ms"
-    os_sku                      = "AzureLinux"
+    #vm_size                     = "Standard_B4ms"
+    vm_size = "Standard_D8s_v5"
+    os_sku  = "AzureLinux"
     upgrade_settings {
       max_surge = "10%"
     }

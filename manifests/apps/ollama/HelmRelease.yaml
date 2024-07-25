@@ -35,6 +35,7 @@ spec:
         nvidia.com/gpu: "0"
       requests:
         nvidia.com/gpu: "0"
+        memory: "16384M"
     image:
       tag: "latest"
     ollama:
