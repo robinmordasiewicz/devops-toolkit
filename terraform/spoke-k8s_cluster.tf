@@ -56,6 +56,7 @@ resource "azurerm_kubernetes_cluster" "kubernetes_cluster" {
 }
 
 resource "azurerm_kubernetes_cluster_node_pool" "node-pool" {
+  count                 = var.spoke-k8s-node-pool-gpu ? 1 : 0
   name                  = "gpu"
   mode                  = "User"
   kubernetes_cluster_id = azurerm_kubernetes_cluster.kubernetes_cluster.id
