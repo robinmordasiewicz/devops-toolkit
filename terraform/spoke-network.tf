@@ -57,7 +57,7 @@ resource "azurerm_network_security_group" "spoke_network_security_group" {
     destination_address_prefix = var.spoke-linux-server-ip
   }
   security_rule {
-    name                       = "container-server_to_internet_rule"
+    name                       = "linux-server_to_internet_rule"
     priority                   = 100
     direction                  = "Outbound"
     access                     = "Allow"
