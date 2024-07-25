@@ -5,10 +5,10 @@ resource "null_resource" "marketplace_agreement" {
     command = "${each.value.terms} && az vm image terms accept --publisher ${each.value.publisher} --offer ${each.value.offer} --plan ${each.value.sku} || true"
   }
 
-  triggers = {
-    publisher = each.value.publisher
-    offer     = each.value.offer
-    sku       = each.value.sku
-    terms     = each.value.terms
-  }
+  # triggers = {
+  #   publisher = each.value.publisher
+  #   offer     = each.value.offer
+  #   sku       = each.value.sku
+  #   terms     = each.value.terms
+  # }
 }
