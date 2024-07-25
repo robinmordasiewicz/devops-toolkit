@@ -92,7 +92,6 @@ spoke-check-internet-up-ip           = "8.8.8.8"
 |------|-------------|
 | admin\_password | Password for admin account |
 | admin\_username | Username for admin account |
-| kube\_config | kube config |
 | management\_fqdn | Management FQDN |
 | vip\_fqdn | VIP FQDN |
 <!-- END_TF_DOCS -->
