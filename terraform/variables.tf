@@ -217,13 +217,9 @@ variable "hub-nva-management-action" {
 }
 
 variable "spoke-linux-server-image" {
-  default     = "ubuntu"
+  default     = "linux-server"
   description = "Container server image product"
   type        = string
-  validation {
-    condition     = var.spoke-linux-server-image == "ubuntu" || var.spoke-linux-server-image == "almalinux"
-    error_message = "The SKU must be either 'ubuntu' or 'almalinux'."
-  }
 }
 
 variable "spoke-linux-server-image-gpu" {
