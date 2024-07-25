@@ -73,21 +73,21 @@ resource "azurerm_linux_virtual_machine" "hub-nva_virtual_machine" {
   custom_data = base64encode(
     templatefile("cloud-init/${var.hub-nva-image}.conf",
       {
-        VAR-hub-external-subnet-gateway              = var.hub-external-subnet-gateway
-        VAR-spoke-check-internet-up-ip               = var.spoke-check-internet-up-ip
-        VAR-spoke-default-gateway                    = cidrhost(var.hub-internal-subnet_prefix, 1)
-        VAR-spoke-virtual-network_address_prefix     = var.spoke-virtual-network_address_prefix
-        VAR-spoke-virtual-network_subnet             = cidrhost(var.spoke-virtual-network_address_prefix, 0)
-        VAR-spoke-virtual-network_netmask            = cidrnetmask(var.spoke-virtual-network_address_prefix)
-        VAR-spoke-linux-server-ip                    = var.spoke-linux-server-ip
-        VAR-hub-nva-vip                              = var.hub-nva-vip
-        VAR-admin-username                           = random_pet.admin_username.id
-        VAR-CERTIFICATE                              = tls_self_signed_cert.self_signed_cert.cert_pem
-        VAR-PRIVATEKEY                               = tls_private_key.private_key.private_key_pem
-        VAR-fwb_license_file                         = ""
-        VAR-fwb_license_fortiflex                    = ""
-        VAR-spoke-linux-server-ollama-port           = var.spoke-linux-server-ollama-port
-        VAR-spoke-linux-server-ollama-webui-port     = var.spoke-linux-server-ollama-webui-port
+        VAR-hub-external-subnet-gateway          = var.hub-external-subnet-gateway
+        VAR-spoke-check-internet-up-ip           = var.spoke-check-internet-up-ip
+        VAR-spoke-default-gateway                = cidrhost(var.hub-internal-subnet_prefix, 1)
+        VAR-spoke-virtual-network_address_prefix = var.spoke-virtual-network_address_prefix
+        VAR-spoke-virtual-network_subnet         = cidrhost(var.spoke-virtual-network_address_prefix, 0)
+        VAR-spoke-virtual-network_netmask        = cidrnetmask(var.spoke-virtual-network_address_prefix)
+        VAR-spoke-linux-server-ip                = var.spoke-linux-server-ip
+        VAR-hub-nva-vip                          = var.hub-nva-vip
+        VAR-admin-username                       = random_pet.admin_username.id
+        VAR-CERTIFICATE                          = tls_self_signed_cert.self_signed_cert.cert_pem
+        VAR-PRIVATEKEY                           = tls_private_key.private_key.private_key_pem
+        VAR-fwb_license_file                     = ""
+        VAR-fwb_license_fortiflex                = ""
+        VAR-spoke-linux-server-ollama-port       = var.spoke-linux-server-ollama-port
+        VAR-spoke-linux-server-ollama-webui-port = var.spoke-linux-server-ollama-webui-port
       }
     )
   )

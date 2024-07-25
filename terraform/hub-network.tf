@@ -89,7 +89,7 @@ resource "azurerm_network_security_group" "hub-internal_network_security_group" 
   location            = azurerm_resource_group.azure_resource_group.location
   resource_group_name = azurerm_resource_group.azure_resource_group.name
   security_rule {
-    name                    = "container-server_to_internet_rule"
+    name                    = "linux-server_to_internet_rule"
     priority                = 100
     direction               = "Inbound"
     access                  = "Allow"
