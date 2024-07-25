@@ -50,7 +50,7 @@ resource "azurerm_linux_virtual_machine" "spoke-linux-server_virtual_machine" {
     version   = "latest"
   }
   custom_data = base64encode(
-    templatefile("cloud-init/${var.spoke-linux-server-image}.conf",
+    templatefile("cloud-init/linux-server.conf",
       {
         VAR-spoke-check-internet-up-ip           = var.spoke-check-internet-up-ip
         VAR-spoke-linux-server-image-gpu         = var.spoke-linux-server-image-gpu
