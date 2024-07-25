@@ -232,6 +232,12 @@ variable "spoke-linux-server-image-gpu" {
   type        = bool
 }
 
+variable "spoke-k8s-node-pool-gpu" {
+  default     = false
+  description = "Set to true to enable GPU workloads"
+  type        = bool
+}
+
 variable "spoke-virtual-network_address_prefix" {
   default     = "10.1.1.0/24"
   description = "Spoke Virtual Network Address prefix."
