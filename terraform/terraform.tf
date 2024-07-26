@@ -34,7 +34,7 @@ terraform {
       version = "2.3.3"
     }
     kubernetes = {
-      source = "hashicorp/kubernetes"
+      source  = "hashicorp/kubernetes"
       version = "2.31.0"
     }
   }
@@ -60,6 +60,6 @@ provider "http" {}
 provider "local" {}
 provider "git" {}
 provider "kubernetes" {
-  config_path    = "~/.kube/config"
+  config_path = "~/.kube/config"
 }
 

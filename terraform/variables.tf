@@ -234,6 +234,12 @@ variable "spoke-k8s-node-pool-gpu" {
   type        = bool
 }
 
+variable "spoke-k8s-node-pool-image" {
+  default     = false
+  description = "k8s node pool image."
+  type        = bool
+}
+
 variable "spoke-virtual-network_address_prefix" {
   default     = "10.1.1.0/24"
   description = "Spoke Virtual Network Address prefix."
