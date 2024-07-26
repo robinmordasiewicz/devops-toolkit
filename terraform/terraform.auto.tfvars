@@ -17,4 +17,4 @@ spoke-subnet_prefix                  = "10.1.1.0/24"
 spoke-check-internet-up-ip           = "8.8.8.8"
 spoke-linux-server-ip                = "10.1.1.5"
 spoke-linux-server-image-gpu         = false
-spoke-k8s-node-pool-gpu              = true
+spoke-k8s-node-pool-gpu              = false
