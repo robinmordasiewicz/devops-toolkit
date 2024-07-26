@@ -39,7 +39,7 @@ resource "azurerm_kubernetes_cluster" "kubernetes_cluster" {
     name                        = "default"
     node_count                  = 1
     #vm_size                     = "Standard_B4ms"
-    vm_size = "Standard_D8s_v5"
+    vm_size = local.vm-image["aks"].size
     os_sku  = "AzureLinux"
     upgrade_settings {
       max_surge = "10%"
@@ -62,11 +62,7 @@ resource "azurerm_kubernetes_cluster_node_pool" "node-pool" {
   mode                  = "User"
   kubernetes_cluster_id = azurerm_kubernetes_cluster.kubernetes_cluster.id
   depends_on            = [azurerm_kubernetes_cluster.kubernetes_cluster]
-  vm_size               = "Standard_NC6s_v3" #16GB
-  #vm_size               = "Standard_NC24s_v3"
-  #vm_size               = "Standard_NC4as_T4_v3" # 16GB
-  #vm_size               = "Standard_ND40rs_v2" # 32 GB vlink
-  #vm_size               = "Standard_NC24ads_A100_v4" # 80GB
+  vm_size = local.vm-image["aks"].gpu-size
   node_count        = 1
   os_sku            = "AzureLinux"
   node_taints       = ["nvidia.com/gpu=true:NoSchedule"]
@@ -139,9 +135,9 @@ resource "azurerm_kubernetes_flux_configuration" "flux_configuration" {
 }
 
 resource "kubernetes_secret" "admin_secret" {
-  depends_on = [azurerm_kubernetes_flux_configuration.flux_configuration]
+  depends_on = [azurerm_kubernetes_flux_configuration.flux_configuration,local_file.kube_config]
   metadata {
-    name = "fwb-login"
+    name      = "fwb-login"
     namespace = "fortiweb-ingress"
   }
   data = {
