@@ -60,6 +60,7 @@ provider "http" {}
 provider "local" {}
 provider "git" {}
 provider "kubernetes" {
-  config_path = "~/.kube/config"
+  config_path = local_file.kube_config.filename
+  #config_path = "~/.kube/config"
 }
 
