@@ -89,6 +89,13 @@ resource "azurerm_kubernetes_cluster_extension" "flux_extension" {
   }
 }
 
+resource "local_file" "kube_config" {
+  content              = azurerm_kubernetes_cluster.kubernetes_cluster.kube_config_raw
+  filename             = "/home/vscode/.kube/config"
+  directory_permission = "0755"
+  file_permission      = "0600"
+}
+
 data "git_repository" "current" {
   path = "${path.module}/.."
 }
@@ -129,15 +136,21 @@ resource "azurerm_kubernetes_flux_configuration" "flux_configuration" {
   ]
 }
 
+resource "kubernetes_secret" "admin_secret" {
+  depends_on = [azurerm_kubernetes_flux_configuration.flux_configuration]
+  metadata {
+    name = "fwb-login"
+    namespace = "fortiweb-ingress"
+  }
+  data = {
+    username = random_pet.admin_username.id
+    password = random_password.admin_password.result
+  }
+  type = "Opaque"
+}
+
 output "kube_config" {
   description = "kube config"
   value       = azurerm_kubernetes_cluster.kubernetes_cluster.kube_config_raw
   sensitive   = true
-}
-
-resource "local_file" "kube_config" {
-  content              = azurerm_kubernetes_cluster.kubernetes_cluster.kube_config_raw
-  filename             = "/home/vscode/.kube/config"
-  directory_permission = "0755"
-  file_permission      = "0600"
 }

@@ -33,6 +33,10 @@ terraform {
       source  = "hashicorp/external"
       version = "2.3.3"
     }
+    kubernetes = {
+      source = "hashicorp/kubernetes"
+      version = "2.31.0"
+    }
   }
   # backend "azurerm" {}
 }
@@ -55,3 +59,7 @@ provider "tls" {}
 provider "http" {}
 provider "local" {}
 provider "git" {}
+provider "kubernetes" {
+  config_path    = "~/.kube/config"
+}
+
