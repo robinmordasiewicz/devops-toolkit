@@ -3,7 +3,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: devcontainer
-  namespace: ollama
+  namespace: devcontainer
 spec:
   replicas: 1
   selector:
