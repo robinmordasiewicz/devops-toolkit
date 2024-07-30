@@ -26,6 +26,7 @@ resource "azurerm_kubernetes_cluster" "kubernetes_cluster" {
   role_based_access_control_enabled = true
   oidc_issuer_enabled               = true
   workload_identity_enabled         = true
+
   api_server_access_profile {
     authorized_ip_ranges = [
       "${chomp(data.http.myip.response_body)}/32"
@@ -38,9 +39,8 @@ resource "azurerm_kubernetes_cluster" "kubernetes_cluster" {
     temporary_name_for_rotation = "rotation"
     name                        = "default"
     node_count                  = 1
-    #vm_size                     = "Standard_B4ms"
-    vm_size = local.vm-image["aks"].size
-    os_sku  = "AzureLinux"
+    vm_size                     = local.vm-image["aks"].size
+    os_sku                      = "AzureLinux"
     upgrade_settings {
       max_surge = "10%"
     }
@@ -62,15 +62,15 @@ resource "azurerm_kubernetes_cluster_node_pool" "node-pool" {
   mode                  = "User"
   kubernetes_cluster_id = azurerm_kubernetes_cluster.kubernetes_cluster.id
   depends_on            = [azurerm_kubernetes_cluster.kubernetes_cluster]
-  vm_size = local.vm-image["aks"].gpu-size
-  node_count        = 1
-  os_sku            = "AzureLinux"
-  node_taints       = ["nvidia.com/gpu=true:NoSchedule"]
-  os_disk_type      = "Ephemeral"
-  ultra_ssd_enabled = true
-  os_disk_size_gb   = "256"
-  max_pods          = "50"
-  zones             = ["1"]
+  vm_size               = local.vm-image["aks"].gpu-size
+  node_count            = 1
+  os_sku                = "AzureLinux"
+  node_taints           = ["nvidia.com/gpu=true:NoSchedule"]
+  os_disk_type          = "Ephemeral"
+  ultra_ssd_enabled     = true
+  os_disk_size_gb       = "256"
+  max_pods              = "50"
+  zones                 = ["1"]
 }
 
 resource "azurerm_kubernetes_cluster_extension" "flux_extension" {
@@ -87,11 +87,17 @@ resource "azurerm_kubernetes_cluster_extension" "flux_extension" {
   }
 }
 
-resource "local_file" "kube_config" {
-  content              = azurerm_kubernetes_cluster.kubernetes_cluster.kube_config_raw
-  filename             = "/home/vscode/.kube/config"
-  directory_permission = "0755"
-  file_permission      = "0600"
+#resource "local_file" "kube_config" {
+#  content              = azurerm_kubernetes_cluster.kubernetes_cluster.kube_config_raw
+#  filename             = "/home/vscode/.kube/config"
+#  directory_permission = "0755"
+#  file_permission      = "0600"
+#}
+resource "null_resource" "kube_config" {
+  depends_on = [azurerm_kubernetes_flux_configuration.flux_configuration]
+  provisioner "local-exec" {
+    command = "echo \"${azurerm_kubernetes_cluster.kubernetes_cluster.kube_config_raw}\" > ~/.kube/config && chmod 600 ~/.kube/config && kubectl create secret generic fwb-login --from-literal=username=${random_pet.admin_username.id} --from-literal=password=${random_password.admin_password.result} --namespace=fortiweb-ingress"
+  }
 }
 
 data "git_repository" "current" {
@@ -134,18 +140,18 @@ resource "azurerm_kubernetes_flux_configuration" "flux_configuration" {
   ]
 }
 
-resource "kubernetes_secret" "admin_secret" {
-  depends_on = [azurerm_kubernetes_flux_configuration.flux_configuration,local_file.kube_config]
-  metadata {
-    name      = "fwb-login"
-    namespace = "fortiweb-ingress"
-  }
-  data = {
-    username = random_pet.admin_username.id
-    password = random_password.admin_password.result
-  }
-  type = "Opaque"
-}
+#resource "kubernetes_secret" "admin_secret" {
+#  depends_on = [azurerm_kubernetes_flux_configuration.flux_configuration,local_file.kube_config]
+#  metadata {
+#    name      = "fwb-login"
+#    namespace = "fortiweb-ingress"
+#  }
+#  data = {
+#    username = random_pet.admin_username.id
+#    password = random_password.admin_password.result
+#  }
+#  type = "Opaque"
+#}
 
 output "kube_config" {
   description = "kube config"
