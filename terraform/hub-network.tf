@@ -12,6 +12,7 @@ resource "azurerm_virtual_network_peering" "hub-to-spoke_virtual_network_peering
   remote_virtual_network_id = azurerm_virtual_network.spoke_virtual_network.id
   allow_forwarded_traffic   = true
   allow_gateway_transit     = true
+  depends_on = [azurerm_virtual_network.hub_virtual_network,azurerm_virtual_network.spoke_virtual_network]
 }
 
 resource "azurerm_subnet" "hub-external_subnet" {
@@ -29,9 +30,9 @@ resource "azurerm_subnet" "hub-internal_subnet" {
 }
 
 resource "azurerm_route_table" "hub_route_table" {
-  name                          = "hub_route_table"
-  location                      = azurerm_resource_group.azure_resource_group.location
-  resource_group_name           = azurerm_resource_group.azure_resource_group.name
+  name                = "hub_route_table"
+  location            = azurerm_resource_group.azure_resource_group.location
+  resource_group_name = azurerm_resource_group.azure_resource_group.name
   route {
     name           = "default"
     address_prefix = "0.0.0.0/0"
