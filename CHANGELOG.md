@@ -1,5 +1,14 @@
 # CHANGELOG
 
+## [1.20.0](https://github.com/robinmordasiewicz/devops-toolkit/compare/v1.19.3...v1.20.0) (2024-07-30)
+
+
+### Features
+
+* add nvidia ([bba7d5c](https://github.com/robinmordasiewicz/devops-toolkit/commit/bba7d5cc4ca8c62ea115de566f6ca8f1d3eee0b9))
+* add nvidia ([e7a8b84](https://github.com/robinmordasiewicz/devops-toolkit/commit/e7a8b84dd21b35d0e3a53727c6cce40de89c0012))
+* update devcontainer ([d4b1ca1](https://github.com/robinmordasiewicz/devops-toolkit/commit/d4b1ca1c9cdf5a2bd6828265214a63975566c434))
+
 ## [1.19.3](https://github.com/robinmordasiewicz/devops-toolkit/compare/v1.19.2...v1.19.3) (2024-06-09)
 
 
