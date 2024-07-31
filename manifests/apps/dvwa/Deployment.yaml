@@ -36,10 +36,10 @@ spec:
           ports:
             - containerPort: 80
               name: http
-      initContainers:
-        - name: init-myservice
-          image: alpine/k8s:1.30.2
-          command: ['sh', '-c', 'IPADDRESS=$(kubectl -n dvwa get svc dvwa -o json | jq -r ".spec.clusterIP"); CONFIGDATA=$(kubectl -n fos get configmaps fos-vip-template -o json | jq -r ".data.config" | sed -e "s/VAR_CLUSTER_IP/${IPADDRESS}/g" -e "s/VAR_APP_NAME/dvwa/g" -e "s/^/    /g"); echo -e "---\nmetadata:\n  labels:\n    app: fos\n    category: config\n  name: dvwa\n  namespace: fos\ndata:\n  config: |\n$CONFIGDATA\n  type: partial\napiVersion: v1\nkind: ConfigMap" > manifest.yaml; cat manifest.yaml; kubectl apply -f manifest.yaml']
+      #initContainers:
+      #  - name: init-myservice
+      #    image: alpine/k8s:1.30.2
+      #    command: ['sh', '-c', 'IPADDRESS=$(kubectl -n dvwa get svc dvwa -o json | jq -r ".spec.clusterIP"); CONFIGDATA=$(kubectl -n fos get configmaps fos-vip-template -o json | jq -r ".data.config" | sed -e "s/VAR_CLUSTER_IP/${IPADDRESS}/g" -e "s/VAR_APP_NAME/dvwa/g" -e "s/^/    /g"); echo -e "---\nmetadata:\n  labels:\n    app: fos\n    category: config\n  name: dvwa\n  namespace: fos\ndata:\n  config: |\n$CONFIGDATA\n  type: partial\napiVersion: v1\nkind: ConfigMap" > manifest.yaml; cat manifest.yaml; kubectl apply -f manifest.yaml']
 ---
 apiVersion: v1
 kind: Service
