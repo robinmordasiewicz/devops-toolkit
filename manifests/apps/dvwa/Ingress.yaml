@@ -5,7 +5,7 @@ metadata:
   namespace: dvwa
   annotations: {
     "fortiweb-ip" : "10.0.0.37",
-    "fortiweb-login" : "",
+    "fortiweb-login" : "stableadder",
     "fortiweb-ctrl-log" : "disable",  
     "virtual-server-ip" : "10.0.0.5",
     "virtual-server-addr-type" : "ipv4",
