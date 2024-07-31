@@ -89,9 +89,12 @@ resource "azurerm_kubernetes_cluster_extension" "flux_extension" {
 }
 
 resource "null_resource" "kube_config" {
+  triggers = {
+    always_run = timestamp()
+  }
   depends_on = [azurerm_kubernetes_flux_configuration.flux_configuration]
   provisioner "local-exec" {
-    command = "echo \"${azurerm_kubernetes_cluster.kubernetes_cluster.kube_config_raw}\" > ~/.kube/config && chmod 600 ~/.kube/config && kubectl create secret generic fwb-login --from-literal=username=${random_pet.admin_username.id} --from-literal=password=${random_password.admin_password.result} --namespace=fortiweb-ingress"
+    command = "echo \"${azurerm_kubernetes_cluster.kubernetes_cluster.kube_config_raw}\" > ~/.kube/config && chmod 600 ~/.kube/config && kubectl create secret generic fortiweb-login --from-literal=username=${random_pet.admin_username.id} --from-literal=password=${random_password.admin_password.result} --namespace=fortiweb-ingress"
   }
 }
 
