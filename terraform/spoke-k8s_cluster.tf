@@ -20,7 +20,8 @@ resource "azurerm_kubernetes_cluster" "kubernetes_cluster" {
   location                          = azurerm_resource_group.azure_resource_group.location
   resource_group_name               = azurerm_resource_group.azure_resource_group.name
   dns_prefix                        = azurerm_resource_group.azure_resource_group.name
-  kubernetes_version                = data.azurerm_kubernetes_service_versions.current.latest_version
+  #kubernetes_version                = data.azurerm_kubernetes_service_versions.current.latest_version
+  kubernetes_version = "1.29"
   sku_tier                          = "Standard"
   node_resource_group               = "MC-${azurerm_resource_group.azure_resource_group.name}"
   role_based_access_control_enabled = true
@@ -87,12 +88,6 @@ resource "azurerm_kubernetes_cluster_extension" "flux_extension" {
   }
 }
 
-#resource "local_file" "kube_config" {
-#  content              = azurerm_kubernetes_cluster.kubernetes_cluster.kube_config_raw
-#  filename             = "/home/vscode/.kube/config"
-#  directory_permission = "0755"
-#  file_permission      = "0600"
-#}
 resource "null_resource" "kube_config" {
   depends_on = [azurerm_kubernetes_flux_configuration.flux_configuration]
   provisioner "local-exec" {
@@ -138,20 +133,7 @@ resource "azurerm_kubernetes_flux_configuration" "flux_configuration" {
   depends_on = [
     azurerm_kubernetes_cluster_extension.flux_extension
   ]
-}
-
-#resource "kubernetes_secret" "admin_secret" {
-#  depends_on = [azurerm_kubernetes_flux_configuration.flux_configuration,local_file.kube_config]
-#  metadata {
-#    name      = "fwb-login"
-#    namespace = "fortiweb-ingress"
-#  }
-#  data = {
-#    username = random_pet.admin_username.id
-#    password = random_password.admin_password.result
-#  }
-#  type = "Opaque"
-#}
+} 
 
 output "kube_config" {
   description = "kube config"
