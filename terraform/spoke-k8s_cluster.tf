@@ -14,6 +14,21 @@ resource "azurerm_log_analytics_workspace" "log_analytics" {
   sku                 = "PerGB2018"
 }
 
+resource "azurerm_user_assigned_identity" "my_identity" {
+  name                = "myUserAssignedIdentity"
+  resource_group_name = azurerm_resource_group.azure_resource_group.name
+  location            = azurerm_resource_group.azure_resource_group.location
+}
+resource "azurerm_role_assignment" "kubernetes_contributor" {
+  principal_id   = azurerm_user_assigned_identity.my_identity.principal_id
+  role_definition_name = "Contributor"
+  scope          = azurerm_resource_group.azure_resource_group.id
+}
+resource "azurerm_role_assignment" "route_table_network_contributor" {
+  principal_id   = azurerm_user_assigned_identity.my_identity.principal_id
+  role_definition_name = "Network Contributor"
+  scope          = azurerm_resource_group.azure_resource_group.id
+}
 resource "azurerm_kubernetes_cluster" "kubernetes_cluster" {
   depends_on                        = [azurerm_virtual_network_peering.spoke-to-hub_virtual_network_peering, azurerm_linux_virtual_machine.hub-nva_virtual_machine]
   name                              = "spoke_kubernetes_cluster"
@@ -42,18 +57,24 @@ resource "azurerm_kubernetes_cluster" "kubernetes_cluster" {
     node_count                  = 1
     vm_size                     = local.vm-image["aks"].size
     os_sku                      = "AzureLinux"
+    max_pods                    = "50"
+    vnet_subnet_id              = azurerm_subnet.spoke_subnet.id
+    #vnet_subnet_id              = azurerm_subnet.spoke_subnet.id
     upgrade_settings {
       max_surge = "10%"
     }
   }
   network_profile {
-    network_plugin    = "azure"
-    network_policy    = "azure"
-    load_balancer_sku = "standard"
+    network_plugin    = "none"
+    #network_policy    = "azure"
+    #load_balancer_sku = "standard"
+    #service_cidr      = var.spoke-k8s_service_cidr
+    #dns_service_ip    = var.spoke-ks8_dns_service_ip
   }
 
   identity {
-    type = "SystemAssigned"
+    type         = "UserAssigned"
+    identity_ids = [azurerm_user_assigned_identity.my_identity.id]
   }
 }
 
@@ -72,6 +93,7 @@ resource "azurerm_kubernetes_cluster_node_pool" "node-pool" {
   os_disk_size_gb       = "256"
   max_pods              = "50"
   zones                 = ["1"]
+  #vnet_subnet_id        = azurerm_subnet.spoke_subnet.id
 }
 
 resource "azurerm_kubernetes_cluster_extension" "flux_extension" {
@@ -92,9 +114,33 @@ resource "null_resource" "kube_config" {
   triggers = {
     always_run = timestamp()
   }
-  depends_on = [azurerm_kubernetes_flux_configuration.flux_configuration]
+  depends_on = [azurerm_kubernetes_cluster.kubernetes_cluster]
   provisioner "local-exec" {
-    command = "echo \"${azurerm_kubernetes_cluster.kubernetes_cluster.kube_config_raw}\" > ~/.kube/config && chmod 600 ~/.kube/config && kubectl create secret generic fortiweb-login --from-literal=username=${random_pet.admin_username.id} --from-literal=password=${random_password.admin_password.result} --namespace=fortiweb-ingress"
+    command = "echo \"${azurerm_kubernetes_cluster.kubernetes_cluster.kube_config_raw}\" > ~/.kube/config && chmod 600 ~/.kube/config"
+  }
+}
+
+resource "null_resource" "secret" {
+  triggers = {
+    always_run = timestamp()
+  }
+  depends_on = [azurerm_kubernetes_flux_configuration.flux_configuration, null_resource.kube_config]
+
+  provisioner "local-exec" {
+    interpreter = ["bash", "-c"]
+    command = <<-EOF
+      kubectl apply -f - <<EOF2
+      apiVersion: v1
+      kind: Secret
+      metadata:
+        name: fortiweb-login
+        namespace: fortiweb-ingress
+      type: Opaque
+      data:
+        username: $(echo -n "${random_pet.admin_username.id}" | base64)
+        password: $(echo -n "${random_password.admin_password.result}" | base64)
+      EOF2
+    EOF
   }
 }
 
