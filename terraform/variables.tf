@@ -269,6 +269,45 @@ variable "spoke-subnet_prefix" {
     error_message = "The subnet must be in the format of 'xxx.xxx.xxx.xxx/xx', where xxx is between 0 and 255, and xx is between 0 and 32."
   }
 }
+variable "spoke-aks-subnet_name" {
+  default     = "spoke-aks-subnet_name"
+  description = "Spoke aks Subnet Name."
+  type        = string
+  validation {
+    condition     = can(regex("^[a-zA-Z0-9_-]*$", var.spoke-aks-subnet_name))
+    error_message = "The value must consist of alphanumeric characters, underscores, or dashes only."
+  }
+}
+
+variable "spoke-aks-subnet_prefix" {
+  default     = "10.1.2.0/24"
+  description = "Spoke Pod Subnet Prefix."
+  type        = string
+  validation {
+    condition     = can(regex("^((25[0-5]|2[0-4][0-9]|1[0-9][0-9]|[1-9]?[0-9])\\.){3}(25[0-5]|2[0-4][0-9]|1[0-9][0-9]|[1-9]?[0-9])/(3[0-2]|[12]?[0-9])$", var.spoke-aks-subnet_prefix))
+    error_message = "The subnet must be in the format of 'xxx.xxx.xxx.xxx/xx', where xxx is between 0 and 255, and xx is between 0 and 32."
+  }
+}
+
+variable "spoke-k8s_service_cidr" {
+  default     = "10.1.2.0/24"
+  description = "Spoke k8s service cidr."
+  type        = string
+  validation {
+    condition     = can(regex("^((25[0-5]|2[0-4][0-9]|1[0-9][0-9]|[1-9]?[0-9])\\.){3}(25[0-5]|2[0-4][0-9]|1[0-9][0-9]|[1-9]?[0-9])/(3[0-2]|[12]?[0-9])$", var.spoke-k8s_service_cidr))
+    error_message = "The subnet must be in the format of 'xxx.xxx.xxx.xxx/xx', where xxx is between 0 and 255, and xx is between 0 and 32."
+  } 
+}
+
+variable "spoke-ks8_dns_service_ip" {
+  default     = "10.2.0.10"
+  description = "Spoke k8s dns service ip"
+  type        = string
+  validation {
+    condition     = can(regex("^((25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\.){3}(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$", var.spoke-ks8_dns_service_ip))
+    error_message = "The IP address must be a valid IPv4 format (e.g., 10.2.0.10)."
+  }
+}
 
 variable "spoke-linux-server-ip" {
   default     = "10.1.1.5"

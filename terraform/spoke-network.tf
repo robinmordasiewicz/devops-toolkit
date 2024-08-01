@@ -22,6 +22,13 @@ resource "azurerm_subnet" "spoke_subnet" {
   virtual_network_name = azurerm_virtual_network.spoke_virtual_network.name
 }
 
+#resource "azurerm_subnet" "spoke_aks_subnet" {
+#  address_prefixes     = [var.spoke-aks-subnet_prefix]
+#  name                 = var.spoke-aks-subnet_name
+#  resource_group_name  = azurerm_resource_group.azure_resource_group.name
+#  virtual_network_name = azurerm_virtual_network.spoke_virtual_network.name
+#}
+
 resource "azurerm_route_table" "spoke_route_table" {
   name                = "spoke_route_table"
   location            = azurerm_resource_group.azure_resource_group.location
