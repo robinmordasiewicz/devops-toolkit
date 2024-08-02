@@ -43,11 +43,11 @@ resource "azurerm_kubernetes_cluster" "kubernetes_cluster" {
   oidc_issuer_enabled               = true
   workload_identity_enabled         = true
 
-  api_server_access_profile {
-    authorized_ip_ranges = [
-      "${chomp(data.http.myip.response_body)}/32"
-    ]
-  }
+  #api_server_access_profile {
+  #  authorized_ip_ranges = [
+  #    "${chomp(data.http.myip.response_body)}/32"
+  #  ]
+  #}
   oms_agent {
     log_analytics_workspace_id = azurerm_log_analytics_workspace.log_analytics.id
   }
@@ -59,17 +59,19 @@ resource "azurerm_kubernetes_cluster" "kubernetes_cluster" {
     os_sku                      = "AzureLinux"
     max_pods                    = "50"
     vnet_subnet_id              = azurerm_subnet.spoke_subnet.id
-    #vnet_subnet_id              = azurerm_subnet.spoke_subnet.id
     upgrade_settings {
       max_surge = "10%"
     }
   }
   network_profile {
-    network_plugin    = "none"
+    #network_plugin    = "azure"
+    network_plugin = "kubenet"
+    #outbound_type     = "loadBalancer" 
     #network_policy    = "azure"
-    #load_balancer_sku = "standard"
-    #service_cidr      = var.spoke-k8s_service_cidr
-    #dns_service_ip    = var.spoke-ks8_dns_service_ip
+    load_balancer_sku = "standard"
+    #service_cidr      = var.spoke-aks-subnet_prefix
+    #dns_service_ip    = var.spoke-aks_dns_service_ip
+    #pod_cidr          = "10.244.0.0/16"
   }
 
   identity {
@@ -93,7 +95,6 @@ resource "azurerm_kubernetes_cluster_node_pool" "node-pool" {
   os_disk_size_gb       = "256"
   max_pods              = "50"
   zones                 = ["1"]
-  #vnet_subnet_id        = azurerm_subnet.spoke_subnet.id
 }
 
 resource "azurerm_kubernetes_cluster_extension" "flux_extension" {
@@ -130,6 +131,14 @@ resource "null_resource" "secret" {
     interpreter = ["bash", "-c"]
     command = <<-EOF
       kubectl apply -f - <<EOF2
+      ---
+      apiVersion: v1
+      kind: Namespace
+      metadata:
+        name: fortiweb-ingress
+        labels:
+          name: fortiweb-ingress
+      ---
       apiVersion: v1
       kind: Secret
       metadata:
@@ -189,3 +198,23 @@ output "kube_config" {
   value       = azurerm_kubernetes_cluster.kubernetes_cluster.kube_config_raw
   sensitive   = true
 }
+
+#resource "azurerm_public_ip" "nat_gateway_public_ip" {
+#  name                = "nat_gateway_public_ip"
+#  location            = azurerm_resource_group.azure_resource_group.location
+#  resource_group_name = azurerm_resource_group.azure_resource_group.name
+#  allocation_method   = "Static"
+#  sku                 = "Standard"
+#}
+
+#resource "azurerm_nat_gateway" "nat_gateway" {
+#  name                = "nat_gateway"
+#  location            = azurerm_resource_group.azure_resource_group.location
+#  resource_group_name = azurerm_resource_group.azure_resource_group.name
+#  sku_name = "Standard"
+#}
+
+#resource "azurerm_subnet_nat_gateway_association" "nat_gateway_association" {
+#  subnet_id     = azurerm_subnet.spoke_subnet.id
+#  nat_gateway_id = azurerm_nat_gateway.nat_gateway.id
+#}
