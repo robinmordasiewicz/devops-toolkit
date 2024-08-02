@@ -5,7 +5,8 @@ metadata:
   namespace: dvwa
   annotations: {
     "fortiweb-ip" : "10.0.0.37",
-    "fortiweb-login" : "stableadder",
+    "fortiweb-login" : "heroicbarnacle",
+    "fortiweb-port": "8443",
     "fortiweb-ctrl-log" : "disable",  
     "virtual-server-ip" : "10.0.0.5",
     "virtual-server-addr-type" : "ipv4",
