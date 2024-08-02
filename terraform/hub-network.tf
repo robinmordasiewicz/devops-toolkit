@@ -107,8 +107,10 @@ resource "azurerm_network_security_group" "hub-internal_network_security_group" 
     protocol                   = "Icmp"
     source_port_range          = "*"
     destination_port_range     = "*"
-    source_address_prefix      = var.spoke-linux-server-ip
-    destination_address_prefix = var.spoke-check-internet-up-ip
+    #source_address_prefix      = var.spoke-linux-server-ip
+    source_address_prefix      = "*"
+    #destination_address_prefix = var.spoke-check-internet-up-ip
+    destination_address_prefix = "*"
   }
   security_rule {
     name                       = "outbound-http_rule"
@@ -119,7 +121,8 @@ resource "azurerm_network_security_group" "hub-internal_network_security_group" 
     source_port_range          = "*"
     destination_port_ranges    = ["80", "81"]
     source_address_prefix      = "*"
-    destination_address_prefix = var.spoke-linux-server-ip
+    #destination_address_prefix = var.spoke-linux-server-ip
+    destination_address_prefix = "*"
   }
 }
 

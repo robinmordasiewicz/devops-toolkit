@@ -1,6 +1,6 @@
-  ---
-  apiVersion: source.toolkit.fluxcd.io/v1beta2
-  kind: HelmRepository
+---
+apiVersion: source.toolkit.fluxcd.io/v1beta2
+kind: HelmRepository
 metadata:
   name: flannel-repo
   namespace: cluster-config
