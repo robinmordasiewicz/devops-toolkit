@@ -88,6 +88,7 @@ resource "azurerm_linux_virtual_machine" "hub-nva_virtual_machine" {
         VAR-fwb_license_fortiflex                = ""
         VAR-spoke-linux-server-ollama-port       = var.spoke-linux-server-ollama-port
         VAR-spoke-linux-server-ollama-webui-port = var.spoke-linux-server-ollama-webui-port
+        VAR-spoke-aks-network                    = var.spoke-aks-subnet_prefix
       }
     )
   )
