@@ -66,12 +66,13 @@ resource "azurerm_kubernetes_cluster" "kubernetes_cluster" {
   network_profile {
     #network_plugin    = "azure"
     network_plugin = "kubenet"
+    #network_plugin = "none"
     #outbound_type     = "loadBalancer" 
     #network_policy    = "azure"
     load_balancer_sku = "standard"
     #service_cidr      = var.spoke-aks-subnet_prefix
     #dns_service_ip    = var.spoke-aks_dns_service_ip
-    #pod_cidr          = "10.244.0.0/16"
+    pod_cidr         = var.spoke-aks_pod_cidr
   }
 
   identity {
@@ -97,6 +98,23 @@ resource "azurerm_kubernetes_cluster_node_pool" "node-pool" {
   zones                 = ["1"]
 }
 
+resource "null_resource" "kube_config" {
+  triggers = {
+    always_run = timestamp()
+  }
+  depends_on = [azurerm_kubernetes_cluster.kubernetes_cluster]
+  provisioner "local-exec" {
+    command = "echo \"${azurerm_kubernetes_cluster.kubernetes_cluster.kube_config_raw}\" > ~/.kube/config && chmod 600 ~/.kube/config"
+  }
+}
+
+#resource "null_resource" "flannel" {
+#  depends_on = [ null_resource.kube_config ]
+#  provisioner "local-exec" {
+#    command = "kubectl apply -f https://raw.githubusercontent.com/flannel-io/flannel/master/Documentation/kube-flannel.yml"
+#  }
+#}
+
 resource "azurerm_kubernetes_cluster_extension" "flux_extension" {
   name              = "flux-extension"
   cluster_id        = azurerm_kubernetes_cluster.kubernetes_cluster.id
@@ -111,21 +129,11 @@ resource "azurerm_kubernetes_cluster_extension" "flux_extension" {
   }
 }
 
-resource "null_resource" "kube_config" {
-  triggers = {
-    always_run = timestamp()
-  }
-  depends_on = [azurerm_kubernetes_cluster.kubernetes_cluster]
-  provisioner "local-exec" {
-    command = "echo \"${azurerm_kubernetes_cluster.kubernetes_cluster.kube_config_raw}\" > ~/.kube/config && chmod 600 ~/.kube/config"
-  }
-}
-
 resource "null_resource" "secret" {
   triggers = {
     always_run = timestamp()
   }
-  depends_on = [azurerm_kubernetes_flux_configuration.flux_configuration, null_resource.kube_config]
+  depends_on = [null_resource.kube_config]
 
   provisioner "local-exec" {
     interpreter = ["bash", "-c"]
@@ -198,23 +206,3 @@ output "kube_config" {
   value       = azurerm_kubernetes_cluster.kubernetes_cluster.kube_config_raw
   sensitive   = true
 }
-
-#resource "azurerm_public_ip" "nat_gateway_public_ip" {
-#  name                = "nat_gateway_public_ip"
-#  location            = azurerm_resource_group.azure_resource_group.location
-#  resource_group_name = azurerm_resource_group.azure_resource_group.name
-#  allocation_method   = "Static"
-#  sku                 = "Standard"
-#}
-
-#resource "azurerm_nat_gateway" "nat_gateway" {
-#  name                = "nat_gateway"
-#  location            = azurerm_resource_group.azure_resource_group.location
-#  resource_group_name = azurerm_resource_group.azure_resource_group.name
-#  sku_name = "Standard"
-#}
-
-#resource "azurerm_subnet_nat_gateway_association" "nat_gateway_association" {
-#  subnet_id     = azurerm_subnet.spoke_subnet.id
-#  nat_gateway_id = azurerm_nat_gateway.nat_gateway.id
-#}
