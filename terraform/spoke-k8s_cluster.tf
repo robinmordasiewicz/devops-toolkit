@@ -150,7 +150,7 @@ resource "null_resource" "secret" {
       apiVersion: v1
       kind: Secret
       metadata:
-        name: fwb-login1
+        name: fortiweb-login-secret
         namespace: fortiweb-ingress
       type: Opaque
       data:
