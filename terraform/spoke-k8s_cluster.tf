@@ -43,7 +43,6 @@ resource "azurerm_kubernetes_cluster" "kubernetes_cluster" {
   role_based_access_control_enabled = true
   oidc_issuer_enabled               = true
   workload_identity_enabled         = true
-
   #api_server_access_profile {
   #  authorized_ip_ranges = [
   #    "${chomp(data.http.myip.response_body)}/32"
@@ -73,9 +72,8 @@ resource "azurerm_kubernetes_cluster" "kubernetes_cluster" {
     load_balancer_sku = "standard"
     #service_cidr      = var.spoke-aks-subnet_prefix
     #dns_service_ip    = var.spoke-aks_dns_service_ip
-    #pod_cidr         = var.spoke-aks_pod_cidr
+    pod_cidr         = var.spoke-aks_pod_cidr
   }
-
   identity {
     type         = "UserAssigned"
     identity_ids = [azurerm_user_assigned_identity.my_identity.id]
