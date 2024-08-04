@@ -195,15 +195,77 @@ config global
     set severity notification
   end
 end
-config system certificate local
-  edit "self-signed-cert"
-    set certificate "${VAR-CERTIFICATE}
+    config system certificate local
+      edit "self-signed-cert"
+        set certificate "${VAR-CERTIFICATE}
 "
-    set private-key "${VAR-PRIVATEKEY}
+        set private-key "${VAR-PRIVATEKEY}
 "
-    set passwd ENC m8eWJTISWrN/JBB9KSp7kOFMNoo=
-  next
-end
+        set passwd ENC m8eWJTISWrN/JBB9KSp7kOFMNoo=
+      next
+    end
+    config system vip
+      edit "hub-nva-external-vip"
+        set vip ${VAR-hub-nva-vip}/32
+        set interface port1
+      next
+    end
+    config server-policy health
+      edit "DVWA-check"
+        config  health-list
+          edit 1
+            set type http
+            set url-path /login.php
+            set method head
+            set match-type response-code
+          next
+        end
+      next
+    end
+    config server-policy vserver
+      edit "hub-nva-external-vip-vserver"
+        config  vip-list
+          edit 1
+            set vip hub-nva-external-vip
+          next
+        end
+      next
+    end
+    config server-policy persistence-policy
+      edit "dvwa-cookie"
+        set type insert-cookie
+        set cookie-name DVWA
+      next
+    end
+    config server-policy server-pool
+      edit "spoke-linux-server-pool"
+        set server-balance enable
+        set health DVWA-check
+        set persistence dvwa-cookie
+        config pserver-list
+          edit 1
+            set ip ${VAR-spoke-linux-server-ip}
+            set port 80
+          next
+          edit 2
+            set ip ${VAR-spoke-linux-server-ip}
+            set port 81
+          next
+        end
+      next
+    end
+    config server-policy policy
+      edit "hub-nva-external-vip-policy"
+        set vserver hub-nva-external-vip-vserver
+        set service HTTP
+        set server-pool spoke-linux-server-pool
+        set https-service HTTPS
+        set certificate self-signed-cert
+        set http-to-https enable
+        set syncookie enable
+        set tlog enable
+      next
+    end
 ',
 "HaAzureInit":"enable",
 "FwbLicenseBYOL":"${VAR-fwb_license_file}",
