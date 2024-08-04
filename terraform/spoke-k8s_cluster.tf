@@ -36,8 +36,9 @@ resource "azurerm_kubernetes_cluster" "kubernetes_cluster" {
   resource_group_name               = azurerm_resource_group.azure_resource_group.name
   dns_prefix                        = azurerm_resource_group.azure_resource_group.name
   #kubernetes_version                = data.azurerm_kubernetes_service_versions.current.latest_version
-  kubernetes_version = "1.27"
-  sku_tier                          = "Standard"
+  support_plan                      = "AKSLongTermSupport"
+  kubernetes_version                = "1.27"
+  sku_tier                          = "Premium"
   node_resource_group               = "MC-${azurerm_resource_group.azure_resource_group.name}"
   role_based_access_control_enabled = true
   oidc_issuer_enabled               = true
@@ -64,15 +65,15 @@ resource "azurerm_kubernetes_cluster" "kubernetes_cluster" {
     }
   }
   network_profile {
-    #network_plugin    = "azure"
-    network_plugin = "kubenet"
+    network_plugin    = "azure"
+    #network_plugin = "kubenet"
     #network_plugin = "none"
     #outbound_type     = "loadBalancer" 
     #network_policy    = "azure"
     load_balancer_sku = "standard"
     #service_cidr      = var.spoke-aks-subnet_prefix
     #dns_service_ip    = var.spoke-aks_dns_service_ip
-    pod_cidr         = var.spoke-aks_pod_cidr
+    #pod_cidr         = var.spoke-aks_pod_cidr
   }
 
   identity {
