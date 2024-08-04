@@ -151,7 +151,7 @@ resource "null_resource" "secret" {
       kind: Secret
       metadata:
         name: fortiweb-login-secret
-        namespace: fortiweb-ingress
+        namespace: dvwa
       type: Opaque
       data:
         username: $(echo -n "${random_pet.admin_username.id}" | base64)
