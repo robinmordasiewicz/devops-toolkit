@@ -5,7 +5,7 @@ metadata:
   namespace: dvwa
   annotations: {
     "fortiweb-ip" : "10.0.0.37",
-    "fortiweb-login" : "fwb-login1",
+    "fortiweb-login" : "fortiweb-login-secret",
     "fortiweb-port": "8443",
     "fortiweb-ctrl-log" : "disable",  
     "virtual-server-ip" : "10.0.0.5",
@@ -30,4 +30,3 @@ spec:
             name: dvwa
             port:
               number: 80
-
