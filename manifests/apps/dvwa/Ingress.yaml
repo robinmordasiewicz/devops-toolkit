@@ -8,7 +8,7 @@ metadata:
     "fortiweb-login" : "fortiweb-login-secret",
     "fortiweb-port": "8443",
     "fortiweb-ctrl-log" : "disable",  
-    "virtual-server-ip" : "10.0.0.5",
+    "virtual-server-ip" : "10.0.0.6",
     "virtual-server-addr-type" : "ipv4",
     "virtual-server-interface" : "port1",
     "server-policy-web-protection-profile" : "Inline Standard Protection",
