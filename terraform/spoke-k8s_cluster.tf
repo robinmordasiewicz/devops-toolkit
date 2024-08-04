@@ -148,6 +148,13 @@ resource "null_resource" "secret" {
           name: fortiweb-ingress
       ---
       apiVersion: v1
+      kind: Namespace
+      metadata:
+        name: dvwa
+        labels:
+          name: dvwa
+      ---
+      apiVersion: v1
       kind: Secret
       metadata:
         name: fortiweb-login-secret
