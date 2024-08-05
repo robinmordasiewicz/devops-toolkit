@@ -20,8 +20,7 @@ metadata:
 spec:
   ingressClassName: fwb-ingress-controller
   rules:
-  - host: "*"
-    http:
+  - http:
       paths:
       - path: /
         pathType: Prefix
