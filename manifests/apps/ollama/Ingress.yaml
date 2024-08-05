@@ -7,13 +7,12 @@ metadata:
 spec:
   ingressClassName: nginx-internal
   rules:
-  - host: www.bankexample.com
-    http:
+  - http:
       paths:
       - backend:
           service:
-            name: fos
+            name: ollama
             port:
-              number: 8001
+              number: 11434
         path: /
         pathType: Prefix

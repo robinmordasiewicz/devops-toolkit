@@ -45,12 +45,26 @@ spec:
         - nomic-embed-text
         - codestral:latest
     ingress:
-      enabled: false
-      className: "nginx"
+      enabled: true
+      className: "fwb-ingress-controller"
+      annotations: {
+        "fortiweb-ip" : "10.0.0.4",
+        "fortiweb-login" : "fortiweb-login-secret",
+        "fortiweb-port": "8443",
+        "fortiweb-ctrl-log" : "disable",  
+        "virtual-server-ip" : "10.0.0.5",
+        "virtual-server-addr-type" : "ipv4",
+        "virtual-server-interface" : "port1",
+        "server-policy-web-protection-profile" : "Inline Standard Protection",
+        "server-policy-https-service" : "HTTPS",
+        "server-policy-http-service" : "HTTP",
+        "server-policy-syn-cookie" : "enable",
+        "server-policy-http-to-https" : "disable"      
+      }
       hosts:
         - host: www.bankexample.com
           paths:
-            - path: /
+            - path: /api
               pathType: Prefix
     persistentVolume:
       enabled: true
