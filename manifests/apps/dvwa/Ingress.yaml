@@ -20,7 +20,7 @@ metadata:
 spec:
   ingressClassName: fwb-ingress-controller
   rules:
-  - host: www.bankexample.com
+  - host: "*"
     http:
       paths:
       - path: /
