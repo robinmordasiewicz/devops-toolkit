@@ -20,4 +20,4 @@ spoke-aks_dns_service_ip             = "10.1.2.10"
 spoke-check-internet-up-ip           = "8.8.8.8"
 spoke-aks-node-ip                    = "10.1.1.4"
 spoke-aks-node-image-gpu             = false
-spoke-k8s-node-pool-gpu              = false
+spoke-k8s-node-pool-gpu              = true
