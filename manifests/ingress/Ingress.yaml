@@ -1,3 +1,4 @@
+---
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
@@ -21,6 +22,6 @@ spec:
   ingressClassName: fwb-ingress-controller
   defaultBackend:
     service:
-      name: http.dvwa
+      name: "http.dvwa.svc.cluster.local"
       port:
         number: 80
