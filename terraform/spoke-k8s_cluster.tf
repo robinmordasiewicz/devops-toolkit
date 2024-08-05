@@ -142,15 +142,15 @@ resource "null_resource" "secret" {
       apiVersion: v1
       kind: Namespace
       metadata:
-        name: fortiweb-ingress
+        name: application
         labels:
-          name: fortiweb-ingress
+          name: application
       ---
       apiVersion: v1
       kind: Secret
       metadata:
         name: fortiweb-login-secret
-        namespace: fortiweb-ingress
+        namespace: application
       type: Opaque
       data:
         username: $(echo -n "${random_pet.admin_username.id}" | base64)
