@@ -85,7 +85,6 @@ resource "azurerm_kubernetes_cluster_node_pool" "node-pool" {
   name                  = "gpu"
   mode                  = "User"
   kubernetes_cluster_id = azurerm_kubernetes_cluster.kubernetes_cluster.id
-  depends_on            = [azurerm_kubernetes_cluster.kubernetes_cluster]
   vm_size               = local.vm-image["aks"].gpu-size
   node_count            = 1
   os_sku                = "AzureLinux"
@@ -95,6 +94,7 @@ resource "azurerm_kubernetes_cluster_node_pool" "node-pool" {
   os_disk_size_gb       = "256"
   max_pods              = "50"
   zones                 = ["1"]
+  vnet_subnet_id        = azurerm_subnet.spoke_subnet.id
 }
 
 resource "null_resource" "kube_config" {
@@ -119,7 +119,7 @@ resource "azurerm_kubernetes_cluster_extension" "flux_extension" {
   cluster_id        = azurerm_kubernetes_cluster.kubernetes_cluster.id
   extension_type    = "microsoft.flux"
   release_namespace = "flux-system"
-  depends_on        = [azurerm_kubernetes_cluster_node_pool.node-pool]
+  depends_on        = [azurerm_kubernetes_cluster.kubernetes_cluster]
   configuration_settings = {
     "image-automation-controller.enabled" = true,
     "image-reflector-controller.enabled"  = true,
@@ -147,34 +147,10 @@ resource "null_resource" "secret" {
           name: fortiweb-ingress
       ---
       apiVersion: v1
-      kind: Namespace
-      metadata:
-        name: dvwa
-        labels:
-          name: dvwa
-      ---
-      apiVersion: v1
       kind: Secret
       metadata:
         name: fortiweb-login-secret
-        namespace: dvwa
-      type: Opaque
-      data:
-        username: $(echo -n "${random_pet.admin_username.id}" | base64)
-        password: $(echo -n "${random_password.admin_password.result}" | base64)
-      ---
-      apiVersion: v1
-      kind: Namespace
-      metadata:
-        name: ollama
-        labels:
-          name: ollama
-      ---
-      apiVersion: v1
-      kind: Secret
-      metadata:
-        name: fortiweb-login-secret
-        namespace: ollama
+        namespace: fortiweb-ingress
       type: Opaque
       data:
         username: $(echo -n "${random_pet.admin_username.id}" | base64)
@@ -218,6 +194,14 @@ resource "azurerm_kubernetes_flux_configuration" "flux_configuration" {
     path                       = "./manifests/apps"
     sync_interval_in_seconds   = 60
     depends_on                 = ["infrastructure"]
+  }
+  kustomizations {
+    name                       = "ingress"
+    recreating_enabled         = true
+    garbage_collection_enabled = true
+    path                       = "./manifests/ingress"
+    sync_interval_in_seconds   = 60
+    depends_on                 = ["apps"]
   }
   depends_on = [
     azurerm_kubernetes_cluster_extension.flux_extension
