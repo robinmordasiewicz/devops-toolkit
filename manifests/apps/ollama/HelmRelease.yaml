@@ -62,8 +62,7 @@ spec:
         "server-policy-http-to-https" : "disable"      
       }
       hosts:
-        - host: www.bankexample.com
-          paths:
+        - paths:
             - path: /api
               pathType: Prefix
     persistentVolume:
