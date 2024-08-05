@@ -1,9 +1,10 @@
+
 ---
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: app-ingress
-  namespace: fortiweb-ingress
+  namespace: application
   annotations: {
     "fortiweb-ip" : "10.0.0.4",
     "fortiweb-login" : "fortiweb-login-secret",
@@ -22,6 +23,6 @@ spec:
   ingressClassName: fwb-ingress-controller
   defaultBackend:
     service:
-      name: "http.dvwa.svc.cluster.local"
+      name: "http"
       port:
         number: 80
