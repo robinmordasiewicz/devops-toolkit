@@ -4,4 +4,4 @@ resources:
   - Deployment.yaml
   - mariadb.yaml
   - rbac.yaml
-  - Ingress.yaml
+
