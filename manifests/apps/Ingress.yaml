@@ -1,8 +1,8 @@
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: dvwa-ingress
-  namespace: dvwa
+  name: app-ingress
+  namespace: fortiweb-ingress
   annotations: {
     "fortiweb-ip" : "10.0.0.4",
     "fortiweb-login" : "fortiweb-login-secret",
