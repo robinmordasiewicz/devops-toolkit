@@ -3,7 +3,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: dvwa
-  namespace: dvwa
+  namespace: application
 spec:
   replicas: 1
   selector:
@@ -44,8 +44,8 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: http
-  namespace: dvwa
+  name: dvwa
+  namespace: application
   labels:
     app: dvwa
 spec:
