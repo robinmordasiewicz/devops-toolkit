@@ -4,4 +4,5 @@ resources:
   - Deployment.yaml
   - mariadb.yaml
   - rbac.yaml
+  - namespace.yaml
 
