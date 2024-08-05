@@ -5,7 +5,7 @@ metadata:
   name: ollama
   namespace: cluster-config
 spec:
-  targetNamespace: ollama
+  targetNamespace: application
   releaseName: ollama
   chart:
     spec:
