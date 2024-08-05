@@ -23,6 +23,6 @@ spec:
   ingressClassName: fwb-ingress-controller
   defaultBackend:
     service:
-      name: "http"
+      name: dvwa
       port:
         number: 80
