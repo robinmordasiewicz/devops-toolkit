@@ -162,6 +162,23 @@ resource "null_resource" "secret" {
       data:
         username: $(echo -n "${random_pet.admin_username.id}" | base64)
         password: $(echo -n "${random_password.admin_password.result}" | base64)
+      ---
+      apiVersion: v1
+      kind: Namespace
+      metadata:
+        name: ollama
+        labels:
+          name: ollama
+      ---
+      apiVersion: v1
+      kind: Secret
+      metadata:
+        name: fortiweb-login-secret
+        namespace: ollama
+      type: Opaque
+      data:
+        username: $(echo -n "${random_pet.admin_username.id}" | base64)
+        password: $(echo -n "${random_password.admin_password.result}" | base64)
       EOF2
     EOF
   }
