@@ -19,13 +19,8 @@ metadata:
   }
 spec:
   ingressClassName: fwb-ingress-controller
-  rules:
-  - http:
-      paths:
-      - path: /
-        pathType: Prefix
-        backend:
-          service:
-            name: dvwa
-            port:
-              number: 80
+  defaultBackend:
+  service:
+    name: dvwa
+    port:
+      number: 80
