@@ -14,11 +14,8 @@ spec:
         kind: HelmRepository
         name: fortiweb-ingress-controller
         namespace: cluster-config
-      version: "1.0.0-1"
   interval: 10m0s
   install:
     remediation:
       retries: 3
-  values:
-   image:
-      tag: "1.0.2"
+

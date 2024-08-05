@@ -28,5 +28,4 @@ spec:
         backend:
           service:
             name: dvwa
-            port:
-              number: 80
+ 
