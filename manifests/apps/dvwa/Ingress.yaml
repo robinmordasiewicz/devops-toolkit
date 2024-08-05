@@ -20,7 +20,7 @@ metadata:
 spec:
   ingressClassName: fwb-ingress-controller
   defaultBackend:
-  service:
-    name: dvwa
-    port:
-      number: 80
+    service:
+      name: dvwa
+      port:
+        number: 80
