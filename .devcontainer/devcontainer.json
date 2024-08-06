@@ -2,6 +2,9 @@
   "image": "ghcr.io/robinmordasiewicz/devcontainer:latest",
   "initializeCommand": "docker pull ghcr.io/robinmordasiewicz/devcontainer:latest",
   "name": "devops-toolkit",
+  "containerEnv": {
+    "OLLAMA_HOST": "www.bankexample.com:443"
+  },
   "runArgs": [
     "--hostname=devops-toolkit"
   ]

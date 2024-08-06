@@ -1,4 +1,3 @@
-
 ---
 apiVersion: networking.k8s.io/v1
 kind: Ingress
@@ -27,7 +26,8 @@ spec:
       port:
         number: 80
   rules:
-  - http:
+  - host: "www.bankexample.com"
+    http:
       paths:
       - path: /api
         pathType: Prefix
