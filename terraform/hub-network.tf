@@ -150,7 +150,7 @@ resource "azurerm_public_ip" "hub-nva-vip_public_ip" {
 }
 
 output "etc_host" {
-  value = "sudo sh -c 'echo ${azurerm_public_ip.hub-nva-vip_public_ip.ip_address} www.bankexample.com >> /etc/host'"
+  value = "sudo sh -c 'echo ${azurerm_public_ip.hub-nva-vip_public_ip.ip_address} www.bankexample.com >> /etc/hosts'"
   description = "The public IP address of the hub NVA."
 }
 
