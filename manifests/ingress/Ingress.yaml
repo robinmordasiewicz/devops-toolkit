@@ -26,3 +26,13 @@ spec:
       name: dvwa
       port:
         number: 80
+  rules:
+  - http:
+      paths:
+      - path: /api
+        pathType: Prefix
+        backend:
+          service:
+            name: ollama
+            port:
+              number: 11434
