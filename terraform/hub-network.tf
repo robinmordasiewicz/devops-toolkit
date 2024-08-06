@@ -149,6 +149,11 @@ resource "azurerm_public_ip" "hub-nva-vip_public_ip" {
   domain_name_label   = random_pet.admin_username.id
 }
 
+output "etc_host" {
+  value = "sudo sh -c 'echo ${azurerm_public_ip.hub-nva-vip_public_ip.ip_address} www.bankexample.com >> /etc/host'"
+  description = "The public IP address of the hub NVA."
+}
+
 resource "azurerm_availability_set" "hub-nva_availability_set" {
   location                     = azurerm_resource_group.azure_resource_group.location
   resource_group_name          = azurerm_resource_group.azure_resource_group.name
