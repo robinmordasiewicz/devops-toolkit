@@ -25,8 +25,8 @@ locals {
       publisher       = "fortinet"
       offer           = "fortinet_fortiweb-vm_v5"
       size            = "Standard_F16s_v2"
-      version         = "latest"
-      sku             = "fortinet_fw-vm_payg_v3"
+      version         = "7.2.4"
+      sku             = "fortinet_fw-vm"
       management-port = "8443"
       terms           = true
     },
