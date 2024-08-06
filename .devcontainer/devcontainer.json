@@ -3,7 +3,9 @@
   "initializeCommand": "docker pull ghcr.io/robinmordasiewicz/devcontainer:latest",
   "name": "devops-toolkit",
   "containerEnv": {
-    "OLLAMA_HOST": "www.bankexample.com:443"
+    "OLLAMA_HOST": "www.bankexample.com:80",
+    "OCO_AI_PROVIDER": "ollama/codestral:latest",
+    "OCO_OLLAMA_API_URL": "http://www.bankexample.com:80/api/chat"
   },
   "runArgs": [
     "--hostname=devops-toolkit"
