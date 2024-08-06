@@ -8,7 +8,7 @@ metadata:
     "fortiweb-ip" : "10.0.0.4",
     "fortiweb-login" : "fortiweb-login-secret",
     "fortiweb-port": "8443",
-    "fortiweb-ctrl-log" : "disable",  
+    "fortiweb-ctrl-log" : "enable",  
     "virtual-server-ip" : "10.0.0.5",
     "virtual-server-addr-type" : "ipv4",
     "virtual-server-interface" : "port1",
@@ -20,17 +20,15 @@ metadata:
   }
 spec:
   ingressClassName: fwb-ingress-controller
+  defaultBackend:
+    service:
+      name: dvwa
+      port:
+        number: 80
   rules:
   - host: www.bankexample.com
     http:
       paths:
-      - path: /
-        pathType: Prefix
-        backend:
-          service:
-            name: dvwa
-            port:
-              number: 80
       - path: /api
         pathType: Prefix
         backend:
