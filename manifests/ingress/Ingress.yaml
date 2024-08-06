@@ -26,13 +26,3 @@ spec:
       port:
         number: 11434
   rules:
-  - host: www.bankexample.com
-    http:
-      paths:
-      - path: /api
-        pathType: Prefix
-        backend:
-          service:
-            name: ollama
-            port:
-              number: 11434
