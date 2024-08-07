@@ -17,7 +17,7 @@ data "external" "tenant_default_domain" {
 }
 
 output "resource_group_url" {
-  value = "https://portal.azure.com/#@${data.external.tenant_default_domain.result["tenantDefaultDomain"]}/resource${azurerm_resource_group.azure_resource_group.id}"
+  value       = "https://portal.azure.com/#@${data.external.tenant_default_domain.result["tenantDefaultDomain"]}/resource${azurerm_resource_group.azure_resource_group.id}"
   description = "URL to access the Azure Resource Group in the Azure Portal"
 }
 
