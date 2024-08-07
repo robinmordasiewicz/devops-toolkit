@@ -20,21 +20,21 @@ resource "azurerm_user_assigned_identity" "my_identity" {
   location            = azurerm_resource_group.azure_resource_group.location
 }
 resource "azurerm_role_assignment" "kubernetes_contributor" {
-  principal_id   = azurerm_user_assigned_identity.my_identity.principal_id
+  principal_id         = azurerm_user_assigned_identity.my_identity.principal_id
   role_definition_name = "Contributor"
-  scope          = azurerm_resource_group.azure_resource_group.id
+  scope                = azurerm_resource_group.azure_resource_group.id
 }
 resource "azurerm_role_assignment" "route_table_network_contributor" {
-  principal_id   = azurerm_user_assigned_identity.my_identity.principal_id
+  principal_id         = azurerm_user_assigned_identity.my_identity.principal_id
   role_definition_name = "Network Contributor"
-  scope          = azurerm_resource_group.azure_resource_group.id
+  scope                = azurerm_resource_group.azure_resource_group.id
 }
 resource "azurerm_kubernetes_cluster" "kubernetes_cluster" {
-  depends_on                        = [azurerm_virtual_network_peering.spoke-to-hub_virtual_network_peering, azurerm_linux_virtual_machine.hub-nva_virtual_machine]
-  name                              = "spoke_kubernetes_cluster"
-  location                          = azurerm_resource_group.azure_resource_group.location
-  resource_group_name               = azurerm_resource_group.azure_resource_group.name
-  dns_prefix                        = azurerm_resource_group.azure_resource_group.name
+  depends_on          = [azurerm_virtual_network_peering.spoke-to-hub_virtual_network_peering, azurerm_linux_virtual_machine.hub-nva_virtual_machine]
+  name                = "spoke_kubernetes_cluster"
+  location            = azurerm_resource_group.azure_resource_group.location
+  resource_group_name = azurerm_resource_group.azure_resource_group.name
+  dns_prefix          = azurerm_resource_group.azure_resource_group.name
   #kubernetes_version                = data.azurerm_kubernetes_service_versions.current.latest_version
   support_plan                      = "AKSLongTermSupport"
   kubernetes_version                = "1.27"
@@ -72,7 +72,7 @@ resource "azurerm_kubernetes_cluster" "kubernetes_cluster" {
     load_balancer_sku = "standard"
     #service_cidr      = var.spoke-aks-subnet_prefix
     #dns_service_ip    = var.spoke-aks_dns_service_ip
-    pod_cidr         = var.spoke-aks_pod_cidr
+    pod_cidr = var.spoke-aks_pod_cidr
   }
   identity {
     type         = "UserAssigned"
@@ -136,7 +136,7 @@ resource "null_resource" "secret" {
 
   provisioner "local-exec" {
     interpreter = ["bash", "-c"]
-    command = <<-EOF
+    command     = <<-EOF
       kubectl apply -f - <<EOF2
       ---
       apiVersion: v1
@@ -206,14 +206,14 @@ resource "azurerm_kubernetes_flux_configuration" "flux_configuration" {
   depends_on = [
     azurerm_kubernetes_cluster_extension.flux_extension
   ]
-} 
+}
 
 resource "null_resource" "openapi_file" {
-  depends_on = [ azurerm_kubernetes_cluster.kubernetes_cluster ]
+  depends_on = [azurerm_kubernetes_cluster.kubernetes_cluster, azurerm_linux_virtual_machine.hub-nva_virtual_machine]
   provisioner "local-exec" {
     interpreter = ["bash", "-c"]
-    command = <<-EOF
-      curl -k -X POST -H "Content-Type: multipart/form-data" -H "Authorization:eyJ1c2VybmFtZSI6InJlbGV2YW50aG9yc2UiLCJwYXNzd29yZCI6ImZzTlJCQ1NTdjhUYUtzeW4iLCJ2ZG9tIjoicm9vdCJ9Cg==" -F 'openapifile=@petstore.yaml' --insecure "https://relevanthorse-management.canadacentral.cloudapp.azure.com:8443/api/v2.0/waf/openapi.openapischemafile"
+    command     = <<-EOF
+      curl -k -X POST -H "Content-Type: multipart/form-data" -H "Authorization:eyJ1c2VybmFtZSI6InJlbGV2YW50aG9yc2UiLCJwYXNzd29yZCI6ImZzTlJCQ1NTdjhUYUtzeW4iLCJ2ZG9tIjoicm9vdCJ9Cg==" -F 'openapifile=@../manifests/apps/ollama/openapi.yaml' --insecure "https://relevanthorse-management.canadacentral.cloudapp.azure.com:8443/api/v2.0/waf/openapi.openapischemafile"
     EOF
   }
 }
