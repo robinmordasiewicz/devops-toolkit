@@ -4,6 +4,7 @@
 - Hub & Spoke Architecture At its core, the Hub & Spoke model is a paradigm for dataflow management. It necessitates the capacity to oversee, document, and scrutinize data traversing in all directions—be it north-to-south or east-to-west.
 - As the best practice when working with AKS is to separate each cluster into different VNets
 - Don't create more than one AKS cluster in the same subnet.
+- Try to follow best practices.
 
 https://learn.microsoft.com/en-us/azure/architecture/networking/guide/nva-ha#pip-udr-nvas-without-snat
 
