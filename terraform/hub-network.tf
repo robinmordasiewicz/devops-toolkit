@@ -12,7 +12,7 @@ resource "azurerm_virtual_network_peering" "hub-to-spoke_virtual_network_peering
   remote_virtual_network_id = azurerm_virtual_network.spoke_virtual_network.id
   allow_forwarded_traffic   = true
   allow_gateway_transit     = true
-  depends_on = [azurerm_virtual_network.hub_virtual_network,azurerm_virtual_network.spoke_virtual_network]
+  depends_on                = [azurerm_virtual_network.hub_virtual_network, azurerm_virtual_network.spoke_virtual_network]
 }
 
 resource "azurerm_subnet" "hub-external_subnet" {
@@ -100,27 +100,27 @@ resource "azurerm_network_security_group" "hub-internal_network_security_group" 
     destination_address_prefix = "*"
   }
   security_rule {
-    name                       = "icmp_to_google-dns_rule"
-    priority                   = 101
-    direction                  = "Inbound"
-    access                     = "Allow"
-    protocol                   = "Icmp"
-    source_port_range          = "*"
-    destination_port_range     = "*"
+    name                   = "icmp_to_google-dns_rule"
+    priority               = 101
+    direction              = "Inbound"
+    access                 = "Allow"
+    protocol               = "Icmp"
+    source_port_range      = "*"
+    destination_port_range = "*"
     #source_address_prefix      = var.spoke-aks-node-ip
-    source_address_prefix      = "*"
+    source_address_prefix = "*"
     #destination_address_prefix = var.spoke-check-internet-up-ip
     destination_address_prefix = "*"
   }
   security_rule {
-    name                       = "outbound-http_rule"
-    priority                   = 102
-    direction                  = "Outbound"
-    access                     = "Allow"
-    protocol                   = "Tcp"
-    source_port_range          = "*"
-    destination_port_ranges    = ["80", "81"]
-    source_address_prefix      = "*"
+    name                    = "outbound-http_rule"
+    priority                = 102
+    direction               = "Outbound"
+    access                  = "Allow"
+    protocol                = "Tcp"
+    source_port_range       = "*"
+    destination_port_ranges = ["80", "81"]
+    source_address_prefix   = "*"
     #destination_address_prefix = var.spoke-aks-node-ip
     destination_address_prefix = "*"
   }
@@ -150,7 +150,7 @@ resource "azurerm_public_ip" "hub-nva-vip_public_ip" {
 }
 
 output "etc_host" {
-  value = "sudo sh -c 'echo ${azurerm_public_ip.hub-nva-vip_public_ip.ip_address} www.bankexample.com >> /etc/hosts'"
+  value       = "sudo sh -c 'echo ${azurerm_public_ip.hub-nva-vip_public_ip.ip_address} www.bankexample.com >> /etc/hosts'"
   description = "The public IP address of the hub NVA."
 }
 

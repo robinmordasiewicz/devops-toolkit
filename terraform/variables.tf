@@ -296,7 +296,7 @@ variable "spoke-aks_service_cidr" {
   validation {
     condition     = can(regex("^((25[0-5]|2[0-4][0-9]|1[0-9][0-9]|[1-9]?[0-9])\\.){3}(25[0-5]|2[0-4][0-9]|1[0-9][0-9]|[1-9]?[0-9])/(3[0-2]|[12]?[0-9])$", var.spoke-aks_service_cidr))
     error_message = "The subnet must be in the format of 'xxx.xxx.xxx.xxx/xx', where xxx is between 0 and 255, and xx is between 0 and 32."
-  } 
+  }
 }
 
 variable "spoke-aks_pod_cidr" {
@@ -306,7 +306,7 @@ variable "spoke-aks_pod_cidr" {
   validation {
     condition     = can(regex("^((25[0-5]|2[0-4][0-9]|1[0-9][0-9]|[1-9]?[0-9])\\.){3}(25[0-5]|2[0-4][0-9]|1[0-9][0-9]|[1-9]?[0-9])/(3[0-2]|[12]?[0-9])$", var.spoke-aks_pod_cidr))
     error_message = "The subnet must be in the format of 'xxx.xxx.xxx.xxx/xx', where xxx is between 0 and 255, and xx is between 0 and 32."
-  } 
+  }
 }
 
 variable "spoke-aks_dns_service_ip" {
