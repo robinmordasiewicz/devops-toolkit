@@ -46,11 +46,11 @@ locals {
       sku       = ""
       publisher = ""
       size      = "Standard_B4ms"
-      gpu-size  = "Standard_NC6s_v3" #16GB
-      #gpu-size      = "Standard_NC24s_v3"
+      #gpu-size  = "Standard_NC6s_v3" #16GB
+      gpu-size      = "Standard_NC24s_v3"
       #gpu-size      = "Standard_NC4as_T4_v3" # 16GB
       #gpu-size      = "Standard_ND40rs_v2" # 32 GB vlink
-      #gpu-size      = "Standard_NC24ads_A100_v4" # 80GB
+      #gpu-size      = "Standard_NC24ads_A100_v4" # 80GB - not supported by azure-linux
     }
   }
 }
