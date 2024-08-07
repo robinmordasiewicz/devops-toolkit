@@ -12,7 +12,7 @@ resource "azurerm_virtual_network_peering" "spoke-to-hub_virtual_network_peering
   remote_virtual_network_id = azurerm_virtual_network.hub_virtual_network.id
   allow_forwarded_traffic   = true
   allow_gateway_transit     = true
-  depends_on = [azurerm_virtual_network.hub_virtual_network,azurerm_virtual_network.spoke_virtual_network]
+  depends_on                = [azurerm_virtual_network.hub_virtual_network, azurerm_virtual_network.spoke_virtual_network]
 }
 
 resource "azurerm_subnet" "spoke_subnet" {
@@ -51,39 +51,39 @@ resource "azurerm_network_security_group" "spoke_network_security_group" {
   location            = azurerm_resource_group.azure_resource_group.location
   resource_group_name = azurerm_resource_group.azure_resource_group.name
   security_rule { #tfsec:ignore:AVD-AZU-0047
-    name                       = "inbound-http_rule"
-    priority                   = 100
-    direction                  = "Inbound"
-    access                     = "Allow"
-    protocol                   = "Tcp"
-    source_port_range          = "*"
+    name              = "inbound-http_rule"
+    priority          = 100
+    direction         = "Inbound"
+    access            = "Allow"
+    protocol          = "Tcp"
+    source_port_range = "*"
     #destination_port_ranges    = var.spoke-aks-node-image-gpu == true ? ["80", "81", "8080", "11434"] : ["80", "81"] #checkov:skip=CKV_AZURE_160: Allow HTTP redirects
-    source_address_prefix      = "*"
+    source_address_prefix = "*"
     #destination_address_prefix = var.spoke-aks-node-ip
-    destination_port_range = "*"
+    destination_port_range     = "*"
     destination_address_prefix = "*"
   }
   security_rule {
-    name                       = "aks-node_to_internet_rule"
-    priority                   = 100
-    direction                  = "Outbound"
-    access                     = "Allow"
-    protocol                   = "Tcp"
-    source_port_range          = "*"
-    destination_port_ranges    = ["80", "443"]
+    name                    = "aks-node_to_internet_rule"
+    priority                = 100
+    direction               = "Outbound"
+    access                  = "Allow"
+    protocol                = "Tcp"
+    source_port_range       = "*"
+    destination_port_ranges = ["80", "443"]
     #source_address_prefix      = var.spoke-aks-node-ip
     #source_address_prefix = var.spoke-subnet_prefix
-    source_address_prefix = "*"
+    source_address_prefix      = "*"
     destination_address_prefix = "*" #tfsec:ignore:AVD-AZU-0051
   }
   security_rule { #tfsec:ignore:AVD-AZU-0051
-    name                       = "icmp_to_google-dns_rule"
-    priority                   = 101
-    direction                  = "Outbound"
-    access                     = "Allow"
-    protocol                   = "Icmp"
-    source_port_range          = "*"
-    destination_port_range     = "*"
+    name                   = "icmp_to_google-dns_rule"
+    priority               = 101
+    direction              = "Outbound"
+    access                 = "Allow"
+    protocol               = "Icmp"
+    source_port_range      = "*"
+    destination_port_range = "*"
     #source_address_prefix      = var.spoke-aks-node-ip
     #source_address_prefix = var.spoke-subnet_prefix
     source_address_prefix = "*"
