@@ -210,10 +210,13 @@ resource "azurerm_kubernetes_flux_configuration" "flux_configuration" {
 
 resource "null_resource" "openapi_file" {
   depends_on = [azurerm_kubernetes_cluster.kubernetes_cluster, azurerm_linux_virtual_machine.hub-nva_virtual_machine]
+  triggers = {
+    always_run = timestamp()
+  }
   provisioner "local-exec" {
     interpreter = ["bash", "-c"]
     command     = <<-EOF
-      curl -k -X POST -H "Content-Type: multipart/form-data" -H "Authorization:eyJ1c2VybmFtZSI6InJlbGV2YW50aG9yc2UiLCJwYXNzd29yZCI6ImZzTlJCQ1NTdjhUYUtzeW4iLCJ2ZG9tIjoicm9vdCJ9Cg==" -F 'openapifile=@../manifests/apps/ollama/openapi.yaml' --insecure "https://relevanthorse-management.canadacentral.cloudapp.azure.com:8443/api/v2.0/waf/openapi.openapischemafile"
+      curl -k -X POST -H "Content-Type: multipart/form-data" -H "Authorization:eyJ1c2VybmFtZSI6ImVuaGFuY2VkdGljayIsInBhc3N3b3JkIjoiazRibVI2UzBiRE1Yck10biIsInZkb20iOiJyb290In0K" -F 'openapifile=@../manifests/apps/ollama/openapi.yaml' --insecure "https://${data.azurerm_public_ip.hub-nva-management_public_ip.fqdn}:${local.vm-image[var.hub-nva-image].management-port}/api/v2.0/waf/openapi.openapischemafile"
     EOF
   }
 }
