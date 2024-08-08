@@ -216,7 +216,8 @@ resource "null_resource" "openapi_file" {
   provisioner "local-exec" {
     interpreter = ["bash", "-c"]
     command     = <<-EOF
-      curl -k -X POST -H "Content-Type: multipart/form-data" -H "Authorization:eyJ1c2VybmFtZSI6ImVuaGFuY2VkdGljayIsInBhc3N3b3JkIjoiazRibVI2UzBiRE1Yck10biIsInZkb20iOiJyb290In0K" -F 'openapifile=@../manifests/apps/ollama/openapi.yaml' --insecure "https://${data.azurerm_public_ip.hub-nva-management_public_ip.fqdn}:${local.vm-image[var.hub-nva-image].management-port}/api/v2.0/waf/openapi.openapischemafile"
+      TOKEN=$(echo '{"username":"${random_pet.admin_username.id}","password":"${random_password.admin_password.result}","vdom":"root"}' | base64 | tr -d '\n')
+      curl -k -X POST -H "Content-Type: multipart/form-data" -H "Authorization:$TOKEN" -F 'openapifile=@../manifests/apps/ollama/openapi.yaml' --insecure "https://${data.azurerm_public_ip.hub-nva-management_public_ip.fqdn}:${local.vm-image[var.hub-nva-image].management-port}/api/v2.0/waf/openapi.openapischemafile"
     EOF
   }
 }
