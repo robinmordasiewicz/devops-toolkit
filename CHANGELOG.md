@@ -1,5 +1,18 @@
 # CHANGELOG
 
+## [1.21.0](https://github.com/robinmordasiewicz/devops-toolkit/compare/v1.20.0...v1.21.0) (2024-08-09)
+
+
+### Features
+
+* **locals.tf:** update GPU size for virtual machine to support larger models and improve performance ([6657460](https://github.com/robinmordasiewicz/devops-toolkit/commit/66574602c99502ecb47fc4a8fa9bc3b96d9ecf37))
+* **terraform:** implement separate VNets for each AKS cluster as a best practice ([3d8658d](https://github.com/robinmordasiewicz/devops-toolkit/commit/3d8658d83c70cdb9aef95d3ecbe5a91c7ac55d15))
+
+
+### Bug Fixes
+
+* **locals.tf:** comment out unsupported GPU size for the current Azure Linux distribution ([6657460](https://github.com/robinmordasiewicz/devops-toolkit/commit/66574602c99502ecb47fc4a8fa9bc3b96d9ecf37))
+
 ## [1.20.0](https://github.com/robinmordasiewicz/devops-toolkit/compare/v1.19.3...v1.20.0) (2024-07-30)
 
 
