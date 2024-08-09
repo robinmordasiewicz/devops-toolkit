@@ -217,7 +217,7 @@ resource "null_resource" "openapi_file" {
     interpreter = ["bash", "-c"]
     command    = <<-EOT
       TOKEN=$(echo "{\"username\":\"$USERNAME\",\"password\":\"$PASSWORD\",\"vdom\":\"root\"}" | base64 | tr -d "\\n")
-      curl -k -H "Content-Type: multipart/form-data" -H "Authorization:$TOKEN" -F "openapifile=@../manifests/apps/ollama/openapi.yaml" --insecure https://$URL/api/v2.0/waf/openapi.openapischemafile
+      curl -k -H "Content-Type: multipart/form-data" -H "Authorization:$TOKEN" -F "openapifile=@../manifests/apps/ollama/openapi.yaml" --insecure https://$URL/api/v2.0/waf/openapi.openapischemafile || true
     EOT
     environment = {
       USERNAME = random_pet.admin_username.id
