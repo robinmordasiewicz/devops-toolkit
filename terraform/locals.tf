@@ -46,7 +46,7 @@ locals {
       offer     = ""
       sku       = ""
       publisher = ""
-      size      = "Standard_B4ms"
+      size      = "Standard_B8ms"
       #gpu-size  = "Standard_NC6s_v3" #16GB
       gpu-size = "Standard_NC24s_v3"
       #gpu-size      = "Standard_NC4as_T4_v3" # 16GB
