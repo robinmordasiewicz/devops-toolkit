@@ -215,10 +215,15 @@ resource "null_resource" "openapi_file" {
   }
   provisioner "local-exec" {
     interpreter = ["bash", "-c"]
-    command     = <<-EOF
-      TOKEN=$(echo '{"username":"${random_pet.admin_username.id}","password":"${random_password.admin_password.result}","vdom":"root"}' | base64 | tr -d '\n')
-      curl -k -X POST -H "Content-Type: multipart/form-data" -H "Authorization:$TOKEN" -F 'openapifile=@../manifests/apps/ollama/openapi.yaml' --insecure "https://${data.azurerm_public_ip.hub-nva-management_public_ip.fqdn}:${local.vm-image[var.hub-nva-image].management-port}/api/v2.0/waf/openapi.openapischemafile"
-    EOF
+    command    = <<-EOT
+      TOKEN=$(echo "{\"username\":\"$USERNAME\",\"password\":\"$PASSWORD\",\"vdom\":\"root\"}" | base64 | tr -d "\\n")
+      curl -k -H "Content-Type: multipart/form-data" -H "Authorization:$TOKEN" -F "openapifile=@../manifests/apps/ollama/openapi.yaml" --insecure https://$URL/api/v2.0/waf/openapi.openapischemafile
+    EOT
+    environment = {
+      USERNAME = random_pet.admin_username.id
+      PASSWORD = random_password.admin_password.result
+      URL      = "${data.azurerm_public_ip.hub-nva-management_public_ip.fqdn}:${local.vm-image[var.hub-nva-image].management-port}"
+    }
   }
 }
 
