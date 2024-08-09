@@ -48,7 +48,7 @@ spoke-aks_dns_service_ip             = "10.1.2.10"
 spoke-check-internet-up-ip           = "8.8.8.8"
 spoke-aks-node-ip                    = "10.1.1.4"
 spoke-aks-node-image-gpu             = false
-spoke-k8s-node-pool-gpu              = true
+spoke-k8s-node-pool-gpu              = false
 ```
 
 
@@ -106,7 +106,6 @@ spoke-k8s-node-pool-gpu              = true
 | admin\_password | Password for admin account |
 | admin\_username | Username for admin account |
 | etc\_host | The public IP address of the hub NVA. |
-| kube\_config | kube config |
 | management\_fqdn | Management FQDN |
 | resource\_group\_url | URL to access the Azure Resource Group in the Azure Portal |
 | vip\_fqdn | VIP FQDN |
