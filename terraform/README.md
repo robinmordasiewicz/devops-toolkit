@@ -57,7 +57,7 @@ spoke-k8s-node-pool-gpu              = false
 | Name | Version |
 |------|---------|
 | terraform | >=1.6 |
-| azurerm | 3.113.0 |
+| azurerm | 3.114.0 |
 | external | 2.3.3 |
 | git | 0.1.0 |
 | http | 3.4.4 |
@@ -83,22 +83,18 @@ spoke-k8s-node-pool-gpu              = false
 | hub-virtual-network\_address\_prefix | Hub Virtual Network Address prefix. | `string` | `"10.0.0.0/24"` | no |
 | location | Azure region for resource group. | `string` | `"canadacentral"` | no |
 | owner\_email | Email address for use with Owner tag. | `string` | `"root@example.com"` | no |
-| spoke-aks-node-image | Container server image product | `string` | `"aks-node"` | no |
-| spoke-aks-node-image-gpu | Set to true to enable GPU workloads | `bool` | `false` | no |
-| spoke-aks-node-ip | Spoke Container Server IP Address | `string` | `"10.1.1.4"` | no |
-| spoke-aks-node-ollama-port | Port for ollama | `string` | `"11434"` | no |
-| spoke-aks-node-ollama-webui-port | Port for the ollama web ui | `string` | `"8080"` | no |
 | spoke-aks-subnet\_name | Spoke aks Subnet Name. | `string` | `"spoke-aks-subnet_name"` | no |
 | spoke-aks-subnet\_prefix | Spoke Pod Subnet Prefix. | `string` | `"10.1.2.0/24"` | no |
-| spoke-aks\_dns\_service\_ip | Spoke k8s dns service ip | `string` | `"10.2.0.10"` | no |
-| spoke-aks\_pod\_cidr | Spoke k8s pod cidr. | `string` | `"10.244.0.0/16"` | no |
-| spoke-aks\_service\_cidr | Spoke k8s service cidr. | `string` | `"10.1.2.0/24"` | no |
 | spoke-check-internet-up-ip | Spoke Container Server Checks the Internet at this IP Address | `string` | `"8.8.8.8"` | no |
 | spoke-k8s-node-pool-gpu | Set to true to enable GPU workloads | `bool` | `false` | no |
 | spoke-k8s-node-pool-image | k8s node pool image. | `bool` | `false` | no |
-| spoke-subnet\_name | Spoke Subnet Name. | `string` | `"spoke_subnet"` | no |
-| spoke-subnet\_prefix | Spoke Subnet Prefix. | `string` | `"10.1.1.0/24"` | no |
-| spoke-virtual-network\_address\_prefix | Spoke Virtual Network Address prefix. | `string` | `"10.1.1.0/24"` | no |
+| spoke-k8s\_service\_cidr | Spoke k8s service cidr. | `string` | `"10.1.2.0/24"` | no |
+| spoke-ks8\_dns\_service\_ip | Spoke k8s dns service ip | `string` | `"10.2.0.10"` | no |
+| spoke-linux-server-image | Container server image product | `string` | `"linux-server"` | no |
+| spoke-linux-server-image-gpu | Set to true to enable GPU workloads | `bool` | `false` | no |
+| spoke-linux-server-ip | Spoke Container Server IP Address | `string` | `"10.1.1.5"` | no |
+| spoke-linux-server-ollama-port | Port for ollama | `string` | `"11434"` | no |
+| spoke-linux-server-ollama-webui-port | Port for the ollama web ui | `string` | `"8080"` | no |
 ## Outputs
 
 | Name | Description |
