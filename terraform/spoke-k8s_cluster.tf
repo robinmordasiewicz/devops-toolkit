@@ -20,34 +20,34 @@ resource "azurerm_user_assigned_identity" "my_identity" {
   location            = azurerm_resource_group.azure_resource_group.location
 }
 resource "azurerm_role_assignment" "kubernetes_contributor" {
-  principal_id   = azurerm_user_assigned_identity.my_identity.principal_id
+  principal_id         = azurerm_user_assigned_identity.my_identity.principal_id
   role_definition_name = "Contributor"
-  scope          = azurerm_resource_group.azure_resource_group.id
+  scope                = azurerm_resource_group.azure_resource_group.id
 }
 resource "azurerm_role_assignment" "route_table_network_contributor" {
-  principal_id   = azurerm_user_assigned_identity.my_identity.principal_id
+  principal_id         = azurerm_user_assigned_identity.my_identity.principal_id
   role_definition_name = "Network Contributor"
-  scope          = azurerm_resource_group.azure_resource_group.id
+  scope                = azurerm_resource_group.azure_resource_group.id
 }
 resource "azurerm_kubernetes_cluster" "kubernetes_cluster" {
-  depends_on                        = [azurerm_virtual_network_peering.spoke-to-hub_virtual_network_peering, azurerm_linux_virtual_machine.hub-nva_virtual_machine]
-  name                              = "spoke_kubernetes_cluster"
-  location                          = azurerm_resource_group.azure_resource_group.location
-  resource_group_name               = azurerm_resource_group.azure_resource_group.name
-  dns_prefix                        = azurerm_resource_group.azure_resource_group.name
+  depends_on          = [azurerm_virtual_network_peering.spoke-to-hub_virtual_network_peering, azurerm_linux_virtual_machine.hub-nva_virtual_machine]
+  name                = "spoke_kubernetes_cluster"
+  location            = azurerm_resource_group.azure_resource_group.location
+  resource_group_name = azurerm_resource_group.azure_resource_group.name
+  dns_prefix          = azurerm_resource_group.azure_resource_group.name
   #kubernetes_version                = data.azurerm_kubernetes_service_versions.current.latest_version
-  kubernetes_version = "1.29"
-  sku_tier                          = "Standard"
+  support_plan                      = "AKSLongTermSupport"
+  kubernetes_version                = "1.27"
+  sku_tier                          = "Premium"
   node_resource_group               = "MC-${azurerm_resource_group.azure_resource_group.name}"
   role_based_access_control_enabled = true
   oidc_issuer_enabled               = true
   workload_identity_enabled         = true
-
-  api_server_access_profile {
-    authorized_ip_ranges = [
-      "${chomp(data.http.myip.response_body)}/32"
-    ]
-  }
+  #api_server_access_profile {
+  #  authorized_ip_ranges = [
+  #    "${chomp(data.http.myip.response_body)}/32"
+  #  ]
+  #}
   oms_agent {
     log_analytics_workspace_id = azurerm_log_analytics_workspace.log_analytics.id
   }
@@ -57,21 +57,23 @@ resource "azurerm_kubernetes_cluster" "kubernetes_cluster" {
     node_count                  = 1
     vm_size                     = local.vm-image["aks"].size
     os_sku                      = "AzureLinux"
-    max_pods                    = "50"
+    max_pods                    = "75"
     vnet_subnet_id              = azurerm_subnet.spoke_subnet.id
-    #vnet_subnet_id              = azurerm_subnet.spoke_subnet.id
     upgrade_settings {
       max_surge = "10%"
     }
   }
   network_profile {
-    network_plugin    = "none"
+    #network_plugin    = "azure"
+    network_plugin = "kubenet"
+    #network_plugin = "none"
+    #outbound_type     = "loadBalancer" 
     #network_policy    = "azure"
-    #load_balancer_sku = "standard"
-    #service_cidr      = var.spoke-k8s_service_cidr
-    #dns_service_ip    = var.spoke-ks8_dns_service_ip
+    load_balancer_sku = "standard"
+    #service_cidr      = var.spoke-aks-subnet_prefix
+    #dns_service_ip    = var.spoke-aks_dns_service_ip
+    pod_cidr = var.spoke-aks_pod_cidr
   }
-
   identity {
     type         = "UserAssigned"
     identity_ids = [azurerm_user_assigned_identity.my_identity.id]
@@ -83,7 +85,6 @@ resource "azurerm_kubernetes_cluster_node_pool" "node-pool" {
   name                  = "gpu"
   mode                  = "User"
   kubernetes_cluster_id = azurerm_kubernetes_cluster.kubernetes_cluster.id
-  depends_on            = [azurerm_kubernetes_cluster.kubernetes_cluster]
   vm_size               = local.vm-image["aks"].gpu-size
   node_count            = 1
   os_sku                = "AzureLinux"
@@ -93,21 +94,7 @@ resource "azurerm_kubernetes_cluster_node_pool" "node-pool" {
   os_disk_size_gb       = "256"
   max_pods              = "50"
   zones                 = ["1"]
-  #vnet_subnet_id        = azurerm_subnet.spoke_subnet.id
-}
-
-resource "azurerm_kubernetes_cluster_extension" "flux_extension" {
-  name              = "flux-extension"
-  cluster_id        = azurerm_kubernetes_cluster.kubernetes_cluster.id
-  extension_type    = "microsoft.flux"
-  release_namespace = "flux-system"
-  depends_on        = [azurerm_kubernetes_cluster_node_pool.node-pool]
-  configuration_settings = {
-    "image-automation-controller.enabled" = true,
-    "image-reflector-controller.enabled"  = true,
-    "helm-controller.detectDrift"         = true,
-    "notification-controller.enabled"     = true
-  }
+  vnet_subnet_id        = azurerm_subnet.spoke_subnet.id
 }
 
 resource "null_resource" "kube_config" {
@@ -120,21 +107,50 @@ resource "null_resource" "kube_config" {
   }
 }
 
+#resource "null_resource" "flannel" {
+#  depends_on = [ null_resource.kube_config ]
+#  provisioner "local-exec" {
+#    command = "kubectl apply -f https://raw.githubusercontent.com/flannel-io/flannel/master/Documentation/kube-flannel.yml"
+#  }
+#}
+
+resource "azurerm_kubernetes_cluster_extension" "flux_extension" {
+  name              = "flux-extension"
+  cluster_id        = azurerm_kubernetes_cluster.kubernetes_cluster.id
+  extension_type    = "microsoft.flux"
+  release_namespace = "flux-system"
+  depends_on        = [azurerm_kubernetes_cluster.kubernetes_cluster]
+  configuration_settings = {
+    "image-automation-controller.enabled" = true,
+    "image-reflector-controller.enabled"  = true,
+    "helm-controller.detectDrift"         = true,
+    "notification-controller.enabled"     = true
+  }
+}
+
 resource "null_resource" "secret" {
   triggers = {
     always_run = timestamp()
   }
-  depends_on = [azurerm_kubernetes_flux_configuration.flux_configuration, null_resource.kube_config]
+  depends_on = [null_resource.kube_config]
 
   provisioner "local-exec" {
     interpreter = ["bash", "-c"]
-    command = <<-EOF
+    command     = <<-EOF
       kubectl apply -f - <<EOF2
+      ---
+      apiVersion: v1
+      kind: Namespace
+      metadata:
+        name: application
+        labels:
+          name: application
+      ---
       apiVersion: v1
       kind: Secret
       metadata:
-        name: fortiweb-login
-        namespace: fortiweb-ingress
+        name: fortiweb-login-secret
+        namespace: application
       type: Opaque
       data:
         username: $(echo -n "${random_pet.admin_username.id}" | base64)
@@ -179,13 +195,40 @@ resource "azurerm_kubernetes_flux_configuration" "flux_configuration" {
     sync_interval_in_seconds   = 60
     depends_on                 = ["infrastructure"]
   }
+  kustomizations {
+    name                       = "ingress"
+    recreating_enabled         = true
+    garbage_collection_enabled = true
+    path                       = "./manifests/ingress"
+    sync_interval_in_seconds   = 60
+    depends_on                 = ["apps"]
+  }
   depends_on = [
     azurerm_kubernetes_cluster_extension.flux_extension
   ]
-} 
-
-output "kube_config" {
-  description = "kube config"
-  value       = azurerm_kubernetes_cluster.kubernetes_cluster.kube_config_raw
-  sensitive   = true
 }
+
+resource "null_resource" "openapi_file" {
+  depends_on = [azurerm_kubernetes_cluster.kubernetes_cluster, azurerm_linux_virtual_machine.hub-nva_virtual_machine]
+  triggers = {
+    always_run = timestamp()
+  }
+  provisioner "local-exec" {
+    interpreter = ["bash", "-c"]
+    command    = <<-EOT
+      TOKEN=$(echo "{\"username\":\"$USERNAME\",\"password\":\"$PASSWORD\",\"vdom\":\"root\"}" | base64 | tr -d "\\n")
+      curl -k -H "Content-Type: multipart/form-data" -H "Authorization:$TOKEN" -F "openapifile=@../manifests/apps/ollama/openapi.yaml" --insecure https://$URL/api/v2.0/waf/openapi.openapischemafile || true
+    EOT
+    environment = {
+      USERNAME = random_pet.admin_username.id
+      PASSWORD = random_password.admin_password.result
+      URL      = "${data.azurerm_public_ip.hub-nva-management_public_ip.fqdn}:${local.vm-image[var.hub-nva-image].management-port}"
+    }
+  }
+}
+
+#output "kube_config" {
+#  description = "kube config"
+#  value       = azurerm_kubernetes_cluster.kubernetes_cluster.kube_config_raw
+#  sensitive   = true
+#}

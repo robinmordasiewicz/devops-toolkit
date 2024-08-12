@@ -29,3 +29,5 @@ gh repo edit \
 ```quote
 your infrastructure will mirror the understanding, competence and goals of the people building it, and contain their nuanced areas of understanding in more detail than areas outside their interest of confidence realms.
 ```
+
+https://azure.github.io/application-gateway-kubernetes-ingress/
