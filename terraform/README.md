@@ -49,7 +49,7 @@ spoke-check-internet-up-ip           = "8.8.8.8"
 spoke-aks-node-ip                    = "10.1.1.4"
 spoke-aks-node-image-gpu             = false
 spoke-k8s-node-pool-gpu              = false
-```
+
 
 
 ## Requirements
@@ -57,7 +57,7 @@ spoke-k8s-node-pool-gpu              = false
 | Name | Version |
 |------|---------|
 | terraform | >=1.6 |
-| azurerm | 3.113.0 |
+| azurerm | 3.114.0 |
 | external | 2.3.3 |
 | git | 0.1.0 |
 | http | 3.4.4 |
