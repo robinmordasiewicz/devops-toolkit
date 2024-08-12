@@ -5,7 +5,7 @@ metadata:
   name: ollama
   namespace: cluster-config
 spec:
-  targetNamespace: ollama
+  targetNamespace: application
   releaseName: ollama
   chart:
     spec:
@@ -44,14 +44,6 @@ spec:
       models:
         - nomic-embed-text
         - codestral:latest
-    ingress:
-      enabled: false
-      className: "nginx"
-      hosts:
-        - host: www.bankexample.com
-          paths:
-            - path: /
-              pathType: Prefix
     persistentVolume:
       enabled: true
       size: 100Gi

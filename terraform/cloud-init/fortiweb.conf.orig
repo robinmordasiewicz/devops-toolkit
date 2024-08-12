@@ -46,6 +46,13 @@ config global
   config system advanced
     set owasp-top10-compliance enable
   end
+  config system vip
+    edit "hub-nva-external-vip"
+      set vip ${VAR-hub-nva-vip}/32
+      set interface port1
+      set domains root
+    next
+  end
   config router static
     edit 1
       set dst ${VAR-spoke-virtual-network_address_prefix}
@@ -61,8 +68,8 @@ config global
     set ip-forward enable
   end
   config system firewall address
-    edit "spoke-aks-node-ip"
-      set ip-address-value ${VAR-spoke-aks-node-ip}
+    edit "spoke-linux-server-ip"
+      set ip-address-value ${VAR-spoke-linux-server-ip}
     next
     edit "internet"
       set type ip-netmask
@@ -90,14 +97,18 @@ config global
     edit "ICMP"
       set protocol ICMP
     next
+    edit "spoke-linux-server-ports"
+      set destination-port-min 80
+      set destination-port-max 81
+    next
   end
   config system firewall firewall-policy
     set default-action deny
-    config firewall-policy-match-list
+    config  firewall-policy-match-list
       edit 1
         set in-interface port2
         set out-interface port1
-        set src-address spoke-aks-node-ip
+        set src-address spoke-linux-server-ip
         set dest-address internet
         set service http
         set action accept
@@ -105,7 +116,7 @@ config global
       edit 2
         set in-interface port2
         set out-interface port1
-        set src-address spoke-aks-node-ip
+        set src-address spoke-linux-server-ip
         set dest-address internet
         set service https
         set action accept
@@ -113,7 +124,7 @@ config global
       edit 3
         set in-interface port2
         set out-interface port1
-        set src-address spoke-aks-node-ip
+        set src-address spoke-linux-server-ip
         set dest-address google-dns
         set service ICMP
         set action accept
@@ -135,16 +146,16 @@ config global
       edit 6
         set out-interface port2
         set src-address internet
-        set dest-address spoke-aks-node-ip
-        set service spoke-aks-node-ports
+        set dest-address spoke-linux-server-ip
+        set service spoke-linux-server-ports
         set action accept
       next
       edit 7
         set in-interface port1
         set out-interface port2
         set src-address internet
-        set dest-address spoke-aks-node-ip
-        set service spoke-aks-node-ports
+        set dest-address spoke-linux-server-ip
+        set service spoke-linux-server-ports
         set action accept
       next
       edit 8
@@ -158,7 +169,7 @@ config global
     end
   end
   config system firewall snat-policy
-    edit "spoke-aks-node-to-internet-snat"
+    edit "spoke-linux-server-to-internet-snat"
       set source-start ${VAR-spoke-virtual-network_subnet}
       set source-end ${VAR-spoke-virtual-network_netmask}
       set out-interface port1
@@ -184,15 +195,77 @@ config global
     set severity notification
   end
 end
-config system certificate local
-  edit "self-signed-cert"
-    set certificate "${VAR-CERTIFICATE}
+    config system certificate local
+      edit "self-signed-cert"
+        set certificate "${VAR-CERTIFICATE}
 "
-    set private-key "${VAR-PRIVATEKEY}
+        set private-key "${VAR-PRIVATEKEY}
 "
-    set passwd ENC m8eWJTISWrN/JBB9KSp7kOFMNoo=
-  next
-end
+        set passwd ENC m8eWJTISWrN/JBB9KSp7kOFMNoo=
+      next
+    end
+    config system vip
+      edit "hub-nva-external-vip"
+        set vip ${VAR-hub-nva-vip}/32
+        set interface port1
+      next
+    end
+    config server-policy health
+      edit "DVWA-check"
+        config  health-list
+          edit 1
+            set type http
+            set url-path /login.php
+            set method head
+            set match-type response-code
+          next
+        end
+      next
+    end
+    config server-policy vserver
+      edit "hub-nva-external-vip-vserver"
+        config  vip-list
+          edit 1
+            set vip hub-nva-external-vip
+          next
+        end
+      next
+    end
+    config server-policy persistence-policy
+      edit "dvwa-cookie"
+        set type insert-cookie
+        set cookie-name DVWA
+      next
+    end
+    config server-policy server-pool
+      edit "spoke-linux-server-pool"
+        set server-balance enable
+        set health DVWA-check
+        set persistence dvwa-cookie
+        config pserver-list
+          edit 1
+            set ip ${VAR-spoke-linux-server-ip}
+            set port 80
+          next
+          edit 2
+            set ip ${VAR-spoke-linux-server-ip}
+            set port 81
+          next
+        end
+      next
+    end
+    config server-policy policy
+      edit "hub-nva-external-vip-policy"
+        set vserver hub-nva-external-vip-vserver
+        set service HTTP
+        set server-pool spoke-linux-server-pool
+        set https-service HTTPS
+        set certificate self-signed-cert
+        set http-to-https enable
+        set syncookie enable
+        set tlog enable
+      next
+    end
 ',
 "HaAzureInit":"enable",
 "FwbLicenseBYOL":"${VAR-fwb_license_file}",
