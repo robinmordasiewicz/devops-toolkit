@@ -49,7 +49,7 @@ spoke-check-internet-up-ip           = "8.8.8.8"
 spoke-aks-node-ip                    = "10.1.1.4"
 spoke-aks-node-image-gpu             = false
 spoke-k8s-node-pool-gpu              = false
-
+```
 
 
 ## Requirements
