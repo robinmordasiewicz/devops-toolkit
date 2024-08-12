@@ -12,7 +12,7 @@ resource "azurerm_virtual_network_peering" "hub-to-spoke_virtual_network_peering
   remote_virtual_network_id = azurerm_virtual_network.spoke_virtual_network.id
   allow_forwarded_traffic   = true
   allow_gateway_transit     = true
-  depends_on = [azurerm_virtual_network.hub_virtual_network,azurerm_virtual_network.spoke_virtual_network]
+  depends_on                = [azurerm_virtual_network.hub_virtual_network, azurerm_virtual_network.spoke_virtual_network]
 }
 
 resource "azurerm_subnet" "hub-external_subnet" {
@@ -72,7 +72,7 @@ resource "azurerm_network_security_group" "hub-external_network_security_group" 
     access                     = "Allow"
     protocol                   = "Tcp"
     source_port_range          = "*"
-    destination_port_ranges    = var.spoke-linux-server-image-gpu == true ? ["80", "443", "8080", "11434"] : ["80", "443"] #checkov:skip=CKV_AZURE_160: Allow HTTP redirects
+    destination_port_ranges    = var.spoke-aks-node-image-gpu == true ? ["80", "443", "8080", "11434"] : ["80", "443"] #checkov:skip=CKV_AZURE_160: Allow HTTP redirects
     source_address_prefix      = "*"
     destination_address_prefix = var.hub-nva-vip
   }
@@ -88,38 +88,41 @@ resource "azurerm_network_security_group" "hub-internal_network_security_group" 
   location            = azurerm_resource_group.azure_resource_group.location
   resource_group_name = azurerm_resource_group.azure_resource_group.name
   security_rule {
-    name                    = "linux-server_to_internet_rule"
+    name                    = "aks-node_to_internet_rule"
     priority                = 100
     direction               = "Inbound"
     access                  = "Allow"
     protocol                = "Tcp"
     source_port_range       = "*"
     destination_port_ranges = ["80", "443"]
-    #source_address_prefix      = var.spoke-linux-server-ip
+    #source_address_prefix      = var.spoke-aks-node-ip
     source_address_prefix      = "10.0.0.0/8"
     destination_address_prefix = "*"
   }
   security_rule {
-    name                       = "icmp_to_google-dns_rule"
-    priority                   = 101
-    direction                  = "Inbound"
-    access                     = "Allow"
-    protocol                   = "Icmp"
-    source_port_range          = "*"
-    destination_port_range     = "*"
-    source_address_prefix      = var.spoke-linux-server-ip
-    destination_address_prefix = var.spoke-check-internet-up-ip
+    name                   = "icmp_to_google-dns_rule"
+    priority               = 101
+    direction              = "Inbound"
+    access                 = "Allow"
+    protocol               = "Icmp"
+    source_port_range      = "*"
+    destination_port_range = "*"
+    #source_address_prefix      = var.spoke-aks-node-ip
+    source_address_prefix = "*"
+    #destination_address_prefix = var.spoke-check-internet-up-ip
+    destination_address_prefix = "*"
   }
   security_rule {
-    name                       = "outbound-http_rule"
-    priority                   = 102
-    direction                  = "Outbound"
-    access                     = "Allow"
-    protocol                   = "Tcp"
-    source_port_range          = "*"
-    destination_port_ranges    = ["80", "81"]
-    source_address_prefix      = "*"
-    destination_address_prefix = var.spoke-linux-server-ip
+    name                    = "outbound-http_rule"
+    priority                = 102
+    direction               = "Outbound"
+    access                  = "Allow"
+    protocol                = "Tcp"
+    source_port_range       = "*"
+    destination_port_ranges = ["80", "81"]
+    source_address_prefix   = "*"
+    #destination_address_prefix = var.spoke-aks-node-ip
+    destination_address_prefix = "*"
   }
 }
 
@@ -144,6 +147,11 @@ resource "azurerm_public_ip" "hub-nva-vip_public_ip" {
   allocation_method   = "Static"
   sku                 = "Standard"
   domain_name_label   = random_pet.admin_username.id
+}
+
+output "etc_host" {
+  value       = "sudo sh -c 'echo ${azurerm_public_ip.hub-nva-vip_public_ip.ip_address} www.bankexample.com >> /etc/hosts'"
+  description = "The public IP address of the hub NVA."
 }
 
 resource "azurerm_availability_set" "hub-nva_availability_set" {

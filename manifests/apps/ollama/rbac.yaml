@@ -3,12 +3,12 @@ apiVersion: rbac.authorization.k8s.io/v1
 kind: ClusterRoleBinding
 metadata:
     name: read-svc
-    namespace: ollama
+    namespace: application
 subjects:
     - kind: ServiceAccount
       name: ollama
       apiGroup: ""
-      namespace: ollama
+      namespace: application
 roleRef:
     kind: ClusterRole
     name: svc-reader

@@ -3,6 +3,5 @@ kind: Kustomization
 resources:
   - Deployment.yaml
   - mariadb.yaml
-  - namespace.yaml
   - rbac.yaml
-  - Ingress.yaml
+
