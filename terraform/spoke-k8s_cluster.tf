@@ -15,20 +15,23 @@ resource "azurerm_log_analytics_workspace" "log_analytics" {
 }
 
 resource "azurerm_user_assigned_identity" "my_identity" {
-  name                = "myUserAssignedIdentity"
+  name                = "UserAssignedIdentity"
   resource_group_name = azurerm_resource_group.azure_resource_group.name
   location            = azurerm_resource_group.azure_resource_group.location
 }
+
 resource "azurerm_role_assignment" "kubernetes_contributor" {
   principal_id         = azurerm_user_assigned_identity.my_identity.principal_id
   role_definition_name = "Contributor"
   scope                = azurerm_resource_group.azure_resource_group.id
 }
+
 resource "azurerm_role_assignment" "route_table_network_contributor" {
   principal_id         = azurerm_user_assigned_identity.my_identity.principal_id
   role_definition_name = "Network Contributor"
   scope                = azurerm_resource_group.azure_resource_group.id
 }
+
 resource "azurerm_kubernetes_cluster" "kubernetes_cluster" {
   depends_on          = [azurerm_virtual_network_peering.spoke-to-hub_virtual_network_peering, azurerm_linux_virtual_machine.hub-nva_virtual_machine]
   name                = "spoke_kubernetes_cluster"
