@@ -60,7 +60,7 @@ spoke-k8s-node-pool-gpu              = false
 | azurerm | 4.1.0 |
 | external | 2.3.3 |
 | git | 0.1.0 |
-| http | 3.4.4 |
+| http | 3.4.5 |
 | local | 2.5.1 |
 | null | 3.2.2 |
 | random | 3.6.2 |
