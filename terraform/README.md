@@ -57,14 +57,14 @@ spoke-k8s-node-pool-gpu              = false
 | Name | Version |
 |------|---------|
 | terraform | >=1.6 |
-| azurerm | 4.1.0 |
+| azurerm | 4.2.0 |
 | external | 2.3.4 |
 | git | 0.1.0 |
 | http | 3.4.5 |
-| local | 2.5.1 |
-| null | 3.2.2 |
+| local | 2.5.2 |
+| null | 3.2.3 |
 | random | 3.6.3 |
-| tls | 4.0.5 |
+| tls | 4.0.6 |
 
 ## Inputs
 
