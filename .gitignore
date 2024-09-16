@@ -1,5 +1,9 @@
 fdevsec.yaml
 creds.json
+core.*
+# DrawIO temporary files
+*.dtmp
+*.bkp
 .chrome/
 !**/.gitkeep
 *$py.class
