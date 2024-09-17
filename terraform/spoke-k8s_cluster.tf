@@ -1,3 +1,20 @@
+locals {
+  streams = [
+    "Microsoft-ContainerLog",
+    "Microsoft-ContainerLogV2",
+    "Microsoft-KubeEvents",
+    "Microsoft-KubePodInventory",
+    "Microsoft-KubeNodeInventory",
+    "Microsoft-KubePVInventory",
+    "Microsoft-KubeServices",
+    "Microsoft-KubeMonAgentEvents",
+    "Microsoft-InsightsMetrics",
+    "Microsoft-ContainerInventory",
+    "Microsoft-ContainerNodeInventory",
+    "Microsoft-Perf"
+  ]
+}
+
 data "http" "myip" {
   url = "https://ipv4.icanhazip.com"
 }
@@ -12,6 +29,7 @@ resource "azurerm_log_analytics_workspace" "log_analytics" {
   location            = azurerm_resource_group.azure_resource_group.location
   resource_group_name = azurerm_resource_group.azure_resource_group.name
   sku                 = "PerGB2018"
+  retention_in_days   = 30
 }
 
 resource "azurerm_user_assigned_identity" "my_identity" {
@@ -30,6 +48,7 @@ resource "azurerm_role_assignment" "route_table_network_contributor" {
   principal_id         = azurerm_user_assigned_identity.my_identity.principal_id
   role_definition_name = "Network Contributor"
   scope                = azurerm_resource_group.azure_resource_group.id
+  skip_service_principal_aad_check = true
 }
 
 resource "azurerm_kubernetes_cluster" "kubernetes_cluster" {
@@ -53,14 +72,16 @@ resource "azurerm_kubernetes_cluster" "kubernetes_cluster" {
   #}
   oms_agent {
     log_analytics_workspace_id = azurerm_log_analytics_workspace.log_analytics.id
+    msi_auth_for_monitoring_enabled = true
   }
   default_node_pool {
     temporary_name_for_rotation = "rotation"
-    name                        = "default"
+    name                        = "system"
     node_count                  = 1
     vm_size                     = local.vm-image["aks"].size
     os_sku                      = "AzureLinux"
     max_pods                    = "75"
+    orchestrator_version        = "1.27"
     vnet_subnet_id              = azurerm_subnet.spoke_subnet.id
     upgrade_settings {
       max_surge = "10%"
@@ -101,6 +122,46 @@ resource "azurerm_kubernetes_cluster_node_pool" "node-pool" {
   max_pods              = "50"
   zones                 = ["1"]
   vnet_subnet_id        = azurerm_subnet.spoke_subnet.id
+}
+
+resource "azurerm_monitor_data_collection_rule" "this" {
+  name                = "rule-${azurerm_resource_group.azure_resource_group.name}-${azurerm_resource_group.azure_resource_group.location}"
+  resource_group_name = azurerm_resource_group.azure_resource_group.name
+  location            = azurerm_resource_group.azure_resource_group.location
+
+  destinations {
+    log_analytics {
+      workspace_resource_id = azurerm_log_analytics_workspace.log_analytics.id
+      name                  = "ciworkspace"
+    }
+  }
+  data_flow {
+    streams      = local.streams
+    destinations = ["ciworkspace"]
+  }
+  data_sources {
+    extension {
+      streams        = local.streams
+      extension_name = "ContainerInsights"
+      extension_json = jsonencode({
+        "dataCollectionSettings" : {
+          "interval" : "1m"
+          "namespaceFilteringMode" : "Off",
+          "namespaces" : ["kube-system", "gatekeeper-system", "azure-arc"]
+          "enableContainerLogV2" : true
+        }
+      })
+      name = "ContainerInsightsExtension"
+    }
+  }
+  description = "DCR for Azure Monitor Container Insights"
+}
+
+resource "azurerm_monitor_data_collection_rule_association" "this" {
+  name                    = "ruleassoc-${azurerm_resource_group.azure_resource_group.name}-${azurerm_resource_group.azure_resource_group.location}"
+  target_resource_id      = azurerm_kubernetes_cluster.kubernetes_cluster.id
+  data_collection_rule_id = azurerm_monitor_data_collection_rule.this.id
+  description             = "Association of container insights data collection rule. Deleting this association will break the data collection for this AKS Cluster."
 }
 
 resource "null_resource" "kube_config" {
