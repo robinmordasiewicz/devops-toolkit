@@ -92,6 +92,9 @@ resource "azurerm_kubernetes_cluster_node_pool" "node-pool" {
   node_count            = 1
   os_sku                = "AzureLinux"
   node_taints           = ["nvidia.com/gpu=true:NoSchedule"]
+  node_labels = {
+    "nvidia.com/gpu.present" = "true"
+  }
   os_disk_type          = "Ephemeral"
   ultra_ssd_enabled     = true
   os_disk_size_gb       = "256"
