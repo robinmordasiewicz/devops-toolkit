@@ -5,3 +5,4 @@ resources:
   - namespace.yaml
   - ./ollama
   - ./devcontainer
+  - ./nvidia-smi
