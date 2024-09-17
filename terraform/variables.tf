@@ -246,7 +246,7 @@ variable "spoke-k8s-node-pool-image" {
 }
 
 variable "spoke-virtual-network_address_prefix" {
-  default     = "10.1.1.0/24"
+  default     = "10.1.0.0/16"
   description = "Spoke Virtual Network Address prefix."
   type        = string
   validation {
@@ -275,7 +275,7 @@ variable "spoke-subnet_prefix" {
   }
 }
 variable "spoke-aks-subnet_name" {
-  default     = "spoke-aks-subnet_name"
+  default     = "spoke-aks-subnet"
   description = "Spoke aks Subnet Name."
   type        = string
   validation {
@@ -315,7 +315,7 @@ variable "spoke-aks_pod_cidr" {
 }
 
 variable "spoke-aks_dns_service_ip" {
-  default     = "10.2.0.10"
+  default     = "10.1.2.10"
   description = "Spoke k8s dns service ip"
   type        = string
   validation {
