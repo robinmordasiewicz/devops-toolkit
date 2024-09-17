@@ -1,3 +1,8 @@
+variable "subscription_id" {
+  description = "Azure subscription ID"
+  type = string
+}
+
 variable "owner_email" {
   default     = "root@example.com"
   description = "Email address for use with Owner tag."
@@ -222,11 +227,11 @@ variable "spoke-aks-node-image" {
   type        = string
 }
 
-variable "spoke-aks-node-image-gpu" {
-  default     = false
-  description = "Set to true to enable GPU workloads"
-  type        = bool
-}
+#variable "spoke-aks-node-image-gpu" {
+#  default     = false
+#  description = "Set to true to enable GPU workloads"
+#  type        = bool
+#}
 
 variable "spoke-k8s-node-pool-gpu" {
   default     = false
