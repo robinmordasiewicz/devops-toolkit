@@ -101,9 +101,9 @@ resource "azurerm_kubernetes_cluster_node_pool" "node-pool" {
 }
 
 resource "null_resource" "kube_config" {
-  triggers = {
-    always_run = timestamp()
-  }
+  #triggers = {
+  #  always_run = timestamp()
+  #}
   depends_on = [azurerm_kubernetes_cluster.kubernetes_cluster]
   provisioner "local-exec" {
     command = "echo \"${azurerm_kubernetes_cluster.kubernetes_cluster.kube_config_raw}\" > ~/.kube/config && chmod 600 ~/.kube/config"
@@ -132,9 +132,9 @@ resource "azurerm_kubernetes_cluster_extension" "flux_extension" {
 }
 
 resource "null_resource" "secret" {
-  triggers = {
-    always_run = timestamp()
-  }
+  #triggers = {
+  #  always_run = timestamp()
+  #}
   depends_on = [null_resource.kube_config]
 
   provisioner "local-exec" {
@@ -213,9 +213,9 @@ resource "azurerm_kubernetes_flux_configuration" "flux_configuration" {
 
 resource "null_resource" "openapi_file" {
   depends_on = [azurerm_kubernetes_cluster.kubernetes_cluster, azurerm_linux_virtual_machine.hub-nva_virtual_machine]
-  triggers = {
-    always_run = timestamp()
-  }
+  #triggers = {
+  #  always_run = timestamp()
+  #}
   provisioner "local-exec" {
     interpreter = ["bash", "-c"]
     command    = <<-EOT
