@@ -33,12 +33,14 @@ terraform {
       source  = "hashicorp/external"
       version = "2.3.4"
     }
-    #kubernetes = {
-    #  source  = "hashicorp/kubernetes"
-    #  version = "2.31.0"
-    #}
   }
   # backend "azurerm" {}
+}
+
+data "azurerm_subscription" "current" {
+}
+
+data "azurerm_client_config" "current" {
 }
 
 provider "azurerm" {
@@ -51,7 +53,8 @@ provider "azurerm" {
       prevent_deletion_if_contains_resources = false
     }
   }
-  skip_provider_registration = true
+  subscription_id = var.subscription_id
+  #resource_provider_registrations = "none"
 }
 
 provider "random" {}
@@ -59,7 +62,3 @@ provider "tls" {}
 provider "http" {}
 provider "local" {}
 provider "git" {}
-#provider "kubernetes" {
-#  config_path = local_file.kube_config.filename
-#}
-
