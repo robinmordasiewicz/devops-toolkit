@@ -128,7 +128,6 @@ resource "azurerm_monitor_data_collection_rule" "this" {
   name                = "rule-${azurerm_resource_group.azure_resource_group.name}-${azurerm_resource_group.azure_resource_group.location}"
   resource_group_name = azurerm_resource_group.azure_resource_group.name
   location            = azurerm_resource_group.azure_resource_group.location
-
   destinations {
     log_analytics {
       workspace_resource_id = azurerm_log_analytics_workspace.log_analytics.id
@@ -165,9 +164,9 @@ resource "azurerm_monitor_data_collection_rule_association" "this" {
 }
 
 resource "null_resource" "kube_config" {
-  #triggers = {
-  #  always_run = timestamp()
-  #}
+  triggers = {
+    kube_config_exists = "${fileexists("~/.kube/config")}"
+  }
   depends_on = [azurerm_kubernetes_cluster.kubernetes_cluster]
   provisioner "local-exec" {
     command = "echo \"${azurerm_kubernetes_cluster.kubernetes_cluster.kube_config_raw}\" > ~/.kube/config && chmod 600 ~/.kube/config"
