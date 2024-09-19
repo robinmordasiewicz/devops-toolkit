@@ -1,0 +1,27 @@
+---
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: gpu-operator
+  namespace: cluster-config
+spec:
+  targetNamespace: application
+  releaseName: gpu-operator
+  chart:
+    spec:
+      chart: gpu-operator
+      sourceRef:
+        kind: HelmRepository
+        name: gpu-operator
+        namespace: cluster-config
+  interval: 10m0s
+  install:
+    timeout: 20m
+    remediation:
+      retries: 5
+  upgrade:
+    timeout: 20m
+  values:
+    driver.enabled: false
+    toolkit.enabled: false
+    operator.runtimeClass: "nvidia-container-runtime"
