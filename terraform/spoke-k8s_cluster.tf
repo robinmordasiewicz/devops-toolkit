@@ -60,7 +60,7 @@ resource "azurerm_kubernetes_cluster" "kubernetes_cluster" {
   #kubernetes_version                = data.azurerm_kubernetes_service_versions.current.latest_version
   #support_plan                      = "AKSLongTermSupport"
   #support_plan = "KubernetesOfficial"
-  kubernetes_version                = "1.30"
+  kubernetes_version                = "1.27"
   sku_tier                          = "Standard"
   node_resource_group               = "MC-${azurerm_resource_group.azure_resource_group.name}"
   role_based_access_control_enabled = true
@@ -82,7 +82,7 @@ resource "azurerm_kubernetes_cluster" "kubernetes_cluster" {
     vm_size                     = local.vm-image["aks"].size
     os_sku                      = "AzureLinux"
     max_pods                    = "75"
-    orchestrator_version        = "1.30"
+    orchestrator_version        = "1.27"
     vnet_subnet_id              = azurerm_subnet.spoke_subnet.id
     upgrade_settings {
       max_surge = "10%"
