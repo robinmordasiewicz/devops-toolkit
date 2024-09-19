@@ -58,10 +58,12 @@ resource "azurerm_kubernetes_cluster" "kubernetes_cluster" {
   resource_group_name = azurerm_resource_group.azure_resource_group.name
   dns_prefix          = azurerm_resource_group.azure_resource_group.name
   #kubernetes_version                = data.azurerm_kubernetes_service_versions.current.latest_version
-  #support_plan                      = "AKSLongTermSupport"
-  #support_plan = "KubernetesOfficial"
+  sku_tier = "Premium"
+  support_plan                      = "AKSLongTermSupport"
   kubernetes_version                = "1.27"
-  sku_tier                          = "Standard"
+  #sku_tier = "Free"
+  #support_plan = "KubernetesOfficial"
+  #kubernetes_version = "1.30"
   node_resource_group               = "MC-${azurerm_resource_group.azure_resource_group.name}"
   role_based_access_control_enabled = true
   oidc_issuer_enabled               = true
