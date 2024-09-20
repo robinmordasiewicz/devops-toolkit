@@ -95,12 +95,12 @@ resource "azurerm_linux_virtual_machine" "hub-nva_virtual_machine" {
 }
 
 resource "azurerm_managed_disk" "log_disk" {
-  name                 = "hub-nva-logs"
+  name                 = "hub-nva-log_disk"
   location             = azurerm_resource_group.azure_resource_group.location
   resource_group_name  = azurerm_resource_group.azure_resource_group.name
   storage_account_type = "Standard_LRS"
   create_option        = "Empty"
-  disk_size_gb         = 30
+  disk_size_gb         = 10
 }
 
 resource "azurerm_virtual_machine_data_disk_attachment" "log_disk" {
