@@ -17,6 +17,7 @@
     "infobars",
     "megalinter",
     "noerrdialogs",
-    "oxsecurity"
+    "oxsecurity",
+    "starcoder"
   ]
 }
