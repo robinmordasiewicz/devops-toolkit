@@ -44,6 +44,9 @@ spec:
       models:
         - nomic-embed-text
         - codestral:latest
+        - llama3.1:70b
+        - llama3.1:8b
+        - starcoder2:3b
     persistentVolume:
       enabled: true
       size: 100Gi
