@@ -26,29 +26,13 @@ az vm image list --publisher fortinet --all
 ## terraform.auto.tfvars
 
 ```hcl
-location                             = "canadacentral"
-owner_email                          = "root@example.com"
 hub-nva-image                        = "fortiweb"
-hub-virtual-network_address_prefix   = "10.0.0.0/24"
-hub-external-subnet_name             = "hub-external_subnet"
-hub-external-subnet_prefix           = "10.0.0.0/27"
-hub-external-subnet-gateway          = "10.0.0.1"
-hub-internal-subnet_name             = "hub-internal_subnet"
-hub-internal-subnet_prefix           = "10.0.0.32/27"
 hub-nva-management-action            = "Allow"
-hub-nva-management-ip                = "10.0.0.4"
-hub-nva-vip                          = "10.0.0.5"
-hub-nva-gateway                      = "10.0.0.37"
-spoke-virtual-network_address_prefix = "10.1.0.0/16"
-spoke-subnet_name                    = "spoke_subnet"
-spoke-subnet_prefix                  = "10.1.1.0/24"
-spoke-aks-subnet_name                = "spoke_aks_subnet"
-spoke-aks-subnet_prefix              = "10.1.2.0/24"
-spoke-aks_dns_service_ip             = "10.1.2.10"
-spoke-check-internet-up-ip           = "8.8.8.8"
-spoke-aks-node-ip                    = "10.1.1.4"
-spoke-aks-node-image-gpu             = false
-spoke-k8s-node-pool-gpu              = false
+#spoke-virtual-network_address_prefix = "10.1.0.0/16"
+#spoke-aks_dns_service_ip             = "10.1.2.10"
+#spoke-aks-node-image-gpu             = false
+spoke-k8s-node-pool-gpu              = true
+subscription_id = "6dced100-9c31-416f-aed1-67e8cfc9fe5f"
 ```
 
 
@@ -57,7 +41,7 @@ spoke-k8s-node-pool-gpu              = false
 | Name | Version |
 |------|---------|
 | terraform | >=1.6 |
-| azurerm | 4.2.0 |
+| azurerm | 4.3.0 |
 | external | 2.3.4 |
 | git | 0.1.0 |
 | http | 3.4.5 |
@@ -84,13 +68,12 @@ spoke-k8s-node-pool-gpu              = false
 | location | Azure region for resource group. | `string` | `"canadacentral"` | no |
 | owner\_email | Email address for use with Owner tag. | `string` | `"root@example.com"` | no |
 | spoke-aks-node-image | Container server image product | `string` | `"aks-node"` | no |
-| spoke-aks-node-image-gpu | Set to true to enable GPU workloads | `bool` | `false` | no |
 | spoke-aks-node-ip | Spoke Container Server IP Address | `string` | `"10.1.1.4"` | no |
 | spoke-aks-node-ollama-port | Port for ollama | `string` | `"11434"` | no |
 | spoke-aks-node-ollama-webui-port | Port for the ollama web ui | `string` | `"8080"` | no |
-| spoke-aks-subnet\_name | Spoke aks Subnet Name. | `string` | `"spoke-aks-subnet_name"` | no |
+| spoke-aks-subnet\_name | Spoke aks Subnet Name. | `string` | `"spoke-aks-subnet"` | no |
 | spoke-aks-subnet\_prefix | Spoke Pod Subnet Prefix. | `string` | `"10.1.2.0/24"` | no |
-| spoke-aks\_dns\_service\_ip | Spoke k8s dns service ip | `string` | `"10.2.0.10"` | no |
+| spoke-aks\_dns\_service\_ip | Spoke k8s dns service ip | `string` | `"10.1.2.10"` | no |
 | spoke-aks\_pod\_cidr | Spoke k8s pod cidr. | `string` | `"10.244.0.0/16"` | no |
 | spoke-aks\_service\_cidr | Spoke k8s service cidr. | `string` | `"10.1.2.0/24"` | no |
 | spoke-check-internet-up-ip | Spoke Container Server Checks the Internet at this IP Address | `string` | `"8.8.8.8"` | no |
@@ -98,7 +81,8 @@ spoke-k8s-node-pool-gpu              = false
 | spoke-k8s-node-pool-image | k8s node pool image. | `bool` | `false` | no |
 | spoke-subnet\_name | Spoke Subnet Name. | `string` | `"spoke_subnet"` | no |
 | spoke-subnet\_prefix | Spoke Subnet Prefix. | `string` | `"10.1.1.0/24"` | no |
-| spoke-virtual-network\_address\_prefix | Spoke Virtual Network Address prefix. | `string` | `"10.1.1.0/24"` | no |
+| spoke-virtual-network\_address\_prefix | Spoke Virtual Network Address prefix. | `string` | `"10.1.0.0/16"` | no |
+| subscription\_id | Azure subscription ID | `string` | n/a | yes |
 ## Outputs
 
 | Name | Description |
