@@ -20,7 +20,7 @@ spec:
         effect: "NoSchedule"
       containers:
         - name: lower-thirds
-          image: robinmordasiewicz/lower-thirds:latest
+          image: ghcr.io/robinmordasiewicz/lower-thirds:latest
           ports:
           - containerPort: 8000
           resources:
