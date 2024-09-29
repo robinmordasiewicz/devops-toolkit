@@ -198,9 +198,9 @@ resource "azurerm_kubernetes_cluster_extension" "flux_extension" {
 }
 
 resource "null_resource" "secret" {
-  #triggers = {
-  #  always_run = timestamp()
-  #}
+  triggers = {
+    always_run = timestamp()
+  }
   depends_on = [null_resource.kube_config]
 
   provisioner "local-exec" {
