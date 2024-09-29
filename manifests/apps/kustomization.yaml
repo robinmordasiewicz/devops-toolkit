@@ -6,3 +6,4 @@ resources:
   - ./ollama
   - ./devcontainer
   - ./nvidia-smi
+  - ./lower-thirds
