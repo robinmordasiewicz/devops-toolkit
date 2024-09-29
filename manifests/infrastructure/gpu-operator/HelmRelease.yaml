@@ -5,7 +5,7 @@ metadata:
   name: gpu-operator
   namespace: cluster-config
 spec:
-  targetNamespace: application
+  targetNamespace: cluster-config
   releaseName: gpu-operator
   chart:
     spec:
