@@ -1,0 +1,28 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: lower-thirds
+  namespace: application
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: lower-thirds
+  template:
+    metadata:
+      labels:
+        app: lower-thirds
+    spec:
+      tolerations:
+      - key: "nvidia.com/gpu"
+        operator: "Exists"
+        effect: "NoSchedule"
+      containers:
+        - name: lower-thirds
+          image: robinmordasiewicz/lower-thirds:latest
+          ports:
+          - containerPort: 8000
+          resources:
+            limits:
+              nvidia.com/gpu: 0
