@@ -26,3 +26,13 @@ spec:
       port:
         number: 11434
   rules:
+  - host: www.bankexample.com
+    http:
+      paths:
+      - path: /lower-thirds
+        pathType: Prefix
+        backend:
+          service:
+            name: lower-thirds
+            port:
+              number: 8000
