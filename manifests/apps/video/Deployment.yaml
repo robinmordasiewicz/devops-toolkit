@@ -2,25 +2,25 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: lower-thirds
+  name: video
   namespace: application
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: lower-thirds
+      app: video
   template:
     metadata:
       labels:
-        app: lower-thirds
+        app: video
     spec:
       tolerations:
       - key: "nvidia.com/gpu"
         operator: "Exists"
         effect: "NoSchedule"
       containers:
-        - name: lower-thirds
-          image: ghcr.io/robinmordasiewicz/lower-thirds:latest
+        - name: video
+          image: ghcr.io/robinmordasiewicz/video:latest
           ports:
           - containerPort: 8000
           resources:
@@ -30,14 +30,14 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: lower-thirds
+  name: video
   namespace: application
   labels:
-    app: lower-thirds
+    app: video
 spec:
   ports:
   - port: 8000
     targetPort: 8000
   selector:
-    app: lower-thirds
+    app: video
   type: NodePort
