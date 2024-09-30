@@ -20,7 +20,7 @@ spec:
         effect: "NoSchedule"
       containers:
         - name: video
-          image: ghcr.io/robinmordasiewicz/video:latest
+          image: ghcr.io/robinmordasiewicz/video:0.0.4
           ports:
           - containerPort: 8000
           resources:
