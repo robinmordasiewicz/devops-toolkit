@@ -29,11 +29,11 @@ spec:
   - host: www.bankexample.com
     http:
       paths:
-      - path: /lower-thirds
+      - path: /video
         pathType: Prefix
         backend:
           service:
-            name: lower-thirds
+            name: video
             port:
               number: 8000
       - path: /v1
