@@ -39,7 +39,7 @@ jobs:
     runs-on: ubuntu-22.04
 
     steps:
-      - uses: platisd/openai-pr-description@ae9234941eb14118caf3a0171bf15dcd4a4ee880
+      - uses: platisd/openai-pr-description@b00c8d72be35b769b7ec8b7b9055689da013eab0
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           openai_api_key: ${{ secrets.OPENAI_API_KEY }}
