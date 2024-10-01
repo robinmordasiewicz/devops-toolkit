@@ -26,18 +26,3 @@ spec:
           resources:
             limits:
               nvidia.com/gpu: 0
----
-apiVersion: v1
-kind: Service
-metadata:
-  name: video
-  namespace: application
-  labels:
-    app: video
-spec:
-  ports:
-  - port: 8000
-    targetPort: 8000
-  selector:
-    app: video
-  type: NodePort

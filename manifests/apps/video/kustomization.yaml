@@ -3,4 +3,5 @@ kind: Kustomization
 resources:
   - Deployment.yaml
   - Ingress.yaml
+  - Service.yaml
   - rbac.yaml
