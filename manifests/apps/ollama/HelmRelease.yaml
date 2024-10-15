@@ -45,7 +45,7 @@ spec:
         - nomic-embed-text
         - codestral:latest
         - llama3.1:70b
-        - llama3.1:8b
+        - llama3.2:3b
         - starcoder2:3b
     persistentVolume:
       enabled: true
