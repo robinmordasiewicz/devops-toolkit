@@ -21,7 +21,7 @@ jobs:
         target: [new, old]
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
         with:
           fetch-depth: 2
       - name: Checkout old
@@ -42,4 +42,4 @@ jobs:
         id: code-analysis
         uses: lacework/code-security-action@v1
         with:
-          token: ${{ secrets.GITHUB_TOKEN }}
+          token: ${{ secrets.PAT }}
