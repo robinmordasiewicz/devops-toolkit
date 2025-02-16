@@ -8,7 +8,7 @@
 
 ## Optional
 
-![CoPilot](img/github-copilot.svg) [Copilot](https://github.com/github-copilot/signup): Payment Required - After creating a GitHub account, sign up for a Copilot subscription. VsCode will require Copilot for AI assist.
+![CoPilot](img/github-copilot.svg) [Copilot](https://github.com/github-copilot/signup): Payment Optional - After creating a GitHub account, sign up for a Copilot subscription. VsCode will require Copilot for AI assist.
 
 ![OpenAI](img/openai.svg) [OpenAI](https://platform.openai.com/signup): Payment Required - AI is used for automation of conventional commits.
 
