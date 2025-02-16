@@ -1,4 +1,4 @@
-FROM nginx
+FROM nginx:latest
 # FROM nginxinc/nginx-unprivileged
 # COPY site /usr/share/nginx/html
 COPY site /www/
