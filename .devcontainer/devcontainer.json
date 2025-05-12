@@ -1,13 +1,7 @@
 {
-  "image": "ghcr.io/robinmordasiewicz/devcontainer:latest",
-  "initializeCommand": "docker pull ghcr.io/robinmordasiewicz/devcontainer:latest",
-  "name": "devops-toolkit",
-  "containerEnv": {
-    "OLLAMA_HOST": "www.bankexample.com:80",
-    "OCO_AI_PROVIDER": "ollama/codestral:latest",
-    "OCO_OLLAMA_API_URL": "http://www.bankexample.com:80/api/chat"
-  },
+  "image": "ghcr.io/amerintlxperts/devcontainer:latest",
+  "initializeCommand": "docker pull ghcr.io/amerintlxperts/devcontainer:latest",
   "runArgs": [
-    "--hostname=devops-toolkit"
+    "--hostname=devcontainer"
   ]
 }
