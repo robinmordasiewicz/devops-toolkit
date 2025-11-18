@@ -23,7 +23,7 @@ terraform {
     }
     local = {
       source  = "hashicorp/local"
-      version = "2.5.2"
+      version = "2.6.1"
     }
     git = {
       source  = "paultyng/git"
